@@ -1,3 +1,17 @@
+const kinList = {
+  "2025-06-23": 218,
+};
+
+const kinInfos = {
+  218: {
+    name: "Eismeerblauer oberton Niwanes",
+    ton: "Ton 5",
+    dimension: "Wahrheit",
+    bestimmung: "Klärt den Blick, stärkt das Wesentliche",
+    farbe: "#79c9dd",
+    glyphe: "niwanes.png"
+  }
+};
 <!DOCTYPE html>
 <html lang="de">
 <head>
