@@ -51,3 +51,10 @@ ul {
 ul li::before {
   content: "❄️ ";
 }
+.kin-feld {
+  background-color: #e0f7fa;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-left: 5px solid #80deea;
+  border-radius: 0.5rem;
+}
