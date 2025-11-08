@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itschana – Empathie mit der Zeit · Webinar-Reihe 2025</title>
+  <meta name="description" content="Webinar-Reihe: Empathie mit der Zeit – Wie der Natürliche Kalender das Raumgefühl erneuert. Zwei Abende im 12. Mond: 10.11. & 17.11. 2025, jeweils um 20:00 Uhr (CET/MEZ)." />
+  <meta property="og:title" content="Itschana – Empathie mit der Zeit · Webinar-Reihe 2025">
+  <meta property="og:description" content="Zwei Abende im 12. Mond: 10. & 17. November 2025 – live via Google Meet.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="kin127.jpg">
+  <meta property="og:image:alt" content="Titelmotiv KIN 127 – Roter selbstbestehender Drache">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#111214;
+      --soft:#1a1c20;
+      --text:#e9e9ec;
+      --muted:#b8bbc2;
+      --gold:#e5b35a;
+      --gold-2:#ffdf99;
+      --red:#b63a32;
+      --blue:#3a72b6;
+      --ring: 0 0 0 1px rgba(229,179,90,.25);
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 600px at 70% -10%, rgba(229,179,90,.12), transparent 60%),
+                         radial-gradient(1000px 500px at 10% 10%, rgba(58,114,182,.10), transparent 60%),
+                         linear-gradient(180deg, #0b0b0c 0%, #0a0a0a 60%);
+      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.5;
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 20px 80px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:42px; height:42px; border-radius:14px; background: linear-gradient(135deg, rgba(229,179,90,.9), rgba(182,58,50,.85)); box-shadow: var(--ring), var(--shadow)}
+    .brand h1{margin:0; font-family: "Playfair Display", serif; font-weight:700; font-size:1.25rem; letter-spacing:.3px}
+    .brand small{display:block; font-size:.78rem; color:var(--muted); font-weight:500}
+    .cta a{display:inline-block; padding:10px 14px; border-radius:14px; background:transparent; border:1px solid rgba(229,179,90,.45); color:var(--gold-2); text-decoration:none; font-weight:600}
+    .cta a:hover{background:rgba(229,179,90,.08)}
+    .hero{margin-top:22px; position:relative; overflow:hidden; border-radius:24px; background:linear-gradient(180deg, rgba(229,179,90,.06), rgba(255,255,255,0) 40%), var(--panel); box-shadow: var(--shadow)}
+    .hero::before{content:""; position:absolute; inset:-2px; background: radial-gradient(900px 500px at 70% -10%, rgba(229,179,90,.10), transparent 60%), radial-gradient(600px 400px at 20% 10%, rgba(182,58,50,.09), transparent 60%);} 
+    .hero-inner{display:grid; grid-template-columns: 1.1fr 0.9fr; gap:26px; padding:38px 28px}
+    @media (max-width: 900px){ .hero-inner{grid-template-columns:1fr; padding:26px 22px} }
+    .hero h2{font-family:"Playfair Display", serif; font-weight:700; font-size:clamp(1.6rem, 3.2vw, 2.6rem); line-height:1.2; margin:0}
+    .subtitle{color:var(--muted); margin-top:8px}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .badge{padding:6px 10px; border-radius:12px; background:rgba(229,179,90,.08); color:var(--gold-2); border:1px solid rgba(229,179,90,.3); font-size:.85rem}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{display:inline-block; padding:12px 16px; border-radius:14px; text-decoration:none; font-weight:700; letter-spacing:.2px}
+    .btn-primary{background:linear-gradient(135deg, rgba(229,179,90,.9), rgba(229,179,90,.7)); color:#1b1206}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{border:1px solid rgba(229,179,90,.35); color:var(--gold-2)}
+    .btn-ghost:hover{background:rgba(229,179,90,.06)}
+    .poster{align-self:stretch; border-radius:20px; background: linear-gradient(180deg, rgba(182,58,50,.28), rgba(58,114,182,.22)), url('kin127.jpg') center/cover no-repeat; min-height:300px; box-shadow: var(--ring), var(--shadow)}
+    .poster small{display:block; padding:10px; color:#e6e6e6; background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.45)); border-bottom-left-radius:20px; border-bottom-right-radius:20px}
+    .grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:26px}
+    @media (max-width: 820px){ .grid{grid-template-columns:1fr} }
+    .card{background:linear-gradient(180deg, var(--soft), var(--panel)); border-radius:var(--radius); padding:18px; box-shadow: var(--ring), var(--shadow)}
+    .card h3{margin:4px 0 0 0; font-size:1.1rem}
+    .meta{display:flex; flex-wrap:wrap; gap:12px; align-items:center; color:var(--muted); font-size:.93rem; margin-top:6px}
+    .dot{width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px}
+    .dot.red{background:var(--red)}
+    .dot.blue{background:var(--blue)}
+    .desc{color:#d7d9de; margin-top:8px}
+    .linkrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .section{margin-top:38px}
+    .section h4{font-size:1.05rem; letter-spacing:.4px; text-transform:uppercase; color:var(--gold-2); margin:0 0 10px}
+    .list{display:grid; gap:10px}
+    .li{background:linear-gradient(180deg, rgba(229,179,90,.06), rgba(229,179,90,.0)); border:1px solid rgba(229,179,90,.18); border-radius:14px; padding:12px 14px}
+    footer{margin-top:42px; padding-top:16px; border-top:1px dashed rgba(229,179,90,.25); color:var(--muted); font-size:.9rem}
+    a{color:var(--gold-2)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Itschana – Hüterraum der Zeit</h1>
+          <small>Empathie mit der Zeit · Webinar-Reihe 2025</small>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="#anmelden" title="Zum Anmeldebereich springen">Jetzt teilnehmen</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Einladung">
+      <div class="hero-inner">
+        <div>
+          <h2>Empathie mit der Zeit<br>– Wie der Natürliche Kalender das Raumgefühl erneuert</h2>
+          <p class="subtitle">Zwei Abende im 12. Mond öffnen die Tür zu einem neuen Empfinden der Zeit. Kein Vortrag – eine Begegnung.</p>
+          <div class="badges">
+            <span class="badge">Live · Google Meet</span>
+            <span class="badge">Dauer ca. 70 Minuten</span>
+            <span class="badge">Teilnahme frei · Spenden willkommen</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#anmelden">Am Webinar teilnehmen</a>
+            <a class="btn btn-ghost" href="#infos">Mehr Infos</a>
+          </div>
+        </div>
+        <div class="poster" role="img" aria-label="Titelbild 2026 – Drache KIN 127">
+          <small>Motiv: KIN 127 – Roter selbstbestehender Drache (Titelbild 2026)</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="termine" aria-label="Termine">
+      <h4>Termine & Themen</h4>
+      <div class="grid">
+        <article class="card">
+          <div class="meta"><span class="dot red"></span>Montag, <strong>10. November 2025</strong> · KIN 85 – Roter elektrischer Drache (Ton 3 – Dienen)</div>
+          <h3>Die Zeit berühren – Empathie als schöpferischer Dienst</h3>
+          <p class="desc">Ein Abend über das Wiedererwachen des Mitgefühls in der Zeit. Wenn wir aufhören, gegen sie zu kämpfen, beginnt sie mit uns zu sprechen. Der elektrische Drache entzündet das Feuer der Verbindung – Dienst als Freude.</p>
+          <div class="linkrow">
+            <a class="btn btn-ghost" href="https://sonnenkalender.com/kin085/" target="_blank" rel="noopener">Mehr zu KIN 85</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="dot blue"></span>Montag, <strong>17. November 2025</strong> · KIN 92 – Eismeerblauer lunarer Niwanes (Ton 2 – Herausforderung)</div>
+          <h3>Rückschau & Resonanz – Wie der Raum das Vergangene heilt</h3>
+          <p class="desc">Zeit wird fühlbar als Raum, der sich erinnert. Wir treten ein in die Rückschau des 12. Mondes, damit der 13. Mond die neue Geschichte schreiben kann – sanft, klar, ohne Verlustgefühl.</p>
+          <div class="linkrow">
+            <a class="btn btn-ghost" href="https://sonnenkalender.com/kin092/" target="_blank" rel="noopener">Mehr zu KIN 92</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="infos" aria-label="Informationen">
+      <h4>Informationen</h4>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:18px">
+        <div class="card">
+          <h3 style="margin-top:0">Ablauf (ca. 70 Minuten)</h3>
+          <ul class="list" style="margin:10px 0 0 0; padding:0 0 0 18px">
+            <li>Raum öffnen & Ankommen (5')</li>
+            <li>Einführender Impuls (10')</li>
+            <li>Wahrnehmungsübung (15')</li>
+            <li>Hauptteil: Natürlicher Kalender als Resonanzkörper (20')</li>
+            <li>Gespräch & Resonanzrunde (15')</li>
+            <li>Poetischer Abschluss (5')</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Rahmen</h3>
+          <div class="list">
+            <div class="li"><strong>Ort:</strong> Online via Google Meet</div>
+            <div class="li"><strong>Uhrzeit:</strong> <em>20:00 Uhr</em> (CET/MEZ)</div>
+            <div class="li"><strong>Leitung:</strong> Franz Leopold</div>
+            <div class="li"><strong>Teilnahme:</strong> frei – Spenden willkommen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="anmelden" aria-label="Anmeldung">
+      <h4>Anmeldung & Zugang</h4>
+      <div class="grid">
+        <div class="card">
+          <p style="margin:0 0 8px">Du kannst ohne Registrierung teilnehmen. Klicke zum jeweiligen Termin einfach auf den Zugang:</p>
+          <div class="list">
+            <div class="li"><strong>10.11. Zugang:</strong> <a href="https://meet.google.com/ted-rqxa-yag" title="Meet-Link 10.11." target="_blank" rel="noopener">https://meet.google.com/ted-rqxa-yag</a></div>
+            <div class="li"><strong>17.11. Zugang:</strong> <a href="https://meet.google.com/rrg-ipij-gas" title="Meet-Link 17.11." target="_blank" rel="noopener">https://meet.google.com/rrg-ipij-gas</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Optional: Erinnerungsservice</h3>
+          <p class="desc" style="margin-top:0">Wenn du eine Erinnerung 24h & 1h vor Beginn möchtest, sende eine kurze Mail mit dem Betreff <em>„Erinnern“</em> an <a href="mailto:info@itschana.example">info@itschana.example</a>. </p>
+          <p class="desc">Du erhältst dann die liebevoll gestalteten Nachklang-Impulse nach jedem Abend.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Itschana – Hüterraum der Zeit · Gestaltung: Nova · Bildreferenz: KIN 127 – Roter selbstbestehender Drache</p>
+      <p><strong>Uhrzeit der Webinare:</strong> jeweils 20:00 Uhr (CET/MEZ)</p>
+    </footer>
+  </div>
+</body>
+</html>
