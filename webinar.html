@@ -216,19 +216,39 @@
     </footer>
       </footer>
 
+        </footer>
+
     <!-- Spendenbereich -->
     <section id="spenden" style="text-align:center; padding:40px 0 60px 0;">
       <h3 style="color:var(--gold-2); margin-bottom:10px;">Spenden willkommen</h3>
       <p style="color:var(--muted); margin-bottom:20px;">
-        Der Hüterraum der Zeit ist frei zugänglich.<br>
-        Wenn du das Wirken unterstützen möchtest, freut sich Itschana über deine freiwillige Gabe.
+        Der Hüterraum der Zeit wird vom Verein RESET getragen.<br>
+        Wenn du das Wirken unterstützen möchtest, freuen wir uns über deine Spende auf folgendes Konto:
       </p>
-      
-      <a href="https://paypal.me/DEINLINK" target="_blank" rel="noopener"
-         style="display:inline-block; background:var(--gold-2); color:#000;
-                padding:10px 22px; border-radius:30px; font-weight:bold;
-                text-decoration:none; box-shadow:0 0 15px rgba(229,179,90,.4);">
-         💫 Jetzt spenden
+
+      <div style="display:inline-block; background:linear-gradient(180deg, rgba(229,179,90,.06), rgba(0,0,0,.08));
+                  border:1px dashed rgba(229,179,90,.25); border-radius:14px; padding:14px 18px;
+                  color:var(--text); font-size:.95rem;">
+        <strong>Verein RESET</strong><br>
+        IBAN: <span id="iban">AT00 0000 0000 0000 0000</span><br>
+        BIC: <span id="bic">XXXXATXX</span><br>
+        Verwendungszweck: <em>Itschana – Hüterraum der Zeit</em><br>
+        <button type="button" style="margin-top:8px; padding:6px 12px; border-radius:8px;
+                background:var(--gold-2); border:none; cursor:pointer; font-weight:bold;"
+                onclick="navigator.clipboard.writeText(document.getElementById('iban').innerText)">
+          AT23 1400 0295 1083 5393
+        </button>
+      </div>
+
+      <p style="color:var(--muted); margin-top:24px; font-style:italic;">
+        Danke für dein Mitwirken im Hüterraum der Zeit.
+      </p>
+    </section>
+
+    </div>
+  </body>
+</html>
+
       </a>
     </section>
 
