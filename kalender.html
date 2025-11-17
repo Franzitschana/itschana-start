@@ -100,28 +100,49 @@
 
   <script src="kin-daten-komplett.js"></script>
   <script>
-    const today = new Date().toISOString().split("T")[0];
-    const kinNumber = kinList[today];
+       // --- Aktuelles Datum bestimmen ---
+    const heute = new Date();
+    const isoDatum = heute.toISOString().split("T")[0]; // yyyy-mm-dd
 
-    const output = document.getElementById("kin-output");
-    const link = document.getElementById("kin-link");
+    // --- Uhrzeit-Anpassung für Itschana (Tageswechsel 03:08) ---
+    const grenzZeit = new Date();
+    grenzZeit.setHours(3, 8, 0, 0);
 
-    if (kinNumber && kinInfos[kinNumber]) {
-      const kinInfo = kinInfos[kinNumber];
-      output.innerHTML = `
-        <div style="background-color: ${kinInfo.farbe}; padding: 1em; border-radius: 1em; text-align: center;">
-          <img src="bilder/${kinInfo.glyphe}" alt="Glyphe" style="height: 64px; margin-bottom: 0.5em;"><br />
-          <strong>KIN ${kinNumber}</strong><br />
-          ${kinInfo.name}<br />
-          ${kinInfo.ton} – ${kinInfo.dimension}<br />
-          <em>${kinInfo.bestimmung}</em>
-        </div>
-      `;
-      link.href = \`https://itschana.vercel.app/kin\${kinNumber.toString().padStart(3, '0')}/\`;
-    } else {
-      output.innerText = "Für dieses Datum ist noch kein KIN eingetragen.";
-      link.href = "#";
+    let effektivesDatum = new Date(heute);
+    if (heute < grenzZeit) {
+        // Wenn vor 03:08 → gilt noch der Vortag
+        effektivesDatum.setDate(effektivesDatum.getDate() - 1);
     }
+
+    const effektivesISO = effektivesDatum.toISOString().split("T")[0];
+
+    // --- KIN ermitteln ---
+    const kinNummer = Verwandtenliste[effektivesISO];
+
+    const ausgabe = document.getElementById("kin-output");
+    const link = document.getElementById("Verwandtschaftsverbindung");
+
+    if (kinNummer && kinInfos[kinNummer]) {
+        const info = kinInfos[kinNummer];
+
+        ausgabe.innerHTML = `
+            <div style="background-color:${info.Farbe}; padding: 1em; border-radius: 1em; text-align: center;">
+                <img src="bilder/${info.Glyphe}" alt="Glyphe" style="height: 64px; margin-bottom: 0.5em;"><br>
+                <strong>VERWANDT: KIN ${kinNummer}</strong><br>
+                ${info.Name}<br>
+                ${info.Ton} (${info.Dimension})<br>
+                <em>${info.Bestimmung}</em>
+            </div>
+        `;
+
+        link.href = `https://itschana.vercel.app/kin${kinNummer.toString().padStart(3, '0')}/`;
+
+    } else {
+        ausgabe.innerText = "Für dieses Datum ist noch kein KIN eingetragen.";
+        link.href = "#";
+    }
+</script>
+
   </script>
 </body>
 </html>
