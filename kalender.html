@@ -91,11 +91,12 @@
   <p class="spenden-dank">
     Danke für deine Unterstützung – sie macht den Itschana-Weg möglich.
   </p>
+  <p class="spenden-dank">
+    Danke für deine Unterstützung – sie macht den Itschana-Weg möglich.
+  </p>
 </section>
 
-</section>
-
-  <script src="kin-daten-komplett.js"></script>
+<script src="kin-daten-komplett.js"></script>
 <script>
   // --- Aktuelles Datum bestimmen ---
   const heute = new Date();
@@ -112,7 +113,7 @@
     sDatum.setDate(sDatum.getDate() - 1);
   }
 
-  // ISO-String (YYYY-MM-DD) aus dem wir das Datum für die Verwandtenliste holen
+  // ISO-String (YYYY-MM-DD), aus dem wir das Datum für die Verwandtenliste holen
   const sISO = sDatum.toISOString().split("T")[0];
 
   // --- KIN über die Verwandtenliste holen ---
@@ -141,9 +142,5 @@
   }
 </script>
 
-
-</script>
-
-  </script>
 </body>
 </html>
