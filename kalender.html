@@ -101,23 +101,27 @@
   <script src="kin-daten-komplett.js"></script>
   <script>
        // --- Aktuelles Datum bestimmen ---
+    <script>
+    // --- Aktuelles Datum bestimmen ---
     const heute = new Date();
-    const isoDatum = heute.toISOString().split("T")[0]; // yyyy-mm-dd
 
     // --- Uhrzeit-Anpassung für Itschana (Tageswechsel 03:08) ---
     const grenzZeit = new Date();
-    grenzZeit.setHours(3, 8, 0, 0);
+    grenzZeit.setHours(3, 8, 0, 0); // 03:08:00
 
-    let effektivesDatum = new Date(heute);
+    // Kopie des Datums, die wir ggf. auf den Vortag setzen
+    let sDatum = new Date(heute);
+
+    // Wenn vor 03:08 → gilt noch der Vortag
     if (heute < grenzZeit) {
-        // Wenn vor 03:08 → gilt noch der Vortag
-        effektivesDatum.setDate(effektivesDatum.getDate() - 1);
+        sDatum.setDate(sDatum.getDate() - 1);
     }
 
-    const effektivesISO = effektivesDatum.toISOString().split("T")[0];
+    // ISO-String (YYYY-MM-DD) aus dem wir das Datum für die Verwandtenliste holen
+    const sISO = sDatum.toISOString().split("T")[0];
 
-    // --- KIN ermitteln ---
-    const kinNummer = Verwandtenliste[effektivesISO];
+    // --- KIN über die Verwandtenliste holen ---
+    const kinNummer = Verwandtenliste[sISO];
 
     const ausgabe = document.getElementById("kin-output");
     const link = document.getElementById("Verwandtschaftsverbindung");
@@ -126,21 +130,22 @@
         const info = kinInfos[kinNummer];
 
         ausgabe.innerHTML = `
-            <div style="background-color:${info.Farbe}; padding: 1em; border-radius: 1em; text-align: center;">
-                <img src="bilder/${info.Glyphe}" alt="Glyphe" style="height: 64px; margin-bottom: 0.5em;"><br>
+            <div style="background-color:${info.farbe}; padding: 1em; border-radius: 1em; text-align: center;">
+                <img src="bilder/${info.glyphe}" alt="Glyphe" style="height: 64px; margin-bottom: 0.5em;"><br>
                 <strong>VERWANDT: KIN ${kinNummer}</strong><br>
-                ${info.Name}<br>
-                ${info.Ton} (${info.Dimension})<br>
-                <em>${info.Bestimmung}</em>
+                ${info.name}<br>
+                ${info.ton} (${info.dimension})<br>
+                <em>${info.bestimmung}</em>
             </div>
         `;
 
         link.href = `https://itschana.vercel.app/kin${kinNummer.toString().padStart(3, '0')}/`;
-
     } else {
         ausgabe.innerText = "Für dieses Datum ist noch kein KIN eingetragen.";
         link.href = "#";
     }
+</script>
+
 </script>
 
   </script>
