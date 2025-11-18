@@ -76,22 +76,19 @@
         die Daten zum manuellen Eintragen:
     </p>
 
-    <p class="spenden-klein" style="font-size:0.9rem; color:#333; line-height:1.5;">
-        <strong>Empfänger:</strong> Verein Reset – Zurück zum Leben als Mensch<br>
-        <strong>IBAN:</strong> AT23 1400 0295 1083 5393<br>
-        <strong>BIC:</strong> BAWAATWW<br>
-        <strong>Betrag:</strong> 45 Euro<br>
-        <strong>Verwendungszweck:</strong> „NK 2026 – Name + Adresse“
+        <p class="spenden-klein" style="font-size:0.9rem; color:#333; line-height:1.5;">
+      <strong>Empfänger:</strong> Verein Reset – Zurück zum Leben als Mensch<br>
+      <strong>IBAN:</strong> AT23 1400 0295 1083 5393<br>
+      <strong>BIC:</strong> BAWAATWW<br>
+      <strong>Betrag:</strong> 45 Euro<br>
+      <strong>Verwendungszweck:</strong> „NK 2026 – Name + Adresse“
     </p>
-</div>
+  </div> <!-- Ende SEPA-Block -->
+</div>   <!-- Ende spenden-grid -->
 
-    </div>
-  </div>
-
-  <p class="spenden-dank">
-    Danke für deine Unterstützung – sie macht den Itschana-Weg möglich.
-  <
-  </p>
+<p class="spenden-dank">
+  Danke für deine Unterstützung – sie macht den Itschana-Weg möglich.
+</p>
 </section>
 
 <script src="kin-daten-komplett.js"></script>
@@ -118,7 +115,7 @@
   const kinNummer = Verwandtenliste[sISO];
 
   const ausgabe = document.getElementById("kin-output");
-  const link    = document.getElementById("Verwandtschaftsverbindung");
+  const link    = document.getElementById("kin-link");
 
   if (kinNummer && kinInfos[kinNummer]) {
     const info = kinInfos[kinNummer];
@@ -142,3 +139,4 @@
 
 </body>
 </html>
+
