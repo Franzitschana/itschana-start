@@ -114,7 +114,7 @@
   const kinNummer = Verwandtenliste[isoDatum];
 
   const ausgabe = document.getElementById("kin-output");
-  const link    = document.getElementById("kin-link"); // <a id="kin-link" ...>
+  const link    = document.getElementById("kin-link"); // WICHTIG: gleiche ID wie im HTML!
 
   if (kinNummer && kinInfos[kinNummer]) {
     const info = kinInfos[kinNummer];
@@ -135,8 +135,5 @@
     link.href = "#";
   }
 </script>
-
-
 </body>
 </html>
-
