@@ -114,7 +114,8 @@
     const sISO = sDatum.toISOString().split("T")[0];
 
     // --- KIN über die Verwandtenliste holen ---
-    const kinNummer = Verwandtenliste[sISO];
+    const kinNummer = kinList[sISO];
+
 
     const ausgabe = document.getElementById("kin-output");
     const link    = document.getElementById("kin-link");
