@@ -91,53 +91,60 @@
       Danke für deine Unterstützung – sie macht den Itschana-Weg möglich.
     </p>
   </section>
+<script src="kin-daten-komplett.js"></script>
+<script>
+  (function () {
+    // --- Heutiges Datum holen ---
+    const jetzt = new Date();
 
-  <!-- KIN-Logik -->
-  <script src="kin-daten-komplett.js"></script>
-  <script>
-    // --- Aktuelles Datum bestimmen ---
-    const heute = new Date();
+    // --- Itschana-Tageswechsel um 03:08 ---
+    const grenze = new Date();
+    grenze.setHours(3, 8, 0, 0); // 03:08:00 lokale Zeit
 
-    // --- Uhrzeit-Anpassung für Itschana (Tageswechsel 03:08) ---
-    const grenzZeit = new Date();
-    grenzZeit.setHours(3, 8, 0, 0); // 03:08:00
-
-    // Kopie des Datums, die wir ggf. auf den Vortag setzen
-    let sDatum = new Date(heute);
-
-    // Wenn vor 03:08 → gilt noch der Vortag
-    if (heute < grenzZeit) {
-      sDatum.setDate(sDatum.getDate() - 1);
+    // Datum, das im Itschana-Kalender zählt
+    let itschanaDatum = new Date(jetzt);
+    if (jetzt < grenze) {
+      // Vor 03:08 -> noch der Vortag
+      itschanaDatum.setDate(itschanaDatum.getDate() - 1);
     }
 
-    // ISO-String (YYYY-MM-DD), aus dem wir das Datum für die Verwandtenliste holen
-    const sISO = sDatum.toISOString().split("T")[0];
+    // Schlüssel im Format YYYY-MM-DD für kinList
+    const isoKey = itschanaDatum.toISOString().split("T")[0];
 
-    // --- KIN über die Verwandtenliste holen ---
-    const kinNummer = kinList[sISO];
+    // --- KIN aus der Verwandtenliste holen ---
+    const kinNummer = kinList[isoKey];
 
+    const outputEl = document.getElementById("kin-output");
+    const linkEl   = document.getElementById("kin-link");
 
-    const ausgabe = document.getElementById("kin-output");
-    const link    = document.getElementById("kin-link");
+    // Sicherheitsnetz: falls IDs nicht gefunden werden, einfach abbrechen
+    if (!outputEl || !linkEl) {
+      return;
+    }
 
     if (kinNummer && kinInfos[kinNummer]) {
       const info = kinInfos[kinNummer];
 
-      ausgabe.innerHTML = `
-        <div style="background-color:${info.farbe}; padding: 1em; border-radius: 1em; text-align: center;">
-          <img src="bilder/${info.glyphe}" alt="Glyphe" style="height: 64px; margin-bottom: 0.5em;"><br>
-          <strong>VERWANDT: KIN ${kinNummer}</strong><br>
+      outputEl.innerHTML = `
+        <div style="background-color:${info.farbe}; padding:1em; border-radius:1em; text-align:center;">
+          <img src="bilder/${info.glyphe}" alt="Glyphe" style="height:64px; margin-bottom:0.5em;"><br>
+          <strong>KIN ${kinNummer}</strong><br>
           ${info.name}<br>
           ${info.ton} (${info.dimension})<br>
           <em>${info.bestimmung}</em>
         </div>
       `;
 
-      link.href = `https://itschana.vercel.app/kin${kinNummer.toString().padStart(3, '0')}/`;
+      linkEl.href =
+        "https://itschana.vercel.app/kin" +
+        kinNummer.toString().padStart(3, "0") +
+        "/";
     } else {
-      ausgabe.innerText = "Für dieses Datum ist noch kein KIN eingetragen.";
-      link.href = "#";
+      outputEl.textContent =
+        "Für dieses Datum ist in der Itschana-Verwandtenliste noch kein KIN eingetragen.";
+      linkEl.href = "#";
     }
-  </script>
+  })();
+</script>
 </body>
-</html>
+  
