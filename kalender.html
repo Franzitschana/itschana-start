@@ -96,25 +96,26 @@
   const jetzt = new Date();
 
   // --- Uhrzeit-Anpassung für Itschana (Tageswechsel 03:08) ---
-  const grenze = new Date();
-  grenze.setHours(3, 8, 0, 0); // 03:08:00
+  const grenzZeit = new Date();
+  grenzZeit.setHours(3, 8, 0, 0); // 03:08:00
 
   // Kopie des Datums, die wir ggf. auf den Vortag setzen
-  let wirkDatum = new Date(jetzt);
+  let sDatum = new Date(jetzt);
 
   // Wenn vor 03:08 → gilt noch der Vortag
-  if (jetzt < grenze) {
-    wirkDatum.setDate(wirkDatum.getDate() - 1);
+  if (jetzt < grenzZeit) {
+    sDatum.setDate(sDatum.getDate() - 1);
   }
 
-  // ISO-String (YYYY-MM-DD), aus dem wir das Datum für die Verwandtenliste holen
-  const isoDatum = wirkDatum.toISOString().split("T")[0];
+  // ISO-String (YYYY-MM-DD), aus dem wir das Datum für die KIN-Liste holen
+  const sISO = sDatum.toISOString().split("T")[0];
 
-  // --- KIN über die Verwandtenliste holen ---
-  const kinNummer = Verwandtenliste[isoDatum];
+  // --- KIN über die KIN-Liste holen ---
+  // WICHTIG: Name muss zu kin-daten-komplett.js passen → hier: kinList
+  const kinNummer = kinList[sISO];
 
   const ausgabe = document.getElementById("kin-output");
-  const link    = document.getElementById("kin-link"); // WICHTIG: gleiche ID wie im HTML!
+  const link    = document.getElementById("kin-link");
 
   if (kinNummer && kinInfos[kinNummer]) {
     const info = kinInfos[kinNummer];
@@ -135,5 +136,6 @@
     link.href = "#";
   }
 </script>
+
 </body>
 </html>
