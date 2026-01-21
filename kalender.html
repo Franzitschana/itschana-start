@@ -146,5 +146,130 @@
     }
   })();
 </script>
+ <!-- Itschana JSON Loader (sicher, nutzt bestehende IDs: kin-output / kin-link) -->
+<script>
+  const FALLBACK_DATE = "2026-01-21";
+
+  function isoTodayLocal(){
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const day = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${day}`;
+  }
+
+  async function loadJSON(path){
+    const r = await fetch(path, { cache: "no-store" });
+    if(!r.ok) throw new Error("Kann JSON nicht laden: " + path);
+    return await r.json();
+  }
+
+  async function loadDay(dateISO){
+    const index = await loadJSON("/data/itschana_index.json");
+    const range = index.ranges.find(r => dateISO >= r.from && dateISO <= r.to);
+    if(!range) return null;
+
+    const days = await loadJSON("/data/" + range.file);
+    return days[dateISO] || null;
+  }
+
+  function renderToExistingFields(data){
+    const outputEl = document.getElementById("kin-output");
+    const linkEl = document.getElementById("kin-link");
+    if(!outputEl) return; // wenn Layout anders ist, nichts kaputt machen
+
+    // Link setzen (wenn vorhanden)
+    const kinLink = data?.links?.kin || (data?.day?.kin
+      ? ("https://sonnenkalender.com/kin" + String(data.day.kin).padStart(3,"0") + "/")
+      : null);
+
+    if(linkEl && kinLink){
+      linkEl.href = kinLink;
+      // falls es ein <a> ohne Text ist:
+      if(!linkEl.textContent || !linkEl.textContent.trim()){
+        linkEl.textContent = "Zum KIN";
+      }
+    }
+
+    // Render (minimal, aber vollständig für deinen Screenshot-Aufbau)
+    outputEl.innerHTML = `
+      <div style="border:2px solid #777; padding:0.75rem; border-radius:8px; margin-bottom:0.75rem;">
+        <div style="text-align:center; font-weight:bold;">
+          ${data.moon?.rangeLabel || ""}
+        </div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:0.6rem;">
+          <div style="flex:1; border:1px solid #bbb; padding:0.6rem;">
+            <div style="font-weight:bold; margin-bottom:0.25rem;">Mond-KIN</div>
+            <div>
+              Mondton ${data.moon?.ton?.nr ?? ""} – ${data.moon?.ton?.label ?? ""}${data.moon?.ton?.abbr ? " ("+data.moon.ton.abbr+")" : ""}
+            </div>
+          </div>
+
+          <div style="flex:1; border:1px solid #bbb; padding:0.6rem;">
+            <div style="font-weight:bold; margin-bottom:0.25rem;">Jahres-KIN</div>
+            <div>
+              ${data.year?.name ?? ""}${data.year?.tonNr ? " (Ton "+data.year.tonNr+")" : ""}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:2px solid #777; padding:0.75rem; border-radius:8px; margin-bottom:0.75rem;">
+        <div style="font-weight:bold;">
+          ${data.wave?.rangeLabel || ""}
+        </div>
+        <div style="margin-top:0.25rem;">
+          ${data.wave?.name || ""}
+        </div>
+      </div>
+
+      <div style="border:3px solid #333; padding:1rem; border-radius:10px;">
+        <div style="text-align:center; font-weight:bold; margin-bottom:0.5rem;">
+          ${data.dateLabel || ""}
+        </div>
+
+        <div style="text-align:center; font-size:1.15rem; font-weight:bold;">
+          KIN ${data.day?.kin ?? ""} – ${data.day?.name ?? ""}
+        </div>
+
+        <div style="text-align:center; margin-top:0.25rem;">
+          Ton ${data.day?.ton?.nr ?? ""} – ${data.day?.ton?.label ?? ""}${data.day?.ton?.phrase ? " ("+data.day.ton.phrase+")" : ""}
+        </div>
+
+        <div style="text-align:center; margin-top:0.25rem;">
+          ${data.day?.ton?.ebene ?? ""}
+        </div>
+
+        <hr style="margin:0.9rem 0; border:none; border-top:1px solid #bbb;">
+
+        <div><b>Figur:</b> ${data.day?.figur ?? ""}</div>
+        <div style="margin-top:0.25rem;"><b>Bestimmung:</b> ${data.day?.rollenfeld ?? ""}</div>
+        <div style="margin-top:0.25rem;"><b>Fraktion:</b> ${data.day?.fraktion ?? ""}</div>
+      </div>
+    `;
+  }
+
+  (async () => {
+    try{
+      const today = isoTodayLocal();
+      let data = await loadDay(today);
+
+      // Fallback auf Testtag, falls heute noch nicht in der Datei ist
+      if(!data){
+        data = await loadDay(FALLBACK_DATE);
+      }
+
+      // Wenn immer noch nichts: nichts überschreiben (dein altes Script bleibt sichtbar)
+      if(!data) return;
+
+      renderToExistingFields(data);
+    } catch(err){
+      // Fehler still lassen, damit dein bisheriges System weiter läuft
+      console.error(err);
+    }
+  })();
+</script>
+ 
 </body>
   
