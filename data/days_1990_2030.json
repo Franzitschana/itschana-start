@@ -1,5 +1,4 @@
 {
-  "{
   "2026-01-20": {
     "dateLabel": "DI 20.Jän. 2026",
     "day": {
@@ -13,7 +12,7 @@
       },
       "figur": "Tag der Harmonie",
       "rollenfeld": "feste GRÖßE der GELEHRTEN",
-      "fraktion": " GELEHRTEN"
+      "fraktion": "der GELEHRTEN"
     },
     "moon": {
       "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
@@ -42,7 +41,7 @@
       },
       "figur": "Tag des Wassers",
       "rollenfeld": "echter KLASSIKER der FRIEDFERTIGEN",
-      "fraktion": "Friedfertige"
+      "fraktion": " der Friedfertigen"
     },
     "moon": {
       "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
@@ -71,14 +70,14 @@
       },
       "figur": "Tag des Herzens",
       "rollenfeld": "wahrer FREUND der SELBSTLOSEN",
-      "fraktion": "SELBSTLOSEN"
+      "fraktion": "der SELBSTLOSEN"
     },
     "moon": {
       "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
       "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
     },
     "year": {
-      "name": "Roter selbst-bestehender Drache",
+      "name": "Roter selbst-bbestehender Drache",
       "tonNr": 4
     },
     "wave": {
@@ -100,14 +99,14 @@
       },
       "figur": "Tag des Spielens",
       "rollenfeld": "glücklicher SPIELER der FURCHTLOSEN",
-      "fraktion": " FURCHTLOSEN"
+      "fraktion": " der FURCHTLOSEN"
     },
     "moon": {
       "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
       "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
     },
     "year": {
-      "name": "Roter selbst-bestehender Drache",
+      "name": "Roter selbst-bbestehender Drache",
       "tonNr": 4
     },
     "wave": {
