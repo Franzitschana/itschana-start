@@ -190,7 +190,35 @@
             ${data.moon?.rangeLabel || ""}
           </div>
 
-          <div style="display:flex; gap:0.75rem; margin-top:0.6rem;">
+          <div style="dispasync function showISO(iso){
+  const data = await loadDay(iso);
+
+  // sanft statt alert:
+  if(!data){
+    currentISO = iso;
+
+    const outputEl = document.getElementById("kin-output");
+    if(outputEl){
+      outputEl.innerHTML = `
+        <div style="display:flex; gap:0.5rem; justify-content:center; margin:0 0 0.75rem;">
+          <button type="button" id="prev-day">◀ Voriger Tag</button>
+          <button type="button" id="next-day">Nächster Tag ▶</button>
+        </div>
+
+        <div style="border:2px dashed #777; padding:1rem; border-radius:10px; text-align:center;">
+          <div style="font-weight:bold; margin-bottom:0.5rem;">${iso}</div>
+          <div>Noch kein Eintrag für dieses Datum.</div>
+        </div>
+      `;
+      wireDayNav();
+    }
+    return;
+  }
+
+  currentISO = iso;
+  renderToExistingFields(data);
+}
+lay:flex; gap:0.75rem; margin-top:0.6rem;">
             <div style="flex:1; border:1px solid #bbb; padding:0.6rem;">
               <div style="font-weight:bold; margin-bottom:0.25rem;">Mond-KIN</div>
               <div>
@@ -254,7 +282,36 @@
         if(!data){
           data = await loadDay(FALLBACK_DATE);
           currentISO = FALLBACK_DATE;
-        }
+        }async function showISO(iso){
+  const data = await loadDay(iso);
+
+  // sanft statt alert:
+  if(!data){
+    currentISO = iso;
+
+    const outputEl = document.getElementById("kin-output");
+    if(outputEl){
+      outputEl.innerHTML = `
+        <div style="display:flex; gap:0.5rem; justify-content:center; margin:0 0 0.75rem;">
+          <button type="button" id="prev-day">◀ Voriger Tag</button>
+          <button type="button" id="next-day">Nächster Tag ▶</button>
+        </div>
+
+        <div style="border:2px dashed #777; padding:1rem; border-radius:10px; text-align:center;">
+          <div style="font-weight:bold; margin-bottom:0.5rem;">${iso}</div>
+          <div>Noch kein Eintrag für dieses Datum.</div>
+        </div>
+      `;
+      wireDayNav();
+    }
+    return;
+  }
+
+  currentISO = iso;
+  renderToExistingFields(data);
+}
+
+
 
         if(!data) return;
 
