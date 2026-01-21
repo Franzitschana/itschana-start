@@ -97,7 +97,6 @@ ul li::before {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-}
 .spenden-box:hover {
   box-shadow: 0 2px 6px rgba(255, 204, 0, 0.3);
 }
