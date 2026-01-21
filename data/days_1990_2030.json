@@ -1,0 +1,30 @@
+{
+  "2026-01-21": {
+    "dateLabel": "MI 21.Jän. 2026",
+    "day": {
+      "kin": 157,
+      "name": "Roter rhythmischer Mond",
+      "ton": {
+        "nr": 6,
+        "label": "Gleichheit",
+        "phrase": "was wir machen",
+        "ebene": "Ebene des LEBENs"
+      },
+      "figur": "Tag des Wassers",
+      "rollenfeld": "echter KLASSIKER der FRIEDFERTIGEN",
+      "fraktion": "Friedfertige"
+    },
+    "moon": {
+      "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
+      "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
+    },
+    "year": {
+      "name": "Roter selbst-bestehender Drache",
+      "tonNr": 4
+    },
+    "wave": {
+      "rangeLabel": "Die Welle: 15.Jän. - 28.Jän.",
+      "name": "KANN – Der Gelbe Samen"
+    }
+  }
+}
