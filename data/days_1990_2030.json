@@ -1,4 +1,34 @@
 {
+  "{
+  "2026-01-20": {
+    "dateLabel": "DI 20.Jän. 2026",
+    "day": {
+      "kin": 156,
+      "name": "Gelber oberton Stern",
+      "ton": {
+        "nr": 5,
+        "label": "Strahlung",
+        "phrase": "(der/die Chef(in))",
+        "ebene": "Ebene der ZEIT"
+      },
+      "figur": "Tag der Harmonie",
+      "rollenfeld": "feste GRÖßE der GELEHRTEN",
+      "fraktion": " GELEHRTEN"
+    },
+    "moon": {
+      "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
+      "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
+    },
+    "year": {
+      "name": "Roter selbst-bestehender Drache",
+      "tonNr": 4
+    },
+    "wave": {
+      "rangeLabel": "Die Welle: 15.Jän. - 28.Jän.",
+      "name": "KANN – Der Gelbe Samen"
+    }
+  },
+
   "2026-01-21": {
     "dateLabel": "MI 21.Jän. 2026",
     "day": {
@@ -13,6 +43,64 @@
       "figur": "Tag des Wassers",
       "rollenfeld": "echter KLASSIKER der FRIEDFERTIGEN",
       "fraktion": "Friedfertige"
+    },
+    "moon": {
+      "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
+      "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
+    },
+    "year": {
+      "name": "Roter selbst-bestehender Drache",
+      "tonNr": 4
+    },
+    "wave": {
+      "rangeLabel": "Die Welle: 15.Jän. - 28.Jän.",
+      "name": "KANN – Der Gelbe Samen"
+    }
+  },
+
+  "2026-01-22": {
+    "dateLabel": "DO 22.Jän. 2026",
+    "day": {
+      "kin": 158,
+      "name": "Weißer resonanter Hund",
+      "ton": {
+        "nr": 7,
+        "label": "Gleichklang",
+        "phrase": "(so funktioniert es)",
+        "ebene": "Ebene der SINNE"
+      },
+      "figur": "Tag des Herzens",
+      "rollenfeld": "wahrer FREUND der SELBSTLOSEN",
+      "fraktion": "SELBSTLOSEN"
+    },
+    "moon": {
+      "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
+      "ton": { "nr": 2, "label": "Herausforderung", "abbr": "CA" }
+    },
+    "year": {
+      "name": "Roter selbst-bestehender Drache",
+      "tonNr": 4
+    },
+    "wave": {
+      "rangeLabel": "Die Welle: 15.Jän. - 28.Jän.",
+      "name": "KANN – Der Gelbe Samen"
+    }
+  },
+
+  "2026-01-23": {
+    "dateLabel": "FR 23.Jän. 2026",
+    "day": {
+      "kin": 159,
+      "name": "Blauer galaktischer Affe",
+      "ton": {
+        "nr": 8,
+        "label": "Ganzheit",
+        "phrase": "(alle helfen mit)",
+        "ebene": "Ebene des BEWUSSTSEINs"
+      },
+      "figur": "Tag des Spielens",
+      "rollenfeld": "glücklicher SPIELER der FURCHTLOSEN",
+      "fraktion": " FURCHTLOSEN"
     },
     "moon": {
       "rangeLabel": "19.Jän. 2026 - 15.Feb. 2026",
