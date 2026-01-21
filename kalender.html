@@ -150,6 +150,46 @@
 <script>
   const FALLBACK_DATE = "2026-01-21";
 
+    let currentISO = null;
+
+  function addDaysISO(iso, delta){
+    const d = new Date(iso + "T12:00:00");
+    d.setDate(d.getDate() + delta);
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const day = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${day}`;
+  }
+
+  async function showISO(iso){
+    const data = await loadDay(iso);
+    if(!data){
+      alert("Für dieses Datum ist noch kein Eintrag vorhanden: " + iso);
+      return;
+    }
+    currentISO = iso;
+    renderToExistingFields(data);
+  }
+
+  function wireDayNav(){
+    const prevBtn = document.getElementById("prev-day");
+    const nextBtn = document.getElementById("next-day");
+
+    if(prevBtn){
+      prevBtn.addEventListener("click", () => {
+        if(!currentISO) return;
+        showISO(addDaysISO(currentISO, -1));
+      });
+    }
+
+    if(nextBtn){
+      nextBtn.addEventListener("click", () => {
+        if(!currentISO) return;
+        showISO(addDaysISO(currentISO, +1));
+      });
+    }
+  }
+
   function isoTodayLocal(){
     const d = new Date();
     const y = d.getFullYear();
@@ -214,6 +254,29 @@
           </div>
         </div>
       </div>
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
 
       <div style="border:2px solid #777; padding:0.75rem; border-radius:8px; margin-bottom:0.75rem;">
         <div style="font-weight:bold;">
@@ -251,24 +314,28 @@
   }
 
   (async () => {
-    try{
-      const today = isoTodayLocal();
-      let data = await loadDay(today);
+  try{
+    const today = isoTodayLocal();
+    let data = await loadDay(today);
+    currentISO = today;
 
-      // Fallback auf Testtag, falls heute noch nicht in der Datei ist
-      if(!data){
-        data = await loadDay(FALLBACK_DATE);
-      }
-
-      // Wenn immer noch nichts: nichts überschreiben (dein altes Script bleibt sichtbar)
-      if(!data) return;
-
-      renderToExistingFields(data);
-    } catch(err){
-      // Fehler still lassen, damit dein bisheriges System weiter läuft
-      console.error(err);
+    // Fallback auf Testtag, falls heute noch nicht in der Datei ist
+    if(!data){
+      data = await loadDay(FALLBACK_DATE);
+      currentISO = FALLBACK_DATE;
     }
-  })();
+
+    // Wenn immer noch nichts: nichts überschreiben (dein altes Script bleibt sichtbar)
+    if(!data) return;
+
+    renderToExistingFields(data);
+    wireDayNav();
+  } catch(err){
+    // Fehler still lassen, damit dein bisheriges System weiter läuft
+    console.error(err);
+  }
+})();
+
 </script> 
 </body>
   
