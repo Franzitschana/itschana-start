@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Itschana – Tagesenergie</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<nav>
+<a href="index.html">Start</a>
+<a href="kalender.html">Kalender</a>
+<a href="vision.html">Vision</a>
+<a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main>
+
+<h1>Tagesenergie</h1>
+
+<div id="kin-info">Lade Energie...</div>
+
+</main>
+
+<script src="kin-daten-komplett.js"></script>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const kin = params.get("kin");
+
+if(kinInfos[kin]){
+
+const k = kinInfos[kin];
+
+document.getElementById("kin-info").innerHTML =
+`
+<h2>KIN ${kin}</h2>
+<h3>${k.name}</h3>
+<p>${k.ton}</p>
+<p>${k.bestimmung}</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
