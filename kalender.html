@@ -312,26 +312,33 @@ lay:flex; gap:0.75rem; margin-top:0.6rem;">
         </div>
       `;
       wireDayNav();
-    }
-    return;
-  }
-
-  currentISO = iso;
-  renderToExistingFields(data);
-}
-
-
-
-        if(!data) return;
-
-        renderToExistingFields(data);
-      } catch(err){
-        console.error(err);
-      }
-    })();
-  </script>
-<script src="kin-daten.js"></script>
+   <script src="kin-daten.js"></script>
 <script src="kin-daten-komplett.js"></script>
+
+<script>
+(async () => {
+
+  const iso = new Date().toISOString().split('T')[0];
+  const kinNumber = kinList[iso];
+
+  const output = document.getElementById("kin-output");
+  const link = document.getElementById("kin-link");
+
+  if (!kinNumber) return;
+
+  const kinInfo = kinInfos[kinNumber];
+
+  output.innerHTML = `
+    <strong>KIN ${kinNumber} – ${kinInfo.name}</strong><br>
+    ${kinInfo.ton}<br>
+    ${kinInfo.bestimmung || ""}
+  `;
+
+  link.href = `https://itschana.vercel.app/kin${String(kinNumber).padStart(3,'0')}/`;
+
+})();
+</script>
+
 </body>
 </html>
   
