@@ -349,13 +349,12 @@ else if ([2, 6, 10].includes(tonNummer)) ebene = "Leben";
 else if ([3, 7, 11].includes(tonNummer)) ebene = "Sinne";
 else if ([4, 8, 12].includes(tonNummer)) ebene = "Bewusstsein";
 
-document.getElementById("ebene-des-tages").textContent =
-  "Ebene des Tages: " + ebene;
-  output.innerHTML = `
-    <strong>KIN ${kinNummer} – ${kinInfo.name}</strong><br>
-    ${kinInfo.ton}<br>
-    ${kinInfo.bestimmung || ""}
-  `;
+output.innerHTML = `
+<div><strong>Ebene des Tages:</strong> ${ebene}</div><br>
+<strong>KIN ${kinNummer} – ${kinInfo.name}</strong><br>
+${kinInfo.ton}<br>
+${kinInfo.bestimmung || ""}
+`;
 
  })();
 </script>
