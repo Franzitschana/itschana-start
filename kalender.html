@@ -22,10 +22,9 @@ F<!DOCTYPE html>
     <p>Itschana verbindet den natürlichen 273er-Zyklus mit dem gregorianischen Jahreslauf und macht innere Rhythmen erfahrbar.</p>
 
     <section class="kin-feld">
-  <h2>Impuls des heutigen Tages</h2>
   <div id="heute-datum" style="margin-top:10px;"></div>
-  <div id="ebene-des-tages" style="margin-bottom:10px;"></div>
-  <div id="kin-output"></div>
+<div id="ebene-des-tages" style="margin-bottom:10px;"></div>
+<div id="kin-output"></div>
 
   </div>
 
@@ -329,11 +328,14 @@ document.addEventListener("DOMContentLoaded", () => {
     String(heute.getMonth() + 1).padStart(2, "0") + "." +
     heute.getFullYear();
 
-  document.getElementById("heute-datum").textContent = "Heute: " + datumText;
-
-  const kinNummer = kinList[iso];
+  const heuteEl = document.getElementById("heute-datum");
   const output = document.getElementById("kin-output");
 
+  if (heuteEl) {
+    heuteEl.textContent = "Heute: " + datumText;
+  }
+
+  const kinNummer = kinList[iso];
   if (!kinNummer || !output) return;
 
   const kinInfo = kinInfos[kinNummer];
