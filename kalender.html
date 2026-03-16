@@ -337,14 +337,15 @@ document.getElementById("heute-datum").textContent = "Heute: " + datumText;
 
   if (!kinNummer) return;
 
-const kinInfo = kinInfos[kinNummer];
-const tonNummer = parseInt(kinInfo.ton.match(/\d+/)[0]);
+const tonNummer = kinInfo.ton.match(/\d+/);
+const ton = tonNummer ? parseInt(tonNummer[0]) : 0;
 
 let ebene = "";
-if ([1, 5, 9, 13].includes(tonNummer)) ebene = "Zeit";
-else if ([2, 6, 10].includes(tonNummer)) ebene = "Leben";
-else if ([3, 7, 11].includes(tonNummer)) ebene = "Sinne";
-else if ([4, 8, 12].includes(tonNummer)) ebene = "Bewusstsein";
+
+if ([1,5,9,13].includes(ton)) ebene = "Zeit";
+else if ([2,6,10].includes(ton)) ebene = "Leben";
+else if ([3,7,11].includes(ton)) ebene = "Sinne";
+else if ([4,8,12].includes(ton)) ebene = "Bewusstsein";
 output.innerHTML = `
 <div><strong>Ebene des Tages:</strong> ${ebene}</div><br>
 <strong>KIN ${kinNummer} – ${kinInfo.name}</strong><br>
