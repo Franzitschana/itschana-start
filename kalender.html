@@ -22,10 +22,12 @@ F<!DOCTYPE html>
     <p>Itschana verbindet den natürlichen 273er-Zyklus mit dem gregorianischen Jahreslauf und macht innere Rhythmen erfahrbar.</p>
 
     <section class="kin-feld">
-  <div id="heute-datum" style="margin-top:10px;"></div>
+<div id="heute-datum" style="margin-top:10px;"></div>
 <div id="ebene-des-tages" style="margin-bottom:10px;"></div>
-<div id="kin-output"></div>
 
+<div id="kin-glyphe"></div>
+
+<div id="kin-output"></div>
   </div>
 
   <p>
@@ -362,6 +364,85 @@ if (!kinNummer || !output) return;
 });
 </script>
 
+    
+<script src="kin-daten.js"></script>
+<script src="kin-daten-komplett.js"></script>
+
+    
+
+<script src="kin-daten.js"></script>
+<script src="kin-daten-komplett.js"></script>
+
+<script>
+(function () {
+  const heuteDatumEl = document.getElementById("heute-datum");
+  const ebeneEl = document.getElementById("ebene-des-tages");
+  const kinOutputEl = document.getElementById("kin-output");
+  const kinGlypheEl = document.getElementById("kin-glyphe");
+  
+  function formatLocalDate(date) {
+    const jahr = date.getFullYear();
+    const monat = String(date.getMonth() + 1).padStart(2, "0");
+    const tag = String(date.getDate()).padStart(2, "0");
+    return `${jahr}-${monat}-${tag}`;
+  }
+
+  function ermittleTonZahl(tonText) {
+    const match = String(tonText || "").match(/\d+/);
+    return match ? parseInt(match[0], 10) : null;
+  }
+
+  function ermittleEbene(tonZahl) {
+    if ([1, 5, 9, 13].includes(tonZahl)) return "Ebene der Zeit";
+    if ([2, 6, 10].includes(tonZahl)) return "Ebene des Lebens";
+    if ([3, 7, 11].includes(tonZahl)) return "Ebene der Sinne";
+    if ([4, 8, 12].includes(tonZahl)) return "Ebene des Bewusstseins";
+    return "Ebene noch nicht bestimmt";
+  }
+
+  const heute = formatLocalDate(new Date());
+  const kinNummer = kinList && kinList[heute];
+  const kinInfo = kinNummer && kinInfos ? kinInfos[kinNummer] : null;
+
+  if (heuteDatumEl) {
+    heuteDatumEl.textContent = `Heute: ${heute}`;
+  }
+
+  if (!kinNummer || !kinInfo) {
+    if (ebeneEl) {
+      ebeneEl.textContent = "Ebene des Tages: keine Zuordnung gefunden";
+    }
+  if (kinGlypheEl) {
+  kinGlypheEl.innerHTML = "";
+}
+
+if (kinOutputEl) {
+  kinOutputEl.innerHTML = `
+    <p>Für das Datum <strong>${heute}</strong> wurde kein KIN gefunden.</p>
+  `;
+}
+
+    return;
+  }
+
+  const tonZahl = ermittleTonZahl(kinInfo.ton);
+  const ebene = ermittleEbene(tonZahl);
+
+  if (ebeneEl) {
+    ebeneEl.textContent = `Ebene des Tages: ${ebene}`;
+  }
+
+  if (kinOutputEl) {
+    kinOutputEl.innerHTML = `
+      <h2>KIN ${kinNummer}</h2>
+      <p><strong>${kinInfo.name || ""}</strong></p>
+      <p>${kinInfo.ton || ""}</p>
+      <p>${kinInfo.dimension || ""}</p>
+      <p>${kinInfo.bestimmung || ""}</p>
+    `;
+  }
+})();
+</script>
 </body>
 </html>
   
