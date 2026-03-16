@@ -335,8 +335,11 @@ document.addEventListener("DOMContentLoaded", () => {
     heuteEl.textContent = "Heute: " + datumText;
   }
 
-  const kinNummer = kinList[iso];
-  if (!kinNummer || !output) return;
+  const kinNummer = kinList[iso] || kinList[
+  heute.getFullYear() + "-" + (heute.getMonth()+1) + "-" + heute.getDate()
+];
+
+if (!kinNummer || !output) return;
 
   const kinInfo = kinInfos[kinNummer];
   if (!kinInfo) return;
