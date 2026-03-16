@@ -314,46 +314,47 @@ lay:flex; gap:0.75rem; margin-top:0.6rem;">
    <script src="kin-daten.js"></script>
 <script src="kin-daten-komplett.js"></script>
 
+
 <script>
-(async () => {
+(() => {
+  const heute = new Date();
 
-const heute = new Date();
-const iso =
-  heute.getFullYear() + "-" +
-  String(heute.getMonth() + 1).padStart(2, "0") + "-" +
-  String(heute.getDate()).padStart(2, "0");
-  
-const datumText =
-  String(heute.getDate()).padStart(2, "0") + "." +
-  String(heute.getMonth() + 1).padStart(2, "0") + "." +
-  heute.getFullYear();
+  const iso =
+    heute.getFullYear() + "-" +
+    String(heute.getMonth() + 1).padStart(2, "0") + "-" +
+    String(heute.getDate()).padStart(2, "0");
 
-document.getElementById("heute-datum").textContent = "Heute: " + datumText;
+  const datumText =
+    String(heute.getDate()).padStart(2, "0") + "." +
+    String(heute.getMonth() + 1).padStart(2, "0") + "." +
+    heute.getFullYear();
+
+  document.getElementById("heute-datum").textContent = "Heute: " + datumText;
 
   const kinNummer = kinList[iso];
-
   const output = document.getElementById("kin-output");
-  
 
-  if (!kinNummer) return;
+  if (!kinNummer || !output) return;
 
-const tonNummer = kinInfo.ton.match(/\d+/);
-const ton = tonNummer ? parseInt(tonNummer[0]) : 0;
+  const kinInfo = kinInfos[kinNummer];
+  if (!kinInfo) return;
 
-let ebene = "";
+  const tonMatch = String(kinInfo.ton || "").match(/\d+/);
+  const ton = tonMatch ? parseInt(tonMatch[0], 10) : 0;
 
-if ([1,5,9,13].includes(ton)) ebene = "Zeit";
-else if ([2,6,10].includes(ton)) ebene = "Leben";
-else if ([3,7,11].includes(ton)) ebene = "Sinne";
-else if ([4,8,12].includes(ton)) ebene = "Bewusstsein";
-output.innerHTML = `
-<div><strong>Ebene des Tages:</strong> ${ebene}</div><br>
-<strong>KIN ${kinNummer} – ${kinInfo.name}</strong><br>
-${kinInfo.ton}<br>
-${kinInfo.bestimmung || ""}
-`;
+  let ebene = "";
+  if ([1, 5, 9, 13].includes(ton)) ebene = "Zeit";
+  else if ([2, 6, 10].includes(ton)) ebene = "Leben";
+  else if ([3, 7, 11].includes(ton)) ebene = "Sinne";
+  else if ([4, 8, 12].includes(ton)) ebene = "Bewusstsein";
 
- })();
+  output.innerHTML = `
+    <div><strong>Ebene des Tages:</strong> ${ebene}</div><br>
+    <strong>KIN ${kinNummer} – ${kinInfo.name || ""}</strong><br>
+    ${kinInfo.ton || ""}<br>
+    ${kinInfo.bestimmung || ""}
+  `;
+})();
 </script>
 
 </body>
