@@ -316,7 +316,7 @@ lay:flex; gap:0.75rem; margin-top:0.6rem;">
 
 
 <script>
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   const heute = new Date();
 
   const iso =
@@ -354,7 +354,7 @@ lay:flex; gap:0.75rem; margin-top:0.6rem;">
     ${kinInfo.ton || ""}<br>
     ${kinInfo.bestimmung || ""}
   `;
-})();
+});
 </script>
 
 </body>
