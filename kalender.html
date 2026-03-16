@@ -338,15 +338,14 @@ const datumText =
 
 document.getElementById("heute-datum").textContent = "Heute: " + datumText;
 
-const kinNummer = kinList[iso];
-  const kinNumber = kinList[iso];
+  const kinNummer = kinList[iso];
 
   const output = document.getElementById("kin-output");
   const link = document.getElementById("kin-link");
 
-  if (!kinNumber) return;
+  if (!kinNummer) return;
 
-  const kinInfo = kinInfos[kinNumber];
+  const kinInfo = kinInfos[kinNummer];
 const tonNummer = parseInt(kinInfo.ton.replace("Ton ", ""), 10);
 
 let ebene = "";
@@ -358,12 +357,12 @@ else if ([4, 8, 12].includes(tonNummer)) ebene = "Bewusstsein";
 document.getElementById("ebene-des-tages").textContent =
   "Ebene des Tages: " + ebene;
   output.innerHTML = `
-    <strong>KIN ${kinNumber} – ${kinInfo.name}</strong><br>
+    <strong>KIN ${kinNummer} – ${kinInfo.name}</strong><br>
     ${kinInfo.ton}<br>
     ${kinInfo.bestimmung || ""}
   `;
 
- link.href = `data/kin.html?kin=${String(kinNumber).padStart(3,'0')}`;
+ link.href = `data/kin.html?kin=${String(kinNummer).padStart(3, '0')}`;
 
 })();
 </script>
