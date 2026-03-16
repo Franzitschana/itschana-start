@@ -345,8 +345,8 @@ document.getElementById("heute-datum").textContent = "Heute: " + datumText;
 
   if (!kinNummer) return;
 
-  const kinInfo = kinInfos[kinNummer];
-const tonNummer = parseInt(kinInfo.ton.replace("Ton ", ""), 10);
+const kinInfo = kinInfos[kinNummer];
+const tonNummer = parseInt(kinInfo.ton.match(/\d+/)[0]);
 
 let ebene = "";
 if ([1, 5, 9, 13].includes(tonNummer)) ebene = "Zeit";
