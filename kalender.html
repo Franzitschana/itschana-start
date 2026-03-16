@@ -341,7 +341,7 @@ document.getElementById("heute-datum").textContent = "Heute: " + datumText;
   const kinNummer = kinList[iso];
 
   const output = document.getElementById("kin-output");
-  const link = document.getElementById("kin-link");
+  
 
   if (!kinNummer) return;
 
@@ -362,9 +362,7 @@ document.getElementById("ebene-des-tages").textContent =
     ${kinInfo.bestimmung || ""}
   `;
 
- link.href = `data/kin.html?kin=${String(kinNummer).padStart(3, '0')}`;
-
-})();
+ })();
 </script>
 
 </body>
