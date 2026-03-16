@@ -24,8 +24,9 @@ F<!DOCTYPE html>
     <section class="kin-feld">
   <h2>Impuls des heutigen Tages</h2>
   <div id="heute-datum"></div>
+  <div id="ebene-des-tages"></div>
   <div id="kin-output">
-    <strong>KIN 211 – Roter Drache</strong><br>
+  <strong>KIN 211 – Roter Drache</strong><br>
   Ton 6 – Gleichheit (was wir machen)<br>
   Die heutige Energie erinnert an Ursprung, nährende Lebenskraft und Harmonie im gemeinsamen Tun.
 </div>
@@ -346,7 +347,16 @@ const kinNummer = kinList[iso];
   if (!kinNumber) return;
 
   const kinInfo = kinInfos[kinNumber];
+const tonNummer = parseInt(kinInfo.ton.replace("Ton ", ""), 10);
 
+let ebene = "";
+if ([1, 5, 9, 13].includes(tonNummer)) ebene = "Zeit";
+else if ([2, 6, 10].includes(tonNummer)) ebene = "Leben";
+else if ([3, 7, 11].includes(tonNummer)) ebene = "Sinne";
+else if ([4, 8, 12].includes(tonNummer)) ebene = "Bewusstsein";
+
+document.getElementById("ebene-des-tages").textContent =
+  "Ebene des Tages: " + ebene;
   output.innerHTML = `
     <strong>KIN ${kinNumber} – ${kinInfo.name}</strong><br>
     ${kinInfo.ton}<br>
