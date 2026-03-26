@@ -13,5 +13,7 @@ const podcasts = [
   { datum: "2026-03-15", kin: 210, name: "Gelbe Sonne", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/1iGBwl8hnLvQZh_ci08t0dti-7qNNtoze/preview" },
   { datum: "2026-03-14", kin: 209, name: "Roter Mond", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/1kLdVmEH1b2pcv3nx9q9xKAcOyGi3fMlb/preview" },
   { datum: "2026-03-13", kin: 208, name: "Weißer Hund", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/1m-x7uwPyifcSo8eh2nI2M_3ZQV5j35Dn/preview" }
+  { datum: "2026-03-12", kin: 207, name: "Rote Erde", titel: "Ruf des Raumes" audio: "https://drive.google.com/file/d/... },
+  { datum: "2026-03-11", kin: 206, name: "Gelber Krieger", titel: "Ruf des Raumes" audio: "https://drive.google.com/file/d/... }
 ];
                                                                                                                                                                                                                                                                                
