@@ -132,6 +132,14 @@
       </div>
     `;
   }).join("");
+<script>
+fetch("./podcasts.js")
+  .then(r => r.text())
+  .then(t => {
+    document.body.innerHTML += "<pre style='text-align:left; white-space:pre-wrap;'>" + t.replace(/</g, "&lt;") + "</pre>";
+  })
+  .catch(e => {
+    document.body.innerHTML += "<p>Laden fehlgeschlagen</p>";
+    console.log(e);
+  });
 </script>
-</body>
-</html>
