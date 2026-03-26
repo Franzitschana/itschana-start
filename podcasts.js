@@ -1,6 +1,4 @@
 const podcasts = [
-{
-  const podcasts = [
   {
     datum: "2026-03-27",
     kin: 222,
