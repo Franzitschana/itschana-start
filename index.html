@@ -76,14 +76,12 @@
     </section>
   </main>
 
-  <script src="podcasts.js"></script>
+ <script src="podcasts.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const ziel = document.getElementById("podcast-heute-player");
 
-  if (!ziel) {
-    return;
-  }
+  if (!ziel) return;
 
   if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
     ziel.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
@@ -94,9 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const aktuellerPodcast = podcasts.find(p => p.datum === heute);
 
   if (aktuellerPodcast) {
+    const [jahr, monat, tag] = aktuellerPodcast.datum.split("-");
+    const datumText = `${tag}.${monat}.${jahr}`;
+
     ziel.innerHTML = `
-      <div style="background:#fff; padding:20px; border-radius:12px; margin-top:20px;">
-        <h3>${aktuellerPodcast.titel}</h3>
+      <div style="background:#fff; padding:20px; border-radius:12px;">
+        <h3>${datumText} – KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}</h3>
+        <div style="margin-bottom:10px; color:#456;">${aktuellerPodcast.titel}</div>
         <iframe
           src="${aktuellerPodcast.audio}"
           width="100%"
@@ -111,6 +113,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
-   
-</body>
-</html>
