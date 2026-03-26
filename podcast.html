@@ -11,8 +11,16 @@
 <h3>26.03.2026 – KIN 221 – Weißer Hund</h3>
 
 <iframe
-  src="https://drive.google.com/file/d/1Z3GG5Czwj49cF4s76slnbKzK9s1bkyWK/preview"
-  width="300"
-  height="80"
+  src="${heutigerPodcast.audio}?autoplay=1"
+  width="100%"
+  height="100"
   allow="autoplay">
 </iframe>
+const stunde = heute.getHours();
+
+if (stunde >= 7) {
+  const iframe = document.querySelector("iframe");
+  if (iframe) {
+    iframe.src = iframe.src + "&autoplay=1";
+  }
+}
