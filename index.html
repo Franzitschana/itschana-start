@@ -81,24 +81,11 @@ const heute = new Date().toISOString().split("T")[0];
 
 const aktuellerPodcast = podcasts.find(p => p.datum === heute);
 
-if (aktuellerPodcast) {
-  document.getElementById("podcast-heute-player").innerHTML = `
-<h3>${aktuellerPodcast.datum} – KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}</h3>
+document.getElementById("podcast-heute-player").innerHTML = `
+  <div style="background:#fff; padding:20px; border-radius:12px; margin-top:20px;">
+    TEST PLAYER PLATZ
 
-<iframe
-  src="${aktuellerPodcast.audio}"
-  width="100%"
-  height="100"
-  allow="autoplay"
-  style="border:none; margin-top:10px;">
-</iframe>
-`;
-`;
-    `;
-} else {
-  document.getElementById("podcast-heute-player").innerHTML = `
-    <p>Kein Podcast für heute vorhanden.</p>
-  `;
+  
 }
 </script>
 </body>
