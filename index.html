@@ -75,6 +75,24 @@ Zum heutigen Podcast
 </Haupt>
 
   </main>
+<script src="podcasts.js"></script>
+<script>
+const heute = new Date().toISOString().split("T")[0];
 
+const aktuellerPodcast = podcasts.find(p => p.datum === heute);
+
+if (aktuellerPodcast) {
+  document.getElementById("podcast-heute-player").innerHTML = `
+    <h3>${aktuellerPodcast.datum} – KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}</h3>
+    <audio controls style="width:100%; margin-top:10px;">
+      <source src="${aktuellerPodcast.audio}" type="audio/mpeg">
+    </audio>
+    `;
+} else {
+  document.getElementById("podcast-heute-player").innerHTML = `
+    <p>Kein Podcast für heute vorhanden.</p>
+  `;
+}
+</script>
 </body>
 </html>
