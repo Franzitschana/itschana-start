@@ -68,17 +68,20 @@
       <a href="podcast-archiv.html">Zum Podcast-Archiv</a>
     </div>
   </div>
+<script src="podcasts.js"></script>
+<script>
+  const inhalt = document.getElementById("inhalt");
 
-  <script src="podcasts.js"></script>
-  <script>
-    const heute = new Date();
-    const yyyy = heute.getFullYear();
-    const mm = String(heute.getMonth() + 1).padStart(2, "0");
-    const dd = String(heute.getDate()).padStart(2, "0");
-    const heuteString = `${yyyy}-${mm}-${dd}`;
+  const jetzt = new Date();
+  const yyyy = jetzt.getFullYear();
+  const mm = String(jetzt.getMonth() + 1).padStart(2, "0");
+  const dd = String(jetzt.getDate()).padStart(2, "0");
+  const heuteString = `${yyyy}-${mm}-${dd}`;
 
+  if (!Array.isArray(podcasts)) {
+    inhalt.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
+  } else {
     const heutigerPodcast = podcasts.find(p => p.datum === heuteString);
-    const inhalt = document.getElementById("inhalt");
 
     if (heutigerPodcast) {
       const formatiertesDatum = `${dd}.${mm}.${yyyy}`;
@@ -89,7 +92,8 @@
           src="${heutigerPodcast.audio}"
           width="100%"
           height="100"
-          allow="autoplay">
+          allow="autoplay"
+          style="border:none;">
         </iframe>
       `;
     } else {
@@ -97,10 +101,11 @@
         <h2>Der heutige Ruf des Raumes</h2>
         <div class="hinweis">
           Für heute ist noch kein Podcast eingetragen.<br>
-          Bitte später noch einmal schauen.
+          Gesucht wurde: <strong>${heuteString}</strong>
         </div>
       `;
     }
-  </script>
+  }
+</script>
 </body>
 </html>
