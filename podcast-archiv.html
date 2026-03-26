@@ -73,11 +73,15 @@
     </div>
   </div>
 
-  <script src="podcasts.js"></script>
+<script src="podcasts.js"></script>
 <script>
   const archiv = document.getElementById("archiv");
+
   const heute = new Date().toISOString().split("T")[0];
-  const sortiert = [...podcasts].sort((a, b) => b.datum.localeCompare(a.datum));
+
+  const sortiert = [...podcasts].sort((a, b) =>
+    b.datum.localeCompare(a.datum)
+  );
 
   archiv.innerHTML = sortiert.map(podcast => {
     const [jahr, monat, tag] = podcast.datum.split("-");
@@ -94,6 +98,7 @@
           box-shadow: inset 0 0 0 1px rgba(47,111,115,0.08);
         `}
       ">
+
         ${istHeute ? `
           <div style="
             display:inline-block;
@@ -109,11 +114,11 @@
           </div>
         ` : ``}
 
-        <div class="datum" style="${istHeute ? `font-size:1.15rem; color:#7a5a00;` : ``}">
+        <div class="datum">
           ${formatiertesDatum} – KIN ${podcast.kin} – ${podcast.name}
         </div>
 
-        <div class="titel" style="${istHeute ? `font-size:1.02rem; color:#5d4c1c;` : ``}">
+        <div class="titel">
           ${podcast.titel}
         </div>
 
@@ -123,8 +128,9 @@
           height="100"
           allow="autoplay">
         </iframe>
+
       </div>
     `;
   }).join("");
-</script>
+</script>  
 </html>
