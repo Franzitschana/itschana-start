@@ -95,53 +95,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const [jahr, monat, tag] = aktuellerPodcast.datum.split("-");
     const datumText = `${tag}.${monat}.${jahr}`;
 
-    ziel.innerHTML = `  
-  <div style="
-    background:#ffffff;
-    padding:28px;
-    border-radius:18px;
-    margin-top:20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    text-align:center;
-  ">
+    ziel.innerHTML = `
+      <div style="
+        background:#ffffff;
+        padding:28px;
+        border-radius:18px;
+        margin-top:20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        text-align:center;
+      ">
 
-    <div style="
-      font-size:14px;
-      color:#7a8a8c;
-      margin-bottom:6px;
-      letter-spacing:1px;
-    ">
-      ${datumText}
-    </div>
+        <div style="
+          font-size:14px;
+          color:#7a8a8c;
+          margin-bottom:6px;
+          letter-spacing:1px;
+        ">
+          ${datumText}
+        </div>
 
-    <div style="
-      font-size:20px;
-      font-weight:600;
-      color:#2f6f73;
-      margin-bottom:6px;
-    ">
-      KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}
-    </div>
+        <div style="
+          font-size:20px;
+          font-weight:600;
+          color:#2f6f73;
+          margin-bottom:6px;
+        ">
+          KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}
+        </div>
 
-    <div style="
-      font-size:16px;
-      color:#444;
-      margin-bottom:18px;
-      font-style:italic;
-    ">
-      ${aktuellerPodcast.titel}
-    </div>
+        <div style="
+          font-size:16px;
+          color:#444;
+          margin-bottom:18px;
+          font-style:italic;
+        ">
+          ${aktuellerPodcast.titel}
+        </div>
 
-    <iframe
-      src="${aktuellerPodcast.audio}"
-      width="100%"
-      height="100"
-      allow="autoplay"
-      style="border:none; border-radius:10px;">
-    </iframe>
+        <iframe
+          src="${aktuellerPodcast.audio}"
+          width="100%"
+          height="100"
+          allow="autoplay"
+          style="border:none; border-radius:10px;">
+        </iframe>
 
-  </div>
-`;
+      </div>
     `;
   } else {
     ziel.innerHTML = `<p>Kein Podcast für heute vorhanden.</p>`;
