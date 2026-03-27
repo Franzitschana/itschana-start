@@ -1,5 +1,5 @@
 const podcasts = [
-  https:m: "2026.03.27", kin: 222, name: "Blauer Affe", Titel: "Ruf des Raumes", audio: https://drive.google.com/file/d/1Z3GG5Czwj49cF4s76slnbKzK9s1bkyWK/view?usp=drive_link  
+  { datum: "2026.03.27", kin: 222, name: "Blauer Affe", Titel: "Ruf des Raumes", audio: https://drive.google.com/file/d/1Z3GG5Czwj49cF4s76slnbKzK9s1bkyWK/view?usp=drive_link  
   { datum: "2026-03-26", kin: 221, name: "Weißer Hund", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/13XQ8jOvhxrYrW9y5XdOjyXD2jEFzUtb/preview" }
   { datum: "2026-03-25", kin: 220, name: "Roter Mond", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/16zjAPpWQXS8FoGflNlKa6R8bCtWnWuWH/preview" }
   { datum: "2026-03-24", kin: 219, name: "Gelber Stern", titel: "Ruf des Raumes", audio: "https://drive.google.com/file/d/18GBQXS73OaqkGKNNGiFlghECLdBPx7Ck/preview" }
