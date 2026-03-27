@@ -52,6 +52,12 @@
       max-width: 100%;
     }
 
+    .hinweis {
+      margin-top: 20px;
+      color: #666;
+      line-height: 1.5;
+    }
+
     .nav {
       margin-top: 28px;
     }
@@ -73,28 +79,38 @@
     </div>
   </div>
 
-<script src="podcasts.js"></script>
-<script>
-  const archiv = document.getElementById("archiv");
-  const sortiert = [...podcasts].sort((a, b) => b.datum.localeCompare(a.datum));
+  <script src="podcasts.js"></script>
+  <script>
+    const archiv = document.getElementById("archiv");
 
-  archiv.innerHTML = sortiert.map(podcast => {
-    const [jahr, monat, tag] = podcast.datum.split("-");
-    const formatiertesDatum = `${tag}.${monat}.${jahr}`;
+    if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
+      archiv.innerHTML = `
+        <div class="hinweis">
+          Das Podcast-Archiv konnte nicht geladen werden.
+        </div>
+      `;
+    } else {
+      const sortiert = [...podcasts].sort((a, b) => b.datum.localeCompare(a.datum));
 
-    return `
-      <div class="eintrag">
-        <div class="datum">${formatiertesDatum} – KIN ${podcast.kin} – ${podcast.name}</div>
-        <div class="titel">${podcast.titel}</div>
-        <iframe
-          src="${podcast.audio}"
-          width="100%"
-          height="100"
-          allow="autoplay">
-        </iframe>
-      </div>
-    `;
-  }).join("");
-</script>
+      archiv.innerHTML = sortiert.map(podcast => {
+        const [jahr, monat, tag] = podcast.datum.split("-");
+        const formatiertesDatum = `${tag}.${monat}.${jahr}`;
+
+        return `
+          <div class="eintrag">
+            <div class="datum">${formatiertesDatum} – KIN ${podcast.kin} – ${podcast.name}</div>
+            <div class="titel">${podcast.titel}</div>
+            <iframe
+              src="${podcast.audio}"
+              width="100%"
+              height="100"
+              allow="autoplay"
+              style="border:none;">
+            </iframe>
+          </div>
+        `;
+      }).join("");
+    }
+  </script>
 </body>
 </html>
