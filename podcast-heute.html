@@ -68,44 +68,45 @@
       <a href="podcast-archiv.html">Zum Podcast-Archiv</a>
     </div>
   </div>
-<script src="podcasts.js"></script>
-<script>
-  const inhalt = document.getElementById("inhalt");
 
-  const jetzt = new Date();
-  const yyyy = jetzt.getFullYear();
-  const mm = String(jetzt.getMonth() + 1).padStart(2, "0");
-  const dd = String(jetzt.getDate()).padStart(2, "0");
-  const heuteString = `${yyyy}-${mm}-${dd}`;
+  <script src="podcasts.js"></script>
+  <script>
+    const inhalt = document.getElementById("inhalt");
 
-  if (!Array.isArray(podcasts)) {
-    inhalt.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
-  } else {
-    const heutigerPodcast = podcasts.find(p => p.datum === heuteString);
+    const jetzt = new Date();
+    const yyyy = jetzt.getFullYear();
+    const mm = String(jetzt.getMonth() + 1).padStart(2, "0");
+    const dd = String(jetzt.getDate()).padStart(2, "0");
+    const heuteString = `${yyyy}-${mm}-${dd}`;
 
-    if (heutigerPodcast) {
-      const formatiertesDatum = `${dd}.${mm}.${yyyy}`;
-      inhalt.innerHTML = `
-        <h2>${formatiertesDatum} – KIN ${heutigerPodcast.kin} – ${heutigerPodcast.name}</h2>
-        <div class="datum">${heutigerPodcast.titel}</div>
-        <iframe
-          src="${heutigerPodcast.audio}"
-          width="100%"
-          height="100"
-          allow="autoplay"
-          style="border:none;">
-        </iframe>
-      `;
+    if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
+      inhalt.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
     } else {
-      inhalt.innerHTML = `
-        <h2>Der heutige Ruf des Raumes</h2>
-        <div class="hinweis">
-          Für heute ist noch kein Podcast eingetragen.<br>
-          Gesucht wurde: <strong>${heuteString}</strong>
-        </div>
-      `;
+      const heutigerPodcast = podcasts.find(p => p.datum === heuteString);
+
+      if (heutigerPodcast) {
+        const formatiertesDatum = `${dd}.${mm}.${yyyy}`;
+        inhalt.innerHTML = `
+          <h2>${formatiertesDatum} – KIN ${heutigerPodcast.kin} – ${heutigerPodcast.name}</h2>
+          <div class="datum">${heutigerPodcast.titel}</div>
+          <iframe
+            src="${heutigerPodcast.audio}"
+            width="100%"
+            height="100"
+            allow="autoplay"
+            style="border:none;">
+          </iframe>
+        `;
+      } else {
+        inhalt.innerHTML = `
+          <h2>Der heutige Ruf des Raumes</h2>
+          <div class="hinweis">
+            Für heute ist noch kein Podcast eingetragen.<br>
+            Gesucht wurde: <strong>${heuteString}</strong>
+          </div>
+        `;
+      }
     }
-  }
-</script>
+  </script>
 </body>
 </html>
