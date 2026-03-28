@@ -1,5 +1,12 @@
 const podcasts = [
   {
+  datum: "2026-03-28",
+  kin: 223,
+  name: "Gelber Mensch",
+  titel: "Ruf des Raumes",
+  audio: "https://drive.google.com/file/d/1bTTZDyEipQuDNiepo8tc0RtjiI-8MYvx/preview"
+}
+  {
     datum: "2026-03-27",
     kin: 222,
     name: "Blauer Affe",
