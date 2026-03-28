@@ -5,7 +5,7 @@ const podcasts = [
   name: "Gelber Mensch",
   titel: "Ruf des Raumes",
   audio: "https://drive.google.com/file/d/1bTTZDyEipQuDNiepo8tc0RtjiI-8MYvx/preview"
-}
+  },
   {
     datum: "2026-03-27",
     kin: 222,
