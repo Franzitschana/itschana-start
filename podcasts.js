@@ -1,10 +1,10 @@
 const podcasts = [
   {
-  datum: "2026-03-28",
-  kin: 223,
-  name: "Gelber Mensch",
-  titel: "Ruf des Raumes",
-  audio: "https://drive.google.com/file/d/1bTTZDyEipQuDNiepo8tc0RtjiI-8MYvx/preview"
+    datum: "2026-03-28",
+    kin: 223,
+    name: "Gelber Mensch",
+    titel: "Ruf des Raumes",
+    audio: "https://drive.google.com/file/d/1bTTZDyEipQuDNiepo8tc0RtjiI-8MYvx/preview"
   },
   {
     datum: "2026-03-27",
@@ -18,7 +18,7 @@ const podcasts = [
     kin: 221,
     name: "Weißer Hund",
     titel: "Ruf des Raumes",
-    audio: "https://drive.google.com/file/d/13XQ8jOvhxrYrW9y5XdOjyXD2jEFzUtb/preview"
+    audio: "https://drive.google.com/file/d/13XQ8jOvhxrYrW9y5XdOjyXD2jEFzUt_b/preview"
   },
   {
     datum: "2026-03-25",
@@ -32,14 +32,14 @@ const podcasts = [
     kin: 219,
     name: "Gelber Stern",
     titel: "Ruf des Raumes",
-    audio: "https://drive.google.com/file/d/18GBQXS73OaqkGKNNGiFlghECLdBPx7Ck/preview"
+    audio: "https://drive.google.com/file/d/1AOoJZ39L7up5dWbDox7g8jQxiwV3B1HK/preview"
   },
   {
     datum: "2026-03-23",
     kin: 218,
     name: "Eismeerblauer Niwanes",
     titel: "Ruf des Raumes",
-    audio: "https://drive.google.com/file/d/1AOoJZ39L7up5dWbDox7g8jQxiwV3B1HK/preview"
+    audio: "https://drive.google.com/file/d/13XQ8jOvhxrYrW9y5XdOjyXD2jEFzUt_b/preview"
   },
   {
     datum: "2026-03-22",
@@ -100,7 +100,7 @@ const podcasts = [
   {
     datum: "2026-03-14",
     kin: 209,
-    name: "Roter Mond",
+    name: "Blauer Sturm",
     titel: "Ruf des Raumes",
     audio: "https://drive.google.com/file/d/1kLdVmEH1b2pcv3nx9q9xKAcOyGi3fMlb/preview"
   },
@@ -116,7 +116,7 @@ const podcasts = [
     kin: 207,
     name: "Rote Erde",
     titel: "Ruf des Raumes",
-    audio: "https://drive.google.com/file/d/13XQ8jOvhxrYrW9y5XdOjyXD2jEFzUt_b/preview"
+    audio: "❗ HIER NOCH RICHTIGEN LINK EINSETZEN"
   },
   {
     datum: "2026-03-11",
@@ -126,4 +126,3 @@ const podcasts = [
     audio: "https://drive.google.com/file/d/1DfR3K9RUXz6XWs_qnJ8_-NSl0aSfx1OA/preview"
   }
 ];
-                                                                                                                                                                                                                                                                               
