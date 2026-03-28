@@ -116,7 +116,7 @@ const podcasts = [
     kin: 207,
     name: "Rote Erde",
     titel: "Ruf des Raumes",
-    audio: "https://drive.google.com/file/d/1Yi77sn8CZsCSI0lOkSBgLzTFaEQHyALX/preview"
+    audio: "https://drive.google.com/file/d/1KRga8yjCLa1dQlIDOvKXdJtbDFzhqZCG/preview"
   },
   {
     datum: "2026-03-11",
