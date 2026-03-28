@@ -150,3 +150,36 @@ ul li::before {
   line-height: 1.6;
   color: #444;
 }
+ .resonanz-raum {
+  margin: 80px auto;
+  padding: 28px;
+  max-width: 760px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e0e0e0;
+}
+
+.resonanz-raum h3 {
+  font-size: 22px;
+  color: #007a9c;
+  margin-bottom: 12px;
+}
+
+.resonanz-raum textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-family: inherit;
+  margin-top: 10px;
+}
+
+.resonanz-raum button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #007a9c;
+  color: white;
+  cursor: pointer;
+}
