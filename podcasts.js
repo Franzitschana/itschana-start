@@ -4,7 +4,8 @@ const podcasts = [
   kin: 226,
   name: "Blauer Adler",
   titel: "Ruf des Raumes",
-  audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview"
+  audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
+  bild: "https://drive.google.com/uc?export=view&id=1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
   },
   {
   datum: "2026-03-30",
