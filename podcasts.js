@@ -1,5 +1,13 @@
 const podcasts = [
   {
+  datum: "2026-04-01",
+  kin: 227,
+  name: "Gelber Krieger",
+  titel: "Ruf des Raumes",
+  audio: "https://drive.google.com/file/d/1nRUrsLQAYKDw6pE6XqtkfSchUuvFoeXf/preview",
+  bild: "https://drive.google.com/file/d/1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp/preview"
+  },  
+  {
   datum: "2026-03-31",
   kin: 226,
   name: "Blauer Adler",
