@@ -150,7 +150,7 @@ window.addEventListener("load", function () {
           KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}
         </div>
 
-        <div style="
+                <div style="
           font-size:16px;
           color:#444;
           margin-bottom:18px;
@@ -159,6 +159,22 @@ window.addEventListener("load", function () {
           ${aktuellerPodcast.titel}
         </div>
 
+        ${aktuellerPodcast.bild ? `
+          <img
+            src="${aktuellerPodcast.bild}"
+    alt="Tagesenergiebild"
+    onclick="zeigeBildGross(this.src)"
+    style="
+      width:100%;
+      max-width:420px;
+      border-radius:14px;
+      margin-bottom:18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor:pointer;
+            "
+          >
+        ` : ""}
+
         <iframe
           src="${aktuellerPodcast.audio}"
           width="100%"
@@ -166,14 +182,12 @@ window.addEventListener("load", function () {
           allow="autoplay"
           style="border:none; border-radius:10px;">
         </iframe>
-
-      </div>
-    `;
+        </div>
+`;
   } else {
     ziel.innerHTML = `<p>Kein Podcast für heute vorhanden.</p>`;
   }
 });
-</script>
 </script>
 
 <!-- 👉 DEIN NEUES SCRIPT DARUNTER -->
