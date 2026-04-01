@@ -5,7 +5,7 @@ const podcasts = [
   name: "Gelber Krieger",
   titel: "Ruf des Raumes",
   audio: "https://drive.google.com/file/d/1nRUrsLQAYKDw6pE6XqtkfSchUuvFoeXf/preview",
-  bild: "https://drive.google.com/file/d/1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp/preview"
+  bild: "https://drive.google.com/uc?export=view&id=1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp"
   },  
   {
   datum: "2026-03-31",
