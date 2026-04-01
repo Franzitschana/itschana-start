@@ -1,4 +1,3 @@
-
   const podcasts = [
   {
     datum: "2026-04-02",
@@ -14,7 +13,7 @@
     name: "Gelber Krieger",
     titel: "Ruf des Raumes",
     audio: "https://drive.google.com/file/d/1nRUrsLQAYKDw6pE6XqtkfSchUuvFoeXf/preview",
-    bild: ""https://drive.google.com/file/d/1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp/preview"
+    bild: "https://drive.google.com/file/d/1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp/preview"
   },
   {
     datum: "2026-03-31",
@@ -24,7 +23,7 @@
     audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
     bild: "https://lh3.googleusercontent.com/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
   }
-];
+  ];
   {
   datum: "2026-03-30",
   kin: 225,
