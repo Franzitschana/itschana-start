@@ -1,20 +1,30 @@
-const podcasts = [
+
+  const podcasts = [
   {
-  datum: "2026-04-01",
-  kin: 227,
-  name: "Gelber Krieger",
-  titel: "Ruf des Raumes",
-  audio: "https://drive.google.com/file/d/1nRUrsLQAYKDw6pE6XqtkfSchUuvFoeXf/preview",
-  bild: "https://drive.google.com/thumbnail?id=1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp&sz=w1200"
-  },  
-  {
-  datum: "2026-03-31",
-  kin: 226,
-  name: "Blauer Adler",
-  titel: "Ruf des Raumes",
-  audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
-  bild: "https://lh3.googleusercontent.com/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
+    datum: "2026-04-02",
+    kin: 228,
+    name: "Rote Erde",
+    titel: "Ruf des Raumes",
+    audio: "https://drive.google.com/file/d/1nXnwn6n66yPJMKnXZW9nD0fYccEU785z/preview",
+    bild: "https://drive.google.com/file/d/13gizDuEu9scSk1PwqoChZG-9NBNdc3HU/preview"
   },
+  {
+    datum: "2026-04-01",
+    kin: 227,
+    name: "Gelber Krieger",
+    titel: "Ruf des Raumes",
+    audio: "https://drive.google.com/file/d/1nRUrsLQAYKDw6pE6XqtkfSchUuvFoeXf/preview",
+    bild: ""https://drive.google.com/file/d/1631GzPS-4CQRohk29o0BV_T1Y5Rb_Mvp/preview"
+  },
+  {
+    datum: "2026-03-31",
+    kin: 226,
+    name: "Blauer Adler",
+    titel: "Ruf des Raumes",
+    audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
+    bild: "https://lh3.googleusercontent.com/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
+  }
+];
   {
   datum: "2026-03-30",
   kin: 225,
