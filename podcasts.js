@@ -1,5 +1,5 @@
   const podcasts = [
-   {
+  {
     datum: "2026-04-02",
     kin: 228,
     name: "Rote Erde",
@@ -21,7 +21,7 @@
     name: "Blauer Adler",
     titel: "Ruf des Raumes",
     audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
-    bild: "https://lh3.googleusercontent.com/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
+    bild: "https://drive.google.com/file/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG/preview"
   },
   {
   datum: "2026-03-30",
