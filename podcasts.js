@@ -22,8 +22,7 @@
     titel: "Ruf des Raumes",
     audio: "https://drive.google.com/file/d/1I8AdXSqDCzN1NCLVNjpJmRmitFwJ3dUg/preview",
     bild: "https://lh3.googleusercontent.com/d/1H5ooCyCx9nLnSILT7jUd2o6ttZgpNlDG"
-  }
-  ];
+  },
   {
   datum: "2026-03-30",
   kin: 225,
