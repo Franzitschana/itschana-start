@@ -20,6 +20,7 @@ nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { border-color: var
 .hero { min-height: min(760px, calc(100vh - 74px)); position: relative; display: grid; place-items: center; padding: 80px 22px; text-align: center; color: #fff; background: url("reset-eltern-kinder.png") center 46% / cover no-repeat; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,35,33,.42), rgba(10,35,33,.78)); }
 .hero-content { position: relative; z-index: 1; max-width: 900px; }
+@media (min-width: 761px) { .hero-content { transform: translateY(clamp(44px, 7vh, 64px)); } }
 .eyebrow { margin: 0 0 10px; font-size: .78rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
 .hero .eyebrow { color: #ffe1a3; }
 h1, h2, h3, p { overflow-wrap: anywhere; }
