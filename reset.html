@@ -3,285 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="RESET – eine öffentliche Spielwiese für die eigene Wahrnehmung.">
   <title>RESET – Zurück zum Leben als Mensch!</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #183332;
-      background: #f4faf8;
-    }
-
-    .hero {
-      min-height: 68vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 55px 25px;
-      background:
-        linear-gradient(
-    rgba(0,0,0,0.18),
-    rgba(0,0,0,0.18)
-  ),
-  url("reset-eltern-kinder.png");
-
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-    }
-
-    .hero-inner {
-      max-width: 1050px;
-    }
-
-    .small-title {
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-size: 1rem;
-      color: #4c7471;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      color: #235c5c;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.05;
-    }
-
-    .claim {
-      margin: 28px auto 15px;
-      max-width: 850px;
-      font-size: clamp(1.25rem, 2.5vw, 2rem);
-      line-height: 1.4;
-    }
-
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 38px;
-    }
-
-    .step {
-      padding: 13px 22px;
-      border-radius: 40px;
-      background: white;
-      font-weight: bold;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    section {
-      padding: 60px 22px;
-    }
-
-    .intro {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h2 {
-      color: #286866;
-      font-size: 2rem;
-    }
-
-    .intro p {
-      font-size: 1.2rem;
-      line-height: 1.75;
-    }
-
-    .cards {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 27px;
-      border-radius: 22px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    }
-
-    .card h3 {
-      color: #347976;
-      margin-top: 0;
-    }
-
-    .card p {
-      line-height: 1.6;
-    }
-
-    .time {
-      max-width: 1000px;
-      margin: 20px auto 60px;
-      padding: 45px 25px;
-      text-align: center;
-      border-radius: 25px;
-      background: #fff8df;
-    }
-
-    .time-line {
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      word-spacing: 12px;
-    }
-
-    .time-line strong {
-      color: #bd7b19;
-    }
-
-    .question {
-      margin-top: 35px;
-      font-size: 1.35rem;
-      font-weight: bold;
-    }
-..erste-frage {
-  margin: 0 auto 28px;
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  font-weight: 700;
-  color: #245c5a;
-  text-align: center;
-}
-
-.intro h2 {
-  margin-top: 70px;
-}
-
-footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: #244d4c;
-      color: white;
-    }
-  </style>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#spielwiese">Direkt zur Spielwiese</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="kalender.html">Kalender</a><a href="podcast-heute.html">Podcast</a><a href="reset.html" aria-current="page">RESET</a><a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
 
-  <div class="hero"></div>
-
-
-  <section class="intro">
-<div class="erste-frage">
-   Was davon möchtest DU leben?
-</div>
-    <h2>
-      Ein realer Spiel- und Lernraum
-    </h2>
-
-    <p>
-      RESET schafft Räume, in denen Menschen
-      ihre Wahrnehmung wiederentdecken,
-      Möglichkeiten ausprobieren und aus
-      eigener Erkenntnis ihr Leben gestalten können.
-    </p>
-
-    <p>
-      Eltern und Kinder begegnen Natur, Zeit,
-      Energie, Technik und Gemeinschaft nicht
-      nur als Theorie, sondern als etwas,
-      das man sehen, fühlen, ausprobieren
-      und gemeinsam weiterentwickeln kann.
-    </p>
-
-  </section>
-
-
-  <section>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Natur erleben</h3>
-        <p>
-          Erde, Wasser, Luft, Wärme und Zeit
-          wieder unmittelbar wahrnehmen.
-        </p>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" id="hero-title">Die erste öffentliche Spielwiese</p>
+        <p class="hero-question">Woran erkennst du, dass eine Wahrnehmung wirklich deine eigene ist?</p>
+        <p class="hero-intro">Niemand erklärt dir hier, was du wahrnehmen sollst. Du bist eingeladen, es selbst zu entdecken.</p>
+        <a class="button button-primary" href="#spielwiese">3 Minuten wahrnehmen</a>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Energie begreifen</h3>
-        <p>
-          Erzeugen, speichern und verwenden:
-          Energie wird sichtbar und erfahrbar.
-        </p>
+    <section class="day-space" aria-labelledby="day-title">
+      <div class="section-inner day-grid">
+        <div>
+          <p class="eyebrow">Itschana begleitet</p>
+          <h2 id="day-title">Der heutige Zeitraum</h2>
+          <p>Die Tagesenergie schreibt dir kein Erleben vor. Sie öffnet einen Zeitraum, in dem du beobachten kannst, ob und wie etwas in dir anklingt. Auch keine Resonanz ist eine wertvolle Wahrnehmung.</p>
+        </div>
+        <div class="day-card" aria-live="polite">
+          <span class="day-date" id="day-date">Heutiges Datum</span>
+          <strong class="day-kin" id="day-kin">Tagesenergie wird geladen …</strong>
+          <a href="kalender.html">Im natürlichen Jahreskalender ansehen</a>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Spielen und entdecken</h3>
-        <p>
-          Nicht die fertige Antwort steht
-          am Anfang, sondern Neugier,
-          Ausprobieren und eigene Erfahrung.
-        </p>
+    <section class="playground" id="spielwiese" aria-labelledby="playground-title">
+      <div class="section-inner narrow">
+        <p class="eyebrow">Ankommen · Wahrnehmen · Unterscheiden</p>
+        <h2 id="playground-title">Deine drei Minuten</h2>
+        <p class="lead">Du musst nichts leisten und nichts richtig machen. Lass dir so viel Zeit, wie du brauchst.</p>
+
+        <div class="timer-card">
+          <div><span class="timer-label">Freiwilliger Zeitbegleiter</span><strong id="timer-display" aria-live="polite">03:00</strong></div>
+          <div class="timer-actions"><button type="button" class="button button-soft" id="timer-toggle">Zeit starten</button><button type="button" class="text-button" id="timer-reset">Zurücksetzen</button></div>
+        </div>
+
+        <div class="stepper" aria-label="Vier Schritte der Wahrnehmung">
+          <span class="step-dot active" data-step-dot="1">1<span>Ankommen</span></span><span class="step-line" aria-hidden="true"></span>
+          <span class="step-dot" data-step-dot="2">2<span>Wahrnehmen</span></span><span class="step-line" aria-hidden="true"></span>
+          <span class="step-dot" data-step-dot="3">3<span>Unterscheiden</span></span><span class="step-line" aria-hidden="true"></span>
+          <span class="step-dot" data-step-dot="4">4<span>Spur</span></span>
+        </div>
+
+        <form id="perception-form" novalidate>
+          <section class="form-step active" data-step="1" aria-labelledby="step-1-title">
+            <p class="step-number">Schritt 1</p><h3 id="step-1-title" tabindex="-1">Komm in deinem Raum an</h3>
+            <p>Schau dich langsam um. Spüre, wo dein Körper gerade ist. Du musst noch nichts erklären.</p>
+            <div class="prompt-box"><p>Wohin geht dein Blick?</p><p>Was zieht dich an?</p><p>Was verändert sich, wenn du langsamer wirst?</p></div>
+          </section>
+
+          <section class="form-step" data-step="2" aria-labelledby="step-2-title" hidden>
+            <p class="step-number">Schritt 2</p><h3 id="step-2-title" tabindex="-1">Was nimmst du unmittelbar wahr?</h3>
+            <p>Bleibe zunächst bei dem, was du sehen, hören oder im Körper spüren kannst.</p>
+            <label for="observation">Meine unmittelbare Wahrnehmung</label>
+            <textarea id="observation" rows="5" placeholder="Zum Beispiel: Mein Blick geht immer wieder zur Tür …"></textarea>
+          </section>
+
+          <section class="form-step" data-step="3" aria-labelledby="step-3-title" hidden>
+            <p class="step-number">Schritt 3</p><h3 id="step-3-title" tabindex="-1">Unterscheide, ohne zu bewerten</h3>
+            <div class="field-grid">
+              <div><label for="feeling">Welches Gefühl zeigt sich?</label><textarea id="feeling" rows="4" placeholder="Was fühle ich dabei?"></textarea></div>
+              <div><label for="interpretation">Welche Erklärung entsteht?</label><textarea id="interpretation" rows="4" placeholder="Was deute ich hinein?"></textarea></div>
+            </div>
+            <aside class="murmur-card">
+              <strong>Der Laut vor dem Wort</strong>
+              <p>Manchmal antwortet der Körper zuerst: mit einem Atemzug, einer Bewegung, Wärme, einem Lächeln oder einem Laut wie „ieh …“.</p>
+              <label for="before-words">Was zeigte sich bei dir, bevor du es erklären konntest?</label><textarea id="before-words" rows="3"></textarea>
+            </aside>
+          </section>
+
+          <section class="form-step" data-step="4" aria-labelledby="step-4-title" hidden>
+            <p class="step-number">Schritt 4</p><h3 id="step-4-title" tabindex="-1">Hinterlasse dir eine eigene Spur</h3>
+            <label for="change">Was hat sich durch dein Wahrnehmen verändert?</label><textarea id="change" rows="5"></textarea>
+            <div class="privacy-choice"><strong>Diese Spur gehört dir.</strong><p>In dieser ersten Stufe wird nichts versendet. Wenn du speicherst, bleibt deine Wahrnehmung ausschließlich in diesem Browser auf diesem Gerät.</p></div>
+          </section>
+
+          <div class="form-actions"><button type="button" class="button button-soft" id="back-button" hidden>Zurück</button><button type="button" class="button button-primary" id="next-button">Beginnen</button><button type="submit" class="button button-primary" id="save-button" hidden>Nur für mich speichern</button></div>
+          <p class="save-status" id="save-status" role="status"></p>
+        </form>
+
+        <div class="saved-entry" id="saved-entry" hidden>
+          <p class="eyebrow">Deine bewahrte Spur</p><h3>Was du zuletzt festgehalten hast</h3><div id="saved-entry-content"></div>
+          <button type="button" class="text-button danger" id="delete-entry">Spur von diesem Gerät löschen</button>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Eltern und Kinder</h3>
-        <p>
-          Generationen begegnen einander neu:
-          gemeinsam beobachten, fragen,
-          entdecken und gestalten.
-        </p>
+    <section class="principles" aria-labelledby="principles-title">
+      <div class="section-inner">
+        <p class="eyebrow">Unser gemeinsamer Maßstab</p><h2 id="principles-title">Was diesen Raum trägt</h2>
+        <div class="principle-grid">
+          <article><span>01</span><h3>Wahrnehmen</h3><p>Was zeigt sich, bevor es erklärt wird?</p></article>
+          <article><span>02</span><h3>Spielen</h3><p>Was darf ohne Leistungsdruck ausprobiert werden?</p></article>
+          <article><span>03</span><h3>Erkennen</h3><p>Was bleibt nach genauer Beobachtung tragfähig?</p></article>
+          <article><span>04</span><h3>Gestalten</h3><p>Was dient dem Leben und darf sichtbar werden?</p></article>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Eigene Wahrnehmung</h3>
-        <p>
-          Werkzeuge und Spielzeuge können helfen,
-          Zusammenhänge im eigenen Leben
-          selbst sichtbar zu machen.
-        </p>
+    <section class="existing-roots" aria-labelledby="roots-title">
+      <div class="section-inner narrow">
+        <h2 id="roots-title">Es war · Es ist · <em>es könnte sein</em></h2>
+        <p>Diese erste Spielwiese wächst aus Itschana, dem ResonanzRaum, Natur, Gemeinschaft, Energie, Klang, Zeichen und den wirklichen Lebensräumen. Weitere Türen öffnen sich Schritt für Schritt.</p>
+        <p class="closing-question">Was könnte möglich werden, wenn wir wieder beginnen, selbst wahrzunehmen?</p>
       </div>
-
-      <div class="card">
-        <h3>Ein Raum in Bewegung</h3>
-        <p>
-          Was an einem Ort entsteht,
-          kann hinausgetragen werden,
-          Menschen begegnen und verändert
-          wieder zurückkommen.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <div class="time">
-
-    <div class="time-line">
-      Es war &nbsp; · &nbsp;
-      Es ist &nbsp; · &nbsp;
-      <strong>es könnte sein</strong>
-    </div>
-
-    <div class="question">
-      Was könnte möglich werden,
-      wenn wir wieder beginnen,
-      selbst wahrzunehmen?
-    </div>
-
-  </div>
-
+    </section>
+  </main>
 
   <footer>
-    RESET – Zurück zum Leben als Mensch!<br><br>
-    Wahrnehmen · Spielen · Erkennen · Gestalten
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+    <span class="footer-note">Frei von Tracking. Frei von Bewertung. Deine Einträge bleiben auf deinem Gerät.</span>
   </footer>
-
+  <script src="kin-daten.js"></script><script src="reset.js"></script>
 </body>
 </html>
