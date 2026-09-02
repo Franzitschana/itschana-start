@@ -92,7 +92,13 @@ footer { padding: 52px 20px 48px; display: flex; flex-direction: column; align-i
 [hidden] { display: none !important; }
 @media (max-width: 760px) {
   body { font-size: 17px; } .site-header { align-items: flex-start; flex-direction: column; gap: 8px; }
-  nav { justify-content: flex-start; gap: 4px 16px; } .hero { min-height: 720px; background-position: 58% center; }
+  nav { justify-content: flex-start; gap: 4px 16px; }
+  .hero { min-height: 720px; padding: 72px 22px 64px; background-position: 50% center; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(10,35,33,.58), rgba(10,35,33,.84)); }
+  .hero-content { width: 100%; padding: 0 8px; }
+  .hero .eyebrow { position: static; width: min(320px, 90%); margin: 0 auto 30px; padding: 0; font-size: .92rem; line-height: 1.4; letter-spacing: .11em; transform: none; }
+  .hero-question { max-width: 560px; font-size: 1.5rem; line-height: 1.2; }
+  .hero-intro { max-width: 520px; margin: 28px auto 34px; font-size: 1rem; line-height: 1.55; }
   .day-grid, .field-grid { grid-template-columns: 1fr; } .principle-grid { grid-template-columns: 1fr 1fr; }
   .timer-card { align-items: flex-start; flex-direction: column; } .step-dot span { display: none; }
   .form-step { min-height: 280px; } .saved-entry dl { grid-template-columns: 1fr; gap: 2px; } .saved-entry dd { margin-bottom: 14px; }
