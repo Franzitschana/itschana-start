@@ -96,7 +96,6 @@
     const spriteColumn = spriteIndex % 5;
     const spriteRow = Math.floor(spriteIndex / 5);
     document.getElementById("figure-glyph").style.backgroundPosition = `${spriteColumn * 25}% ${spriteRow * 25}%`;
-    setText("glyph-name", figure.shortName);
     document.querySelector(".glyph-halo").setAttribute("aria-label", `KIN ${kin.number}: ${figure.name}, Ton ${tone.number}`);
     document.getElementById("today").disabled = isToday;
     document.getElementById("kin-stage").setAttribute("aria-busy", "false");
