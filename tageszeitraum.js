@@ -60,7 +60,10 @@
     setText("figure-purpose", figure.purpose);
     setText("wave-name", wave.name);
 
-    setText("glyph-number", String(figure.number).padStart(2, "0"));
+    const spriteIndex = figure.number - 1;
+    const spriteColumn = spriteIndex % 5;
+    const spriteRow = Math.floor(spriteIndex / 5);
+    document.getElementById("figure-glyph").style.backgroundPosition = `${spriteColumn * 25}% ${spriteRow * 25}%`;
     setText("glyph-name", figure.shortName);
     document.getElementById("today").disabled = isToday;
     document.getElementById("kin-stage").setAttribute("aria-busy", "false");
