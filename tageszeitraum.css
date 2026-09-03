@@ -21,7 +21,6 @@
 .tone-bars { flex-direction: column; gap: 4px; }
 .tone-point { width: 9px; height: 9px; background: #fff1c9; border-radius: 50%; }
 .tone-bar { width: 54px; height: 6px; background: #fff1c9; border-radius: 999px; }
-.glyph-halo > span:last-child { position: absolute; bottom: 17%; z-index: 1; color: #cfe0db; font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .kin-heading > span { color: #e6b45e; font-size: .88rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .kin-heading h2 { max-width: 620px; margin: 8px 0 14px; color: #fff; font-size: clamp(2.2rem, 6vw, 4.8rem); }
 .kin-heading p { margin: 0; color: #cfe0db; font-size: clamp(1rem, 2.4vw, 1.3rem); }
