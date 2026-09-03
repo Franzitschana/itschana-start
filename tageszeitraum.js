@@ -31,6 +31,37 @@
     document.getElementById(id).textContent = value || "";
   }
 
+  function renderToneMark(toneNumber) {
+    const mark = document.getElementById("tone-mark");
+    const bars = Math.floor(toneNumber / 5);
+    const points = toneNumber % 5;
+    const parts = [];
+
+    if (points) {
+      const pointRow = document.createElement("span");
+      pointRow.className = "tone-points";
+      for (let index = 0; index < points; index += 1) {
+        const point = document.createElement("i");
+        point.className = "tone-point";
+        pointRow.appendChild(point);
+      }
+      parts.push(pointRow);
+    }
+
+    if (bars) {
+      const barStack = document.createElement("span");
+      barStack.className = "tone-bars";
+      for (let index = 0; index < bars; index += 1) {
+        const bar = document.createElement("i");
+        bar.className = "tone-bar";
+        barStack.appendChild(bar);
+      }
+      parts.push(barStack);
+    }
+
+    mark.replaceChildren(...parts);
+  }
+
   function sameDay(a, b) {
     return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
   }
@@ -50,6 +81,7 @@
     setText("kin-name", kin.name);
     setText("tone-name", tone.name);
     setText("tone-number", tone.number);
+    renderToneMark(tone.number);
     setText("tone-keyword", tone.keyword);
     setText("tone-flh", tone.flhText);
     setText("tone-orientation", tone.orientation);
@@ -65,6 +97,7 @@
     const spriteRow = Math.floor(spriteIndex / 5);
     document.getElementById("figure-glyph").style.backgroundPosition = `${spriteColumn * 25}% ${spriteRow * 25}%`;
     setText("glyph-name", figure.shortName);
+    document.querySelector(".glyph-halo").setAttribute("aria-label", `KIN ${kin.number}: ${figure.name}, Ton ${tone.number}`);
     document.getElementById("today").disabled = isToday;
     document.getElementById("kin-stage").setAttribute("aria-busy", "false");
   }
