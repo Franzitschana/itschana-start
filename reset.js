@@ -1,6 +1,7 @@
 (function () {
   "use strict";
-  const STORAGE_KEY = "reset_wahrnehmung_v1";
+  const STORAGE_KEY = "reset_wahrnehmung_v2";
+  const LEGACY_STORAGE_KEY = "reset_wahrnehmung_v1";
   const TOTAL_SECONDS = 180;
   let currentStep = 1;
   let secondsLeft = TOTAL_SECONDS;
@@ -16,7 +17,8 @@
   const timerReset = document.getElementById("timer-reset");
   const savedEntry = document.getElementById("saved-entry");
   const savedEntryContent = document.getElementById("saved-entry-content");
-  const deleteEntryButton = document.getElementById("delete-entry");
+  const savedEntryEmpty = document.getElementById("saved-entry-empty");
+  let savedEntries = [];
 
   function localDateAtItschanaDay() {
     const now = new Date();
@@ -73,26 +75,65 @@
   }
   function value(id) { return document.getElementById(id).value.trim(); }
 
-  function renderSavedEntry(data) {
-    const items = [["Wahrnehmung", data.observation], ["Gefühl", data.feeling], ["Deutung", data.interpretation], ["Vor den Worten", data.beforeWords], ["Veränderung", data.change]].filter((item) => item[1]);
-    if (!items.length) { savedEntry.hidden = true; return; }
-    const dl = document.createElement("dl");
-    items.forEach(([label, entry]) => {
-      const dt = document.createElement("dt"); const dd = document.createElement("dd");
-      dt.textContent = label; dd.textContent = entry; dl.append(dt, dd);
-    });
-    savedEntryContent.replaceChildren(dl); savedEntry.hidden = false;
+  function dayLabel(iso) {
+    const date = new Date(`${iso}T12:00:00`);
+    return new Intl.DateTimeFormat("de-AT", { weekday: "long", day: "2-digit", month: "long", year: "numeric" }).format(date);
   }
 
-  function loadSavedEntry() {
-    try {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (!data) return;
-      [["observation", "observation"], ["feeling", "feeling"], ["interpretation", "interpretation"], ["before-words", "beforeWords"], ["change", "change"]].forEach(([id, property]) => {
-        if (data[property]) document.getElementById(id).value = data[property];
+  function renderSavedEntries() {
+    savedEntryContent.replaceChildren();
+    savedEntryEmpty.hidden = savedEntries.length > 0;
+    savedEntries.slice().reverse().forEach((data) => {
+      const article = document.createElement("article");
+      article.className = "saved-trace";
+      const header = document.createElement("header");
+      const time = document.createElement("p");
+      time.className = "saved-trace-date";
+      time.textContent = dayLabel(data.day);
+      const kin = document.createElement("strong");
+      kin.className = "saved-trace-kin";
+      kin.textContent = data.kin ? `KIN ${data.kin}` : "KIN noch nicht hinterlegt";
+      header.append(time, kin);
+
+      const items = [["Wahrnehmung", data.observation], ["Gefühl", data.feeling], ["Deutung", data.interpretation], ["Vor den Worten", data.beforeWords], ["Veränderung", data.change]].filter((item) => item[1]);
+      const dl = document.createElement("dl");
+      items.forEach(([label, entry]) => {
+        const dt = document.createElement("dt"); const dd = document.createElement("dd");
+        dt.textContent = label; dd.textContent = entry; dl.append(dt, dd);
       });
-      renderSavedEntry(data);
-    } catch (error) { localStorage.removeItem(STORAGE_KEY); }
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "text-button danger";
+      remove.textContent = "Diese Spur löschen";
+      remove.addEventListener("click", () => {
+        savedEntries = savedEntries.filter((entry) => entry.id !== data.id);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
+        renderSavedEntries();
+        saveStatus.textContent = "Diese Spur wurde von deinem Gerät gelöscht.";
+      });
+      article.append(header, dl, remove);
+      savedEntryContent.append(article);
+    });
+  }
+
+  function loadSavedEntries() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      savedEntries = Array.isArray(stored) ? stored : [];
+      if (!savedEntries.length) {
+        const legacy = JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY));
+        if (legacy) {
+          const { iso } = localDateAtItschanaDay();
+          const kin = typeof kinList !== "undefined" ? kinList[iso] : null;
+          savedEntries = [{ ...legacy, id: `legacy-${legacy.savedAt || iso}`, day: iso, kin }];
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
+        }
+      }
+    } catch (error) {
+      savedEntries = [];
+      localStorage.removeItem(STORAGE_KEY);
+    }
+    renderSavedEntries();
   }
 
   nextButton.addEventListener("click", () => showStep(currentStep + 1));
@@ -104,15 +145,16 @@
   });
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const data = { observation: value("observation"), feeling: value("feeling"), interpretation: value("interpretation"), beforeWords: value("before-words"), change: value("change"), savedAt: new Date().toISOString() };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); renderSavedEntry(data);
-    saveStatus.textContent = "Deine Spur wurde nur auf diesem Gerät bewahrt.";
+    const { iso } = localDateAtItschanaDay();
+    const kin = typeof kinList !== "undefined" ? kinList[iso] : null;
+    const savedAt = new Date().toISOString();
+    const data = { id: `${savedAt}-${Math.random().toString(36).slice(2)}`, day: iso, kin, observation: value("observation"), feeling: value("feeling"), interpretation: value("interpretation"), beforeWords: value("before-words"), change: value("change"), savedAt };
+    savedEntries.push(data);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
+    renderSavedEntries();
+    saveStatus.textContent = `Deine Spur für KIN ${kin || "–"} wurde nur auf diesem Gerät bewahrt.`;
     savedEntry.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-  deleteEntryButton.addEventListener("click", () => {
-    localStorage.removeItem(STORAGE_KEY); form.reset(); savedEntry.hidden = true;
-    saveStatus.textContent = "Deine bewahrte Spur wurde von diesem Gerät gelöscht."; showStep(1);
-  });
 
-  renderDaySpace(); loadSavedEntry(); showStep(1);
+  renderDaySpace(); loadSavedEntries(); showStep(1);
 })();
