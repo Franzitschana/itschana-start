@@ -91,6 +91,14 @@
     setText("figure-flh", figure.flhText);
     setText("figure-purpose", figure.purpose);
     setText("wave-name", wave.name);
+    const waveLink = document.getElementById("wave-name");
+    if (wave.number === 3) {
+      waveLink.href = "welle-niwanes.html";
+      waveLink.setAttribute("aria-label", `${wave.name}: vollständigen Verlauf öffnen`);
+    } else {
+      waveLink.removeAttribute("href");
+      waveLink.removeAttribute("aria-label");
+    }
 
     const spriteIndex = figure.number - 1;
     const spriteColumn = spriteIndex % 5;
