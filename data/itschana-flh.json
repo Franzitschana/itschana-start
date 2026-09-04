@@ -1,0 +1,2219 @@
+{
+  "source": {
+    "application": "NaturalCycles V1.0.10",
+    "textVariant": "FLH",
+    "cycleLength": 273,
+    "anchor": {
+      "date": "1989-11-19",
+      "kin": 49
+    },
+    "dayBoundaryLocalTime": "03:08"
+  },
+  "tones": [
+    {
+      "number": 1,
+      "name": "Der MAGNETISCHE Ton",
+      "orientation": "Der Ton der Bestimmung (HUN)",
+      "keyword": "Bestimmung",
+      "dimension": "Dimension der ZEIT",
+      "flhText": "Programm"
+    },
+    {
+      "number": 2,
+      "name": "Der LUNARE Ton",
+      "orientation": "Der Ton der Herausforderung (CA)",
+      "keyword": "Herausforderung",
+      "dimension": "Dimension des LEBENS",
+      "flhText": "wie groß / weit"
+    },
+    {
+      "number": 3,
+      "name": "Der ELEKTRISCHE Ton",
+      "orientation": "Der Ton des Dienens (OX)",
+      "keyword": "Dienen",
+      "dimension": "Dimension der SINNE",
+      "flhText": "sofort zur Verfügung"
+    },
+    {
+      "number": 4,
+      "name": "Der SELBST-BESTEHENDE Ton",
+      "orientation": "Der Ton der Form (CAN)",
+      "keyword": "Form",
+      "dimension": "Dimension des BEWUSSTSEINS",
+      "flhText": "vorhanden"
+    },
+    {
+      "number": 5,
+      "name": "Der OBERTON Ton",
+      "orientation": "Der Ton der Strahlung (HO)",
+      "keyword": "Strahlung",
+      "dimension": "Dimension der ZEIT",
+      "flhText": "der/die Chef(in)"
+    },
+    {
+      "number": 6,
+      "name": "Der RHYTHMISCHE Ton",
+      "orientation": "Der Ton der Gleichheit (UAC)",
+      "keyword": "Gleichheit",
+      "dimension": "Dimension des LEBENS",
+      "flhText": "was wir machen"
+    },
+    {
+      "number": 7,
+      "name": "Der RESONANTE Ton",
+      "orientation": "Der Ton des Gleichklangs (UC)",
+      "keyword": "Gleichklang",
+      "dimension": "Dimension der SINNE",
+      "flhText": "so funktioniert es"
+    },
+    {
+      "number": 8,
+      "name": "Der GALAKTISCHE Ton",
+      "orientation": "Der Ton der Ganzheit (VAXAC)",
+      "keyword": "Ganzheit",
+      "dimension": "Dimension des BEWUSSTSEINS",
+      "flhText": "alle helfen mit"
+    },
+    {
+      "number": 9,
+      "name": "Der SOLARE Ton",
+      "orientation": "Der Ton der Absicht (BOLON)",
+      "keyword": "Absicht",
+      "dimension": "Dimension der ZEIT",
+      "flhText": "die letzten Änderungen"
+    },
+    {
+      "number": 10,
+      "name": "Der PLANETARE Ton",
+      "orientation": "Der Ton der Manifestation (LAHUN)",
+      "keyword": "Manifestation",
+      "dimension": "Dimension des LEBENS",
+      "flhText": "ausgerichtete Verwirklichung"
+    },
+    {
+      "number": 11,
+      "name": "Der SPEKTRALE Ton",
+      "orientation": "Der Ton der Befreiung (HUN LAHUN)",
+      "keyword": "Befreiung",
+      "dimension": "Dimension der SINNE",
+      "flhText": "Verwendung"
+    },
+    {
+      "number": 12,
+      "name": "Der KRISTALLE Ton",
+      "orientation": "Der Ton der Zusammenarbeit (CA LAHUN)",
+      "keyword": "Zusammenarbeit",
+      "dimension": "Dimension des BEWUSSTSEINS",
+      "flhText": "Rückschau"
+    },
+    {
+      "number": 13,
+      "name": "Der KOSMISCHE Ton",
+      "orientation": "Der Ton der Gegenwärtigkeit (OX LAHUN)",
+      "keyword": "Gegenwärtigkeit",
+      "dimension": "Dimension der ZEIT",
+      "flhText": "daraus entsteht Neues"
+    }
+  ],
+  "figures": [
+    {
+      "number": 1,
+      "name": "Die Blaue Nacht",
+      "shortName": "Nacht",
+      "colorIndex": 2,
+      "flhText": "Tag der Ideen",
+      "purpose": "phantastischer ERFINDER der GELEHRTEN"
+    },
+    {
+      "number": 2,
+      "name": "Der Gelbe Samen",
+      "shortName": "Samen",
+      "colorIndex": 3,
+      "flhText": "Tag der Reife",
+      "purpose": "zügelloser PIONIER der FRIEDFERTIGEN"
+    },
+    {
+      "number": 3,
+      "name": "Die Rote Schlange",
+      "shortName": "Schlange",
+      "colorIndex": 4,
+      "flhText": "Tag der Gesundheit",
+      "purpose": "treibende KRAFT der SELBSTLOSEN"
+    },
+    {
+      "number": 4,
+      "name": "Der Weiße Weltenüberbrücker",
+      "shortName": "Weltenüberbrücker",
+      "colorIndex": 1,
+      "flhText": "Tag des Veränderns",
+      "purpose": "gewinnendes WESEN der FURCHTLOSEN"
+    },
+    {
+      "number": 5,
+      "name": "Die Blaue Hand",
+      "shortName": "Hand",
+      "colorIndex": 2,
+      "flhText": "Tag des Erlebens",
+      "purpose": "geschickter HÄNDLER der FREIMÜTIGEN"
+    },
+    {
+      "number": 6,
+      "name": "The iceblue Niawanes",
+      "shortName": "Niawanes",
+      "colorIndex": 2,
+      "flhText": "Tag der Erfühlbarkeit",
+      "purpose": "reines HERZ des UNBESTIMMTEN"
+    },
+    {
+      "number": 7,
+      "name": "Der Gelbe Stern",
+      "shortName": "Stern",
+      "colorIndex": 3,
+      "flhText": "Tag der Harmonie",
+      "purpose": "feste GRÖßE der GELEHRTEN"
+    },
+    {
+      "number": 8,
+      "name": "Der Rote Mond",
+      "shortName": "Mond",
+      "colorIndex": 4,
+      "flhText": "Tag des Wassers",
+      "purpose": "echter KLASSIKER der FRIEDFERTIGEN"
+    },
+    {
+      "number": 9,
+      "name": "Der Weiße Hund",
+      "shortName": "Hund",
+      "colorIndex": 1,
+      "flhText": "Tag des Herzens",
+      "purpose": "wahrer FREUND der SELBSTLOSEN"
+    },
+    {
+      "number": 10,
+      "name": "Der Blaue Affe",
+      "shortName": "Affe",
+      "colorIndex": 2,
+      "flhText": "Tag des Spielens",
+      "purpose": "glücklicher SPIELER der FURCHTLOSEN"
+    },
+    {
+      "number": 11,
+      "name": "Der Gelbe Mensch",
+      "shortName": "Mensch",
+      "colorIndex": 3,
+      "flhText": "Tag des Entscheidens",
+      "purpose": "hartnäckiger ANWALT der FREIMÜTIGEN"
+    },
+    {
+      "number": 12,
+      "name": "Der Rote Himmelswanderer",
+      "shortName": "Himmelswanderer",
+      "colorIndex": 4,
+      "flhText": "Tag des Raumes",
+      "purpose": "weitgereister ENTDECKER der GELEHRTEN"
+    },
+    {
+      "number": 13,
+      "name": "Der Weiße Magier",
+      "shortName": "Magier",
+      "colorIndex": 1,
+      "flhText": "Tag der Magie",
+      "purpose": "angesehener MEISTER der FRIEDFERTIGEN"
+    },
+    {
+      "number": 14,
+      "name": "Der Blaue Adler",
+      "shortName": "Adler",
+      "colorIndex": 2,
+      "flhText": "Tag der Vision",
+      "purpose": "gerechter FÜHRER der SELBSTLOSEN"
+    },
+    {
+      "number": 15,
+      "name": "Der Gelbe Krieger",
+      "shortName": "Krieger",
+      "colorIndex": 3,
+      "flhText": "Tag der Hinterfragung",
+      "purpose": "glorreicher HELD der FURCHTLOSEN"
+    },
+    {
+      "number": 16,
+      "name": "Die Rote Erde",
+      "shortName": "Erde",
+      "colorIndex": 4,
+      "flhText": "Tag des Zentrums",
+      "purpose": "gewissenhafter PRÜFER der FREIMÜTIGEN"
+    },
+    {
+      "number": 17,
+      "name": "Der Weiße Spiegel",
+      "shortName": "Spiegel",
+      "colorIndex": 1,
+      "flhText": "Tag der Erkenntnis",
+      "purpose": "klarer GEIST der GELEHRTEN"
+    },
+    {
+      "number": 18,
+      "name": "Der Blaue Sturm",
+      "shortName": "Sturm",
+      "colorIndex": 2,
+      "flhText": "Tag der Erneuerung",
+      "purpose": "junger WILDER der FRIEDFERTIGEN"
+    },
+    {
+      "number": 19,
+      "name": "Die Gelbe Sonne",
+      "shortName": "Sonne",
+      "colorIndex": 3,
+      "flhText": "Tag der Erleuchtung",
+      "purpose": "strahlende AUTORITÄT der SELBSTLOSEN"
+    },
+    {
+      "number": 20,
+      "name": "Der Rote Drache",
+      "shortName": "Drache",
+      "colorIndex": 4,
+      "flhText": "Tag der Geburt",
+      "purpose": "starke NATUR der FURCHTLOSEN"
+    },
+    {
+      "number": 21,
+      "name": "Der Weiße Wind",
+      "shortName": "Wind",
+      "colorIndex": 1,
+      "flhText": "Tag des Geistes",
+      "purpose": "ehrenwerter RICHTER der FREIMÜTIGEN"
+    }
+  ],
+  "kins": [
+    {
+      "number": 1,
+      "name": "Roter magnetischer Drache",
+      "toneNumber": 1,
+      "figureNumber": 20,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 2,
+      "name": "Weisser lunarer Wind",
+      "toneNumber": 2,
+      "figureNumber": 21,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 3,
+      "name": "Blaue elektrische Nacht",
+      "toneNumber": 3,
+      "figureNumber": 1,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 4,
+      "name": "Gelber selbst-bestehender Samen",
+      "toneNumber": 4,
+      "figureNumber": 2,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 5,
+      "name": "Rote oberton Schlange",
+      "toneNumber": 5,
+      "figureNumber": 3,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 6,
+      "name": "Weisser rhythmischer Welten- überbrücker",
+      "toneNumber": 6,
+      "figureNumber": 4,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 7,
+      "name": "Blaue resonante Hand",
+      "toneNumber": 7,
+      "figureNumber": 5,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 8,
+      "name": "Kosmischer Niwanes",
+      "toneNumber": 13,
+      "figureNumber": 6,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 9,
+      "name": "Gelber galaktischer Stern",
+      "toneNumber": 8,
+      "figureNumber": 7,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 10,
+      "name": "Roter solarer Mond",
+      "toneNumber": 9,
+      "figureNumber": 8,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 11,
+      "name": "Weisser planetarer Hund",
+      "toneNumber": 10,
+      "figureNumber": 9,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 12,
+      "name": "Blauer spektraler Affe",
+      "toneNumber": 11,
+      "figureNumber": 10,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 13,
+      "name": "Gelber kristaller Mensch",
+      "toneNumber": 12,
+      "figureNumber": 11,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 14,
+      "name": "Roter kosmischer Himmels- wanderer",
+      "toneNumber": 13,
+      "figureNumber": 12,
+      "waveFigureNumber": 20
+    },
+    {
+      "number": 15,
+      "name": "Weisser magnetischer Magier",
+      "toneNumber": 1,
+      "figureNumber": 13,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 16,
+      "name": "Blauer lunarer Adler",
+      "toneNumber": 2,
+      "figureNumber": 14,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 17,
+      "name": "Gelber elektrischer Krieger",
+      "toneNumber": 3,
+      "figureNumber": 15,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 18,
+      "name": "Rote selbst-bestehende Erde",
+      "toneNumber": 4,
+      "figureNumber": 16,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 19,
+      "name": "Weisser oberton Spiegel",
+      "toneNumber": 5,
+      "figureNumber": 17,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 20,
+      "name": "Blauer rhythmischer Sturm",
+      "toneNumber": 6,
+      "figureNumber": 18,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 21,
+      "name": "Gelbe resonante Sonne",
+      "toneNumber": 7,
+      "figureNumber": 19,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 22,
+      "name": "Roter galaktischer Drache",
+      "toneNumber": 8,
+      "figureNumber": 20,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 23,
+      "name": "Weisser solarer Wind",
+      "toneNumber": 9,
+      "figureNumber": 21,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 24,
+      "name": "Blaue planetare Nacht",
+      "toneNumber": 10,
+      "figureNumber": 1,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 25,
+      "name": "Gelber spektraler Samen",
+      "toneNumber": 11,
+      "figureNumber": 2,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 26,
+      "name": "Rote kristalle Schlange",
+      "toneNumber": 12,
+      "figureNumber": 3,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 27,
+      "name": "Weisser kosmischer Welten- überbrücker",
+      "toneNumber": 13,
+      "figureNumber": 4,
+      "waveFigureNumber": 13
+    },
+    {
+      "number": 28,
+      "name": "Blaue magnetische Hand",
+      "toneNumber": 1,
+      "figureNumber": 5,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 29,
+      "name": "Resonanter Niwanes",
+      "toneNumber": 7,
+      "figureNumber": 6,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 30,
+      "name": "Gelber lunarer Stern",
+      "toneNumber": 2,
+      "figureNumber": 7,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 31,
+      "name": "Roter elektrischer Mond",
+      "toneNumber": 3,
+      "figureNumber": 8,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 32,
+      "name": "Weisser selbst-bestehender Hund",
+      "toneNumber": 4,
+      "figureNumber": 9,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 33,
+      "name": "Blauer oberton Affe",
+      "toneNumber": 5,
+      "figureNumber": 10,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 34,
+      "name": "Gelber rhythmischer Mensch",
+      "toneNumber": 6,
+      "figureNumber": 11,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 35,
+      "name": "Roter resonanter Himmels- wanderer",
+      "toneNumber": 7,
+      "figureNumber": 12,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 36,
+      "name": "Weisser galaktischer Magier",
+      "toneNumber": 8,
+      "figureNumber": 13,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 37,
+      "name": "Blauer solarer Adler",
+      "toneNumber": 9,
+      "figureNumber": 14,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 38,
+      "name": "Gelber planetarer Krieger",
+      "toneNumber": 10,
+      "figureNumber": 15,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 39,
+      "name": "Rote spektrale Erde",
+      "toneNumber": 11,
+      "figureNumber": 16,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 40,
+      "name": "Weisser kristaller Spiegel",
+      "toneNumber": 12,
+      "figureNumber": 17,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 41,
+      "name": "Blauer kosmischer Sturm",
+      "toneNumber": 13,
+      "figureNumber": 18,
+      "waveFigureNumber": 5
+    },
+    {
+      "number": 42,
+      "name": "Gelbe magnetische Sonne",
+      "toneNumber": 1,
+      "figureNumber": 19,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 43,
+      "name": "Roter lunarer Drache",
+      "toneNumber": 2,
+      "figureNumber": 20,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 44,
+      "name": "Weisser elektrischer Wind",
+      "toneNumber": 3,
+      "figureNumber": 21,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 45,
+      "name": "Blaue selbst-bestehende Nacht",
+      "toneNumber": 4,
+      "figureNumber": 1,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 46,
+      "name": "Gelber oberton Samen",
+      "toneNumber": 5,
+      "figureNumber": 2,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 47,
+      "name": "Rote rhythmische Schlange",
+      "toneNumber": 6,
+      "figureNumber": 3,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 48,
+      "name": "Weisser resonanter Welten- überbrücker",
+      "toneNumber": 7,
+      "figureNumber": 4,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 49,
+      "name": "Blaue galaktische Hand",
+      "toneNumber": 8,
+      "figureNumber": 5,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 50,
+      "name": "Magnetischer Niwanes",
+      "toneNumber": 1,
+      "figureNumber": 6,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 51,
+      "name": "Gelber solarer Stern",
+      "toneNumber": 9,
+      "figureNumber": 7,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 52,
+      "name": "Roter planetarer Mond",
+      "toneNumber": 10,
+      "figureNumber": 8,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 53,
+      "name": "Weisser spektraler Hund",
+      "toneNumber": 11,
+      "figureNumber": 9,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 54,
+      "name": "Blauer kristaller Affe",
+      "toneNumber": 12,
+      "figureNumber": 10,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 55,
+      "name": "Gelber kosmischer Mensch",
+      "toneNumber": 13,
+      "figureNumber": 11,
+      "waveFigureNumber": 19
+    },
+    {
+      "number": 56,
+      "name": "Roter magnetischer Himmels- wanderer",
+      "toneNumber": 1,
+      "figureNumber": 12,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 57,
+      "name": "Weisser lunarer Magier",
+      "toneNumber": 2,
+      "figureNumber": 13,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 58,
+      "name": "Blauer elektrischer Adler",
+      "toneNumber": 3,
+      "figureNumber": 14,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 59,
+      "name": "Gelber selbst-bestehender Krieger",
+      "toneNumber": 4,
+      "figureNumber": 15,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 60,
+      "name": "Rote oberton Erde",
+      "toneNumber": 5,
+      "figureNumber": 16,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 61,
+      "name": "Weisser rhythmischer Spiegel",
+      "toneNumber": 6,
+      "figureNumber": 17,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 62,
+      "name": "Blauer resonanter Sturm",
+      "toneNumber": 7,
+      "figureNumber": 18,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 63,
+      "name": "Gelbe galaktische Sonne",
+      "toneNumber": 8,
+      "figureNumber": 19,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 64,
+      "name": "Roter solarer Drache",
+      "toneNumber": 9,
+      "figureNumber": 20,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 65,
+      "name": "Weisser planetarer Wind",
+      "toneNumber": 10,
+      "figureNumber": 21,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 66,
+      "name": "Blaue spektrale Nacht",
+      "toneNumber": 11,
+      "figureNumber": 1,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 67,
+      "name": "Gelber kristaller Samen",
+      "toneNumber": 12,
+      "figureNumber": 2,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 68,
+      "name": "Rote kosmische Schlange",
+      "toneNumber": 13,
+      "figureNumber": 3,
+      "waveFigureNumber": 12
+    },
+    {
+      "number": 69,
+      "name": "Weisser magnetischer Welten- überbrücker",
+      "toneNumber": 1,
+      "figureNumber": 4,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 70,
+      "name": "Blaue lunare Hand",
+      "toneNumber": 2,
+      "figureNumber": 5,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 71,
+      "name": "Galaktischer Niwanes",
+      "toneNumber": 8,
+      "figureNumber": 6,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 72,
+      "name": "Gelber elektrischer Stern",
+      "toneNumber": 3,
+      "figureNumber": 7,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 73,
+      "name": "Roter selbst-bestehender Mond",
+      "toneNumber": 4,
+      "figureNumber": 8,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 74,
+      "name": "Weisser oberton Hund",
+      "toneNumber": 5,
+      "figureNumber": 9,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 75,
+      "name": "Blauer rhythmischer Affe",
+      "toneNumber": 6,
+      "figureNumber": 10,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 76,
+      "name": "Gelber resonanter Mensch",
+      "toneNumber": 7,
+      "figureNumber": 11,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 77,
+      "name": "Roter galaktischer Himmels- wanderer",
+      "toneNumber": 8,
+      "figureNumber": 12,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 78,
+      "name": "Weisser solarer Magier",
+      "toneNumber": 9,
+      "figureNumber": 13,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 79,
+      "name": "Blauer planetarer Adler",
+      "toneNumber": 10,
+      "figureNumber": 14,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 80,
+      "name": "Gelber spektraler Krieger",
+      "toneNumber": 11,
+      "figureNumber": 15,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 81,
+      "name": "Rote kristalle Erde",
+      "toneNumber": 12,
+      "figureNumber": 16,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 82,
+      "name": "Weisser kosmischer Spiegel",
+      "toneNumber": 13,
+      "figureNumber": 17,
+      "waveFigureNumber": 4
+    },
+    {
+      "number": 83,
+      "name": "Blauer magnetischer Sturm",
+      "toneNumber": 1,
+      "figureNumber": 18,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 84,
+      "name": "Gelbe lunare Sonne",
+      "toneNumber": 2,
+      "figureNumber": 19,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 85,
+      "name": "Roter elektrischer Drache",
+      "toneNumber": 3,
+      "figureNumber": 20,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 86,
+      "name": "Weisser selbst-bestehender Wind",
+      "toneNumber": 4,
+      "figureNumber": 21,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 87,
+      "name": "Blaue oberton Nacht",
+      "toneNumber": 5,
+      "figureNumber": 1,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 88,
+      "name": "Gelber rhythmischer Samen",
+      "toneNumber": 6,
+      "figureNumber": 2,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 89,
+      "name": "Rote resonante Schlange",
+      "toneNumber": 7,
+      "figureNumber": 3,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 90,
+      "name": "Weisser galaktischer Welten- überbrücker",
+      "toneNumber": 8,
+      "figureNumber": 4,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 91,
+      "name": "Blaue solare Hand",
+      "toneNumber": 9,
+      "figureNumber": 5,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 92,
+      "name": "Lunarer Niwanes",
+      "toneNumber": 2,
+      "figureNumber": 6,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 93,
+      "name": "Gelber planetarer Stern",
+      "toneNumber": 10,
+      "figureNumber": 7,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 94,
+      "name": "Roter spektraler Mond",
+      "toneNumber": 11,
+      "figureNumber": 8,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 95,
+      "name": "Weisser kristaller Hund",
+      "toneNumber": 12,
+      "figureNumber": 9,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 96,
+      "name": "Blauer kosmischer Affe",
+      "toneNumber": 13,
+      "figureNumber": 10,
+      "waveFigureNumber": 18
+    },
+    {
+      "number": 97,
+      "name": "Gelber magnetischer Mensch",
+      "toneNumber": 1,
+      "figureNumber": 11,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 98,
+      "name": "Roter lunarer Himmelswanderer",
+      "toneNumber": 2,
+      "figureNumber": 12,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 99,
+      "name": "Weisser elektrischer Magier",
+      "toneNumber": 3,
+      "figureNumber": 13,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 100,
+      "name": "Blauer selbst-bestehender Adler",
+      "toneNumber": 4,
+      "figureNumber": 14,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 101,
+      "name": "Gelber oberton Krieger",
+      "toneNumber": 5,
+      "figureNumber": 15,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 102,
+      "name": "Rote rhythmische Erde",
+      "toneNumber": 6,
+      "figureNumber": 16,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 103,
+      "name": "Weisser resonanter Spiegel",
+      "toneNumber": 7,
+      "figureNumber": 17,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 104,
+      "name": "Blauer galaktischer Sturm",
+      "toneNumber": 8,
+      "figureNumber": 18,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 105,
+      "name": "Gelbe solare Sonne",
+      "toneNumber": 9,
+      "figureNumber": 19,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 106,
+      "name": "Roter planetarer Drache",
+      "toneNumber": 10,
+      "figureNumber": 20,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 107,
+      "name": "Weisser spektraler Wind",
+      "toneNumber": 11,
+      "figureNumber": 21,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 108,
+      "name": "Blaue kristalle Nacht",
+      "toneNumber": 12,
+      "figureNumber": 1,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 109,
+      "name": "Gelber kosmischer Samen",
+      "toneNumber": 13,
+      "figureNumber": 2,
+      "waveFigureNumber": 11
+    },
+    {
+      "number": 110,
+      "name": "Rote magnetische Schlange",
+      "toneNumber": 1,
+      "figureNumber": 3,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 111,
+      "name": "Weisser lunarer Welten- überbrücker",
+      "toneNumber": 2,
+      "figureNumber": 4,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 112,
+      "name": "Blaue elektrische Hand",
+      "toneNumber": 3,
+      "figureNumber": 5,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 113,
+      "name": "Solarer Niwanes",
+      "toneNumber": 9,
+      "figureNumber": 6,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 114,
+      "name": "Gelber selbst-bestehender Stern",
+      "toneNumber": 4,
+      "figureNumber": 7,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 115,
+      "name": "Roter oberton Mond",
+      "toneNumber": 5,
+      "figureNumber": 8,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 116,
+      "name": "Weisser rhythmischer Hund",
+      "toneNumber": 6,
+      "figureNumber": 9,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 117,
+      "name": "Blauer resonanter Affe",
+      "toneNumber": 7,
+      "figureNumber": 10,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 118,
+      "name": "Gelber galaktischer Mensch",
+      "toneNumber": 8,
+      "figureNumber": 11,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 119,
+      "name": "Roter solarer Himmels- wanderer",
+      "toneNumber": 9,
+      "figureNumber": 12,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 120,
+      "name": "Weisser planetarer Magier",
+      "toneNumber": 10,
+      "figureNumber": 13,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 121,
+      "name": "Blauer spektraler Adler",
+      "toneNumber": 11,
+      "figureNumber": 14,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 122,
+      "name": "Gelber kristaller Krieger",
+      "toneNumber": 12,
+      "figureNumber": 15,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 123,
+      "name": "Rote kosmische Erde",
+      "toneNumber": 13,
+      "figureNumber": 16,
+      "waveFigureNumber": 3
+    },
+    {
+      "number": 124,
+      "name": "Weisser magnetischer Spiegel",
+      "toneNumber": 1,
+      "figureNumber": 17,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 125,
+      "name": "Blauer lunarer Sturm",
+      "toneNumber": 2,
+      "figureNumber": 18,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 126,
+      "name": "Gelbe elektrische Sonne",
+      "toneNumber": 3,
+      "figureNumber": 19,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 127,
+      "name": "Roter selbst-bestehender Drache",
+      "toneNumber": 4,
+      "figureNumber": 20,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 128,
+      "name": "Weisser oberton Wind",
+      "toneNumber": 5,
+      "figureNumber": 21,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 129,
+      "name": "Blaue rhythmische Nacht",
+      "toneNumber": 6,
+      "figureNumber": 1,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 130,
+      "name": "Gelber resonanter Samen",
+      "toneNumber": 7,
+      "figureNumber": 2,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 131,
+      "name": "Rote galaktische Schlange",
+      "toneNumber": 8,
+      "figureNumber": 3,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 132,
+      "name": "Weisser solarer Welten- überbrücker",
+      "toneNumber": 9,
+      "figureNumber": 4,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 133,
+      "name": "Blaue planetare Hand",
+      "toneNumber": 10,
+      "figureNumber": 5,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 134,
+      "name": "Elektrischer Niwanes",
+      "toneNumber": 3,
+      "figureNumber": 6,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 135,
+      "name": "Gelber spektraler Stern",
+      "toneNumber": 11,
+      "figureNumber": 7,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 136,
+      "name": "Roter kristaller Mond",
+      "toneNumber": 12,
+      "figureNumber": 8,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 137,
+      "name": "Weisser kosmischer Hund",
+      "toneNumber": 13,
+      "figureNumber": 9,
+      "waveFigureNumber": 17
+    },
+    {
+      "number": 138,
+      "name": "Blauer magnetischer Affe",
+      "toneNumber": 1,
+      "figureNumber": 10,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 139,
+      "name": "Gelber lunarer Mensch",
+      "toneNumber": 2,
+      "figureNumber": 11,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 140,
+      "name": "Roter elektrischer Himmels- wanderer",
+      "toneNumber": 3,
+      "figureNumber": 12,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 141,
+      "name": "Weisser selbst-bestehender Magier",
+      "toneNumber": 4,
+      "figureNumber": 13,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 142,
+      "name": "Blauer oberton Adler",
+      "toneNumber": 5,
+      "figureNumber": 14,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 143,
+      "name": "Gelber rhythmischer Krieger",
+      "toneNumber": 6,
+      "figureNumber": 15,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 144,
+      "name": "Rote resonante Erde",
+      "toneNumber": 7,
+      "figureNumber": 16,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 145,
+      "name": "Weisser galaktischer Spiegel",
+      "toneNumber": 8,
+      "figureNumber": 17,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 146,
+      "name": "Blauer solarer Sturm",
+      "toneNumber": 9,
+      "figureNumber": 18,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 147,
+      "name": "Gelbe planetare Sonne",
+      "toneNumber": 10,
+      "figureNumber": 19,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 148,
+      "name": "Roter spektraler Drache",
+      "toneNumber": 11,
+      "figureNumber": 20,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 149,
+      "name": "Weisser kristaller Wind",
+      "toneNumber": 12,
+      "figureNumber": 21,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 150,
+      "name": "Blaue kosmische Nacht",
+      "toneNumber": 13,
+      "figureNumber": 1,
+      "waveFigureNumber": 10
+    },
+    {
+      "number": 151,
+      "name": "Gelber magnetischer Samen",
+      "toneNumber": 1,
+      "figureNumber": 2,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 152,
+      "name": "Rote lunare Schlange",
+      "toneNumber": 2,
+      "figureNumber": 3,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 153,
+      "name": "Weisser elektrischer Welten- überbrücker",
+      "toneNumber": 3,
+      "figureNumber": 4,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 154,
+      "name": "Blaue selbst-bestehende Hand",
+      "toneNumber": 4,
+      "figureNumber": 5,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 155,
+      "name": "Planetarer Niwanes",
+      "toneNumber": 10,
+      "figureNumber": 6,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 156,
+      "name": "Gelber oberton Stern",
+      "toneNumber": 5,
+      "figureNumber": 7,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 157,
+      "name": "Roter rhythmischer Mond",
+      "toneNumber": 6,
+      "figureNumber": 8,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 158,
+      "name": "Weisser resonanter Hund",
+      "toneNumber": 7,
+      "figureNumber": 9,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 159,
+      "name": "Blauer galaktischer Affe",
+      "toneNumber": 8,
+      "figureNumber": 10,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 160,
+      "name": "Gelber solarer Mensch",
+      "toneNumber": 9,
+      "figureNumber": 11,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 161,
+      "name": "Roter planetarer Himmels- wanderer",
+      "toneNumber": 10,
+      "figureNumber": 12,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 162,
+      "name": "Weisser spektraler Magier",
+      "toneNumber": 11,
+      "figureNumber": 13,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 163,
+      "name": "Blauer kristaller Adler",
+      "toneNumber": 12,
+      "figureNumber": 14,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 164,
+      "name": "Gelber kosmischer Krieger",
+      "toneNumber": 13,
+      "figureNumber": 15,
+      "waveFigureNumber": 2
+    },
+    {
+      "number": 165,
+      "name": "Rote magnetische Erde",
+      "toneNumber": 1,
+      "figureNumber": 16,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 166,
+      "name": "Weisser lunarer Spiegel",
+      "toneNumber": 2,
+      "figureNumber": 17,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 167,
+      "name": "Blauer elektrischer Sturm",
+      "toneNumber": 3,
+      "figureNumber": 18,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 168,
+      "name": "Gelbe selbst-bestehende Sonne",
+      "toneNumber": 4,
+      "figureNumber": 19,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 169,
+      "name": "Roter oberton Drache",
+      "toneNumber": 5,
+      "figureNumber": 20,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 170,
+      "name": "Weisser rhythmischer Wind",
+      "toneNumber": 6,
+      "figureNumber": 21,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 171,
+      "name": "Blaue resonante Nacht",
+      "toneNumber": 7,
+      "figureNumber": 1,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 172,
+      "name": "Gelber galaktischer Samen",
+      "toneNumber": 8,
+      "figureNumber": 2,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 173,
+      "name": "Rote solare Schlange",
+      "toneNumber": 9,
+      "figureNumber": 3,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 174,
+      "name": "Weisser planetarer Welten- überbrücker",
+      "toneNumber": 10,
+      "figureNumber": 4,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 175,
+      "name": "Blaue spektrale Hand",
+      "toneNumber": 11,
+      "figureNumber": 5,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 176,
+      "name": "Selbst-existierender Niwanes",
+      "toneNumber": 4,
+      "figureNumber": 6,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 177,
+      "name": "Gelber kristaller Stern",
+      "toneNumber": 12,
+      "figureNumber": 7,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 178,
+      "name": "Roter kosmischer Mond",
+      "toneNumber": 13,
+      "figureNumber": 8,
+      "waveFigureNumber": 16
+    },
+    {
+      "number": 179,
+      "name": "Weisser magnetischer Hund",
+      "toneNumber": 1,
+      "figureNumber": 9,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 180,
+      "name": "Blauer lunarer Affe",
+      "toneNumber": 2,
+      "figureNumber": 10,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 181,
+      "name": "Gelber elektrischer Mensch",
+      "toneNumber": 3,
+      "figureNumber": 11,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 182,
+      "name": "Roter selbst-bestehender Himmels- wanderer",
+      "toneNumber": 4,
+      "figureNumber": 12,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 183,
+      "name": "Weisser oberton Magier",
+      "toneNumber": 5,
+      "figureNumber": 13,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 184,
+      "name": "Blauer rhythmischer Adler",
+      "toneNumber": 6,
+      "figureNumber": 14,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 185,
+      "name": "Gelber resonanter Krieger",
+      "toneNumber": 7,
+      "figureNumber": 15,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 186,
+      "name": "Rote galaktische Erde",
+      "toneNumber": 8,
+      "figureNumber": 16,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 187,
+      "name": "Weisser solarer Spiegel",
+      "toneNumber": 9,
+      "figureNumber": 17,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 188,
+      "name": "Blauer planetarer Sturm",
+      "toneNumber": 10,
+      "figureNumber": 18,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 189,
+      "name": "Gelbe spektrale Sonne",
+      "toneNumber": 11,
+      "figureNumber": 19,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 190,
+      "name": "Roter kristaller Drache",
+      "toneNumber": 12,
+      "figureNumber": 20,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 191,
+      "name": "Weisser kosmischer Wind",
+      "toneNumber": 13,
+      "figureNumber": 21,
+      "waveFigureNumber": 9
+    },
+    {
+      "number": 192,
+      "name": "Blaue magnetische Nacht",
+      "toneNumber": 1,
+      "figureNumber": 1,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 193,
+      "name": "Gelber lunarer Samen",
+      "toneNumber": 2,
+      "figureNumber": 2,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 194,
+      "name": "Rote elektrische Schlange",
+      "toneNumber": 3,
+      "figureNumber": 3,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 195,
+      "name": "Weisser selbst-bestehender Welten- überbrücker",
+      "toneNumber": 4,
+      "figureNumber": 4,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 196,
+      "name": "Blaue oberton Hand",
+      "toneNumber": 5,
+      "figureNumber": 5,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 197,
+      "name": "Spektraler Niwanes",
+      "toneNumber": 11,
+      "figureNumber": 6,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 198,
+      "name": "Gelber rhythmischer Stern",
+      "toneNumber": 6,
+      "figureNumber": 7,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 199,
+      "name": "Roter resonanter Mond",
+      "toneNumber": 7,
+      "figureNumber": 8,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 200,
+      "name": "Weisser galaktischer Hund",
+      "toneNumber": 8,
+      "figureNumber": 9,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 201,
+      "name": "Blauer solarer Affe",
+      "toneNumber": 9,
+      "figureNumber": 10,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 202,
+      "name": "Gelber planetarer Mensch",
+      "toneNumber": 10,
+      "figureNumber": 11,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 203,
+      "name": "Roter spektraler Himmels- wanderer",
+      "toneNumber": 11,
+      "figureNumber": 12,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 204,
+      "name": "Weisser kristaller Magier",
+      "toneNumber": 12,
+      "figureNumber": 13,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 205,
+      "name": "Blauer kosmischer Adler",
+      "toneNumber": 13,
+      "figureNumber": 14,
+      "waveFigureNumber": 1
+    },
+    {
+      "number": 206,
+      "name": "Gelber magnetischer Krieger",
+      "toneNumber": 1,
+      "figureNumber": 15,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 207,
+      "name": "Rote lunare Erde",
+      "toneNumber": 2,
+      "figureNumber": 16,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 208,
+      "name": "Weisser elektrischer Spiegel",
+      "toneNumber": 3,
+      "figureNumber": 17,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 209,
+      "name": "Blauer selbst-bestehender Sturm",
+      "toneNumber": 4,
+      "figureNumber": 18,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 210,
+      "name": "Gelbe oberton Sonne",
+      "toneNumber": 5,
+      "figureNumber": 19,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 211,
+      "name": "Roter rhythmischer Drache",
+      "toneNumber": 6,
+      "figureNumber": 20,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 212,
+      "name": "Weisser resonanter Wind",
+      "toneNumber": 7,
+      "figureNumber": 21,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 213,
+      "name": "Blaue galaktische Nacht",
+      "toneNumber": 8,
+      "figureNumber": 1,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 214,
+      "name": "Gelber solarer Samen",
+      "toneNumber": 9,
+      "figureNumber": 2,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 215,
+      "name": "Rote planetare Schlange",
+      "toneNumber": 10,
+      "figureNumber": 3,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 216,
+      "name": "Weisser spektraler Welten- überbrücker",
+      "toneNumber": 11,
+      "figureNumber": 4,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 217,
+      "name": "Blaue kristalle Hand",
+      "toneNumber": 12,
+      "figureNumber": 5,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 218,
+      "name": "Oberton Niwanes",
+      "toneNumber": 5,
+      "figureNumber": 6,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 219,
+      "name": "Gelber kosmischer Stern",
+      "toneNumber": 13,
+      "figureNumber": 7,
+      "waveFigureNumber": 15
+    },
+    {
+      "number": 220,
+      "name": "Roter magnetischer Mond",
+      "toneNumber": 1,
+      "figureNumber": 8,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 221,
+      "name": "Weisser lunarer Hund",
+      "toneNumber": 2,
+      "figureNumber": 9,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 222,
+      "name": "Blauer elektrischer Affe",
+      "toneNumber": 3,
+      "figureNumber": 10,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 223,
+      "name": "Gelber selbst-bestehender Mensch",
+      "toneNumber": 4,
+      "figureNumber": 11,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 224,
+      "name": "Roter oberton Himmels- wanderer",
+      "toneNumber": 5,
+      "figureNumber": 12,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 225,
+      "name": "Weisser rhythmischer Magier",
+      "toneNumber": 6,
+      "figureNumber": 13,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 226,
+      "name": "Blauer resonanter Adler",
+      "toneNumber": 7,
+      "figureNumber": 14,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 227,
+      "name": "Gelber galaktischer Krieger",
+      "toneNumber": 8,
+      "figureNumber": 15,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 228,
+      "name": "Rote solare Erde",
+      "toneNumber": 9,
+      "figureNumber": 16,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 229,
+      "name": "Weisser planetarer Spiegel",
+      "toneNumber": 10,
+      "figureNumber": 17,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 230,
+      "name": "Blauer spektraler Sturm",
+      "toneNumber": 11,
+      "figureNumber": 18,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 231,
+      "name": "Gelbe kristalle Sonne",
+      "toneNumber": 12,
+      "figureNumber": 19,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 232,
+      "name": "Roter kosmischer Drache",
+      "toneNumber": 13,
+      "figureNumber": 20,
+      "waveFigureNumber": 8
+    },
+    {
+      "number": 233,
+      "name": "Weisser magnetischer Wind",
+      "toneNumber": 1,
+      "figureNumber": 21,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 234,
+      "name": "Blaue lunare Nacht",
+      "toneNumber": 2,
+      "figureNumber": 1,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 235,
+      "name": "Gelber elektrischer Samen",
+      "toneNumber": 3,
+      "figureNumber": 2,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 236,
+      "name": "Rote selbst-bestehende Schlange",
+      "toneNumber": 4,
+      "figureNumber": 3,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 237,
+      "name": "Weisser oberton Welten- überbrücker",
+      "toneNumber": 5,
+      "figureNumber": 4,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 238,
+      "name": "Blaue rhythmische Hand",
+      "toneNumber": 6,
+      "figureNumber": 5,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 239,
+      "name": "Kristallener Niwanes",
+      "toneNumber": 12,
+      "figureNumber": 6,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 240,
+      "name": "Gelber resonater Stern",
+      "toneNumber": 7,
+      "figureNumber": 7,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 241,
+      "name": "Roter galaktischer Mond",
+      "toneNumber": 8,
+      "figureNumber": 8,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 242,
+      "name": "Weisser solarer Hund",
+      "toneNumber": 9,
+      "figureNumber": 9,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 243,
+      "name": "Blauer planetarer Affe",
+      "toneNumber": 10,
+      "figureNumber": 10,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 244,
+      "name": "Gelber spektraler Mensch",
+      "toneNumber": 11,
+      "figureNumber": 11,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 245,
+      "name": "Roter kristaller Himmels- wanderer",
+      "toneNumber": 12,
+      "figureNumber": 12,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 246,
+      "name": "Weisser kosmischer Magier",
+      "toneNumber": 13,
+      "figureNumber": 13,
+      "waveFigureNumber": 21
+    },
+    {
+      "number": 247,
+      "name": "Blauer magnetischer Adler",
+      "toneNumber": 1,
+      "figureNumber": 14,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 248,
+      "name": "Gelber lunarer Krieger",
+      "toneNumber": 2,
+      "figureNumber": 15,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 249,
+      "name": "Rote elektrische Erde",
+      "toneNumber": 3,
+      "figureNumber": 16,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 250,
+      "name": "Weisser selbst-bestehender Spiegel",
+      "toneNumber": 4,
+      "figureNumber": 17,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 251,
+      "name": "Blauer oberton Sturm",
+      "toneNumber": 5,
+      "figureNumber": 18,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 252,
+      "name": "Gelbe rhythmische Sonne",
+      "toneNumber": 6,
+      "figureNumber": 19,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 253,
+      "name": "Roter resonanter Drache",
+      "toneNumber": 7,
+      "figureNumber": 20,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 254,
+      "name": "Weisser galaktischer Wind",
+      "toneNumber": 8,
+      "figureNumber": 21,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 255,
+      "name": "Blaue solare Nacht",
+      "toneNumber": 9,
+      "figureNumber": 1,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 256,
+      "name": "Gelber planetarer Samen",
+      "toneNumber": 10,
+      "figureNumber": 2,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 257,
+      "name": "Rote spektrale Schlange",
+      "toneNumber": 11,
+      "figureNumber": 3,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 258,
+      "name": "Weisser kristaller Welten- überbrücker",
+      "toneNumber": 12,
+      "figureNumber": 4,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 259,
+      "name": "Blaue kosmische Hand",
+      "toneNumber": 13,
+      "figureNumber": 5,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 260,
+      "name": "Rhytmischer Niwanes",
+      "toneNumber": 6,
+      "figureNumber": 6,
+      "waveFigureNumber": 14
+    },
+    {
+      "number": 261,
+      "name": "Gelber magnetischer Stern",
+      "toneNumber": 1,
+      "figureNumber": 7,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 262,
+      "name": "Roter lunarer Mond",
+      "toneNumber": 2,
+      "figureNumber": 8,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 263,
+      "name": "Weisser elektrischer Hund",
+      "toneNumber": 3,
+      "figureNumber": 9,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 264,
+      "name": "Blauer selbst-bestehender Affe",
+      "toneNumber": 4,
+      "figureNumber": 10,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 265,
+      "name": "Gelber oberton Mensch",
+      "toneNumber": 5,
+      "figureNumber": 11,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 266,
+      "name": "Roter rhythmischer Himmels- wanderer",
+      "toneNumber": 6,
+      "figureNumber": 12,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 267,
+      "name": "Weisser resonanter Magier",
+      "toneNumber": 7,
+      "figureNumber": 13,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 268,
+      "name": "Blauer galaktischer Adler",
+      "toneNumber": 8,
+      "figureNumber": 14,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 269,
+      "name": "Gelber solarer Krieger",
+      "toneNumber": 9,
+      "figureNumber": 15,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 270,
+      "name": "Rote planetare Erde",
+      "toneNumber": 10,
+      "figureNumber": 16,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 271,
+      "name": "Weisser spektraler Speigel",
+      "toneNumber": 11,
+      "figureNumber": 17,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 272,
+      "name": "Blauer kristaller Sturm",
+      "toneNumber": 12,
+      "figureNumber": 18,
+      "waveFigureNumber": 7
+    },
+    {
+      "number": 273,
+      "name": "Gelbe kosmische Sonne",
+      "toneNumber": 13,
+      "figureNumber": 19,
+      "waveFigureNumber": 7
+    }
+  ],
+  "verification": [
+    {
+      "date": "2026-08-31",
+      "kin": 106
+    },
+    {
+      "date": "2026-09-01",
+      "kin": 107
+    },
+    {
+      "date": "2026-09-02",
+      "kin": 108
+    },
+    {
+      "date": "2026-09-03",
+      "kin": 109
+    }
+  ]
+}
