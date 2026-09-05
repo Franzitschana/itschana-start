@@ -18,6 +18,7 @@
   const savedEntry = document.getElementById("saved-entry");
   const savedEntryContent = document.getElementById("saved-entry-content");
   const savedEntryEmpty = document.getElementById("saved-entry-empty");
+  const newEntryButton = document.getElementById("new-entry");
   let savedEntries = [];
 
   function localDateAtItschanaDay() {
@@ -83,6 +84,7 @@
   function renderSavedEntries() {
     savedEntryContent.replaceChildren();
     savedEntryEmpty.hidden = savedEntries.length > 0;
+    newEntryButton.hidden = savedEntries.length === 0;
     savedEntries.slice().reverse().forEach((data) => {
       const article = document.createElement("article");
       article.className = "saved-trace";
@@ -152,8 +154,21 @@
     savedEntries.push(data);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
     renderSavedEntries();
+    saveButton.disabled = true;
     saveStatus.textContent = `Deine Spur für KIN ${kin || "–"} wurde nur auf diesem Gerät bewahrt.`;
     savedEntry.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  newEntryButton.addEventListener("click", () => {
+    form.reset();
+    saveButton.disabled = false;
+    if (timerId) stopTimer();
+    secondsLeft = TOTAL_SECONDS;
+    timerDisplay.textContent = formatTime(secondsLeft);
+    timerToggle.textContent = "Zeit starten";
+    saveStatus.textContent = "Ein neuer Wahrnehmungsraum ist geöffnet.";
+    showStep(1);
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   renderDaySpace(); loadSavedEntries(); showStep(1);
