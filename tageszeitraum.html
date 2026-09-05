@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Der heutige Zeitraum im natürlichen Itschana-Zyklus.">
+  <title>Der heutige Zeitraum · Itschana RESET</title>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="tageszeitraum.css">
+</head>
+<body class="zeitraum-page">
+  <a class="skip-link" href="#tagesraum">Direkt zum heutigen Zeitraum</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="kalender.html">Kalender</a><a href="podcast-heute.html">Podcast</a><a href="reset.html" aria-current="page">RESET</a><a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main id="tagesraum" class="zeitraum-main">
+    <section class="zeitraum-intro">
+      <a class="back-link" href="reset.html">← Zurück zur Spielwiese</a>
+      <p class="eyebrow">Itschana begleitet</p>
+      <h1>Der heutige Zeitraum</h1>
+      <p>Keine Vorgabe für deinen Tag. Ein Raum, in dem du wahrnehmen kannst, was in dir anklingt.</p>
+    </section>
+
+    <section class="kin-stage" aria-live="polite" aria-busy="true" id="kin-stage">
+      <div class="date-line">
+        <span id="date-weekday">Heute</span>
+        <strong id="date-full">Datum wird geöffnet …</strong>
+        <span class="day-boundary">Tageswechsel 03:08 Uhr</span>
+      </div>
+
+      <div class="kin-center">
+            <div class="glyph-halo" role="img" aria-label="Itschana-Figur">
+              <span class="kin-glyph-unit" aria-hidden="true">
+                <span class="tone-mark" id="tone-mark"></span>
+                <span class="glyph-symbol" id="figure-glyph"></span>
+              </span>
+            </div>
+        <div class="kin-heading">
+          <span id="kin-number">KIN …</span>
+          <h2 id="kin-name">Der Tagesraum öffnet sich</h2>
+          <p id="tone-name"></p>
+        </div>
+      </div>
+
+      <div class="flh-grid">
+        <article class="flh-card tone-card">
+          <span class="card-label">Ton <b id="tone-number"></b></span>
+          <h3 id="tone-keyword"></h3>
+          <p class="flh-text" id="tone-flh"></p>
+          <p class="card-detail" id="tone-orientation"></p>
+          <p class="card-detail" id="tone-dimension"></p>
+        </article>
+        <article class="flh-card figure-card">
+          <span class="card-label">Figur <b id="figure-number"></b></span>
+          <h3 id="figure-name"></h3>
+          <p class="flh-text" id="figure-flh"></p>
+          <p class="card-detail" id="figure-purpose"></p>
+        </article>
+      </div>
+
+      <div class="wave-line">
+        <span>Getragen von der Welle</span>
+        <a id="wave-name" href="welle-niwanes.html" aria-label="Vollständigen Verlauf der Welle öffnen"></a>
+      </div>
+
+      <nav class="day-navigation" aria-label="Zeitraum wechseln">
+        <button type="button" id="previous-day" class="day-button"><span>←</span> Vorheriger Tag</button>
+        <button type="button" id="today" class="day-button today-button">Heute</button>
+        <button type="button" id="next-day" class="day-button">Nächster Tag <span>→</span></button>
+      </nav>
+    </section>
+
+    <section class="resonance-space">
+      <p class="eyebrow">Deine Wahrnehmung bleibt frei</p>
+      <h2>Was zeigt sich, bevor du es erklärst?</h2>
+      <p>Du musst mit diesem Zeitraum nicht übereinstimmen. Auch keine Resonanz ist eine wirkliche Wahrnehmung.</p>
+      <a class="button button-primary" href="reset.html#spielwiese">In die drei Minuten gehen</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+  </footer>
+  <script src="tageszeitraum.js"></script>
+</body>
+</html>

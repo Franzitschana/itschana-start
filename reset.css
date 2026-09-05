@@ -72,6 +72,14 @@ textarea { width: 100%; padding: 15px 16px; color: var(--ink); background: #fff;
 .form-actions { margin-top: 30px; display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
 .save-status { min-height: 1.5em; margin: 14px 0 0; color: var(--teal); text-align: right; }
 .saved-entry { margin-top: 34px; background: #f5faf8; }
+.saved-entry-intro { color: var(--muted); }
+.saved-entry-empty { margin: 28px 0 0; padding: 22px; color: var(--muted); text-align: center; background: rgba(255,255,255,.7); border: 1px dashed #aebfbb; border-radius: 18px; }
+.saved-entry-list { display: grid; gap: 22px; margin-top: 30px; }
+.new-entry-button { margin-top: 28px; }
+.saved-trace { padding: 26px; background: #fff; border: 1px solid rgba(21,63,61,.14); border-radius: 20px; }
+.saved-trace header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 24px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #dce9e5; }
+.saved-trace-date { margin: 0; color: var(--muted); font-size: .92rem; }
+.saved-trace-kin { color: var(--forest); font-size: 1.18rem; }
 .saved-entry dl { display: grid; grid-template-columns: minmax(120px,.35fr) 1fr; gap: 8px 20px; }
 .saved-entry dt { color: var(--muted); font-weight: 700; }
 .saved-entry dd { margin: 0; white-space: pre-wrap; }
@@ -101,7 +109,7 @@ footer { padding: 52px 20px 48px; display: flex; flex-direction: column; align-i
   .hero-intro { max-width: 520px; margin: 28px auto 34px; font-size: 1rem; line-height: 1.55; }
   .day-grid, .field-grid { grid-template-columns: 1fr; } .principle-grid { grid-template-columns: 1fr 1fr; }
   .timer-card { align-items: flex-start; flex-direction: column; } .step-dot span { display: none; }
-  .form-step { min-height: 280px; } .saved-entry dl { grid-template-columns: 1fr; gap: 2px; } .saved-entry dd { margin-bottom: 14px; }
+  .form-step { min-height: 280px; } .saved-entry dl { grid-template-columns: 1fr; gap: 2px; } .saved-entry dd { margin-bottom: 14px; } .saved-trace header { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 460px) { .principle-grid { grid-template-columns: 1fr; } .form-actions .button { width: 100%; } .form-actions { flex-direction: column-reverse; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
