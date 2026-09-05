@@ -1,27 +1,9 @@
 (function () {
   "use strict";
 
-  const ANCHOR_DATE = Date.UTC(1989, 10, 19);
-  const ANCHOR_KIN = 49;
-  const CYCLE_LENGTH = 273;
-  let selectedDate = itschanaToday();
+  const requestedDate = ItschanaCalendar.dateFromIso(new URLSearchParams(window.location.search).get("date"));
+  let selectedDate = requestedDate || ItschanaCalendar.today();
   let data;
-
-  function itschanaToday() {
-    const now = new Date();
-    if (now.getHours() < 3 || (now.getHours() === 3 && now.getMinutes() < 8)) now.setDate(now.getDate() - 1);
-    return new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  }
-
-  function modulo(value, divisor) {
-    return ((value % divisor) + divisor) % divisor;
-  }
-
-  function kinForDate(date) {
-    const utcDate = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
-    const difference = Math.round((utcDate - ANCHOR_DATE) / 86400000);
-    return modulo(ANCHOR_KIN - 1 + difference, CYCLE_LENGTH) + 1;
-  }
 
   function byNumber(collection, number) {
     return collection.find((entry) => entry.number === number);
@@ -67,12 +49,12 @@
   }
 
   function render() {
-    const kinNumber = kinForDate(selectedDate);
+    const kinNumber = ItschanaCalendar.kinForDate(selectedDate);
     const kin = byNumber(data.kins, kinNumber);
     const tone = byNumber(data.tones, kin.toneNumber);
     const figure = byNumber(data.figures, kin.figureNumber);
     const wave = byNumber(data.figures, kin.waveFigureNumber);
-    const today = itschanaToday();
+    const today = ItschanaCalendar.today();
     const isToday = sameDay(selectedDate, today);
 
     setText("date-weekday", isToday ? "Heute" : new Intl.DateTimeFormat("de-AT", { weekday: "long" }).format(selectedDate));
@@ -111,13 +93,18 @@
 
   function moveDay(amount) {
     selectedDate.setDate(selectedDate.getDate() + amount);
+    window.history.replaceState(null, "", `?date=${ItschanaCalendar.isoFromDate(selectedDate)}`);
     render();
     document.getElementById("kin-stage").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   document.getElementById("previous-day").addEventListener("click", () => moveDay(-1));
   document.getElementById("next-day").addEventListener("click", () => moveDay(1));
-  document.getElementById("today").addEventListener("click", () => { selectedDate = itschanaToday(); render(); });
+  document.getElementById("today").addEventListener("click", () => {
+    selectedDate = ItschanaCalendar.today();
+    window.history.replaceState(null, "", window.location.pathname);
+    render();
+  });
 
   fetch("data/itschana-flh.json")
     .then((response) => {

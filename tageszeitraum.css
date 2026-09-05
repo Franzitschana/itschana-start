@@ -2,6 +2,7 @@
 .zeitraum-main { overflow: hidden; }
 .zeitraum-intro { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 42px; text-align: center; }
 .zeitraum-intro h1 { margin: 4px 0 20px; color: var(--forest); font-size: clamp(2.7rem, 7vw, 5.5rem); line-height: .98; letter-spacing: -.055em; }
+.zeitraum-intro h1 span { color: var(--teal); }
 .zeitraum-intro > p:last-child { max-width: 660px; margin: 0 auto; color: var(--muted); font-size: 1.12rem; }
 .back-link { display: inline-block; margin-bottom: 34px; color: var(--teal); font-size: .9rem; }
 .kin-stage { width: min(1080px, calc(100% - 40px)); margin: 0 auto 80px; padding: clamp(28px, 6vw, 68px); position: relative; color: #fff; background: radial-gradient(circle at 50% 22%, rgba(198,139,50,.32), transparent 31%), linear-gradient(145deg, #1b5450, #0c302e 74%); border-radius: 38px; box-shadow: 0 28px 80px rgba(13,48,46,.25); }

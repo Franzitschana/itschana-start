@@ -22,18 +22,14 @@
   let savedEntries = [];
 
   function localDateAtItschanaDay() {
-    const now = new Date();
-    if (now.getHours() < 3 || (now.getHours() === 3 && now.getMinutes() < 8)) now.setDate(now.getDate() - 1);
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    return { iso: `${year}-${month}-${day}`, date: now };
+    const date = ItschanaCalendar.today();
+    return { iso: ItschanaCalendar.isoFromDate(date), date };
   }
 
   function renderDaySpace() {
     const { iso, date } = localDateAtItschanaDay();
     document.getElementById("day-date").textContent = new Intl.DateTimeFormat("de-AT", { weekday: "long", day: "2-digit", month: "long", year: "numeric" }).format(date);
-    const kin = typeof kinList !== "undefined" ? kinList[iso] : null;
+    const kin = ItschanaCalendar.kinForDate(date);
     document.getElementById("day-kin").textContent = kin ? `KIN ${kin} – dein heutiger Beobachtungsraum` : "Für diesen Tag ist noch keine KIN-Zuordnung hinterlegt.";
   }
 
@@ -97,6 +93,11 @@
       kin.textContent = data.kin ? `KIN ${data.kin}` : "KIN noch nicht hinterlegt";
       header.append(time, kin);
 
+      const dayLink = document.createElement("a");
+      dayLink.className = "saved-trace-day-link";
+      dayLink.href = `tageszeitraum.html?date=${encodeURIComponent(data.day)}`;
+      dayLink.textContent = "Diesen Tagesraum öffnen";
+
       const items = [["Wahrnehmung", data.observation], ["Gefühl", data.feeling], ["Deutung", data.interpretation], ["Vor den Worten", data.beforeWords], ["Veränderung", data.change]].filter((item) => item[1]);
       const dl = document.createElement("dl");
       items.forEach(([label, entry]) => {
@@ -113,7 +114,7 @@
         renderSavedEntries();
         saveStatus.textContent = "Diese Spur wurde von deinem Gerät gelöscht.";
       });
-      article.append(header, dl, remove);
+      article.append(header, dl, dayLink, remove);
       savedEntryContent.append(article);
     });
   }
@@ -122,11 +123,16 @@
     try {
       const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
       savedEntries = Array.isArray(stored) ? stored : [];
+      savedEntries = savedEntries.map((entry) => {
+        const date = ItschanaCalendar.dateFromIso(entry.day);
+        return date ? { ...entry, kin: ItschanaCalendar.kinForDate(date) } : entry;
+      });
+      if (savedEntries.length) localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
       if (!savedEntries.length) {
         const legacy = JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY));
         if (legacy) {
           const { iso } = localDateAtItschanaDay();
-          const kin = typeof kinList !== "undefined" ? kinList[iso] : null;
+          const kin = ItschanaCalendar.kinForDate(ItschanaCalendar.dateFromIso(iso));
           savedEntries = [{ ...legacy, id: `legacy-${legacy.savedAt || iso}`, day: iso, kin }];
           localStorage.setItem(STORAGE_KEY, JSON.stringify(savedEntries));
         }
@@ -148,7 +154,7 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const { iso } = localDateAtItschanaDay();
-    const kin = typeof kinList !== "undefined" ? kinList[iso] : null;
+    const kin = ItschanaCalendar.kinForDate(ItschanaCalendar.dateFromIso(iso));
     const savedAt = new Date().toISOString();
     const data = { id: `${savedAt}-${Math.random().toString(36).slice(2)}`, day: iso, kin, observation: value("observation"), feeling: value("feeling"), interpretation: value("interpretation"), beforeWords: value("before-words"), change: value("change"), savedAt };
     savedEntries.push(data);

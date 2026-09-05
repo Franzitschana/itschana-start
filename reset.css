@@ -83,6 +83,7 @@ textarea { width: 100%; padding: 15px 16px; color: var(--ink); background: #fff;
 .saved-entry dl { display: grid; grid-template-columns: minmax(120px,.35fr) 1fr; gap: 8px 20px; }
 .saved-entry dt { color: var(--muted); font-weight: 700; }
 .saved-entry dd { margin: 0; white-space: pre-wrap; }
+.saved-trace-day-link { display: inline-block; margin: 18px 20px 0 0; color: var(--teal); font-weight: 800; }
 .principles { padding: 92px 0; color: #fff; background: var(--forest); }
 .principles h2 { color: #fff; }
 .principle-grid { margin-top: 42px; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
