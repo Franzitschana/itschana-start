@@ -59,6 +59,129 @@
       font-weight: bold;
     }
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itschana – Podcast des Tages</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eaf4f4;
+      color: #123;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .box {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 18px;
+      padding: 30px 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #2f6f73;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    .datum {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      color: #456;
+    }
+
+    iframe {
+      border: none;
+      max-width: 100%;
+    }
+
+    .hinweis {
+      margin-top: 20px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .nav {
+      margin-top: 25px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #2f6f73;
+      font-weight: bold;
+    }
+
+    .werkstatt-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 11px 18px;
+      color: white !important;
+      background: #2f6f73;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🎧 Ruf des Raumes</h1>
+    <div id="inhalt"></div>
+    <div class="nav">
+      <a href="podcast-archiv.html">Zum Podcast-Archiv</a>
+      <br>
+      <a class="werkstatt-link" href="podcast-werkstatt.html">Podcast-Werkstatt öffnen</a>
+    </div>
+  </div>
+
+  <script src="podcasts.js"></script>
+  <script>
+    const inhalt = document.getElementById("inhalt");
+
+    const jetzt = new Date();
+    const yyyy = jetzt.getFullYear();
+    const mm = String(jetzt.getMonth() + 1).padStart(2, "0");
+    const dd = String(jetzt.getDate()).padStart(2, "0");
+    const heuteString = `${yyyy}-${mm}-${dd}`;
+
+    if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
+      inhalt.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
+    } else {
+      const heutigerPodcast = podcasts.find(p => p.datum === heuteString);
+
+      if (heutigerPodcast) {
+        const formatiertesDatum = `${dd}.${mm}.${yyyy}`;
+        inhalt.innerHTML = `
+          <h2>${formatiertesDatum} – KIN ${heutigerPodcast.kin} – ${heutigerPodcast.name}</h2>
+          <div class="datum">${heutigerPodcast.titel}</div>
+          <iframe
+            src="${heutigerPodcast.audio}"
+            width="100%"
+            height="100"
+            allow="autoplay"
+            style="border:none;">
+          </iframe>
+        `;
+      } else {
+        inhalt.innerHTML = `
+          <h2>Der heutige Ruf des Raumes</h2>
+          <div class="hinweis">
+            Für heute ist noch kein Podcast eingetragen.<br>
+            Gesucht wurde: <strong>${heuteString}</strong>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
     .werkstatt-link {
       display: inline-block;
       margin-top: 16px;
