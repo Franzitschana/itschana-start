@@ -13,6 +13,13 @@
     document.getElementById(id).textContent = value || "";
   }
 
+  function kinDisplayName(kinName, figure) {
+    if (figure.number === 6 || !/^(Der|Die)\s/.test(figure.name)) return kinName;
+    const [article, color] = figure.name.split(/\s+/);
+    const description = kinName.split(/\s+/).slice(1).join(" ");
+    return `${article} ${color} ${description}`;
+  }
+
   function renderToneMark(toneNumber) {
     const mark = document.getElementById("tone-mark");
     const bars = Math.floor(toneNumber / 5);
@@ -60,7 +67,7 @@
     setText("date-weekday", isToday ? "Heute" : new Intl.DateTimeFormat("de-AT", { weekday: "long" }).format(selectedDate));
     setText("date-full", new Intl.DateTimeFormat("de-AT", { day: "2-digit", month: "long", year: "numeric" }).format(selectedDate));
     setText("kin-number", `KIN ${kin.number}`);
-    setText("kin-name", kin.name);
+    setText("kin-name", kinDisplayName(kin.name, figure));
     setText("tone-name", tone.name);
     setText("tone-number", tone.number);
     renderToneMark(tone.number);
