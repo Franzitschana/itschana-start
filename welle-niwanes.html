@@ -3,170 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Itschana – Welle und Niwanes</title>
-
+  <title>Itschana – Der Wellenraum</title>
   <style>
-    body {
-      margin: 0;
-      padding: 30px 18px;
-      font-family: Arial, sans-serif;
-      background: #eef7fa;
-      color: #17333d;
-    }
-
-    .raum {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .erklaerung {
-      text-align: center;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
-
-    .welle {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 12px;
-    }
-
-    .tag {
-      background: white;
-      border-radius: 14px;
-      padding: 16px 8px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,.08);
-    }
-
-    .ton {
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .kin {
-      margin-top: 8px;
-      font-size: 14px;
-    }
-
-    .niwanes {
-      background: #dff5ff;
-      border: 3px solid #57a9c7;
-    }
-
-    .neutral {
-      margin-top: 7px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 650px) {
-      .welle {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+    :root { color-scheme:light; --tief:#123f3b; --gruen:#17635a; --gold:#d8aa4b; --creme:#f7f1e5; --eis:#dff5ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:28px 18px 45px; font-family:Arial,sans-serif; background:var(--creme); color:var(--tief); }
+    .raum { max-width:980px; margin:auto; }
+    .zurueck { color:var(--gruen); font-size:.92rem; }
+    header { max-width:720px; margin:28px auto 32px; text-align:center; }
+    .uebertitel { color:#a86e00; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { margin:10px 0 8px; font-size:clamp(2rem,6vw,3.5rem); line-height:1.05; }
+    .zeitraum { font-size:1.05rem; font-weight:700; }
+    .erklaerung { line-height:1.6; }
+    .welle { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:12px; }
+    .tag { display:block; min-height:172px; padding:16px 10px; border:1px solid rgba(18,63,59,.14); border-radius:16px; background:#fff; color:inherit; text-align:center; text-decoration:none; box-shadow:0 4px 14px rgba(18,63,59,.07); }
+    .tag:hover, .tag:focus-visible { border-color:var(--gold); outline:none; transform:translateY(-1px); }
+    .tag.heute { border:3px solid var(--gold); padding:14px 8px; box-shadow:0 7px 20px rgba(168,110,0,.2); }
+    .tag.niwanes { background:var(--eis); border-color:#57a9c7; }
+    .platz { min-height:33px; font-size:1.65rem; font-weight:700; }
+    .kin { display:block; margin-top:9px; font-size:.9rem; line-height:1.45; }
+    .name { display:block; margin:4px 0; font-weight:700; }
+    .neutral { display:block; margin-top:8px; font-size:.78rem; font-weight:700; }
+    .marke { display:block; margin-bottom:5px; color:#9b6500; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .fehler { padding:22px; border-radius:14px; background:#fff; text-align:center; }
+    @media (max-width:760px) { .welle { grid-template-columns:repeat(2,minmax(0,1fr)); } .tag { min-height:155px; } }
+    @media (max-width:390px) { .welle { grid-template-columns:1fr; } }
   </style>
 </head>
-
 <body>
-
-<div class="raum">
-
-  <h1>CHICCHAN – Die Rote Schlange</h1>
-
-  <div class="erklaerung">
-    04.09.–17.09.2026 · 13 Wellentöne + Niwanes<br><br>
-    Der Ton trägt den Platz in der Welle.<br>
-    Ton 1 beginnt die Welle – Ton 13 vollendet sie.<br><br>
-
-    Tritt Niwanes in die Welle ein, bleibt Niwanes mit seinem
-    eigenen Ton in der Welle neutral.<br>
-
-    Die nachfolgenden KIN laufen mit ihren eigenen Tönen weiter.<br>
-    Dadurch verlängert sich diese Welle auf 14 Tage.
-  </div>
-
-  <div class="welle">
-
-    <div class="tag">
-      <div class="ton">1</div>
-      <div class="kin">KIN 110<br>Die Rote Schlange<br>04.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">2</div>
-      <div class="kin">KIN 111<br>Der Weiße Weltenüberbrücker<br>05.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">3</div>
-      <div class="kin">KIN 112<br>Die Blaue Hand<br>06.09.</div>
-    </div>
-
-    <div class="tag niwanes">
-      <div class="ton">Niwanes</div>
-      <div class="kin">KIN 113<br>eigener Ton 8<br>07.09.</div>
-      <div class="neutral">neutral in der Welle</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">4</div>
-      <div class="kin">KIN 114<br>Der Gelbe Stern<br>08.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">5</div>
-      <div class="kin">KIN 115<br>Der Rote Mond<br>09.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">6</div>
-      <div class="kin">KIN 116<br>Der Weiße Hund<br>10.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">7</div>
-      <div class="kin">KIN 117<br>Die Blaue Affe<br>11.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">8</div>
-      <div class="kin">KIN 118<br>Der Gelbe Mensch<br>12.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">9</div>
-      <div class="kin">KIN 119<br>Der Rote Himmelswanderer<br>13.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">10</div>
-      <div class="kin">KIN 120<br>Der Weiße Magier<br>14.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">11</div>
-      <div class="kin">KIN 121<br>Der Blaue Adler<br>15.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">12</div>
-      <div class="kin">KIN 122<br>Der Gelbe Krieger<br>16.09.</div>
-    </div>
-
-    <div class="tag">
-      <div class="ton">13</div>
-      <div class="kin">KIN 123<br>Die Rote Erde<br>17.09.</div>
-    </div>
-
-  </div>
-
-</div>
-
+  <main class="raum">
+    <a class="zurueck" id="back-to-day" href="tageszeitraum.html">← Zurück zum Tages-KIN</a>
+    <header>
+      <div class="uebertitel">Getragen von der Welle</div>
+      <h1 id="wave-name">Der Wellenraum</h1>
+      <p class="zeitraum" id="wave-range"></p>
+      <p class="erklaerung">Der Ton trägt den Platz in der Welle. Ton 1 beginnt – Ton 13 vollendet sie. Tritt Niwanes ein, bleibt Niwanes mit seinem eigenen Ton neutral; die nachfolgenden KIN laufen mit ihren Wellentönen weiter.</p>
+    </header>
+    <section class="welle" id="wave-grid" aria-live="polite"></section>
+  </main>
+  <script src="itschana-calendar.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      const params = new URLSearchParams(location.search);
+      const selectedDate = ItschanaCalendar.dateFromIso(params.get("date")) || ItschanaCalendar.today();
+      const iso = (date) => ItschanaCalendar.isoFromDate(date);
+      const cloneDay = (date, amount) => { const copy=new Date(date); copy.setDate(copy.getDate()+amount); return copy; };
+      const sameDay = (a,b) => iso(a)===iso(b);
+      const shortDate = (date) => new Intl.DateTimeFormat("de-AT",{day:"2-digit",month:"2-digit",year:"numeric"}).format(date);
+      const longDate = (date) => new Intl.DateTimeFormat("de-AT",{day:"2-digit",month:"long",year:"numeric"}).format(date);
+      const byNumber = (items,number) => items.find((item)=>item.number===number);
+      fetch("data/itschana-flh.json").then((response) => {
+        if (!response.ok) throw new Error();
+        return response.json();
+      }).then((data) => {
+        const kinAt = (date) => byNumber(data.kins,ItschanaCalendar.kinForDate(date));
+        const waveNumber = kinAt(selectedDate).waveFigureNumber;
+        let first=new Date(selectedDate), last=new Date(selectedDate);
+        for (let i=0;i<15 && kinAt(cloneDay(first,-1)).waveFigureNumber===waveNumber;i+=1) first=cloneDay(first,-1);
+        for (let i=0;i<15 && kinAt(cloneDay(last,1)).waveFigureNumber===waveNumber;i+=1) last=cloneDay(last,1);
+        const wave=byNumber(data.figures,waveNumber);
+        const dayCount=Math.round((last-first)/86400000)+1;
+        document.getElementById("wave-name").textContent=wave.name;
+        document.title=wave.name+" – Itschana";
+        document.getElementById("wave-range").textContent=shortDate(first)+"–"+shortDate(last)+" · 13 Wellentöne"+(dayCount===14?" + Niwanes":"");
+        document.getElementById("back-to-day").href="tageszeitraum.html?date="+iso(selectedDate);
+        const cards=[];
+        for (let day=new Date(first);day<=last;day=cloneDay(day,1)) {
+          const kin=kinAt(day), figure=byNumber(data.figures,kin.figureNumber);
+          const current=sameDay(day,selectedDate), isNiwanes=figure.number===6;
+          const card=document.createElement("a");
+          card.className="tag"+(isNiwanes?" niwanes":"")+(current?" heute":"");
+          card.href="tageszeitraum.html?date="+iso(day);
+          card.setAttribute("aria-label",longDate(day)+": KIN "+kin.number+", "+kin.name);
+          card.innerHTML=(current?'<span class="marke">Gewählter Tag</span>':'')+'<span class="platz">'+(isNiwanes?'Niwanes':'Ton '+kin.toneNumber)+'</span><span class="kin">KIN '+kin.number+'<span class="name">'+figure.name+'</span>'+longDate(day)+(isNiwanes?'<span class="neutral">eigener Ton '+kin.toneNumber+' · neutral in der Welle</span>':'')+'</span>';
+          cards.push(card);
+        }
+        document.getElementById("wave-grid").replaceChildren(...cards);
+      }).catch(() => {
+        document.getElementById("wave-grid").innerHTML='<p class="fehler">Der Wellenraum konnte gerade nicht geöffnet werden.</p>';
+      });
+    })();
+  </script>
 </body>
 </html>
