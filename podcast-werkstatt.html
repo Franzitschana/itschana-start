@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Die Podcast-Werkstatt formt den heutigen Itschana-Tagesraum zu einem Sprechentwurf.">
+  <title>Podcast-Werkstatt · Itschana RESET</title>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="podcast-werkstatt.css">
+</head>
+<body class="werkstatt-page">
+  <a class="skip-link" href="#werkstatt">Direkt zur Podcast-Werkstatt</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="kalender.html">Tagesraum</a><a href="podcast-heute.html" aria-current="page">Podcast</a><a href="reset.html">RESET</a><a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main id="werkstatt" class="werkstatt-main">
+    <section class="werkstatt-intro">
+      <a class="back-link" href="podcast-heute.html">← Zurück zum Podcast</a>
+      <p class="eyebrow">Itschana – Ruf des Raumes</p>
+      <h1>Podcast-Werkstatt</h1>
+      <p class="stage-label">Stufe 1</p>
+      <p>Der heutige Itschana-Tagesraum wird zur Quelle. Du hörst hinein, veränderst, was sich zeigen möchte, und sprichst daraus deinen Ruf des Raumes.</p>
+    </section>
+
+    <section class="source-card" aria-live="polite" aria-busy="true" id="source-card">
+      <div>
+        <p class="source-label">Heutige Quelle · Tageswechsel 03:08 Uhr</p>
+        <p class="source-date" id="source-date">Der Tagesraum öffnet sich …</p>
+        <h2 id="source-kin">KIN …</h2>
+        <p class="source-tone" id="source-tone"></p>
+      </div>
+      <div class="source-details">
+        <p><span>Figur</span><strong id="source-figure">…</strong></p>
+        <p><span>Ton</span><strong id="source-tone-keyword">…</strong></p>
+        <p><span>Welle</span><strong id="source-wave">…</strong></p>
+      </div>
+      <a class="source-link" id="source-link" href="tageszeitraum.html">Den vollständigen Tagesraum öffnen →</a>
+    </section>
+
+    <section class="draft-space">
+      <div class="draft-heading">
+        <div>
+          <p class="eyebrow">Dein täglicher Sprechraum</p>
+          <h2>Der Entwurf ist schon vorbereitet</h2>
+        </div>
+        <button class="text-button" type="button" id="rebuild-draft">Neu aus dem Tagesraum bilden</button>
+      </div>
+
+      <label for="podcast-draft">Podcast-Text</label>
+      <textarea id="podcast-draft" rows="24" spellcheck="true" aria-describedby="draft-help"></textarea>
+      <p id="draft-help" class="draft-help">Der Text ist eine Einladung, keine Vorgabe. Alles bleibt veränderbar.</p>
+
+      <div class="draft-actions">
+        <button class="button button-soft" type="button" id="save-draft">Auf diesem Gerät speichern</button>
+        <button class="button button-primary" type="button" id="copy-draft">Text kopieren</button>
+      </div>
+      <p class="draft-status" id="draft-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="daily-path" aria-labelledby="daily-path-title">
+      <p class="eyebrow">Einfach durch den Tag</p>
+      <h2 id="daily-path-title">Drei kleine Schritte</h2>
+      <div class="path-grid">
+        <article><span>1</span><h3>Hineinhören</h3><p>Den vorbereiteten Text lesen und wahrnehmen, was heute wirklich klingt.</p></article>
+        <article><span>2</span><h3>Verändern</h3><p>Wörter ergänzen, streichen oder stehen lassen. Deine Wahrnehmung führt.</p></article>
+        <article><span>3</span><h3>Sprechen</h3><p>Den Ruf aufnehmen. Die Veröffentlichung bleibt ein eigener, bewusster Schritt.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+  </footer>
+  <script src="itschana-calendar.js"></script>
+  <script src="podcast-werkstatt.js"></script>
+</body>
+</html>

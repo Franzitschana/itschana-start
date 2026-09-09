@@ -3,110 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Itschana – Podcast des Tages</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #eaf4f4;
-      color: #123;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .box {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 18px;
-      padding: 30px 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-top: 0;
-      color: #2f6f73;
-    }
-
-    h2 {
-      margin-bottom: 8px;
-    }
-
-    .datum {
-      font-size: 1.05rem;
-      margin-bottom: 18px;
-      color: #456;
-    }
-
-    iframe {
-      border: none;
-      max-width: 100%;
-    }
-
-    .hinweis {
-      margin-top: 20px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .nav {
-      margin-top: 25px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #2f6f73;
-      font-weight: bold;
-    }
-  </style>
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Der tägliche Ruf des Raumes zum Lesen und Anhören.">
+  <title>Itschana – Ruf des Raumes</title>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="podcast-heute.css">
 </head>
-<body>
-  <div class="box">
-    <h1>🎧 Ruf des Raumes</h1>
-    <div id="inhalt"></div>
-    <div class="nav">
+<body class="podcast-page">
+  <a class="skip-link" href="#tagesruf">Direkt zum heutigen Ruf</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="tageszeitraum.html">Tagesraum</a><a href="podcast-heute.html" aria-current="page">Podcast</a><a href="reset.html">RESET</a><a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+  <main id="tagesruf" class="podcast-main">
+    <section class="podcast-intro">
+      <p class="eyebrow">Itschana</p>
+      <h1>Ruf des Raumes</h1>
+      <p>Der heutige Zeitraum – zum Lesen und, wenn eine Aufnahme vorhanden ist, zum Anhören.</p>
+    </section>
+    <article class="ruf-card" id="ruf-card" aria-live="polite" aria-busy="true">
+      <header class="ruf-header">
+        <span id="date-weekday">Heute</span>
+        <strong id="date-full">Der Tagesruf öffnet sich …</strong>
+        <span class="day-boundary">Tageswechsel 03:08 Uhr</span>
+      </header>
+      <div class="kin-line">
+        <span id="kin-number">KIN …</span>
+        <h2 id="kin-name">Der Raum wird lesbar</h2>
+        <p><span id="tone-name"></span><span aria-hidden="true"> · </span><span id="wave-name"></span></p>
+      </div>
+      <section class="listen-space" id="listen-space" hidden>
+        <p class="section-label">Den Ruf anhören</p>
+        <iframe id="audio-player" title="Podcast des Tages" width="100%" height="100" allow="autoplay"></iframe>
+      </section>
+      <section class="reading-space" aria-labelledby="reading-title">
+        <p class="section-label">Den Ruf lesen</p>
+        <h2 id="reading-title">Der heutige Ruf des Raumes</h2>
+        <p class="opening" id="opening"></p>
+        <div class="four-spaces">
+          <section><h3>Zeit</h3><p id="space-time"></p></section>
+          <section><h3>Leben</h3><p id="space-life"></p></section>
+          <section><h3>Sinne</h3><p id="space-senses"></p></section>
+          <section><h3>Bewusstsein</h3><p id="space-awareness"></p></section>
+        </div>
+        <div class="daily-pause">
+          <h3>Eine Wahrnehmung für heute</h3>
+          <p id="daily-question"></p>
+        </div>
+        <p class="closing">Nimm mit, was in dir anklingt. Lass liegen, was heute nicht zu dir spricht.</p>
+        <p class="itschana-sign">It tscha na.</p>
+      </section>
+      <nav class="day-navigation" aria-label="Tagesruf wechseln">
+        <button type="button" id="previous-day" class="day-button"><span>←</span> Vorheriger Tag</button>
+        <button type="button" id="today" class="day-button today-button">Heute</button>
+        <button type="button" id="next-day" class="day-button">Nächster Tag <span>→</span></button>
+      </nav>
+    </article>
+    <nav class="podcast-links" aria-label="Weitere Wege">
+      <a class="workshop-link" href="podcast-werkstatt.html">Podcast-Werkstatt öffnen</a>
       <a href="podcast-archiv.html">Zum Podcast-Archiv</a>
-    </div>
-  </div>
-
+      <a id="day-room-link" href="tageszeitraum.html">Den vollständigen Tagesraum öffnen</a>
+    </nav>
+  </main>
+  <footer>
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+  </footer>
   <script src="podcasts.js"></script>
-  <script>
-    const inhalt = document.getElementById("inhalt");
-
-    const jetzt = new Date();
-    const yyyy = jetzt.getFullYear();
-    const mm = String(jetzt.getMonth() + 1).padStart(2, "0");
-    const dd = String(jetzt.getDate()).padStart(2, "0");
-    const heuteString = `${yyyy}-${mm}-${dd}`;
-
-    if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
-      inhalt.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
-    } else {
-      const heutigerPodcast = podcasts.find(p => p.datum === heuteString);
-
-      if (heutigerPodcast) {
-        const formatiertesDatum = `${dd}.${mm}.${yyyy}`;
-        inhalt.innerHTML = `
-          <h2>${formatiertesDatum} – KIN ${heutigerPodcast.kin} – ${heutigerPodcast.name}</h2>
-          <div class="datum">${heutigerPodcast.titel}</div>
-          <iframe
-            src="${heutigerPodcast.audio}"
-            width="100%"
-            height="100"
-            allow="autoplay"
-            style="border:none;">
-          </iframe>
-        `;
-      } else {
-        inhalt.innerHTML = `
-          <h2>Der heutige Ruf des Raumes</h2>
-          <div class="hinweis">
-            Für heute ist noch kein Podcast eingetragen.<br>
-            Gesucht wurde: <strong>${heuteString}</strong>
-          </div>
-        `;
-      }
-    }
-  </script>
+  <script src="itschana-calendar.js"></script>
+  <script src="podcast-heute.js"></script>
 </body>
 </html>
