@@ -10,8 +10,9 @@
   function kinDisplayName(kin, figure) {
     if (figure.number === 6 || !/^(Der|Die)\s/.test(figure.name)) return kin.name;
     const [article, color] = figure.name.split(/\s+/);
-    const description = kin.name.split(/\s+/).slice(1).join(" ");
-    return `${article} ${color} ${description.charAt(0).toLocaleUpperCase("de-AT") + description.slice(1)}`;
+    let description = kin.name.split(/\s+/).slice(1).join(" ");
+    if (description.startsWith("oberton ")) description = `Oberton ${description.slice(8)}`;
+    return `${article} ${color} ${description}`;
   }
 
   function renderAudio(isoDate) {
