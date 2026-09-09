@@ -18,6 +18,7 @@
     const [article, color] = figure.name.split(/\s+/);
     let description = kinName.split(/\s+/).slice(1).join(" ");
     if (description.startsWith("oberton ")) description = `Oberton ${description.slice(8)}`;
+    else description = description.replace(/^(\S+)er\b/, "$1e");
     return `${article} ${color} ${description}`;
   }
 
