@@ -40,8 +40,31 @@
 .day-button:first-child { text-align: left; } .day-button:last-child { text-align: right; }
 .day-button:hover, .day-button:focus-visible { background: rgba(255,255,255,.1); outline: 2px solid #e6b45e; outline-offset: 2px; }
 .today-button { padding-inline: 28px; color: var(--forest); background: #fff; font-weight: 700; }
+
+.empathy-space { width: min(1040px, calc(100% - 40px)); margin: 0 auto 82px; padding: clamp(30px, 6vw, 64px); background: rgba(255,255,255,.64); border: 1px solid rgba(21,63,61,.11); border-radius: 34px; box-shadow: 0 22px 70px rgba(49,55,38,.08); }
+.empathy-space > .eyebrow, .empathy-space > h2, .empathy-lead { text-align: center; }
+.empathy-space h2 { margin: 5px 0 14px; color: var(--forest); font-size: clamp(2rem, 5vw, 3.4rem); }
+.empathy-lead { max-width: 760px; margin: 0 auto 34px; color: var(--muted); line-height: 1.7; }
+.empathy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.empathy-card { display: grid; gap: 12px; padding: 20px; background: #fffaf0; border: 1px solid rgba(21,63,61,.12); border-radius: 22px; }
+.empathy-card > span { color: var(--forest); font-weight: 700; line-height: 1.35; }
+.empathy-card textarea { width: 100%; min-height: 132px; resize: vertical; padding: 14px 15px; color: #263d38; background: #fff; border: 1px solid rgba(21,63,61,.18); border-radius: 15px; font: inherit; line-height: 1.5; box-sizing: border-box; }
+.empathy-card textarea:focus { outline: 2px solid #c68b32; outline-offset: 2px; border-color: transparent; }
+.empathy-actions { margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.empathy-secondary { color: var(--teal); background: transparent; border: 1px solid rgba(21,63,61,.22); }
+.wayfinder { margin-top: 30px; padding: clamp(24px, 4vw, 38px); background: linear-gradient(145deg, #173f3d, #0d302e); color: #fff; border-radius: 26px; }
+.wayfinder[hidden] { display: none; }
+.wayfinder .eyebrow { color: #e6b45e; }
+.wayfinder h3 { margin: 4px 0 14px; color: #fff; font-size: clamp(1.55rem, 3vw, 2.3rem); }
+.wayfinder > p { color: #d9e7e2; line-height: 1.7; }
+.image-seed { margin-top: 24px; padding: 22px; background: rgba(255,255,255,.075); border: 1px solid rgba(255,255,255,.14); border-radius: 19px; }
+.image-seed strong { display: block; margin-bottom: 8px; color: #fff1c9; font-size: 1.05rem; }
+.image-seed p { margin: 6px 0 0; color: #d9e7e2; line-height: 1.65; }
+.image-note { opacity: .72; font-size: .85rem; }
+
 .resonance-space { width: min(760px, calc(100% - 40px)); margin: 0 auto; padding: 20px 0 90px; text-align: center; }
 .resonance-space h2 { color: var(--forest); }.resonance-space > p:not(.eyebrow) { margin: 0 auto 30px; color: var(--muted); }
+@media (max-width: 860px) { .empathy-grid { grid-template-columns: 1fr; } }
 @media (max-width: 700px) {
   .zeitraum-intro { padding-top: 44px; }
   .kin-stage { width: calc(100% - 22px); margin-bottom: 58px; padding: 34px 22px 28px; border-radius: 28px; }
@@ -53,4 +76,6 @@
   .day-navigation { grid-template-columns: 1fr 1fr; }
   .today-button { grid-column: 1 / -1; grid-row: 1; }
   .day-button { text-align: center !important; }
+  .empathy-space { width: calc(100% - 22px); margin-bottom: 58px; padding: 28px 18px; border-radius: 26px; }
+  .empathy-actions .button { width: 100%; text-align: center; }
 }
