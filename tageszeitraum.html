@@ -76,6 +76,43 @@
       </nav>
     </section>
 
+    <section class="empathy-space" aria-labelledby="empathy-title">
+      <p class="eyebrow">Empathie zum Tagesraum</p>
+      <h2 id="empathy-title">Nicht deuten. Erst wahrnehmen.</h2>
+      <p class="empathy-lead">Der Itschana-Tagesraum gibt den tragenden Rahmen. Du gibst deine Wahrnehmung dazu. Daraus darf etwas entstehen, das vorher noch nicht sichtbar war.</p>
+
+      <div class="empathy-grid">
+        <label class="empathy-card">
+          <span>1 · Was zieht deine Aufmerksamkeit an?</span>
+          <textarea id="resonance-attention" rows="4" placeholder="Ein Bild, ein Gefühl, ein Gedanke, eine Bewegung …"></textarea>
+        </label>
+        <label class="empathy-card">
+          <span>2 · Was fühlt sich heute lebendig an?</span>
+          <textarea id="resonance-alive" rows="4" placeholder="Etwas, das wächst, ruft, drängt, still wird oder Raum braucht …"></textarea>
+        </label>
+        <label class="empathy-card">
+          <span>3 · Was möchtest du noch nicht erklären?</span>
+          <textarea id="resonance-open" rows="4" placeholder="Etwas darf einfach da sein, ohne sofort eine Antwort zu brauchen …"></textarea>
+        </label>
+      </div>
+
+      <div class="empathy-actions">
+        <button type="button" class="button button-primary" id="open-wayfinder">Wegweiser für weiteres Denken öffnen</button>
+        <button type="button" class="button empathy-secondary" id="clear-wayfinder">Wahrnehmung leeren</button>
+      </div>
+
+      <article class="wayfinder" id="wayfinder" hidden aria-live="polite">
+        <p class="eyebrow">Wegweiser</p>
+        <h3>Was zeigt sich, wenn nichts festgelegt werden muss?</h3>
+        <p id="wayfinder-text"></p>
+        <div class="image-seed" id="image-seed">
+          <strong>Bildraum</strong>
+          <p id="image-seed-text"></p>
+          <p class="image-note">Dieser Bildraum ist noch keine fertige Deutung. Er ist die Grundlage für eine spätere persönliche Bildgenerierung in der App.</p>
+        </div>
+      </article>
+    </section>
+
     <section class="resonance-space">
       <p class="eyebrow">Deine Wahrnehmung bleibt frei</p>
       <h2>Was zeigt sich, bevor du es erklärst?</h2>
