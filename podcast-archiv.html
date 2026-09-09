@@ -3,114 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Itschana – Podcast-Archiv</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #eaf4f4;
-      color: #123;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .box {
-      max-width: 850px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 18px;
-      padding: 30px 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-top: 0;
-      color: #2f6f73;
-    }
-
-    .eintrag {
-      margin: 24px 0;
-      padding: 22px 18px;
-      border-radius: 16px;
-      background: #f7fbfb;
-      box-shadow: inset 0 0 0 1px rgba(47,111,115,0.08);
-    }
-
-    .datum {
-      font-size: 1.05rem;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    .titel {
-      color: #456;
-      margin-bottom: 14px;
-    }
-
-    iframe {
-      border: none;
-      max-width: 100%;
-    }
-
-    .hinweis {
-      margin-top: 20px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .nav {
-      margin-top: 28px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #2f6f73;
-      font-weight: bold;
-    }
-  </style>
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Frühere Aufnahmen des Itschana-Rufs mit der richtigen Tagesenergie.">
+  <title>Itschana – Archiv des Rufes</title>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="podcast-archiv.css">
 </head>
-<body>
-  <div class="box">
-    <h1>🎧 Podcast-Archiv</h1>
-    <div id="archiv"></div>
-
-    <div class="nav">
-      <a href="podcast-heute.html">Zum heutigen Podcast</a>
-    </div>
-  </div>
-
+<body class="archiv-page">
+  <a class="skip-link" href="#archiv">Direkt zum Archiv</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="tageszeitraum.html">Tagesraum</a><a href="podcast-heute.html" aria-current="page">Podcast</a><a href="reset.html">RESET</a><a href="webinar.html">Webinar</a><a href="vision.html">Vision</a><a href="index.html#spenden">Spenden</a><a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+  <main id="archiv" class="archiv-main">
+    <section class="archiv-intro">
+      <p class="eyebrow">Frühere Stimmen</p>
+      <h1>Archiv des Rufes</h1>
+      <p>Die Aufnahmen bleiben erhalten. Datum und KIN werden dabei aus derselben Itschana-Kalenderberechnung wie der Tagesraum gelesen.</p>
+      <a class="button button-primary" href="podcast-heute.html">Zum heutigen Ruf</a>
+    </section>
+    <div id="archive-list" class="archive-list" aria-live="polite"><p>Das Archiv öffnet sich …</p></div>
+  </main>
+  <footer>
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+  </footer>
   <script src="podcasts.js"></script>
-  <script>
-    const archiv = document.getElementById("archiv");
-
-    if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
-      archiv.innerHTML = `
-        <div class="hinweis">
-          Das Podcast-Archiv konnte nicht geladen werden.
-        </div>
-      `;
-    } else {
-      const sortiert = [...podcasts].sort((a, b) => b.datum.localeCompare(a.datum));
-
-      archiv.innerHTML = sortiert.map(podcast => {
-        const [jahr, monat, tag] = podcast.datum.split("-");
-        const formatiertesDatum = `${tag}.${monat}.${jahr}`;
-
-        return `
-          <div class="eintrag">
-            <div class="datum">${formatiertesDatum} – KIN ${podcast.kin} – ${podcast.name}</div>
-            <div class="titel">${podcast.titel}</div>
-            <iframe
-              src="${podcast.audio}"
-              width="100%"
-              height="100"
-              allow="autoplay"
-              style="border:none;">
-            </iframe>
-          </div>
-        `;
-      }).join("");
-    }
-  </script>
+  <script src="itschana-calendar.js"></script>
+  <script src="podcast-archiv.js"></script>
 </body>
 </html>

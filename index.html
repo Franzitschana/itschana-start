@@ -15,7 +15,7 @@
 
   <nav>
     <a href="index.html">Start</a>
-    <a href="kalender.html">Kalender</a>
+    <a href="tageszeitraum.html">Tagesraum</a>
     <a href="podcast-heute.html">Podcast</a>
     <a href="reset.html">RESET</a>
     <a href="webinar.html">Webinar</a>
@@ -29,8 +29,8 @@
     <p>Willkommen im Hüterraum der Zeit.</p>
 
     <section style="margin:40px 0;">
-      <h2>🎧 Höre den heutigen Ruf des Raumes</h2>
-      <p>Der tägliche Podcast öffnet den aktuellen Klangraum von Itschana.</p>
+      <h2>🎧 Lies oder höre den heutigen Ruf des Raumes</h2>
+      <p>Der tägliche Ruf ist immer zum Lesen da – und zum Anhören, sobald eine Aufnahme vorhanden ist.</p>
 
       <a href="podcast-heute.html" style="
         display:inline-block;
@@ -42,10 +42,8 @@
         border-radius:12px;
         font-weight:bold;
       ">
-        Zum heutigen Podcast
+        Zum heutigen Ruf
       </a>
-
-      <div id="podcast-heute-player" style="margin-top:20px;"></div>
     </section>
     
     <section class="freiheit-hinweis">
@@ -103,95 +101,6 @@
     </section>
   </main>
 
-<script src="./podcasts.js"></script>
-
-<script>
-window.addEventListener("load", function () {
-  const ziel = document.getElementById("podcast-heute-player");
-
-  if (!ziel) return;
-
-  if (typeof podcasts === "undefined" || !Array.isArray(podcasts)) {
-    ziel.innerHTML = `<p>Podcast-Liste konnte nicht geladen werden.</p>`;
-    return;
-  }
-
-  const heute = new Date().toISOString().split("T")[0];
-  const aktuellerPodcast = podcasts.find(p => p.datum === heute);
-
-  if (aktuellerPodcast) {
-    const [jahr, monat, tag] = aktuellerPodcast.datum.split("-");
-    const datumText = `${tag}.${monat}.${jahr}`;
-
-    ziel.innerHTML = `
-      <div style="
-        background:#ffffff;
-        padding:28px;
-        border-radius:18px;
-        margin-top:20px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        text-align:center;
-      ">
-
-        <div style="
-          font-size:14px;
-          color:#7a8a8c;
-          margin-bottom:6px;
-          letter-spacing:1px;
-        ">
-          ${datumText}
-        </div>
-
-        <div style="
-          font-size:20px;
-          font-weight:600;
-          color:#2f6f73;
-          margin-bottom:6px;
-        ">
-          KIN ${aktuellerPodcast.kin} – ${aktuellerPodcast.name}
-        </div>
-
-                <div style="
-          font-size:16px;
-          color:#444;
-          margin-bottom:18px;
-          font-style:italic;
-        ">
-          ${aktuellerPodcast.titel}
-        </div>
-
-        ${aktuellerPodcast.bild ? `
-          <img
-            src="${aktuellerPodcast.bild}"
-    alt="Tagesenergiebild"
-    onclick="zeigeBildGross(this.src)"
-    style="
-      width:100%;
-      max-width:420px;
-      border-radius:14px;
-      margin-bottom:18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      cursor:pointer;
-            "
-          >
-        ` : ""}
-
-        <iframe
-          src="${aktuellerPodcast.audio}"
-          width="100%"
-          height="100"
-          allow="autoplay"
-          style="border:none; border-radius:10px;">
-        </iframe>
-        </div>
-`;
-  } else {
-    ziel.innerHTML = `<p>Kein Podcast für heute vorhanden.</p>`;
-  }
-});
-</script>
-
-<!-- 👉 DEIN NEUES SCRIPT DARUNTER -->
 <script>
   const textarea = document.querySelector(".resonanz-raum textarea");
   const button = document.querySelector(".resonanz-raum button");
@@ -222,3 +131,5 @@ window.addEventListener("load", function () {
     textarea.value = "";
   });
 </script>
+</body>
+</html>

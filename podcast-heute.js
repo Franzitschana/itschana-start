@@ -46,11 +46,11 @@
     setText("wave-name", `getragen von der Welle ${wave.name}`);
 
     const placeText = niwanes
-      ? `Niwanes steht heute mit dem eigenen Ton ${tone.number} neutral in der Welle ${wave.name}.`
-      : `Der Ton ${tone.number} trägt den ${tone.number}. Platz innerhalb der Welle ${wave.name}.`;
+      ? `Niwanes steht heute mit dem eigenen Ton ${tone.number} neutral innerhalb der Welle „${wave.name}“.`
+      : `Der Ton ${tone.number} trägt den ${tone.number}. Platz innerhalb der Welle „${wave.name}“.`;
 
     setText("opening", `Heute öffnet sich KIN ${kin.number} – ${displayName}. ${placeText}`);
-    setText("space-time", `Die Welle ${wave.name} trägt den größeren Zeitraum. Der heutige Ton heißt: ${tone.keyword}.`);
+    setText("space-time", `${wave.name} trägt den größeren Zeitraum. Der heutige Ton heißt: ${tone.keyword}.`);
     setText("space-life", `${figure.name}: ${figure.flhText}. ${figure.purpose}.`);
     setText("space-senses", `${tone.orientation}. ${tone.keyword} bedeutet in den F.L.H.-Worten: ${tone.flhText}.`);
     setText("space-awareness", "Nimm wahr, was diese Verbindung in dir berührt, ohne daraus eine Vorgabe für deinen Tag zu machen.");

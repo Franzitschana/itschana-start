@@ -2,25 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Itschana – Podcast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=podcast-heute.html">
+  <title>Itschana – Ruf des Raumes</title>
+  <script>window.location.replace("podcast-heute.html");</script>
 </head>
 <body>
-
-<h1>🎧 Ruf des Raumes – Podcast</h1>
-
-<h3>26.03.2026 – KIN 221 – Weißer Hund</h3>
-
-<iframe
-  src="${heutigerPodcast.audio}?autoplay=1"
-  width="100%"
-  height="100"
-  allow="autoplay">
-</iframe>
-const stunde = heute.getHours();
-
-if (stunde >= 7) {
-  const iframe = document.querySelector("iframe");
-  if (iframe) {
-    iframe.src = iframe.src + "&autoplay=1";
-  }
-}
+  <p>Der Ruf des Raumes ist umgezogen. <a href="podcast-heute.html">Zum täglichen Ruf</a></p>
+</body>
+</html>

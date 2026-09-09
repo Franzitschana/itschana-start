@@ -1,292 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itschana – Empathie mit der Zeit · Webinar-Reihe 2025</title>
-  <meta name="description" content="Webinar-Reihe: Empathie mit der Zeit – Wie der Natürliche Kalender das Raumgefühl erneuert. Zwei Abende im 12. Mond: 10.11. & 17.11. 2025, jeweils um 20:00 Uhr (CET/MEZ)." />
-  <meta property="og:title" content="Itschana – Empathie mit der Zeit · Webinar-Reihe 2025">
-  <meta property="og:description" content="Zwei Abende im 12. Mond: 10. & 17. November 2025 – live via Google Meet.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="kin127.jpg">
-  <meta property="og:image:alt" content="Titelmotiv KIN 127 – Roter selbstbestehender Drache">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0a0a0a;
-      --panel:#111214;
-      --soft:#1a1c20;
-      --text:#e9e9ec;
-      --muted:#b8bbc2;
-      --gold:#e5b35a;
-      --gold-2:#ffdf99;
-      --red:#b63a32;
-      --blue:#3a72b6;
-      --ring: 0 0 0 1px rgba(229,179,90,.25);
-      --shadow: 0 10px 30px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background: radial-gradient(1200px 600px at 70% -10%, rgba(229,179,90,.12), transparent 60%),
-                         radial-gradient(1000px 500px at 10% 10%, rgba(58,114,182,.10), transparent 60%),
-                         linear-gradient(180deg, #0b0b0c 0%, #0a0a0a 60%);
-      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.5;
-    }
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 20px 80px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
-    .brand{display:flex; align-items:center; gap:14px}
-    .logo{width:42px; height:42px; border-radius:14px; background: linear-gradient(135deg, rgba(229,179,90,.9), rgba(182,58,50,.85)); box-shadow: var(--ring), var(--shadow)}
-    .brand h1{margin:0; font-family: "Playfair Display", serif; font-weight:700; font-size:1.25rem; letter-spacing:.3px}
-    .brand small{display:block; font-size:.78rem; color:var(--muted); font-weight:500}
-    .cta a{display:inline-block; padding:10px 14px; border-radius:14px; background:transparent; border:1px solid rgba(229,179,90,.45); color:var(--gold-2); text-decoration:none; font-weight:600}
-    .cta a:hover{background:rgba(229,179,90,.08)}
-    .hero{margin-top:22px; position:relative; overflow:hidden; border-radius:24px; background:linear-gradient(180deg, rgba(229,179,90,.06), rgba(255,255,255,0) 40%), var(--panel); box-shadow: var(--shadow)}
-    .hero::before{content:""; position:absolute; inset:-2px; background: radial-gradient(900px 500px at 70% -10%, rgba(229,179,90,.10), transparent 60%), radial-gradient(600px 400px at 20% 10%, rgba(182,58,50,.09), transparent 60%);} 
-    .hero-inner{display:grid; grid-template-columns: 1.1fr 0.9fr; gap:26px; padding:38px 28px}
-    @media (max-width: 900px){ .hero-inner{grid-template-columns:1fr; padding:26px 22px} }
-    .hero h2{font-family:"Playfair Display", serif; font-weight:700; font-size:clamp(1.6rem, 3.2vw, 2.6rem); line-height:1.2; margin:0}
-    .subtitle{color:var(--muted); margin-top:8px}
-    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
-    .badge{padding:6px 10px; border-radius:12px; background:rgba(229,179,90,.08); color:var(--gold-2); border:1px solid rgba(229,179,90,.3); font-size:.85rem}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{display:inline-block; padding:12px 16px; border-radius:14px; text-decoration:none; font-weight:700; letter-spacing:.2px}
-    .btn-primary{background:linear-gradient(135deg, rgba(229,179,90,.9), rgba(229,179,90,.7)); color:#1b1206}
-    .btn-primary:hover{filter:brightness(1.05)}
-    .btn-ghost{border:1px solid rgba(229,179,90,.35); color:var(--gold-2)}
-    .btn-ghost:hover{background:rgba(229,179,90,.06)}
-    .poster{align-self:stretch; border-radius:20px; background: linear-gradient(180deg, rgba(182,58,50,.28), rgba(58,114,182,.22)), url('kin127.jpg') center/cover no-repeat; min-height:300px; box-shadow: var(--ring), var(--shadow)}
-    .poster small{display:block; padding:10px; color:#e6e6e6; background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.45)); border-bottom-left-radius:20px; border-bottom-right-radius:20px}
-    .grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:26px}
-    @media (max-width: 820px){ .grid{grid-template-columns:1fr} }
-    .card{background:linear-gradient(180deg, var(--soft), var(--panel)); border-radius:var(--radius); padding:18px; box-shadow: var(--ring), var(--shadow)}
-    .card h3{margin:4px 0 0 0; font-size:1.1rem}
-    .meta{display:flex; flex-wrap:wrap; gap:12px; align-items:center; color:var(--muted); font-size:.93rem; margin-top:6px}
-    .dot{width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px}
-    .dot.red{background:var(--red)}
-    .dot.blue{background:var(--blue)}
-    .desc{color:#d7d9de; margin-top:8px}
-    .linkrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .section{margin-top:38px}
-    .section h4{font-size:1.05rem; letter-spacing:.4px; text-transform:uppercase; color:var(--gold-2); margin:0 0 10px}
-    .list{display:grid; gap:10px}
-    .li{background:linear-gradient(180deg, rgba(229,179,90,.06), rgba(229,179,90,.0)); border:1px solid rgba(229,179,90,.18); border-radius:14px; padding:12px 14px}
-    footer{margin-top:42px; padding-top:16px; border-top:1px dashed rgba(229,179,90,.25); color:var(--muted); font-size:.9rem}
-    a{color:var(--gold-2)}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Webinar und Begegnungsraum von Itschana – Empathie mit der Zeit.">
+  <title>Webinar – Empathie mit der Zeit</title>
+  <link rel="icon" href="icon-512.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="webinar.css">
 </head>
-<body>
-  <body>
-
-  </style>
-</head>
-
-<body>
-
-  <!-- Titelbereich mit Hintergrundbild -->
-  <header style="
-      width: 100%;
-      height: 480px;
-      background-image: url('Kin 127 Roter selbstbestehender Drache.jpg');
-      background-size: cover;
-      background-position: center;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 40px;
-      box-shadow: inset 0 -80px 120px rgba(0, 0, 0, 0.7);
-    ">
-    <h1 style="color:#fff; font-family:'Playfair Display', serif; font-size:2.4em; text-shadow:0 0 18px rgba(255,180,80,0.8);">
-      Empathie mit der Zeit<br>
-      <span style="font-size:.65em; color:var(--gold-2); font-weight:normal;">Wie der Natürliche Kalender das Raumgefühl erneuert</span>
-    </h1>
+<body class="webinar-page">
+  <a class="skip-link" href="#webinar">Direkt zum Webinar</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="index.html">Start</a><a href="tageszeitraum.html">Tagesraum</a><a href="podcast-heute.html">Podcast</a><a href="reset.html">RESET</a><a href="webinar.html" aria-current="page">Webinar</a><a href="vision.html">Vision</a><a href="index.html#spenden">Spenden</a><a href="kontakt.html">Kontakt</a>
+    </nav>
   </header>
-
-  <div class="wrap">
-    <header class="brand">
-      <h2>Itschana – Hüterraum der Zeit</h2>
-      <small>Empathie mit der Zeit · Webinar-Reihe 2025</small>
-      <a href="#anmelden" class="button">Jetzt teilnehmen</a>
-    </header>
-
-    <section class="intro">
-      <h3>Empathie mit der Zeit – Wie der Natürliche Kalender das Raumgefühl erneuert</h3>
-      <p>Zwei Abende im 12. Mond öffnen die Tür zu einem neuen Empfinden der Zeit. Kein Vortrag – eine Begegnung.</p>
-      <div class="chips">
-        <span class="chip">Live · Google Meet</span>
-        <span class="chip">Dauer ca. 70 Minuten</span>
-        <a class="chip" href="#spenden">Teilnahme frei · Spenden willkommen</a>
-      </div>
-      <div class="buttons">
-        <a href="#anmelden" class="button gold">Am Webinar teilnehmen</a>
-        <a href="#themen" class="button">Mehr Infos</a>
+  <main id="webinar" class="webinar-main">
+    <section class="webinar-intro">
+      <p class="eyebrow">Itschana – Begegnung</p>
+      <h1>Empathie mit der Zeit</h1>
+      <p>Wie der natürliche Kalender das Raumgefühl erneuert.</p>
+    </section>
+    <section class="webinar-card" aria-labelledby="termin-title">
+      <p class="section-label">Der nächste Zeitraum öffnet sich</p>
+      <h2 id="termin-title">Neue Termine werden hier angekündigt</h2>
+      <p>Zurzeit ist kein Webinar-Termin angekündigt. Sobald sich ein neuer gemeinsamer Raum öffnet, findest du hier Datum und Zugang.</p>
+      <div class="webinar-actions">
+        <a class="button button-primary" href="tageszeitraum.html">Den heutigen Tagesraum öffnen</a>
+        <a class="button button-soft" href="mailto:zeitsurfer@gmail.com?subject=Webinar%20Empathie%20mit%20der%20Zeit">Nach einem Webinar fragen</a>
       </div>
     </section>
-
-    <section id="anmelden" aria-label="Anmeldung">
-      <h4>Anmeldung & Zugang</h4>
-      <p>Du kannst ohne Registrierung teilnehmen. Klicke zum jeweiligen Termin einfach auf den Zugang:</p>
-      <ul>
-        <li><strong>10. 11. Zugang:</strong> <a href="https://meet.google.com/ted-rqxa-yag" target="_blank" rel="noopener">Meet-Link 10.11.</a></li>
-        <li><strong>17. 11. Zugang:</strong> <a href="https://meet.google.com/rrg-1p1j-gas" target="_blank" rel="noopener">Meet-Link 17.11.</a></li>
-      </ul>
-      <p><small>Wenn du 24 h vor Beginn erinnert werden möchtest, sende eine kurze Mail mit dem Betreff <em>„Erinnern“</em>.</small></p>
+    <section class="webinar-about">
+      <h2>Worum es geht</h2>
+      <p>Das Webinar ist kein Vortrag über Zeit. Es ist eine Begegnung mit dem eigenen Wahrnehmen und mit den lebendigen Rhythmen des natürlichen Kalenders.</p>
+      <p>Bis zum nächsten gemeinsamen Termin bleibt der tägliche Itschana-Raum für dich geöffnet.</p>
     </section>
-
-    <footer>
-      <p>© 2025 Itschana – Hüterraum der Zeit · Gestaltung: Nova · Bildreferenz: KIN 127 – Roter selbstbestehender Drache</p>
-      <p><strong>Uhrzeit der Webinare:</strong> jeweils 20:00 Uhr (CET/MEZ)</p>
-    </footer>
-
-   
-
-  </div>
-
-  <!-- Responsive Header-Optimierung -->
-  <style>
-    @media (max-width: 640px) {
-      header[style] {
-        height: 320px !important;
-        padding-bottom: 24px !important;
-      }
-      header[style] h1 {
-        font-size: 1.8em !important;
-      }
-    }
-  </style>
-  </style>
-
-  <!-- Sanftes Gold-Leuchten beim Überfahren des Spendenbereichs -->
-  <style>
-    #spenden div:hover {
-      box-shadow: 0 0 30px rgba(229,179,90,.4),
-                  0 0 80px rgba(229,179,90,.15);
-      transform: scale(1.01);
-      transition: all 0.8s ease;
-    }
-
-    #spenden div {
-      transition: all 0.8s ease;
-    }
-  </style>
-
-  <!-- Meta-Vorschau (Open Graph / Twitter) -->
-  <meta property="og:image" content="Kin 127 Roter selbstbestehender Drache.jpg">
-
-  <!-- Meta-Vorschau (Open Graph / Twitter) -->
-  <meta property="og:image" content="Kin 127 Roter selbstbestehender Drache.jpg">
-  <meta property="og:image:alt" content="KIN 127 – Roter selbstbestehender Drache (Titelbild)">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Structured Data (Google Event) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Itschana – Empathie mit der Zeit (Webinar-Reihe 2025)",
-    "startDate": "2025-11-10T20:00:00+01:00",
-    "endDate": "2025-11-10T21:10:00+01:00",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "https://meet.google.com/ted-rqxa-yag"
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Verein RESET – Hüterraum der Zeit"
-    },
-    "image": ["Kin 127 Roter selbstbestehender Drache.jpg"],
-    "description": "Zwei Abende: Wahrnehmung, Resonanz, Natürlicher Kalender als Raumempfinden.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
-
-</body>
-</html>
-
-    </footer>
-      </footer>
-
-        </footer>
-
-        </footer>
-
-    <!-- Spendenbereich – mit Liebe gestaltet -->
-    <section id="spenden" style="text-align:center; padding:70px 0 90px 0;">
-      <h3 style="color:var(--gold-2); margin-bottom:12px; letter-spacing:.5px;">
-        Spenden willkommen
-      </h3>
-
-      <p style="color:var(--muted); margin-bottom:26px; line-height:1.6;">
-        Der Hüterraum der Zeit wird vom Verein <strong>RESET</strong> getragen.<br>
-        Wenn du das Wirken unterstützen möchtest, freuen wir uns über deine Spende auf folgendes Konto:
-      </p>
-
-      <div style="display:inline-block;
-                  background:radial-gradient(circle at top, rgba(229,179,90,.06), rgba(0,0,0,.08));
-                  border:1px dashed rgba(229,179,90,.25);
-                  border-radius:16px;
-                  padding:20px 28px;
-                  color:var(--text);
-                  font-size:.95rem;
-                  box-shadow:0 0 18px rgba(229,179,90,.12);
-                  transition:box-shadow .6s ease;">
-        <strong>Verein RESET – Zurück zum Leben als Mensch  ZVR-Zahl 885277419</strong><br>
-        IBAN: <span id="iban">AT23 1400 0295 1083 5393</span><br>
-        BIC: <span id="bic">BIC / SWIFT: BAWAATWW
-</span><br>
-        Verwendungszweck: <em>Itschana – Hüterraum der Zeit</em><br>
-        <button type="button"
-                style="margin-top:10px;
-                       padding:6px 14px;
-                       border-radius:10px;
-                       background:var(--gold-2);
-                       border:none;
-                       cursor:pointer;
-                       font-weight:bold;
-                       color:#000;
-                       box-shadow:0 0 10px rgba(229,179,90,.3);"
-                onclick="navigator.clipboard.writeText(document.getElementById('iban').innerText)">
-          AT23 1400 0295 1083 5393
-        </button>
-      </div>
-
-      <p style="color:var(--gold-2);
-                margin-top:30px;
-                font-style:italic;
-                letter-spacing:.3px;">
-        Danke für dein Mitwirken im Hüterraum der Zeit.
-      </p>
-    </section>
-
-    </div>
-  </body>
-</html>
-
-      </p>
-    </section>
-
-    </div>
-  </body>
-</html>
-
-      </a>
-    </section>
-
-    </div>
-  </body>
-</html>
-
-  </div>
+  </main>
+  <footer>
+    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
+    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
+  </footer>
 </body>
 </html>
