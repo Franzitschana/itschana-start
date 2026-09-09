@@ -4,6 +4,7 @@
   const requestedDate = ItschanaCalendar.dateFromIso(new URLSearchParams(window.location.search).get("date"));
   let selectedDate = requestedDate || ItschanaCalendar.today();
   let data;
+  let currentRoom = null;
 
   function byNumber(collection, number) {
     return collection.find((entry) => entry.number === number);
@@ -57,6 +58,15 @@
     return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
   }
 
+  function clean(value) {
+    return String(value || "").trim().replace(/\s+/g, " ");
+  }
+
+  function resetWayfinder() {
+    const wayfinder = document.getElementById("wayfinder");
+    if (wayfinder) wayfinder.hidden = true;
+  }
+
   function render() {
     const kinNumber = ItschanaCalendar.kinForDate(selectedDate);
     const kin = byNumber(data.kins, kinNumber);
@@ -65,11 +75,14 @@
     const wave = byNumber(data.figures, kin.waveFigureNumber);
     const today = ItschanaCalendar.today();
     const isToday = sameDay(selectedDate, today);
+    const displayName = kinDisplayName(kin.name, figure);
+
+    currentRoom = { kin, tone, figure, wave, displayName, date: new Date(selectedDate) };
 
     setText("date-weekday", isToday ? "Heute" : new Intl.DateTimeFormat("de-AT", { weekday: "long" }).format(selectedDate));
     setText("date-full", new Intl.DateTimeFormat("de-AT", { day: "2-digit", month: "long", year: "numeric" }).format(selectedDate));
     setText("kin-number", `KIN ${kin.number}`);
-    setText("kin-name", kinDisplayName(kin.name, figure));
+    setText("kin-name", displayName);
     setText("tone-name", tone.name);
     setText("tone-number", tone.number);
     renderToneMark(tone.number);
@@ -93,6 +106,7 @@
     document.querySelector(".glyph-halo").setAttribute("aria-label", `KIN ${kin.number}: ${figure.name}, Ton ${tone.number}`);
     document.getElementById("today").disabled = isToday;
     document.getElementById("kin-stage").setAttribute("aria-busy", "false");
+    resetWayfinder();
   }
 
   function moveDay(amount) {
@@ -102,12 +116,55 @@
     document.getElementById("kin-stage").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  function openWayfinder() {
+    if (!currentRoom) return;
+
+    const attention = clean(document.getElementById("resonance-attention").value);
+    const alive = clean(document.getElementById("resonance-alive").value);
+    const open = clean(document.getElementById("resonance-open").value);
+    const personalParts = [attention, alive, open].filter(Boolean);
+
+    const roomSentence = `Der tragende Raum bleibt KIN ${currentRoom.kin.number} – ${currentRoom.displayName}, Ton ${currentRoom.tone.number} · ${currentRoom.tone.keyword}, getragen von ${currentRoom.wave.name}.`;
+    const personalSentence = personalParts.length
+      ? `Deine heutige Resonanz bringt dazu: ${personalParts.join(" · ")}.`
+      : "Du hast noch keine Worte eingesetzt. Auch diese Offenheit darf Teil der Wahrnehmung bleiben.";
+
+    setText("wayfinder-text", `${roomSentence} ${personalSentence} Frage nicht zuerst: Was bedeutet das? Frage: Was wird dadurch in mir oder um mich herum neu sichtbar?`);
+
+    const visualSeeds = [
+      `Tagesraum KIN ${currentRoom.kin.number}: ${currentRoom.displayName}`,
+      `Ton ${currentRoom.tone.number}: ${currentRoom.tone.keyword}`,
+      `Welle: ${currentRoom.wave.name}`,
+      currentRoom.tone.flhText,
+      currentRoom.figure.flhText,
+      ...personalParts
+    ].filter(Boolean);
+
+    setText(
+      "image-seed-text",
+      `Ein offener, nicht festlegender Bildraum aus ${visualSeeds.join(" · ")}. Die Gestaltung soll Atmosphäre, Bewegung, Licht, Natur, Formen und Zwischenräume nutzen. Sie soll nichts beweisen und keine fertige Symboldeutung vorgeben, sondern Empathie zum Tagesraum tragen und weitere Wahrnehmung ermöglichen.`
+    );
+
+    const wayfinder = document.getElementById("wayfinder");
+    wayfinder.hidden = false;
+    wayfinder.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
   document.getElementById("previous-day").addEventListener("click", () => moveDay(-1));
   document.getElementById("next-day").addEventListener("click", () => moveDay(1));
   document.getElementById("today").addEventListener("click", () => {
     selectedDate = ItschanaCalendar.today();
     window.history.replaceState(null, "", window.location.pathname);
     render();
+  });
+
+  document.getElementById("open-wayfinder").addEventListener("click", openWayfinder);
+  document.getElementById("clear-wayfinder").addEventListener("click", () => {
+    ["resonance-attention", "resonance-alive", "resonance-open"].forEach((id) => {
+      document.getElementById(id).value = "";
+    });
+    resetWayfinder();
+    document.getElementById("resonance-attention").focus();
   });
 
   fetch("data/itschana-flh.json")
