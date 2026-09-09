@@ -7,8 +7,6 @@
   function byNumber(collection, number) { return collection.find((entry) => entry.number === number); }
   function setText(id, value) { document.getElementById(id).textContent = value || ""; }
   function sameDay(a, b) { return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate(); }
-  function lowerFirst(value) { return value ? value.charAt(0).toLocaleLowerCase("de-AT") + value.slice(1) : ""; }
-
   function kinDisplayName(kin, figure) {
     if (figure.number === 6 || !/^(Der|Die)\s/.test(figure.name)) return kin.name;
     const [article, color] = figure.name.split(/\s+/);
@@ -56,7 +54,7 @@
     setText("space-life", `${figure.name}: ${figure.flhText}. ${figure.purpose}.`);
     setText("space-senses", `${tone.orientation}. ${tone.keyword} bedeutet in den F.L.H.-Worten: ${tone.flhText}.`);
     setText("space-awareness", "Nimm wahr, was diese Verbindung in dir berührt, ohne daraus eine Vorgabe für deinen Tag zu machen.");
-    setText("daily-question", `Wo zeigt sich heute ${lowerFirst(tone.keyword)} – und was lässt dich den ${lowerFirst(figure.flhText)} unmittelbar wahrnehmen?`);
+    setText("daily-question", `Wo zeigt sich heute ${tone.keyword} – und was lässt dich den ${figure.flhText} unmittelbar wahrnehmen?`);
 
     renderAudio(isoDate);
     document.getElementById("day-room-link").href = `tageszeitraum.html?date=${isoDate}`;

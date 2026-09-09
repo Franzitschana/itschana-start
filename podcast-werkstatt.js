@@ -32,7 +32,7 @@
 
     const figureText = figure.number === 6
       ? `Niwanes trägt heute den eigenen Ton ${tone.number} und bleibt neutral in der Welle ${wave.name}. ${figure.flhText}. ${figure.purpose}.`
-      : `${figure.name} trägt den ${figure.flhText}. Darin zeigt sich ${figure.purpose}.`;
+      : `${figure.name} trägt den ${figure.flhText}. Darin zeigt sich: ${figure.purpose}.`;
 
     return `Guten Morgen und willkommen bei Itschana – Ruf des Raumes.
 
@@ -42,7 +42,7 @@ Der heutige Zeitraum öffnet sich mit KIN ${kin.number} – ${kinName}.
 
 ${figureText}
 
-Der heutige Ton ist Ton ${tone.number}: ${tone.name}. Sein Raum ist ${tone.keyword}. ${tone.orientation}. ${tone.dimension}. In den einfachen Worten des Tages: ${tone.flhText}.
+Der heutige Ton ist Ton ${tone.number} – ${tone.name}. Sein Raum ist ${tone.keyword}. ${tone.orientation}. ${tone.dimension}. In den einfachen Worten des Tages: ${tone.flhText}.
 
 Getragen wird dieser Tag von der Welle ${wave.name}.
 
