@@ -1,130 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#153f3d">
-  <meta name="description" content="Der heutige Zeitraum im natürlichen Itschana-Zyklus.">
-  <title>Der heutige Zeitraum · Itschana RESET</title>
-  <link rel="icon" href="icon-512.png">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="tageszeitraum.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#153f3d">
+  <meta name="description" content="Der heutige Zeitraum im natürlichen Itschana-Zyklus."><title>Der heutige Zeitraum · Itschana RESET</title>
+  <link rel="icon" href="icon-512.png"><link rel="stylesheet" href="reset.css"><link rel="stylesheet" href="tageszeitraum.css">
 </head>
 <body class="zeitraum-page">
-  <a class="skip-link" href="#tagesraum">Direkt zum heutigen Zeitraum</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a>
-    <nav aria-label="Hauptnavigation">
-      <a href="index.html">Start</a><a href="tageszeitraum.html" aria-current="page">Tagesraum</a><a href="podcast-heute.html">Podcast</a><a href="reset.html">RESET</a><a href="webinar.html">Webinar</a><a href="vision.html">Vision</a><a href="index.html#spenden">Spenden</a><a href="kontakt.html">Kontakt</a>
-    </nav>
-  </header>
-
-  <main id="tagesraum" class="zeitraum-main">
-    <section class="zeitraum-intro">
-      <a class="back-link" href="reset.html">← Zurück zur Spielwiese</a>
-      <p class="eyebrow">RESET und Itschana</p>
-      <h1><span>Itschana</span> – Der heutige Zeitraum</h1>
-      <p>Keine Vorgabe für deinen Tag. Ein Raum, in dem du wahrnehmen kannst, was in dir anklingt.</p>
-    </section>
-
-    <section class="kin-stage" aria-live="polite" aria-busy="true" id="kin-stage">
-      <div class="date-line">
-        <span id="date-weekday">Heute</span>
-        <strong id="date-full">Datum wird geöffnet …</strong>
-        <span class="day-boundary">Tageswechsel 03:08 Uhr</span>
-      </div>
-
-      <div class="kin-center">
-            <div class="glyph-halo" role="img" aria-label="Itschana-Figur">
-              <span class="kin-glyph-unit" aria-hidden="true">
-                <span class="tone-mark" id="tone-mark"></span>
-                <span class="glyph-symbol" id="figure-glyph"></span>
-              </span>
-            </div>
-        <div class="kin-heading">
-          <span id="kin-number">KIN …</span>
-          <h2 id="kin-name">Der Tagesraum öffnet sich</h2>
-          <p id="tone-name"></p>
-        </div>
-      </div>
-
-      <div class="flh-grid">
-        <article class="flh-card tone-card">
-          <span class="card-label">Ton <b id="tone-number"></b></span>
-          <h3 id="tone-keyword"></h3>
-          <p class="flh-text" id="tone-flh"></p>
-          <p class="card-detail" id="tone-orientation"></p>
-          <p class="card-detail" id="tone-dimension"></p>
-        </article>
-        <article class="flh-card figure-card">
-          <span class="card-label">Figur <b id="figure-number"></b></span>
-          <h3 id="figure-name"></h3>
-          <p class="flh-text" id="figure-flh"></p>
-          <p class="card-detail" id="figure-purpose"></p>
-        </article>
-      </div>
-
-      <div class="wave-line">
-        <span>Getragen von der Welle</span>
-        <a id="wave-name" href="welle-niwanes.html" aria-label="Vollständigen Verlauf der Welle öffnen"></a>
-      </div>
-
-      <nav class="day-navigation" aria-label="Zeitraum wechseln">
-        <button type="button" id="previous-day" class="day-button"><span>←</span> Vorheriger Tag</button>
-        <button type="button" id="today" class="day-button today-button">Heute</button>
-        <button type="button" id="next-day" class="day-button">Nächster Tag <span>→</span></button>
-      </nav>
-    </section>
-
-    <section class="empathy-space" aria-labelledby="empathy-title">
-      <p class="eyebrow">Empathie zum Tagesraum</p>
-      <h2 id="empathy-title">Nicht deuten. Erst wahrnehmen.</h2>
-      <p class="empathy-lead">Der Itschana-Tagesraum gibt den tragenden Rahmen. Du gibst deine Wahrnehmung dazu. Daraus darf etwas entstehen, das vorher noch nicht sichtbar war.</p>
-
-      <div class="empathy-grid">
-        <label class="empathy-card">
-          <span>1 · Was zieht deine Aufmerksamkeit an?</span>
-          <textarea id="resonance-attention" rows="4" placeholder="Ein Bild, ein Gefühl, ein Gedanke, eine Bewegung …"></textarea>
-        </label>
-        <label class="empathy-card">
-          <span>2 · Was fühlt sich heute lebendig an?</span>
-          <textarea id="resonance-alive" rows="4" placeholder="Etwas, das wächst, ruft, drängt, still wird oder Raum braucht …"></textarea>
-        </label>
-        <label class="empathy-card">
-          <span>3 · Was möchtest du noch nicht erklären?</span>
-          <textarea id="resonance-open" rows="4" placeholder="Etwas darf einfach da sein, ohne sofort eine Antwort zu brauchen …"></textarea>
-        </label>
-      </div>
-
-      <div class="empathy-actions">
-        <button type="button" class="button button-primary" id="open-wayfinder">Wegweiser für weiteres Denken öffnen</button>
-        <button type="button" class="button empathy-secondary" id="clear-wayfinder">Wahrnehmung leeren</button>
-      </div>
-
-      <article class="wayfinder" id="wayfinder" hidden aria-live="polite">
-        <p class="eyebrow">Wegweiser</p>
-        <h3>Was zeigt sich, wenn nichts festgelegt werden muss?</h3>
-        <p id="wayfinder-text"></p>
-        <div class="image-seed" id="image-seed">
-          <strong>Bildraum</strong>
-          <p id="image-seed-text"></p>
-          <p class="image-note">Dieser Bildraum ist noch keine fertige Deutung. Er ist die Grundlage für eine spätere persönliche Bildgenerierung in der App.</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="resonance-space">
-      <p class="eyebrow">Deine Wahrnehmung bleibt frei</p>
-      <h2>Was zeigt sich, bevor du es erklärst?</h2>
-      <p>Du musst mit diesem Zeitraum nicht übereinstimmen. Auch keine Resonanz ist eine wirkliche Wahrnehmung.</p>
-      <a class="button button-primary" href="reset.html#spielwiese">In die drei Minuten gehen</a>
-    </section>
-  </main>
-
-  <footer>
-    <strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong>
-    <span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span>
-  </footer>
-  <script src="itschana-calendar.js"></script><script src="tageszeitraum.js"></script>
-</body>
-</html>
+<a class="skip-link" href="#tagesraum">Direkt zum heutigen Zeitraum</a>
+<header class="site-header"><a class="brand" href="index.html" aria-label="Zur Itschana Startseite"><span class="brand-mark" aria-hidden="true">○</span><span>Itschana</span></a><nav aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="tageszeitraum.html" aria-current="page">Tagesraum</a><a href="podcast-heute.html">Podcast</a><a href="reset.html">RESET</a><a href="webinar.html">Webinar</a><a href="vision.html">Vision</a><a href="index.html#spenden">Spenden</a><a href="kontakt.html">Kontakt</a></nav></header>
+<main id="tagesraum" class="zeitraum-main">
+<section class="zeitraum-intro"><a class="back-link" href="reset.html">← Zurück zur Spielwiese</a><p class="eyebrow">RESET und Itschana</p><h1><span>Itschana</span> – Der heutige Zeitraum</h1><p>Keine Vorgabe für deinen Tag. Ein Raum, in dem du wahrnehmen kannst, was in dir anklingt.</p></section>
+<section class="kin-stage" aria-live="polite" aria-busy="true" id="kin-stage">
+<div class="date-line"><span id="date-weekday">Heute</span><strong id="date-full">Datum wird geöffnet …</strong><span class="day-boundary">Tageswechsel 03:08 Uhr</span></div>
+<div class="kin-center"><div class="glyph-halo" role="img" aria-label="Itschana-Figur"><span class="kin-glyph-unit" aria-hidden="true"><span class="tone-mark" id="tone-mark"></span><span class="glyph-symbol" id="figure-glyph"></span></span></div><div class="kin-heading"><span id="kin-number">KIN …</span><h2 id="kin-name">Der Tagesraum öffnet sich</h2><p id="tone-name"></p></div></div>
+<div class="flh-grid"><article class="flh-card tone-card"><span class="card-label">Ton <b id="tone-number"></b></span><h3 id="tone-keyword"></h3><p class="flh-text" id="tone-flh"></p><p class="card-detail" id="tone-orientation"></p><p class="card-detail" id="tone-dimension"></p></article><article class="flh-card figure-card"><span class="card-label">Figur <b id="figure-number"></b></span><h3 id="figure-name"></h3><p class="flh-text" id="figure-flh"></p><p class="card-detail" id="figure-purpose"></p></article></div>
+<div class="wave-line"><span>Getragen von der Welle</span><a id="wave-name" href="welle-niwanes.html" aria-label="Vollständigen Verlauf der Welle öffnen"></a></div>
+<nav class="day-navigation" aria-label="Zeitraum wechseln"><button type="button" id="previous-day" class="day-button"><span>←</span> Vorheriger Tag</button><button type="button" id="today" class="day-button today-button">Heute</button><button type="button" id="next-day" class="day-button">Nächster Tag <span>→</span></button></nav>
+</section>
+<section class="empathy-space" aria-labelledby="empathy-title"><p class="eyebrow">Empathie zum Tagesraum</p><h2 id="empathy-title">Nicht deuten. Erst wahrnehmen.</h2><p class="empathy-lead">Der Itschana-Tagesraum gibt den tragenden Rahmen. Du gibst deine Wahrnehmung dazu. Daraus darf etwas entstehen, das vorher noch nicht sichtbar war.</p>
+<div class="empathy-grid"><label class="empathy-card"><span>1 · Was zieht deine Aufmerksamkeit an?</span><textarea id="resonance-attention" rows="4" placeholder="Ein Bild, ein Gefühl, ein Gedanke, eine Bewegung …"></textarea></label><label class="empathy-card"><span>2 · Was fühlt sich heute lebendig an?</span><textarea id="resonance-alive" rows="4" placeholder="Etwas, das wächst, ruft, drängt, still wird oder Raum braucht …"></textarea></label><label class="empathy-card"><span>3 · Was möchtest du noch nicht erklären?</span><textarea id="resonance-open" rows="4" placeholder="Etwas darf einfach da sein, ohne sofort eine Antwort zu brauchen …"></textarea></label></div>
+<div class="empathy-actions"><button type="button" class="button button-primary" id="open-wayfinder">Bildraum öffnen</button><button type="button" class="button empathy-secondary" id="clear-wayfinder">Wahrnehmung leeren</button></div>
+<article class="wayfinder" id="wayfinder" hidden aria-live="polite"><p class="eyebrow">Wegweiser</p><h3>Was zeigt sich, wenn nichts festgelegt werden muss?</h3><p id="wayfinder-text"></p>
+<div class="visual-stage" id="visual-stage"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="visual-light"></div><div class="visual-horizon"></div><div class="visual-center"><span class="visual-label">Dein heutiger Bildraum</span><strong id="visual-room-title">Der Raum wird sichtbar</strong><p id="visual-room-pulse">Tagesraum und Wahrnehmung begegnen einander.</p></div></div>
+<div class="image-seed" id="image-seed"><strong>Was das spätere persönliche Bild tragen soll</strong><p id="image-seed-text"></p><p class="image-note">Dies ist jetzt die sichtbare Bildbühne. Im nächsten technischen Schritt kann hier ein wirklich neu erzeugtes Bild erscheinen – ohne die verbindlichen Itschana-Daten zu verändern.</p></div></article></section>
+<section class="resonance-space"><p class="eyebrow">Deine Wahrnehmung bleibt frei</p><h2>Was zeigt sich, bevor du es erklärst?</h2><p>Du musst mit diesem Zeitraum nicht übereinstimmen. Auch keine Resonanz ist eine wirkliche Wahrnehmung.</p><a class="button button-primary" href="reset.html#spielwiese">In die drei Minuten gehen</a></section>
+</main><footer><strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong><span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span></footer><script src="itschana-calendar.js"></script><script src="tageszeitraum.js"></script></body></html>
