@@ -30,6 +30,7 @@ body.podcast-page { margin:0; background:var(--podcast-paper); color:var(--podca
 .day-button:disabled { cursor:default; opacity:.55; }
 .podcast-links { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem 2rem; margin-top:2rem; }
 .podcast-links a { color:var(--podcast-ink); font-weight:700; }
+.podcast-links .workshop-link { padding:.75rem 1.15rem; border-radius:999px; background:var(--podcast-deep); color:#fff; text-decoration:none; }
 @media (max-width:650px) {
   .podcast-main { width:min(100% - 1rem,960px); padding-top:2rem; }
   .ruf-card { border-radius:20px; }
