@@ -1,123 +1,18 @@
 (function () {
   "use strict";
-
   const requestedDate = ItschanaCalendar.dateFromIso(new URLSearchParams(window.location.search).get("date"));
-  let selectedDate = requestedDate || ItschanaCalendar.today();
-  let data;
-
-  function byNumber(collection, number) {
-    return collection.find((entry) => entry.number === number);
-  }
-
-  function setText(id, value) {
-    document.getElementById(id).textContent = value || "";
-  }
-
-  function kinDisplayName(kinName, figure) {
-    if (figure.number === 6 || !/^(Der|Die)\s/.test(figure.name)) return kinName;
-    const [article, color] = figure.name.split(/\s+/);
-    let description = kinName.split(/\s+/).slice(1).join(" ");
-    if (description.startsWith("oberton ")) description = `Oberton ${description.slice(8)}`;
-    else description = description.replace(/^(\S+)er\b/, "$1e");
-    return `${article} ${color} ${description}`;
-  }
-
-  function renderToneMark(toneNumber) {
-    const mark = document.getElementById("tone-mark");
-    const bars = Math.floor(toneNumber / 5);
-    const points = toneNumber % 5;
-    const parts = [];
-
-    if (points) {
-      const pointRow = document.createElement("span");
-      pointRow.className = "tone-points";
-      for (let index = 0; index < points; index += 1) {
-        const point = document.createElement("i");
-        point.className = "tone-point";
-        pointRow.appendChild(point);
-      }
-      parts.push(pointRow);
-    }
-
-    if (bars) {
-      const barStack = document.createElement("span");
-      barStack.className = "tone-bars";
-      for (let index = 0; index < bars; index += 1) {
-        const bar = document.createElement("i");
-        bar.className = "tone-bar";
-        barStack.appendChild(bar);
-      }
-      parts.push(barStack);
-    }
-
-    mark.replaceChildren(...parts);
-  }
-
-  function sameDay(a, b) {
-    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-  }
-
-  function render() {
-    const kinNumber = ItschanaCalendar.kinForDate(selectedDate);
-    const kin = byNumber(data.kins, kinNumber);
-    const tone = byNumber(data.tones, kin.toneNumber);
-    const figure = byNumber(data.figures, kin.figureNumber);
-    const wave = byNumber(data.figures, kin.waveFigureNumber);
-    const today = ItschanaCalendar.today();
-    const isToday = sameDay(selectedDate, today);
-
-    setText("date-weekday", isToday ? "Heute" : new Intl.DateTimeFormat("de-AT", { weekday: "long" }).format(selectedDate));
-    setText("date-full", new Intl.DateTimeFormat("de-AT", { day: "2-digit", month: "long", year: "numeric" }).format(selectedDate));
-    setText("kin-number", `KIN ${kin.number}`);
-    setText("kin-name", kinDisplayName(kin.name, figure));
-    setText("tone-name", tone.name);
-    setText("tone-number", tone.number);
-    renderToneMark(tone.number);
-    setText("tone-keyword", tone.keyword);
-    setText("tone-flh", tone.flhText);
-    setText("tone-orientation", tone.orientation);
-    setText("tone-dimension", tone.dimension);
-    setText("figure-number", figure.number);
-    setText("figure-name", figure.name);
-    setText("figure-flh", figure.flhText);
-    setText("figure-purpose", figure.purpose);
-    setText("wave-name", wave.name);
-    const waveLink = document.getElementById("wave-name");
-    waveLink.href = `welle-niwanes.html?date=${ItschanaCalendar.isoFromDate(selectedDate)}`;
-    waveLink.setAttribute("aria-label", `${wave.name}: vollständigen Verlauf öffnen`);
-
-    const spriteIndex = figure.number - 1;
-    const spriteColumn = spriteIndex % 5;
-    const spriteRow = Math.floor(spriteIndex / 5);
-    document.getElementById("figure-glyph").style.backgroundPosition = `${spriteColumn * 25}% ${spriteRow * 25}%`;
-    document.querySelector(".glyph-halo").setAttribute("aria-label", `KIN ${kin.number}: ${figure.name}, Ton ${tone.number}`);
-    document.getElementById("today").disabled = isToday;
-    document.getElementById("kin-stage").setAttribute("aria-busy", "false");
-  }
-
-  function moveDay(amount) {
-    selectedDate.setDate(selectedDate.getDate() + amount);
-    window.history.replaceState(null, "", `?date=${ItschanaCalendar.isoFromDate(selectedDate)}`);
-    render();
-    document.getElementById("kin-stage").scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  document.getElementById("previous-day").addEventListener("click", () => moveDay(-1));
-  document.getElementById("next-day").addEventListener("click", () => moveDay(1));
-  document.getElementById("today").addEventListener("click", () => {
-    selectedDate = ItschanaCalendar.today();
-    window.history.replaceState(null, "", window.location.pathname);
-    render();
-  });
-
-  fetch("data/itschana-flh.json")
-    .then((response) => {
-      if (!response.ok) throw new Error("F.L.H.-Daten konnten nicht geladen werden.");
-      return response.json();
-    })
-    .then((loadedData) => { data = loadedData; render(); })
-    .catch(() => {
-      setText("kin-name", "Der Tagesraum konnte gerade nicht geöffnet werden.");
-      document.getElementById("kin-stage").setAttribute("aria-busy", "false");
-    });
+  let selectedDate = requestedDate || ItschanaCalendar.today(); let data; let currentRoom = null;
+  function byNumber(collection, number) { return collection.find((entry) => entry.number === number); }
+  function setText(id, value) { const el=document.getElementById(id); if(el) el.textContent=value||""; }
+  function kinDisplayName(kinName, figure) { if (figure.number===6 || !/^(Der|Die)\s/.test(figure.name)) return kinName; const [article,color]=figure.name.split(/\s+/); let description=kinName.split(/\s+/).slice(1).join(" "); if(description.startsWith("oberton ")) description=`Oberton ${description.slice(8)}`; else description=description.replace(/^(\S+)er\b/,"$1e"); return `${article} ${color} ${description}`; }
+  function renderToneMark(toneNumber){const mark=document.getElementById("tone-mark"),bars=Math.floor(toneNumber/5),points=toneNumber%5,parts=[];if(points){const row=document.createElement("span");row.className="tone-points";for(let i=0;i<points;i++){const p=document.createElement("i");p.className="tone-point";row.appendChild(p)}parts.push(row)}if(bars){const stack=document.createElement("span");stack.className="tone-bars";for(let i=0;i<bars;i++){const b=document.createElement("i");b.className="tone-bar";stack.appendChild(b)}parts.push(stack)}mark.replaceChildren(...parts)}
+  function sameDay(a,b){return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate()}
+  function clean(v){return String(v||"").trim().replace(/\s+/g," ")}
+  function resetWayfinder(){const w=document.getElementById("wayfinder");if(w)w.hidden=true;const img=document.getElementById("generated-room-image");if(img){img.hidden=true;img.removeAttribute("src")}setText("image-status","")}
+  function render(){const kinNumber=ItschanaCalendar.kinForDate(selectedDate),kin=byNumber(data.kins,kinNumber),tone=byNumber(data.tones,kin.toneNumber),figure=byNumber(data.figures,kin.figureNumber),wave=byNumber(data.figures,kin.waveFigureNumber),today=ItschanaCalendar.today(),isToday=sameDay(selectedDate,today),displayName=kinDisplayName(kin.name,figure);currentRoom={kin,tone,figure,wave,displayName,date:new Date(selectedDate)};setText("date-weekday",isToday?"Heute":new Intl.DateTimeFormat("de-AT",{weekday:"long"}).format(selectedDate));setText("date-full",new Intl.DateTimeFormat("de-AT",{day:"2-digit",month:"long",year:"numeric"}).format(selectedDate));setText("kin-number",`KIN ${kin.number}`);setText("kin-name",displayName);setText("tone-name",tone.name);setText("tone-number",tone.number);renderToneMark(tone.number);setText("tone-keyword",tone.keyword);setText("tone-flh",tone.flhText);setText("tone-orientation",tone.orientation);setText("tone-dimension",tone.dimension);setText("figure-number",figure.number);setText("figure-name",figure.name);setText("figure-flh",figure.flhText);setText("figure-purpose",figure.purpose);setText("wave-name",wave.name);const waveLink=document.getElementById("wave-name");waveLink.href=`welle-niwanes.html?date=${ItschanaCalendar.isoFromDate(selectedDate)}`;const spriteIndex=figure.number-1;document.getElementById("figure-glyph").style.backgroundPosition=`${(spriteIndex%5)*25}% ${Math.floor(spriteIndex/5)*25}%`;document.getElementById("today").disabled=isToday;document.getElementById("kin-stage").setAttribute("aria-busy","false");resetWayfinder()}
+  function moveDay(amount){selectedDate.setDate(selectedDate.getDate()+amount);window.history.replaceState(null,"",`?date=${ItschanaCalendar.isoFromDate(selectedDate)}`);render();document.getElementById("kin-stage").scrollIntoView({behavior:"smooth",block:"start"})}
+  async function createImage(personalParts){const button=document.getElementById("open-wayfinder"),img=document.getElementById("generated-room-image");button.disabled=true;setText("image-status","Der Bildmotor öffnet den persönlichen Bildraum …");try{const response=await fetch("/api/tagesbild",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({kin:currentRoom.kin.number,displayName:currentRoom.displayName,tone:currentRoom.tone.number,toneKeyword:currentRoom.tone.keyword,waveName:currentRoom.wave.name,toneText:currentRoom.tone.flhText,figureText:currentRoom.figure.flhText,resonance:personalParts})});const result=await response.json();if(!response.ok)throw new Error(result.error||"Bild konnte nicht erzeugt werden.");img.src=result.image;img.alt=`Persönlicher Bildraum zu ${currentRoom.displayName}`;img.hidden=false;setText("image-status","Dein Bildraum ist sichtbar. Die Itschana-Daten darüber bleiben die verbindliche Quelle.")}catch(error){setText("image-status",`${error.message} Der vorbereitete Bildraum bleibt sichtbar.`)}finally{button.disabled=false}}
+  function openWayfinder(){if(!currentRoom)return;const attention=clean(document.getElementById("resonance-attention").value),alive=clean(document.getElementById("resonance-alive").value),open=clean(document.getElementById("resonance-open").value),personalParts=[attention,alive,open].filter(Boolean);const roomSentence=`Der tragende Raum bleibt KIN ${currentRoom.kin.number} – ${currentRoom.displayName}, Ton ${currentRoom.tone.number} · ${currentRoom.tone.keyword}, getragen von ${currentRoom.wave.name}.`;const personalSentence=personalParts.length?`Deine heutige Resonanz bringt dazu: ${personalParts.join(" · ")}.`:"Du hast noch keine Worte eingesetzt. Auch diese Offenheit darf Teil der Wahrnehmung bleiben.";setText("wayfinder-text",`${roomSentence} ${personalSentence} Frage nicht zuerst: Was bedeutet das? Frage: Was wird dadurch in mir oder um mich herum neu sichtbar?`);setText("visual-room-title",`${currentRoom.displayName} · ${currentRoom.tone.keyword}`);setText("visual-room-pulse",personalParts.length?personalParts.join(" · "):"Stille darf ebenfalls eine Wahrnehmung sein.");const seeds=[`Tagesraum KIN ${currentRoom.kin.number}: ${currentRoom.displayName}`,`Ton ${currentRoom.tone.number}: ${currentRoom.tone.keyword}`,`Welle: ${currentRoom.wave.name}`,currentRoom.tone.flhText,currentRoom.figure.flhText,...personalParts].filter(Boolean);setText("image-seed-text",`Ein offener, nicht festlegender Bildraum aus ${seeds.join(" · ")}. Atmosphäre, Bewegung, Licht, Natur, Formen und Zwischenräume dürfen daraus entstehen. Keine neue Kalenderdeutung: Die Itschana-Daten bleiben unverändert.`);const w=document.getElementById("wayfinder");w.hidden=false;w.scrollIntoView({behavior:"smooth",block:"center"});createImage(personalParts)}
+  document.getElementById("previous-day").addEventListener("click",()=>moveDay(-1));document.getElementById("next-day").addEventListener("click",()=>moveDay(1));document.getElementById("today").addEventListener("click",()=>{selectedDate=ItschanaCalendar.today();window.history.replaceState(null,"",window.location.pathname);render()});document.getElementById("open-wayfinder").addEventListener("click",openWayfinder);document.getElementById("clear-wayfinder").addEventListener("click",()=>{["resonance-attention","resonance-alive","resonance-open"].forEach(id=>document.getElementById(id).value="");resetWayfinder();document.getElementById("resonance-attention").focus()});
+  fetch("data/itschana-flh.json").then(r=>{if(!r.ok)throw new Error();return r.json()}).then(d=>{data=d;render()}).catch(()=>{setText("kin-name","Der Tagesraum konnte gerade nicht geöffnet werden.");document.getElementById("kin-stage").setAttribute("aria-busy","false")});
 })();

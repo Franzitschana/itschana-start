@@ -43,6 +43,67 @@ h2 {
   margin-top: 1.5em;
 }
 
+.bildraum-ruf {
+  margin: 42px auto 56px;
+  padding: 34px 28px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(236,249,248,0.98));
+  border: 1px solid #cfe7e5;
+  box-shadow: 0 16px 42px rgba(0, 95, 115, 0.10);
+}
+
+.bildraum-neu {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #fff8df;
+  border: 1px solid #eedb92;
+  color: #715d16;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.bildraum-ruf h2 {
+  margin: 16px 0 10px;
+  font-size: 2em;
+}
+
+.bildraum-lead {
+  max-width: 590px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #29474c;
+}
+
+.bildraum-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  background: #176b6f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(23, 107, 111, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.bildraum-button:hover,
+.bildraum-button:focus-visible {
+  background: #0f565a;
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(23, 107, 111, 0.24);
+}
+
+.bildraum-note {
+  margin: 18px auto 0;
+  max-width: 560px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #607276;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -207,4 +268,20 @@ ul li::before {
   margin-top: 12px;
   font-size: 13px;
   color: #666;
+}
+
+@media (max-width: 640px) {
+  nav a {
+    display: inline-block;
+    margin: 0.35em 0.55em;
+  }
+
+  .bildraum-ruf {
+    margin-top: 30px;
+    padding: 28px 18px;
+  }
+
+  .bildraum-ruf h2 {
+    font-size: 1.65em;
+  }
 }
