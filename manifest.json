@@ -1,15 +1,19 @@
 {
   "name": "Itschana",
   "short_name": "Itschana",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
+  "description": "Itschana – Hüterraum der Zeit",
   "icons": [
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
