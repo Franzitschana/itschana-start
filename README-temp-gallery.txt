@@ -1,0 +1,1 @@
+Bilddatei wird separat als Binärdatei eingesetzt.
