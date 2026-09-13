@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#153f3d">
+  <title>Itschana Werkstattmodus</title>
+  <link rel="icon" href="icon-512.png">
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#f6f0e4;color:#153f3d;display:grid;place-items:center;min-height:100vh;padding:24px;box-sizing:border-box}.card{max-width:620px;background:#fffdf7;border-radius:24px;padding:34px;box-shadow:0 18px 55px rgba(21,63,61,.14);text-align:center}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.72rem;color:#a87828;font-weight:700}h1{font-size:clamp(2rem,6vw,3.6rem);margin:10px 0 16px;font-weight:500}p{line-height:1.7}button,a{display:inline-block;margin:8px;padding:12px 20px;border-radius:999px;border:0;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}.on{background:#176b6f;color:#fff}.off{background:#e8f1ed;color:#153f3d}.status{margin-top:18px;font-weight:700}.note{font-size:.86rem;opacity:.72;margin-top:20px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Itschana Werkstatt</p>
+    <h1>Bildraum ohne Tagesbegrenzung</h1>
+    <p>Dieser Modus gilt nur auf diesem Browser und diesem Gerät. Öffentliche Besucher behalten weiterhin ihre Tagesbegrenzung.</p>
+    <button class="on" id="activate">Werkstattmodus einschalten</button>
+    <button class="off" id="deactivate">Werkstattmodus ausschalten</button>
+    <div class="status" id="status"></div>
+    <a class="on" href="tageszeitraum.html">Zum Tagesraum</a>
+    <p class="note">Hinweis: Der Werkstattmodus ist eine Geräte-Einstellung zur eigenen Arbeit. Die Vercel-Firewall bleibt davon unberührt.</p>
+  </main>
+  <script>
+    const KEY='itschana_werkstattmodus';
+    const status=document.getElementById('status');
+    function sync(){
+      const active=localStorage.getItem(KEY)==='1';
+      status.textContent=active?'Werkstattmodus ist auf diesem Gerät aktiv.':'Werkstattmodus ist auf diesem Gerät aus.';
+    }
+    document.getElementById('activate').addEventListener('click',()=>{localStorage.setItem(KEY,'1');sync();});
+    document.getElementById('deactivate').addEventListener('click',()=>{localStorage.removeItem(KEY);sync();});
+    sync();
+  </script>
+</body>
+</html>
