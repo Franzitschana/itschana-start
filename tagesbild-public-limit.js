@@ -2,7 +2,18 @@
   "use strict";
 
   const PUBLIC_HOST = "itschana-start.vercel.app";
+  const WORKSHOP_KEY = "itschana_werkstattmodus";
   if (window.location.hostname !== PUBLIC_HOST) return;
+
+  function isWorkshopMode() {
+    try {
+      return localStorage.getItem(WORKSHOP_KEY) === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  if (isWorkshopMode()) return;
 
   const button = document.getElementById("open-wayfinder");
   const image = document.getElementById("generated-room-image");
