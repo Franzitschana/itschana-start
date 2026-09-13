@@ -1,7 +1,22 @@
+import { createHash, createHmac } from "node:crypto";
+
 const MAX_TEXT = 500;
+const SHARE_TTL_MS = 60 * 60 * 1000;
 
 function clean(value) {
   return String(value || "").trim().replace(/\s+/g, " ").slice(0, MAX_TEXT);
+}
+
+function createShareToken(imageBase64, date) {
+  const secret = process.env.BLOB_READ_WRITE_TOKEN || process.env.OPENAI_API_KEY;
+  if (!secret) return "";
+  const payload = Buffer.from(JSON.stringify({
+    date,
+    hash: createHash("sha256").update(imageBase64).digest("hex"),
+    exp: Date.now() + SHARE_TTL_MS
+  })).toString("base64url");
+  const signature = createHmac("sha256", secret).update(payload).digest("base64url");
+  return `${payload}.${signature}`;
 }
 
 export default async function handler(req, res) {
@@ -23,6 +38,8 @@ export default async function handler(req, res) {
   const toneText = clean(body.toneText);
   const figureText = clean(body.figureText);
   const resonance = Array.isArray(body.resonance) ? body.resonance.map(clean).filter(Boolean).slice(0, 3) : [];
+  const requestedDate = clean(body.date);
+  const shareDate = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : new Date().toISOString().slice(0, 10);
 
   if (!Number.isInteger(kin) || kin < 1 || kin > 273 || !Number.isInteger(tone) || tone < 1 || tone > 13 || !displayName || !waveName) {
     return res.status(400).json({ error: "Der Itschana-Tagesraum ist unvollständig." });
@@ -66,8 +83,9 @@ export default async function handler(req, res) {
     const image = result?.data?.[0]?.b64_json;
     if (!image) return res.status(502).json({ error: "Der Bildmotor hat kein Bild zurückgegeben." });
 
+    const shareToken = createShareToken(image, shareDate);
     res.setHeader("Cache-Control", "no-store");
-    return res.status(200).json({ image: `data:image/png;base64,${image}` });
+    return res.status(200).json({ image: `data:image/png;base64,${image}`, shareToken, shareDate });
   } catch (error) {
     return res.status(500).json({ error: "Der Bildraum konnte nicht geöffnet werden." });
   }
