@@ -18,8 +18,32 @@
 </header>
 
 <main id="geburtstagsraum" class="birthday-main">
+  <section class="birthday-calculator" aria-labelledby="calculator-title">
+    <div class="calculator-intro">
+      <p class="eyebrow">Deinen Geburtstagsraum öffnen</p>
+      <h1 id="calculator-title">Welches Energiefeld begleitet deinen Lebenszyklus?</h1>
+      <p>Der Rechner unterscheidet das frühere 260er-Feld vom erweiterten 273er-Itschana-Feld. Maßgeblich ist der Beginn des jeweiligen 52-jährigen Lebenszyklus.</p>
+    </div>
+    <form id="birthday-form" class="birthday-form">
+      <label><span>Name</span><input id="birthday-name" name="name" type="text" value="Franz Leopold Hinterndorfer" autocomplete="name"></label>
+      <label><span>Geburtsdatum</span><input id="birthday-date" name="birthday" type="date" value="1957-04-25" required></label>
+      <label><span>Geburtstagsjahr betrachten</span><input id="birthday-year" name="year" type="number" min="1900" max="2200" value="2026" required></label>
+      <button type="submit">Geburtstagsraum berechnen</button>
+    </form>
+    <p class="calculator-rule">Bis 19.11.1989 gilt das 260er-Feld. Ab 20.11.1989 gilt das um Niwanes erweiterte 273er-Feld.</p>
+    <div id="birthday-result" class="birthday-result" hidden aria-live="polite">
+      <div class="result-heading"><p class="eyebrow" id="result-name"></p><h2 id="result-title"></h2><p id="result-period"></p></div>
+      <div class="result-grid">
+        <article><span>52-jährige Lebenskraft</span><strong id="cycle-kin"></strong><h3 id="cycle-figure"></h3><p id="cycle-details"></p></article>
+        <article><span id="annual-label">Geburtstagsenergie</span><strong id="annual-kin"></strong><h3 id="annual-figure"></h3><p id="annual-details"></p></article>
+      </div>
+      <p id="result-note" class="result-note"></p>
+    </div>
+    <p id="birthday-error" class="birthday-error" role="alert"></p>
+  </section>
+
   <section class="birthday-hero">
-    <p class="eyebrow">Persönlicher Itschana-Geburtstagsraum</p>
+    <p class="eyebrow">Das persönliche Muster</p>
     <p class="birthday-date">Dein Geburtstag · 25. April</p>
     <h1>Franz Leopold Hinterndorfer</h1>
     <p class="hero-lead">Dein Geburtstag erinnert nicht nur an den Beginn deines Lebens. Er öffnet einen Raum, in dem Ursprung, gelebte Zeit und neue Möglichkeiten einander begegnen.</p>
@@ -66,12 +90,14 @@
   </section>
 
   <section class="birthday-future">
-    <p class="eyebrow">Das erste Muster</p>
-    <h2>Aus einem persönlichen Raum kann ein Geburtstagsraum für viele entstehen.</h2>
-    <p>Dieser Raum für Franz ist der Anfang. Als nächster Schritt kann daraus eine einfache Eingabe für Name, Geburtstag und einen persönlichen Zyklusbeginn innerhalb des gültigen Itschana-Zeitraums wachsen.</p>
+    <p class="eyebrow">Ein persönlicher Raum für viele</p>
+    <h2>Jeder Lebenszyklus trägt seinen eigenen Grundbegleiter.</h2>
+    <p>Der Rechner macht die 52-jährige Lebenskraft und die jährlich hinzukommende Geburtstagsenergie sichtbar. Er legt nichts fest – er öffnet einen Raum zum Wahrnehmen.</p>
   </section>
 </main>
 
 <footer><strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong><span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span></footer>
+<script src="itschana-calendar.js"></script>
+<script src="geburtstagsraum.js"></script>
 </body>
 </html>
