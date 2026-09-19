@@ -109,7 +109,10 @@
     document.getElementById('annual-label').textContent = `Geburtstagsenergie ${year}`;
     showEnergy('cycle', cycleEnergy);
     showEnergy('annual', annualEnergy);
-    document.getElementById('result-note').textContent = `Die Lebenskraft wurde am Beginn dieses 52-jährigen Zyklus geprägt und bleibt dessen Grundbegleiter. Die Geburtstagsenergie vom ${formatDate(annualDate)} kommt für dieses Lebensjahr hinzu.`;
+    const crossedTransition = cycleEnergy.system === '260er-Feld' && annualEnergy.system === '273er-Itschana-Feld';
+    document.getElementById('result-note').textContent = crossedTransition
+      ? `Die 52-jährige Lebenskraft wurde vor dem Schnittpunkt geprägt und bleibt bis zum Zyklusende der Grundbegleiter. Die Geburtstagsenergie vom ${formatDate(annualDate)} wird davon getrennt und ausschließlich im 273er-Itschana-Feld berechnet.`
+      : `Die Lebenskraft wurde am Beginn dieses 52-jährigen Zyklus geprägt und bleibt dessen Grundbegleiter. Die Geburtstagsenergie vom ${formatDate(annualDate)} kommt für dieses Lebensjahr hinzu.`;
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
