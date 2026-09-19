@@ -9,3 +9,10 @@
 .result-tone-bars{flex-direction:column;gap:3px}
 .result-tone-points i{width:7px;height:7px;border-radius:50%;background:#fff1c9}
 .result-tone-bars i{width:38px;height:4px;border-radius:999px;background:#fff1c9}
+.origin-kin{position:absolute;z-index:2;display:grid;justify-items:center;gap:3px;width:126px;color:#173f3d}
+.origin-glyph{display:block;width:105px;aspect-ratio:1;background-image:url("itschana-glyphs-sprite.png");background-repeat:no-repeat;background-size:500% 500%;background-position:75% 0;filter:drop-shadow(0 7px 10px rgba(0,0,0,.18))}
+.origin-kin b{padding:3px 8px;border-radius:999px;background:rgba(255,253,245,.82);font-size:.72rem;letter-spacing:.08em}
+.origin-tone{min-height:18px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.origin-tone-points{display:flex;gap:5px}
+.origin-tone-points i{display:block;width:7px;height:7px;border-radius:50%;background:#173f3d}
+.origin-tone-bar{display:block;width:38px;height:4px;border-radius:999px;background:#173f3d}
