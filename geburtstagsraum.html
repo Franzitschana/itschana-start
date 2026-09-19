@@ -84,12 +84,25 @@
     <p class="connection-note">Keine Vorhersage und keine Festlegung – ein persönlicher Raum, in dem du wahrnehmen kannst, was dein neues Lebensjahr in dir anklingen lässt.</p>
   </section>
 
-  <section class="birthday-image-room" aria-labelledby="image-title">
-    <div class="birthday-visual" role="img" aria-label="Symbolisches Geburtstagsbild: Der Weiße Weltenüberbrücker verbindet, während der Blaue Sturm neue Bewegung öffnet">
+  <section class="birthday-image-room birthday-generator" aria-labelledby="image-title">
+    <div class="birthday-visual" id="birthday-visual" role="img" aria-label="Bildraum für das persönliche Geburtstagsbild">
+      <img id="generated-birthday-image" class="generated-birthday-image" alt="" hidden>
       <span class="sun-glow"></span><span class="ground"></span><span class="storm-line line-one"></span><span class="storm-line line-two"></span><span class="storm-line line-three"></span>
-      <div class="visual-words"><small>Dein Geburtstagsbild 2026</small><strong>Welten verbinden.<br>Der Sturm erneuert.</strong></div>
+      <div id="birthday-image-placeholder" class="visual-words"><small>Dein persönlicher Bildraum</small><strong>Hier darf dein Geburtstagsbild entstehen.</strong></div>
     </div>
-    <div class="image-copy"><p class="eyebrow">Dein Geburtstagsbild</p><h2 id="image-title">Ein Bild deines neuen Lebensraums.</h2><p>Du musst darin nichts Bestimmtes erkennen. Vielleicht zeigt sich ein Zentrum, eine Bewegung oder etwas, das erst wachsen möchte. Dein Blick entscheidet, was das Bild für dich werden darf.</p><blockquote>„Heute öffnet sich dein persönlicher Lebensraum.“</blockquote></div>
+    <div class="image-copy">
+      <p class="eyebrow">Dein Geburtstagsbild</p>
+      <h2 id="image-title">Ein Bild deines neuen Lebensraums.</h2>
+      <p>Das Bild verbindet den berechneten 52-jährigen Grundbegleiter mit der Geburtstagsenergie des gewählten Jahres. Deine eigene Wahrnehmung gibt ihm eine persönliche Richtung, ohne etwas festzulegen.</p>
+      <label class="birthday-perception" for="birthday-perception"><span>Was möchtest du in deinem neuen Lebensjahr sichtbar werden lassen?</span><textarea id="birthday-perception" rows="4" maxlength="500" placeholder="Zum Beispiel: Weite, Vertrauen, eine neue Verbindung oder einfach das, was sich zeigen möchte."></textarea></label>
+      <button id="create-birthday-image" class="create-birthday-image" type="button">Mein Geburtstagsbild entstehen lassen</button>
+      <p id="birthday-image-status" class="birthday-image-status" role="status" aria-live="polite"></p>
+      <div id="birthday-image-takeaway" class="birthday-image-takeaway" hidden>
+        <button id="download-birthday-image" type="button">Mein Geburtstagsbild mitnehmen</button>
+        <span>Das Bild wird als PNG auf deinem Gerät gespeichert.</span>
+      </div>
+      <p class="image-cost-note">Jedes neu erzeugte Bild verwendet den Bildmotor.</p>
+    </div>
   </section>
 
   <section class="birthday-future">

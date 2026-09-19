@@ -20,6 +20,7 @@
   const toneKeywords = ['Bestimmung', 'Herausforderung', 'Dienen', 'Form', 'Strahlung', 'Gleichheit', 'Gleichklang', 'Ganzheit', 'Absicht', 'Manifestation', 'Befreiung', 'Zusammenarbeit', 'Gegenwärtigkeit'];
   const toneDimensions = ['Zeit', 'Leben', 'Sinne', 'Bewusstsein', 'Zeit', 'Leben', 'Sinne', 'Bewusstsein', 'Zeit', 'Leben', 'Sinne', 'Bewusstsein', 'Zeit'];
   let itschanaData;
+  let currentBirthdayRoom;
 
   function modulo(value, divisor) {
     return ((value % divisor) + divisor) % divisor;
@@ -127,6 +128,9 @@
     const annualEnergy = energyForDate(annualDate);
     const cycleYear = age - cycleIndex * 52 + 1;
 
+    currentBirthdayRoom = { name, year, annualDate, cycleEnergy, annualEnergy };
+    resetBirthdayImage();
+
     document.getElementById('result-name').textContent = name;
     document.getElementById('result-title').textContent = `${cycleYear}. Jahr im ${cycleIndex + 1}. Lebenszyklus`;
     document.getElementById('result-period').textContent = `${formatDate(cycleStart)} bis ${formatDate(cycleEnd)}`;
@@ -141,10 +145,83 @@
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  function resetBirthdayImage() {
+    const image = document.getElementById('generated-birthday-image');
+    const placeholder = document.getElementById('birthday-image-placeholder');
+    const takeaway = document.getElementById('birthday-image-takeaway');
+    const status = document.getElementById('birthday-image-status');
+    if (!image) return;
+    image.hidden = true;
+    image.removeAttribute('src');
+    image.alt = '';
+    placeholder.hidden = false;
+    takeaway.hidden = true;
+    status.textContent = '';
+  }
+
+  async function createBirthdayImage() {
+    const button = document.getElementById('create-birthday-image');
+    const status = document.getElementById('birthday-image-status');
+    const perception = document.getElementById('birthday-perception').value.trim();
+    if (!currentBirthdayRoom) {
+      status.textContent = 'Bitte berechne zuerst deinen Geburtstagsraum.';
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Dein Bild entsteht …';
+    status.textContent = 'Grundbegleiter, Geburtstagsenergie und deine Wahrnehmung finden gerade zu einem Bild zusammen.';
+
+    try {
+      const response = await fetch('/api/geburtstagsbild', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: currentBirthdayRoom.name,
+          year: currentBirthdayRoom.year,
+          birthdayDate: currentBirthdayRoom.annualDate.toISOString().slice(0, 10),
+          perception,
+          cycleEnergy: currentBirthdayRoom.cycleEnergy,
+          annualEnergy: currentBirthdayRoom.annualEnergy
+        })
+      });
+      const data = await response.json();
+      if (!response.ok || !data.image) throw new Error(data.error || 'Das Bild konnte nicht erzeugt werden.');
+
+      const image = document.getElementById('generated-birthday-image');
+      image.src = data.image;
+      image.alt = `Persönliches Geburtstagsbild für ${currentBirthdayRoom.name} im Jahr ${currentBirthdayRoom.year}`;
+      image.hidden = false;
+      document.getElementById('birthday-image-placeholder').hidden = true;
+      document.getElementById('birthday-image-takeaway').hidden = false;
+      status.textContent = 'Dein Geburtstagsbild ist da. Nimm dir Zeit, bevor du ihm eine Bedeutung gibst.';
+    } catch (error) {
+      status.textContent = error.message || 'Der Bildraum konnte gerade nicht geöffnet werden.';
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Mein Geburtstagsbild entstehen lassen';
+    }
+  }
+
+  function downloadBirthdayImage() {
+    const image = document.getElementById('generated-birthday-image');
+    if (!image.src || !currentBirthdayRoom) return;
+    const safeName = currentBirthdayRoom.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'mein';
+    const link = document.createElement('a');
+    link.href = image.src;
+    link.download = `itschana-geburtstagsbild-${safeName}-${currentBirthdayRoom.year}.png`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     if (itschanaData) calculate();
   });
+
+  document.getElementById('create-birthday-image')?.addEventListener('click', createBirthdayImage);
+  document.getElementById('download-birthday-image')?.addEventListener('click', downloadBirthdayImage);
 
   fetch('data/itschana-flh.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject())
