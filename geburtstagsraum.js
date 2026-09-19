@@ -51,6 +51,7 @@
     const waveIndex = modulo(figureIndex - toneIndex, 20);
     return {
       system: '260er-Feld', kin, figure: oldFigures[figureIndex],
+      figureNumber: figureIndex < 5 ? figureIndex + 1 : figureIndex + 2,
       tone: toneIndex + 1, keyword: toneKeywords[toneIndex], dimension: toneDimensions[toneIndex],
       wave: oldFigures[waveIndex]
     };
@@ -65,6 +66,7 @@
     const wave = itschanaData.figures.find(entry => entry.number === kin.waveFigureNumber);
     return {
       system: '273er-Itschana-Feld', kin: kin.number, figure: figure.name,
+      figureNumber: figure.number,
       tone: tone.number, keyword: tone.keyword, dimension: tone.dimension.replace('Dimension der ', ''),
       wave: wave.name
     };
@@ -78,6 +80,28 @@
     document.getElementById(`${prefix}-kin`).textContent = `KIN ${energy.kin}`;
     document.getElementById(`${prefix}-figure`).textContent = energy.figure;
     document.getElementById(`${prefix}-details`).innerHTML = `Ton ${energy.tone} · ${energy.keyword}<br>Ebene: ${energy.dimension}<br>Welle: ${energy.wave}<br>${energy.system}`;
+    const spriteIndex = energy.figureNumber - 1;
+    document.getElementById(`${prefix}-glyph`).style.backgroundPosition = `${(spriteIndex % 5) * 25}% ${Math.floor(spriteIndex / 5) * 25}%`;
+    renderToneMark(document.getElementById(`${prefix}-tone-mark`), energy.tone);
+  }
+
+  function renderToneMark(mark, toneNumber) {
+    const bars = Math.floor(toneNumber / 5);
+    const points = toneNumber % 5;
+    const parts = [];
+    if (points) {
+      const row = document.createElement('span');
+      row.className = 'result-tone-points';
+      for (let index = 0; index < points; index += 1) row.appendChild(document.createElement('i'));
+      parts.push(row);
+    }
+    if (bars) {
+      const stack = document.createElement('span');
+      stack.className = 'result-tone-bars';
+      for (let index = 0; index < bars; index += 1) stack.appendChild(document.createElement('i'));
+      parts.push(stack);
+    }
+    mark.replaceChildren(...parts);
   }
 
   function calculate() {
