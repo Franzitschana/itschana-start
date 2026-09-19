@@ -3,9 +3,24 @@ module.exports = async function handler(req, res) {
   try {
     const { list } = await import('@vercel/blob');
     const date = /^\d{4}-\d{2}-\d{2}$/.test(String(req.query.date || '')) ? String(req.query.date) : '';
-    if (!date) return res.status(400).json({ error: 'Tagesdatum fehlt.' });
-    const result = await list({ prefix: `tagesgalerie/${date}/` });
-    const images = result.blobs.filter(blob => blob.pathname.endsWith('.png')).map(blob => ({ pathname: blob.pathname, uploadedAt: blob.uploadedAt }));
+    const prefix = date ? `tagesgalerie/${date}/` : 'tagesgalerie/';
+    const blobs = [];
+    let cursor;
+
+    do {
+      const result = await list({ prefix, cursor, limit: 1000 });
+      blobs.push(...result.blobs);
+      cursor = result.hasMore ? result.cursor : undefined;
+    } while (cursor && blobs.length < 5000);
+
+    const images = blobs
+      .filter(blob => /^tagesgalerie\/\d{4}-\d{2}-\d{2}\/.+\.png$/.test(blob.pathname))
+      .map(blob => ({
+        pathname: blob.pathname,
+        date: blob.pathname.split('/')[1],
+        uploadedAt: blob.uploadedAt
+      }))
+      .sort((a, b) => String(a.uploadedAt).localeCompare(String(b.uploadedAt)));
     res.setHeader('Cache-Control', 'no-store');
     return res.status(200).json({ images });
   } catch (error) {
