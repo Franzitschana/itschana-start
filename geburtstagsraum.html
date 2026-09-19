@@ -105,6 +105,19 @@
     </div>
   </section>
 
+  <section class="birthday-card-room" aria-labelledby="birthday-card-title">
+    <p class="eyebrow">Eine Seite für das Goldene Buch</p>
+    <h2 id="birthday-card-title">Deine persönliche Geburtstags-Glückwunschkarte</h2>
+    <p>Schreibe Worte, die nicht festlegen, sondern ein neues Lebensjahr liebevoll begleiten. Die berechneten Energien und – wenn vorhanden – das Geburtstagsbild werden mit dieser Seite verbunden.</p>
+    <label for="birthday-wish">Mein Glückwunsch für diesen Menschen</label>
+    <textarea id="birthday-wish" rows="7" maxlength="5000" placeholder="Was möchtest du diesem Menschen für sein neues Lebensjahr mitgeben?"></textarea>
+    <label for="birthday-writer">Geschrieben von</label>
+    <input id="birthday-writer" type="text" maxlength="120" placeholder="Dein Name">
+    <div class="birthday-card-actions"><button id="save-birthday-card" type="button">Diese Karte ins Goldene Buch legen</button><button id="download-birthday-book" type="button">Meine Buchdatei mitnehmen</button></div>
+    <p id="birthday-card-status" class="birthday-card-status" role="status" aria-live="polite"></p>
+    <p class="birthday-card-privacy">Die Karte bleibt privat auf diesem Gerät, bis du die Buchdatei selbst mitnimmst oder weitergibst.</p>
+  </section>
+
   <section class="birthday-future">
     <p class="eyebrow">Ein persönlicher Raum für viele</p>
     <h2>Jeder Lebenszyklus trägt seinen eigenen Grundbegleiter.</h2>
@@ -114,6 +127,7 @@
 
 <footer><strong class="footer-title">RESET – Zurück zum Leben als Mensch!</strong><span class="footer-motto">Wahrnehmen · Spielen · Erkennen · Gestalten</span></footer>
 <script src="itschana-calendar.js"></script>
+<script src="goldenes-buch.js"></script>
 <script src="geburtstagsraum.js"></script>
 </body>
 </html>

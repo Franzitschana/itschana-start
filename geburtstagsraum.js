@@ -222,6 +222,27 @@
 
   document.getElementById('create-birthday-image')?.addEventListener('click', createBirthdayImage);
   document.getElementById('download-birthday-image')?.addEventListener('click', downloadBirthdayImage);
+  document.getElementById('save-birthday-card')?.addEventListener('click', async () => {
+    const status = document.getElementById('birthday-card-status');
+    const text = document.getElementById('birthday-wish').value.trim();
+    const author = document.getElementById('birthday-writer').value.trim();
+    if (!currentBirthdayRoom) { status.textContent = 'Bitte berechne zuerst den Geburtstagsraum.'; return; }
+    if (!text) { status.textContent = 'Schreibe zuerst deinen persönlichen Glückwunsch.'; return; }
+    const image = await GoldenesBuch.imageThumbnail(document.getElementById('generated-birthday-image'));
+    GoldenesBuch.addEntry({
+      type: 'geburtstag',
+      date: currentBirthdayRoom.annualDate.toISOString().slice(0, 10),
+      title: `Geburtstagskarte für ${currentBirthdayRoom.name} · ${currentBirthdayRoom.year}`,
+      text, author, image,
+      energy: { grundbegleiter: currentBirthdayRoom.cycleEnergy, geburtstagsenergie: currentBirthdayRoom.annualEnergy }
+    });
+    status.textContent = `Die Glückwunschkarte liegt nun im Goldenen Buch. Es enthält ${GoldenesBuch.count()} Seiten.`;
+    document.getElementById('birthday-wish').value = '';
+  });
+  document.getElementById('download-birthday-book')?.addEventListener('click', () => {
+    GoldenesBuch.download();
+    document.getElementById('birthday-card-status').textContent = 'Deine Goldene-Buch-Datei wurde zum Mitnehmen vorbereitet.';
+  });
 
   fetch('data/itschana-flh.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject())
