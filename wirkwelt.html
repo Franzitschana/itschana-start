@@ -52,7 +52,8 @@ const select=document.getElementById('bereich');
 const itDatum=document.getElementById('itschanaDatum');
 const itInhalt=document.getElementById('itschanaInhalt');
 const itOriginal=itInhalt.innerHTML;
-let itData=null;\nlet bgblData=null;
+let itData=null;
+let bgblData=null;
 function byNumber(collection,number){return collection.find(entry=>entry.number===number)}
 function kinDisplayName(kinName,figure){if(figure.number===6||!/^(Der|Die)\s/.test(figure.name))return kinName;const [article,color]=figure.name.split(/\s+/);let description=kinName.split(/\s+/).slice(1).join(" ");if(description.startsWith("oberton "))description="Oberton "+description.slice(8);else description=description.replace(/^(\S+)er\b/,"$1e");return article+" "+color+" "+description}
 function syncItschana(){
