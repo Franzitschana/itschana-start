@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rote Erde · Anker der Wirkwelt · Itschana</title>
+<link rel="icon" href="icon-512.png"><link rel="stylesheet" href="reset.css">
+<style>
+:root{--erde:#9b382f;--erde2:#c66a50;--papier:#fffaf0;--tinte:#17333d;--gold:#b98b3b}
+body{background:linear-gradient(#f4eee2,#eef7f4);color:var(--tinte);font-family:Arial,sans-serif;margin:0}
+header{max-width:1100px;margin:auto;padding:18px}.brand{color:inherit;text-decoration:none;font-weight:700}
+main{max-width:1050px;margin:auto;padding:18px 18px 70px}
+.hero{min-height:0!important;background:none!important;color:var(--tinte)!important;text-align:center;padding:18px 12px 10px;display:block!important}.earth{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--erde2),var(--erde));margin:0 auto 10px;box-shadow:0 0 0 7px rgba(155,56,47,.08)}
+h1{margin:.2em 0;font-size:clamp(2rem,5vw,3.6rem)!important;line-height:1.05!important;letter-spacing:-.03em!important} .lead{max-width:720px;margin:auto;line-height:1.6}
+.anchor{background:var(--papier);border:1px solid #ddcfb8;border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.controls label{font-weight:700}.controls input,.controls select{padding:11px;border:1px solid #b9b2a7;border-radius:10px;background:white}
+button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;color:white;text-decoration:none;cursor:pointer}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:white;border-radius:16px;padding:20px;border-top:5px solid var(--gold)}
+.panel.wirk{border-top-color:var(--erde)} .status{display:inline-block;padding:5px 9px;border-radius:999px;font-size:.82rem;font-weight:700;margin-right:6px}
+.green{background:#dff1e5}.yellow{background:#fff0b8}.blue{background:#dfeefa}
+.item{padding:15px 0;border-bottom:1px solid #e7e1d7}.item:last-child{border:0}.item h3{margin:5px 0}.item p{line-height:1.5}
+.source{font-size:.9rem}.source a{color:#205d62}.truth{border-left:5px solid var(--erde);padding-left:18px}
+.note{font-size:.92rem;color:#506267}.hidden{display:none}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+</style>
+<script src="itschana-calendar.js"></script>
+</head>
+<body>
+<header><a class="brand" href="index.html">○ Itschana</a></header>
+<main>
+<section class="hero"><div class="earth" aria-hidden="true"></div><p>ROTE ERDE</p><h1>Anker der Wirkwelt</h1><p class="lead">Nachsehen · Einordnen · Aufarbeiten.</p><p class="note">Der Itschana-Raum und die nachprüfbare Wirkwelt bleiben getrennt. Du kannst jederzeit zur Originalquelle zurückgehen.</p></section>
+<section class="anchor">
+<div class="controls">
+<label>Datum<br><input id="datum" type="date" value="2026-09-28"></label>
+<label>Bereich<br><select id="bereich"><option value="alle">Alle Bereiche</option><option value="energie">Energie & Klima</option><option value="finanzen">Geld & Finanzen</option><option value="bildung">Bildung</option><option value="migration">Migration & Arbeit</option><option value="recht">Recht & Staat</option></select></label>
+<button id="ansehen">Anker öffnen</button>
+</div>
+<p class="note" id="stand">Erster gespeicherter Anker: 28.09.2026 · Österreich · Bundesrecht</p>
+</section>
+<section class="two">
+<article class="panel"><p>ITSCHANA-RAUM</p><h2 id="itschanaDatum">28.09.2026</h2><div id="itschanaInhalt"><p><strong>11. Monatszyklus:</strong> Befreiung</p><p><strong>Welle:</strong> Der Weiße Spiegel · Klarheit</p><p><strong>Tagesraum:</strong> KIN 134 · Niwanes · Ton 3</p><p><strong>Raum:</strong> Unbestimmt · Erfühlbarkeit · Dimension der Sinne</p></div><p class="note">Itschana öffnet den Wahrnehmungsraum. Diese Seite verwendet ihn nicht als politische Vorhersage oder Bewertung.</p></article>
+<article class="panel wirk"><p>NACHPRÜFBARE WIRKWELT</p><h2>Österreich · Bundesrecht</h2><p><span class="status green">kundgemacht</span><span class="status yellow">im Verfahren</span><span class="status blue">Entwurf</span></p><p>Jeder Eintrag führt zur amtlichen Quelle. Ein späterer Stand überschreibt diesen Anker nicht.</p><p class="note">Abrufstand dieses Ankers: 28.09.2026</p></article>
+</section>
+<section class="anchor" id="register">
+<h2>Register durchforsten</h2><p class="note">Wähle oben einen Bereich. Jeder Fund behält seinen damaligen Status und seine amtliche Quelle.</p>
+<div class="item" data-bereich="recht" data-date="2026-01-02"><span class="status green">KUNDGEMACHT</span><h3>BGBl. I Nr. 1/2026</h3><p><strong>02.01.2026</strong> · Änderungsvereinbarung zum Nationalpark Neusiedler See-Seewinkel.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/1" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="bildung" data-date="2026-02-18"><span class="status green">KUNDGEMACHT</span><h3>Schulrecht · BGBl. I Nr. 2/2026</h3><p><strong>18.02.2026</strong> · Änderungen mehrerer Schulgesetze und des Berufsreifeprüfungsgesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/2" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="recht" data-date="2026-02-27"><span class="status green">KUNDGEMACHT</span><h3>Vergaberechtsgesetz 2026 · BGBl. I Nr. 8/2026</h3><p><strong>27.02.2026</strong> · Änderungen im Vergaberecht einschließlich Konzessionen, Verteidigung und Sicherheit.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/8" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="energie" data-date="2026-03-31"><span class="status green">KUNDGEMACHT</span><h3>Preisgesetz & Energie-Control · BGBl. I Nr. 13/2026</h3><p><strong>31.03.2026</strong> · Änderung des Preisgesetzes 1992 und des Energie-Control-Gesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/13" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="finanzen" data-date="2026-04-23"><span class="status green">KUNDGEMACHT</span><h3>ESG-Rating-Vollzug · BGBl. I Nr. 28/2026</h3><p><strong>23.04.2026</strong> · ESG-Rating-Verordnung-Vollzugsgesetz und Änderung des Finanzmarktaufsichtsbehördengesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/28" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="bildung" data-date="2026-05-19"><span class="status green">KUNDGEMACHT</span><h3>Privatschulgesetz · BGBl. I Nr. 31/2026</h3><p><strong>19.05.2026</strong> · Änderung des Privatschulgesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/31" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="finanzen" data-date="2026-06-30"><span class="status green">KUNDGEMACHT</span><h3>Budgetmaßnahmengesetz 2026 · BGBl. I Nr. 43/2026</h3><p><strong>30.06.2026</strong> · Änderungen unter anderem bei Einkommensteuer, Umsatzsteuer, Finanzstrafrecht, Gebühren und Preisauszeichnung.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/43" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="bildung" data-date="2026-07-29"><span class="status green">KUNDGEMACHT</span><h3>Pflichtschulabschluss & Schulrecht · BGBl. I Nr. 76/2026</h3><p><strong>29.07.2026</strong> · Änderungen des Pflichtschulabschluss-Prüfungs-Gesetzes, Schulorganisationsgesetzes und Schulunterrichtsgesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/76" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="migration" data-date="2026-08-06"><span class="status green">KUNDGEMACHT</span><h3>Niederlassung, Aufenthalt & Beschäftigung · BGBl. I Nr. 81/2026</h3><p><strong>06.08.2026</strong> · Änderung des Niederlassungs- und Aufenthaltsgesetzes und des Ausländerbeschäftigungsgesetzes.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/2026/81" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="energie" data-date="2026-09-17"><span class="status blue">MINISTERIALENTWURF</span><h3>Industriestrompreisgesetz (ISPG) · 135/ME</h3><p><strong>17.09.2026</strong> · Entwurf; Begutachtungsfrist bis 16.10.2026.</p><p class="source"><a href="https://www.parlament.gv.at/gegenstand/XXVIII/ME/135" target="_blank" rel="noopener">Amtliche Parlamentsseite öffnen ↗</a></p></div>
+<div class="item" data-bereich="energie" data-date="2026-09-17"><span class="status blue">MINISTERIALENTWURF</span><h3>Strompreiskrisenmechanismus-Gesetz (SPKMG) · 136/ME</h3><p><strong>17.09.2026</strong> · Entwurf eines befristeten Mechanismus für außergewöhnlich hohe Strompreise; Begutachtungsfrist bis 16.10.2026.</p><p class="source"><a href="https://www.parlament.gv.at/gegenstand/XXVIII/ME/136" target="_blank" rel="noopener">Amtliche Parlamentsseite öffnen ↗</a></p></div>
+<p class="note" id="trefferInfo"></p></section>
+<section class="anchor truth"><h2>Es war · Es ist · könnte sein</h2><p><strong>Es war:</strong> Der gespeicherte, nachprüfbare Stand am Ankerdatum.</p><p><strong>Es ist:</strong> Was bei einem späteren Besuch aktuell nachweisbar geworden ist.</p><p><strong>könnte sein:</strong> Was am Ankerdatum Möglichkeit, Entwurf oder eigene Wahrnehmung war – ohne es nachträglich als Gewissheit auszugeben.</p></section>
+<p style="text-align:center"><a class="button" href="tageszeitraum.html">← Zurück zum Tagesraum</a></p>
+</main>
+<script>
+const select=document.getElementById('bereich');
+const itDatum=document.getElementById('itschanaDatum');
+const itInhalt=document.getElementById('itschanaInhalt');
+const itOriginal=itInhalt.innerHTML;
+let itData=null;
+function byNumber(collection,number){return collection.find(entry=>entry.number===number)}
+function kinDisplayName(kinName,figure){if(figure.number===6||!/^(Der|Die)\s/.test(figure.name))return kinName;const [article,color]=figure.name.split(/\s+/);let description=kinName.split(/\s+/).slice(1).join(" ");if(description.startsWith("oberton "))description="Oberton "+description.slice(8);else description=description.replace(/^(\S+)er\b/,"$1e");return article+" "+color+" "+description}
+function syncItschana(){
+ const iso=document.getElementById('datum').value;if(!iso)return;
+ const d=ItschanaCalendar.dateFromIso(iso);const [y,m,tag]=iso.split('-');itDatum.textContent=tag+'.'+m+'.'+y;
+ if(!d||!itData){itInhalt.innerHTML='<p class="note">Die gültigen Itschana-Tagesdaten werden geladen …</p>';return}
+ const kn=ItschanaCalendar.kinForDate(d),kin=byNumber(itData.kins,kn);
+ if(!kin){itInhalt.innerHTML='<p class="note">Für diesen Tag konnte in der Itschana-Datenquelle kein Tagesraum gefunden werden.</p>';return}
+ const tone=byNumber(itData.tones,kin.toneNumber),figure=byNumber(itData.figures,kin.figureNumber),wave=byNumber(itData.figures,kin.waveFigureNumber),name=kinDisplayName(kin.name,figure);
+ itInhalt.innerHTML='<p><strong>Tagesraum:</strong> KIN '+kin.number+' · '+name+'</p><p><strong>Ton:</strong> '+tone.number+' · '+tone.keyword+' · '+tone.dimension+'</p><p><strong>Welle:</strong> '+wave.name+'</p><p><strong>Figur:</strong> '+figure.name+'</p><p><strong>Bestimmung:</strong> '+figure.purpose+'</p>';
+}
+function filter(){syncItschana();
+ const d=document.getElementById('datum').value||'9999-12-31';
+ let n=0;
+ document.querySelectorAll('.item').forEach(x=>{
+  const okBereich=select.value==='alle'||x.dataset.bereich===select.value;
+  const okDatum=!x.dataset.date||x.dataset.date<=d;
+  const show=okBereich&&okDatum; x.classList.toggle('hidden',!show); if(show)n++;
+ });
+ const info=document.getElementById('trefferInfo'); if(info) info.textContent=n+' Einträge bis zum gewählten Ankerdatum sichtbar.';
+}
+select.addEventListener('change',filter);document.getElementById('datum').addEventListener('change',filter);fetch('data/itschana-flh.json').then(r=>r.json()).then(d=>{itData=d;filter()}).catch(()=>{itInhalt.innerHTML='<p class="note">Die Itschana-Datenquelle konnte gerade nicht geöffnet werden.</p>'});filter();
+document.getElementById('ansehen').addEventListener('click',()=>{const d=document.getElementById('datum').value;document.getElementById('stand').textContent='Ankerdatum: '+d+' · sichtbar sind nur Einträge, die bis zu diesem Datum dokumentiert sind.';filter();document.getElementById('register').scrollIntoView({behavior:'smooth'});})
+</script>
+</body></html>
