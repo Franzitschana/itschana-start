@@ -36,7 +36,7 @@ button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;
 <p class="note" id="stand">Erster gespeicherter Anker: 28.09.2026 · Österreich · Bundesrecht</p>
 </section>
 <section class="two">
-<article class="panel"><p>ITSCHANA-RAUM</p><h2>28.09.2026</h2><p><strong>11. Monatszyklus:</strong> Befreiung</p><p><strong>Welle:</strong> Der Weiße Spiegel · Klarheit</p><p><strong>Tagesraum:</strong> KIN 134 · Niwanes · Ton 3</p><p><strong>Raum:</strong> Unbestimmt · Erfühlbarkeit · Dimension der Sinne</p><p class="note">Itschana öffnet den Wahrnehmungsraum. Diese Seite verwendet ihn nicht als politische Vorhersage oder Bewertung.</p></article>
+<article class="panel"><p>ITSCHANA-RAUM</p><h2 id="itschanaDatum">28.09.2026</h2><div id="itschanaInhalt"><p><strong>11. Monatszyklus:</strong> Befreiung</p><p><strong>Welle:</strong> Der Weiße Spiegel · Klarheit</p><p><strong>Tagesraum:</strong> KIN 134 · Niwanes · Ton 3</p><p><strong>Raum:</strong> Unbestimmt · Erfühlbarkeit · Dimension der Sinne</p></div><p class="note">Itschana öffnet den Wahrnehmungsraum. Diese Seite verwendet ihn nicht als politische Vorhersage oder Bewertung.</p></article>
 <article class="panel wirk"><p>NACHPRÜFBARE WIRKWELT</p><h2>Österreich · Bundesrecht</h2><p><span class="status green">kundgemacht</span><span class="status yellow">im Verfahren</span><span class="status blue">Entwurf</span></p><p>Jeder Eintrag führt zur amtlichen Quelle. Ein späterer Stand überschreibt diesen Anker nicht.</p><p class="note">Abrufstand dieses Ankers: 28.09.2026</p></article>
 </section>
 <section class="anchor" id="register">
@@ -58,7 +58,17 @@ button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;
 </main>
 <script>
 const select=document.getElementById('bereich');
-function filter(){
+const itDatum=document.getElementById('itschanaDatum');
+const itInhalt=document.getElementById('itschanaInhalt');
+const itOriginal=itInhalt.innerHTML;
+function syncItschana(){
+ const d=document.getElementById('datum').value;
+ if(!d)return;
+ const [y,m,tag]=d.split('-'); itDatum.textContent=tag+'.'+m+'.'+y;
+ if(d==='2026-09-28') itInhalt.innerHTML=itOriginal;
+ else itInhalt.innerHTML='<p><strong>Itschana-Daten:</strong> Für diesen gewählten Tag werden die Tagesraum-Daten in dieser Prüfversion noch nicht automatisch geladen.</p><p class="note">Das Datum läuft bereits gemeinsam mit der Wirkwelt. Die Itschana-Werte werden erst eingeblendet, wenn sie aus der gültigen Itschana-Datenquelle übernommen werden.</p>';
+}
+function filter(){syncItschana();
  const d=document.getElementById('datum').value||'9999-12-31';
  let n=0;
  document.querySelectorAll('.item').forEach(x=>{
