@@ -67,7 +67,7 @@ function syncItschana(){
 }
 function renderBgbl(){
  const host=document.getElementById('kundmachungen'); if(!host||!bgblData)return;
- host.innerHTML=bgblData.entries.map(e=>'<div class="item" data-bereich="'+e.bereich+'" data-date="'+e.date+'"><span class="status green">KUNDGEMACHT</span><h3>BGBl. I Nr. '+e.nr+'/2026</h3><p><strong>'+e.date.split('-').reverse().join('.')+'</strong> · '+e.title+'</p><p class="source"><a href="'+e.source+'" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>').join('');
+ host.innerHTML=bgblData.entries.map(e=>'<div class="item" data-bereich="'+e.bereich+'" data-date="'+e.date+'"><span class="status green">KUNDGEMACHT</span><h3>BGBl. I Nr. '+e.nr+'/2026</h3><p><strong>'+e.date.split('-').reverse().join('.')+'</strong> · '+e.title+'</p><p class="source"><a href="'+e.source+'" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a> · <button type="button" onclick="alert(article.einfach || 'Für diesen Eintrag ist noch keine verständliche Erklärung hinterlegt.')">Einfach erklärt</button></p></div>').join('');
 }
 function filter(){syncItschana();
  const d=document.getElementById('datum').value||'9999-12-31';
