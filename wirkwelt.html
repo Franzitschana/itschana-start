@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rote Erde · Anker der Wirkwelt · Itschana</title>
+<link rel="icon" href="icon-512.png"><link rel="stylesheet" href="reset.css">
+<style>
+:root{--erde:#9b382f;--erde2:#c66a50;--papier:#fffaf0;--tinte:#17333d;--gold:#b98b3b}
+body{background:linear-gradient(#f4eee2,#eef7f4);color:var(--tinte);font-family:Arial,sans-serif;margin:0}
+header{max-width:1100px;margin:auto;padding:18px}.brand{color:inherit;text-decoration:none;font-weight:700}
+main{max-width:1050px;margin:auto;padding:18px 18px 70px}
+.hero{text-align:center;padding:35px 12px}.earth{width:82px;height:82px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--erde2),var(--erde));margin:0 auto 16px;box-shadow:0 0 0 9px rgba(155,56,47,.08)}
+h1{margin:.2em 0} .lead{max-width:720px;margin:auto;line-height:1.6}
+.anchor{background:var(--papier);border:1px solid #ddcfb8;border-radius:18px;padding:22px;margin:20px 0;box-shadow:0 8px 28px rgba(0,0,0,.05)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.controls label{font-weight:700}.controls input,.controls select{padding:11px;border:1px solid #b9b2a7;border-radius:10px;background:white}
+button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;color:white;text-decoration:none;cursor:pointer}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:white;border-radius:16px;padding:20px;border-top:5px solid var(--gold)}
+.panel.wirk{border-top-color:var(--erde)} .status{display:inline-block;padding:5px 9px;border-radius:999px;font-size:.82rem;font-weight:700;margin-right:6px}
+.green{background:#dff1e5}.yellow{background:#fff0b8}.blue{background:#dfeefa}
+.item{padding:15px 0;border-bottom:1px solid #e7e1d7}.item:last-child{border:0}.item h3{margin:5px 0}.item p{line-height:1.5}
+.source{font-size:.9rem}.source a{color:#205d62}.truth{border-left:5px solid var(--erde);padding-left:18px}
+.note{font-size:.92rem;color:#506267}.hidden{display:none}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">○ Itschana</a></header>
+<main>
+<section class="hero"><div class="earth" aria-hidden="true"></div><p>ROTE ERDE</p><h1>Anker der Wirkwelt</h1><p class="lead">Nachsehen · Einordnen · Aufarbeiten. Der Itschana-Raum und die nachprüfbare Wirkwelt bleiben getrennt sichtbar. Das Register sagt nicht, was du denken sollst. Es zeigt, was zu einem Zeitpunkt dokumentiert war.</p></section>
+<section class="anchor">
+<div class="controls">
+<label>Datum<br><input id="datum" type="date" value="2026-09-28"></label>
+<label>Bereich<br><select id="bereich"><option value="alle">Alle Bereiche</option><option value="energie">Energie & Klima</option><option value="recht">Recht & Staat</option></select></label>
+<button id="ansehen">Anker öffnen</button>
+</div>
+<p class="note" id="stand">Erster gespeicherter Anker: 28.09.2026 · Österreich · Bundesrecht</p>
+</section>
+<section class="two">
+<article class="panel"><p>ITSCHANA-RAUM</p><h2>28.09.2026</h2><p><strong>11. Monatszyklus:</strong> Befreiung</p><p><strong>Welle:</strong> Der Weiße Spiegel · Klarheit</p><p><strong>Tagesraum:</strong> KIN 134 · Niwanes · Ton 3</p><p><strong>Raum:</strong> Unbestimmt · Erfühlbarkeit · Dimension der Sinne</p><p class="note">Itschana öffnet den Wahrnehmungsraum. Diese Seite verwendet ihn nicht als politische Vorhersage oder Bewertung.</p></article>
+<article class="panel wirk"><p>NACHPRÜFBARE WIRKWELT</p><h2>Österreich · Bundesrecht</h2><p><span class="status green">kundgemacht</span><span class="status yellow">im Verfahren</span><span class="status blue">Entwurf</span></p><p>Jeder Eintrag führt zur amtlichen Quelle. Ein späterer Stand überschreibt diesen Anker nicht.</p><p class="note">Abrufstand dieses Ankers: 28.09.2026</p></article>
+</section>
+<section class="anchor" id="register">
+<h2>Register durchforsten</h2>
+<div class="item" data-bereich="recht"><span class="status green">KUNDGEMACHT</span><h3>Bundesgesetzblatt I · 2026</h3><p>Am Ankerdatum reicht die amtliche RIS-Trefferliste für 2026 von BGBl. I Nr. 1/2026 bis Nr. 81/2026. Nr. 81 wurde am 06.08.2026 kundgemacht.</p><p class="source"><a href="https://www.ris.bka.gv.at/eli/bgbl/I/" target="_blank" rel="noopener">Amtliche Quelle im RIS öffnen ↗</a></p></div>
+<div class="item" data-bereich="energie"><span class="status blue">MINISTERIALENTWURF</span><h3>Strompreiskrisenmechanismus-Gesetz (SPKMG)</h3><p>Stand 17.09.2026. Vorgesehen ist ein befristeter Mechanismus für außergewöhnlich hohe Strompreise. Die Begutachtungsfrist endet am 16.10.2026. Am Ankerdatum ist dies kein geltendes Gesetz.</p><p class="source"><a href="https://www.parlament.gv.at/gegenstand/XXVIII/ME/136" target="_blank" rel="noopener">Amtliche Parlamentsseite öffnen ↗</a></p></div>
+<div class="item" data-bereich="energie"><span class="status blue">MINISTERIALENTWURF</span><h3>Klimagesetz (KliG)</h3><p>Stand 21.09.2026. Der Entwurf nennt Klimafahrplan, institutionellen Rahmen sowie Monitoring und Berichtswesen. Die Begutachtungsfrist endet am 30.10.2026. Am Ankerdatum ist dies kein geltendes Gesetz.</p><p class="source"><a href="https://www.parlament.gv.at/gegenstand/XXVIII/ME/137" target="_blank" rel="noopener">Amtliche Parlamentsseite öffnen ↗</a></p></div>
+</section>
+<section class="anchor truth"><h2>Es war · Es ist · könnte sein</h2><p><strong>Es war:</strong> Der gespeicherte, nachprüfbare Stand am Ankerdatum.</p><p><strong>Es ist:</strong> Was bei einem späteren Besuch aktuell nachweisbar geworden ist.</p><p><strong>könnte sein:</strong> Was am Ankerdatum Möglichkeit, Entwurf oder eigene Wahrnehmung war – ohne es nachträglich als Gewissheit auszugeben.</p></section>
+<p style="text-align:center"><a class="button" href="tageszeitraum.html">← Zurück zum Tagesraum</a></p>
+</main>
+<script>
+const select=document.getElementById('bereich');
+function filter(){document.querySelectorAll('.item').forEach(x=>x.classList.toggle('hidden',select.value!=='alle'&&x.dataset.bereich!==select.value))}
+select.addEventListener('change',filter);
+document.getElementById('ansehen').addEventListener('click',()=>{const d=document.getElementById('datum').value;if(d!=='2026-09-28'){document.getElementById('stand').textContent='Für '+d+' ist in dieser ersten Prüfversion noch kein eingefrorener Anker hinterlegt. Der erste gespeicherte Anker bleibt 28.09.2026.'}else{document.getElementById('stand').textContent='Erster gespeicherter Anker: 28.09.2026 · Österreich · Bundesrecht'}})
+</script>
+</body></html>
