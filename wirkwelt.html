@@ -22,6 +22,7 @@ button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;
 .note{font-size:.92rem;color:#506267}.hidden{display:none}
 @media(max-width:760px){.two{grid-template-columns:1fr}}
 </style>
+<script src="itschana-calendar.js"></script>
 </head>
 <body>
 <header><a class="brand" href="index.html">○ Itschana</a></header>
@@ -61,12 +62,17 @@ const select=document.getElementById('bereich');
 const itDatum=document.getElementById('itschanaDatum');
 const itInhalt=document.getElementById('itschanaInhalt');
 const itOriginal=itInhalt.innerHTML;
+let itData=null;
+function byNumber(collection,number){return collection.find(entry=>entry.number===number)}
+function kinDisplayName(kinName,figure){if(figure.number===6||!/^(Der|Die)\s/.test(figure.name))return kinName;const [article,color]=figure.name.split(/\s+/);let description=kinName.split(/\s+/).slice(1).join(" ");if(description.startsWith("oberton "))description="Oberton "+description.slice(8);else description=description.replace(/^(\S+)er\b/,"$1e");return article+" "+color+" "+description}
 function syncItschana(){
- const d=document.getElementById('datum').value;
- if(!d)return;
- const [y,m,tag]=d.split('-'); itDatum.textContent=tag+'.'+m+'.'+y;
- if(d==='2026-09-28') itInhalt.innerHTML=itOriginal;
- else itInhalt.innerHTML='<p><strong>Itschana-Daten:</strong> Für diesen gewählten Tag werden die Tagesraum-Daten in dieser Prüfversion noch nicht automatisch geladen.</p><p class="note">Das Datum läuft bereits gemeinsam mit der Wirkwelt. Die Itschana-Werte werden erst eingeblendet, wenn sie aus der gültigen Itschana-Datenquelle übernommen werden.</p>';
+ const iso=document.getElementById('datum').value;if(!iso)return;
+ const d=ItschanaCalendar.dateFromIso(iso);const [y,m,tag]=iso.split('-');itDatum.textContent=tag+'.'+m+'.'+y;
+ if(!d||!itData){itInhalt.innerHTML='<p class="note">Die gültigen Itschana-Tagesdaten werden geladen …</p>';return}
+ const kn=ItschanaCalendar.kinForDate(d),kin=byNumber(itData.kins,kn);
+ if(!kin){itInhalt.innerHTML='<p class="note">Für diesen Tag konnte in der Itschana-Datenquelle kein Tagesraum gefunden werden.</p>';return}
+ const tone=byNumber(itData.tones,kin.toneNumber),figure=byNumber(itData.figures,kin.figureNumber),wave=byNumber(itData.figures,kin.waveFigureNumber),name=kinDisplayName(kin.name,figure);
+ itInhalt.innerHTML='<p><strong>Tagesraum:</strong> KIN '+kin.number+' · '+name+'</p><p><strong>Ton:</strong> '+tone.number+' · '+tone.keyword+' · '+tone.dimension+'</p><p><strong>Welle:</strong> '+wave.name+'</p><p><strong>Figur:</strong> '+figure.name+'</p><p><strong>Bestimmung:</strong> '+figure.purpose+'</p>';
 }
 function filter(){syncItschana();
  const d=document.getElementById('datum').value||'9999-12-31';
@@ -78,7 +84,7 @@ function filter(){syncItschana();
  });
  const info=document.getElementById('trefferInfo'); if(info) info.textContent=n+' Einträge bis zum gewählten Ankerdatum sichtbar.';
 }
-select.addEventListener('change',filter);document.getElementById('datum').addEventListener('change',filter);filter();
+select.addEventListener('change',filter);document.getElementById('datum').addEventListener('change',filter);fetch('data/itschana-flh.json').then(r=>r.json()).then(d=>{itData=d;filter()}).catch(()=>{itInhalt.innerHTML='<p class="note">Die Itschana-Datenquelle konnte gerade nicht geöffnet werden.</p>'});filter();
 document.getElementById('ansehen').addEventListener('click',()=>{const d=document.getElementById('datum').value;document.getElementById('stand').textContent='Ankerdatum: '+d+' · sichtbar sind nur Einträge, die bis zu diesem Datum dokumentiert sind.';filter();document.getElementById('register').scrollIntoView({behavior:'smooth'});})
 </script>
 </body></html>
