@@ -31,7 +31,7 @@ button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;
 <section class="anchor">
 <div class="controls">
 <label>Datum<br><input id="datum" type="date" value="2026-09-28"></label>
-<label>Bereich<br><select id="bereich"><option value="alle">Alle Bereiche</option><option value="energie">Energie & Klima</option><option value="finanzen">Geld & Finanzen</option><option value="bildung">Bildung</option><option value="migration">Migration & Arbeit</option><option value="recht">Recht & Staat</option></select></label>
+<label>Bereich<br><select id="bereich"><option value="alle">Alle Bereiche</option><option value="energie">Energie & Klima</option><option value="finanzen">Geld & Finanzen</option><option value="gesundheit">Gesundheit</option><option value="soziales">Arbeit & Soziales</option><option value="bildung">Bildung</option><option value="justiz">Justiz & Recht</option><option value="migration">Migration</option><option value="verkehr">Verkehr & Mobilität</option><option value="wohnen">Wohnen</option><option value="wirtschaft">Wirtschaft & Verbraucher</option><option value="staat">Staat & Verfassung</option></select></label>
 <button id="ansehen">Anker öffnen</button>
 </div>
 <p class="note" id="stand">Erster gespeicherter Anker: 28.09.2026 · Österreich · Bundesrecht</p>
@@ -76,7 +76,7 @@ function filter(){syncItschana();
   const okDatum=!x.dataset.date||x.dataset.date<=d;
   const show=okBereich&&okDatum; x.classList.toggle('hidden',!show); if(show)n++;
  });
- const info=document.getElementById('trefferInfo'); if(info) info.textContent=n+' Einträge bis zum gewählten Ankerdatum sichtbar.';
+ const info=document.getElementById('trefferInfo'); if(info){const total=[...document.querySelectorAll('.item')].filter(x=>!x.dataset.date||x.dataset.date<=d).length;const label=select.options[select.selectedIndex].text;info.textContent=(select.value==='alle'?total+' Kundmachungen bis zum gewählten Ankerdatum sichtbar.':n+' von '+total+' Kundmachungen bis zum gewählten Ankerdatum · Bereich: '+label);}
 }
 select.addEventListener('change',filter);document.getElementById('datum').addEventListener('change',filter);
 fetch('data/bgbl-i-2026.json').then(r=>r.json()).then(d=>{bgblData=d;renderBgbl();filter()}).catch(()=>{document.getElementById('kundmachungen').innerHTML='<p class="note">Der BGBl.-Datensatz konnte gerade nicht geöffnet werden.</p>'});
