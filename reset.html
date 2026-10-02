@@ -116,7 +116,7 @@
         <h2 id="support-title">Was möchtest du von dir nach außen tragen?</h2>
         <p class="lead support-lead">Hier beginnt kein gewöhnlicher Shop. Wähle den Raum, der dich gerade anspricht. Du entscheidest selbst, was du entdecken, gestalten oder mitnehmen möchtest.</p>
         <div class="support-grid">
-          <a class="support-card" href="#resonanz"><span aria-hidden="true">🐾</span><h3>Meine Resonanz</h3><p>Krafttiere &amp; Schwingungsresonanz</p><small>Wahrnehmen → Resonanz → Begleiter</small></a>
+          <a class="support-card" href="#resonanz-spiel"><span aria-hidden="true">🐾</span><h3>Meine Resonanz</h3><p>Krafttiere &amp; Schwingungsresonanz</p><small>Wahrnehmen → Resonanz → Begleiter</small></a>
           <a class="support-card" href="#zeichen"><span aria-hidden="true">◇</span><h3>Mein Zeichen</h3><p>Amulette &amp; persönliche Zeichen</p><small>Begegnen → wählen → tragen</small></a>
           <a class="support-card" href="#tragen"><span aria-hidden="true">👕</span><h3>Ich trage mich</h3><p>It tscha na Leiberl &amp; Kapuzenpullis</p><small>Innen → Ausdruck → sichtbar</small></a>
           <a class="support-card" href="#gestalten"><span aria-hidden="true">✎</span><h3>Ich gestalte</h3><p>Malbilder &amp; Bilderwelten</p><small>Sehen → spielen → gestalten</small></a>
@@ -126,8 +126,26 @@
         <div class="support-message">
           <p class="support-claim">Du nimmst etwas mit – und lässt etwas da.</p>
           <p>Dein Beitrag trägt RESET und Itschana weiter. Was du erhältst, kann einen Teil deiner eigenen Geschichte nach außen tragen.</p>
-          <div class="support-actions"><a class="button button-primary" href="#resonanz">Meinen Raum entdecken</a><a class="button button-soft" href="index.html#spenden">RESET einfach unterstützen</a></div>
+          <div class="support-actions"><a class="button button-primary" href="#resonanz-spiel">Meinen Raum entdecken</a><a class="button button-soft" href="index.html#spenden">RESET einfach unterstützen</a></div>
         </div>
+
+        <section class="resonance-game" id="resonanz-spiel" aria-labelledby="resonance-title">
+          <p class="eyebrow">Erster spielbarer Förderraum</p>
+          <h3 id="resonance-title">Meine Resonanz</h3>
+          <p class="resonance-intro">Hier musst du noch nichts auswählen. Folge nur dem, was deine Aufmerksamkeit von selbst berührt.</p>
+          <div class="resonance-stage" id="resonance-stage" aria-live="polite">
+            <p class="resonance-step" id="resonance-step">Frage 1</p>
+            <p class="resonance-question" id="resonance-question">Wenn du für einen Moment nichts suchen musst: Was zieht deine Aufmerksamkeit von selbst an?</p>
+            <div class="resonance-choices" id="resonance-choices">
+              <button type="button" data-resonance="bild">Ein Bild oder eine Gestalt</button>
+              <button type="button" data-resonance="gefuehl">Ein Gefühl oder eine Stimmung</button>
+              <button type="button" data-resonance="zeichen">Ein Zeichen, eine Farbe oder Form</button>
+              <button type="button" data-resonance="nichts">Noch nichts Bestimmtes</button>
+            </div>
+          </div>
+          <button type="button" class="text-button resonance-restart" id="resonance-restart" hidden>Von vorne spielen</button>
+          <p class="resonance-note">Es gibt keine richtige Antwort. Auch „noch nichts“ öffnet einen Raum.</p>
+        </section>
         <div class="support-details" aria-label="Die sechs Förderräume">
           <article id="resonanz"><h3>Meine Resonanz</h3><p>Krafttiere und Schwingungsresonanz öffnen einen Raum zum eigenen Wahrnehmen. Was darin für dich Bedeutung bekommt, entscheidest du selbst.</p></article>
           <article id="zeichen"><h3>Mein Zeichen</h3><p>Amulette machen eine selbst gewählte Verbindung als persönlichen Begleiter sichtbar.</p></article>
