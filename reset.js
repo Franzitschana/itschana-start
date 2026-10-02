@@ -177,5 +177,54 @@
     form.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
+
+  const resonanceStage = document.getElementById("resonance-stage");
+  const resonanceStep = document.getElementById("resonance-step");
+  const resonanceQuestion = document.getElementById("resonance-question");
+  const resonanceChoices = document.getElementById("resonance-choices");
+  const resonanceRestart = document.getElementById("resonance-restart");
+
+  const resonancePaths = {
+    bild: { q: "Bleibt dein Blick bei etwas Lebendigem, bei einer Landschaft oder bei einer Gestalt hängen?", choices: [["lebendig","Etwas Lebendiges"],["landschaft","Ein Ort oder eine Landschaft"],["gestalt","Eine Gestalt"],["offen","Ich möchte noch offen bleiben"]] },
+    gefuehl: { q: "Wenn du das Gefühl nicht benennen musst: Möchtest du ihm eher näherkommen, bei ihm bleiben oder ihm Raum geben?", choices: [["naeher","Näherkommen"],["bleiben","Einfach dabei bleiben"],["raum","Ihm Raum geben"],["offen","Noch nicht entscheiden"]] },
+    zeichen: { q: "Was geschieht, wenn du dieses Zeichen, diese Farbe oder Form nicht deutest, sondern nur ansiehst?", choices: [["ruhig","Es wird ruhiger"],["neugier","Ich werde neugierig"],["vertraut","Es wirkt vertraut"],["offen","Ich beobachte weiter"]] },
+    nichts: { q: "Dann bleib genau dort. Was bemerkst du zuerst, wenn nichts Bestimmtes von dir verlangt wird?", choices: [["atem","Meinen Atem oder Körper"],["umgebung","Etwas in meiner Umgebung"],["gedanke","Einen Gedanken"],["stille","Einfach Stille"]] }
+  };
+  const resonanceEnds = {
+    lebendig:"Vielleicht beginnt deine Resonanz dort, wo dir etwas Lebendiges begegnet. Schau noch nicht nach einem bestimmten Krafttier – beobachte zuerst, wer oder was wiederkehrt.",
+    landschaft:"Vielleicht antwortet dir zuerst ein Raum. Welche Tiere, Zeichen oder Erinnerungen darin später auftauchen, darf offen bleiben.",
+    gestalt:"Eine Gestalt hat deine Aufmerksamkeit gehalten. Nimm dieses erste Bild mit, ohne ihm schon eine Bedeutung geben zu müssen.",
+    naeher:"Du möchtest der Empfindung näherkommen. Das kann deine nächste Spur sein: Was verändert sich, wenn du ihr Aufmerksamkeit gibst?",
+    bleiben:"Du musst nichts verändern. Manchmal zeigt sich Resonanz gerade dadurch, dass man einen Augenblick länger bleibt.",
+    raum:"Du gibst etwas Raum, ohne es festzulegen. Beobachte, ob daraus ein Bild, ein Zeichen oder ein Begleiter auftaucht.",
+    ruhig:"Die Form verändert deinen Zustand. Bewahre zuerst diese Wirkung – die Erklärung kann später kommen.",
+    neugier:"Neugier ist eine offene Tür. Folge ihr, ohne schon zu wissen, welches Produkt oder Zeichen am Ende steht.",
+    vertraut:"Etwas wirkt vertraut. Frage nicht sofort warum – beobachte, ob es dir in den nächsten Tagen wieder begegnet.",
+    atem:"Dein eigener Körper ist der erste Resonanzraum. Von hier aus kannst du später schauen, welches Bild oder welcher Begleiter dazu passt.",
+    umgebung:"Etwas im wirklichen Raum hat dich erreicht. Genau dort kann das Spiel weitergehen.",
+    gedanke:"Ein Gedanke ist aufgetaucht. Lass ihn zunächst eine Spur sein, nicht gleich eine Erklärung.",
+    stille:"Auch Stille ist eine Antwort. Du musst heute nichts auswählen.",
+    offen:"Du lässt die Tür offen. Genau das ist erlaubt: Wahrnehmen, ohne sofort festzulegen."
+  };
+  function resonanceButtons(items) {
+    resonanceChoices.replaceChildren();
+    items.forEach(([key,label]) => { const b=document.createElement("button"); b.type="button"; b.dataset.resonance=key; b.textContent=label; resonanceChoices.append(b); });
+  }
+  function resetResonance() {
+    resonanceStep.textContent="Frage 1";
+    resonanceQuestion.textContent="Wenn du für einen Moment nichts suchen musst: Was zieht deine Aufmerksamkeit von selbst an?";
+    resonanceButtons([["bild","Ein Bild oder eine Gestalt"],["gefuehl","Ein Gefühl oder eine Stimmung"],["zeichen","Ein Zeichen, eine Farbe oder Form"],["nichts","Noch nichts Bestimmtes"]]);
+    resonanceRestart.hidden=true;
+  }
+  if (resonanceStage) {
+    resonanceChoices.addEventListener("click",(event)=>{
+      const button=event.target.closest("[data-resonance]"); if(!button) return;
+      const key=button.dataset.resonance;
+      if(resonancePaths[key]) { resonanceStep.textContent="Frage 2"; resonanceQuestion.textContent=resonancePaths[key].q; resonanceButtons(resonancePaths[key].choices); }
+      else { resonanceStep.textContent="Deine Spur"; resonanceQuestion.textContent=resonanceEnds[key] || resonanceEnds.offen; resonanceChoices.replaceChildren(); resonanceRestart.hidden=false; }
+    });
+    resonanceRestart.addEventListener("click",resetResonance);
+  }
+
   renderDaySpace(); loadSavedEntries(); showStep(1);
 })();
