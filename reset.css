@@ -99,6 +99,18 @@ textarea { width: 100%; padding: 15px 16px; color: var(--ink); background: #fff;
 .support-claim { margin-top: 0; font-size: clamp(1.45rem,3vw,2.1rem); font-weight: 700; }
 .support-actions { margin-top: 28px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
 .support-message .button-soft { background: #fff; }
+.resonance-game { scroll-margin-top: 24px; margin-top: 56px; padding: clamp(28px,6vw,54px); background: #fff; border: 1px solid rgba(21,63,61,.14); border-radius: var(--radius); box-shadow: var(--shadow); }
+.resonance-game h3 { margin: 0 0 12px; font-size: clamp(2rem,5vw,3.2rem); }
+.resonance-intro { max-width: 720px; color: var(--muted); }
+.resonance-stage { margin-top: 30px; padding: clamp(24px,5vw,42px); background: #f0f7f4; border-radius: 22px; }
+.resonance-step { margin: 0 0 8px; color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.resonance-question { max-width: 760px; margin: 0; font-size: clamp(1.3rem,3vw,1.85rem); font-weight: 700; line-height: 1.35; }
+.resonance-choices { margin-top: 28px; display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.resonance-choices button { min-height: 58px; padding: 14px 18px; color: var(--forest); text-align: left; background: #fff; border: 1px solid #bfd3ce; border-radius: 16px; cursor: pointer; }
+.resonance-choices button:hover, .resonance-choices button:focus-visible { border-color: var(--gold); box-shadow: 0 8px 20px rgba(24,57,54,.1); outline: none; }
+.resonance-restart { margin-top: 16px; }
+.resonance-note { margin: 20px 0 0; color: var(--muted); font-size: .9rem; }
+
 .support-details { margin-top: 56px; display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
 .support-details article { scroll-margin-top: 24px; padding: 26px; background: #fff; border: 1px solid rgba(21,63,61,.12); border-radius: 20px; }
 .support-details h3 { margin-top: 0; color: var(--forest); }
@@ -129,7 +141,7 @@ footer { padding: 52px 20px 48px; display: flex; flex-direction: column; align-i
   .hero-question { max-width: 560px; font-size: 1.5rem; line-height: 1.2; }
   .hero-intro { max-width: 520px; margin: 28px auto 34px; font-size: 1rem; line-height: 1.55; }
   .day-grid, .field-grid { grid-template-columns: 1fr; } .support-grid { grid-template-columns: 1fr 1fr; } .support-details { grid-template-columns: 1fr; } .principle-grid { grid-template-columns: 1fr 1fr; }
-  .timer-card { align-items: flex-start; flex-direction: column; } .step-dot span { display: none; }
+  .timer-card { align-items: flex-start; flex-direction: column; } .resonance-choices { grid-template-columns: 1fr; } .step-dot span { display: none; }
   .form-step { min-height: 280px; } .saved-entry dl { grid-template-columns: 1fr; gap: 2px; } .saved-entry dd { margin-bottom: 14px; } .saved-trace header { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 460px) { .support-grid, .principle-grid { grid-template-columns: 1fr; } .form-actions .button { width: 100%; } .form-actions { flex-direction: column-reverse; } }
