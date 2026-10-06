@@ -23,8 +23,12 @@ button,.button{padding:11px 17px;border:0;border-radius:11px;background:#2f6f73;
 @media(max-width:760px){.two{grid-template-columns:1fr}}
 </style>
 <script src="itschana-calendar.js"></script>
-</head>
-<body>
+<style>
+.visitor-nav{display:flex!important;flex-wrap:wrap!important;justify-content:center;align-items:center;gap:8px 16px!important;padding:14px 18px!important;position:static!important;background:transparent!important;max-width:1120px;margin:0 auto!important;font:600 15px/1.5 system-ui,sans-serif;min-width:0}
+.visitor-nav a{color:inherit!important;text-decoration:none!important;white-space:normal!important;padding:4px!important}.visitor-nav a[aria-current=page]{text-decoration:underline!important;text-underline-offset:5px}.visitor-footer{display:block;margin:30px auto 16px;text-align:center;font:14px/1.6 system-ui,sans-serif;max-width:1000px;padding:12px}.visitor-footer a{color:inherit;text-decoration:underline}.visitor-nav a:focus-visible,.visitor-footer a:focus-visible{outline:3px solid #a88b57;outline-offset:3px}
+@media(max-width:600px){.visitor-nav{gap:4px 10px!important;font-size:14px}.visitor-nav a{padding:6px!important}}
+</style></head>
+<body><nav class="visitor-nav" aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="tageszeitraum.html">Tagesraum</a><a href="wirkwelt.html" aria-current="page">WirkWelt · Rote Erde</a><a href="medienwelt.html">MedienWelt</a><a href="familienwelt.html">FamilienWelt</a><a href="podcast-heute.html">Podcast</a><a href="reset.html">RESET</a><a href="webinar.html">Webinar</a><a href="vision.html">Vision</a><a href="index.html#spenden">Spenden</a><a href="kontakt.html">Kontakt</a></nav>
 <header><a class="brand" href="index.html">○ Itschana</a></header>
 <main>
 <section class="hero"><div class="earth" aria-hidden="true"></div><p>ROTE ERDE</p><h1>Anker der Wirkwelt</h1><p class="lead">Nachsehen · Einordnen · Aufarbeiten.</p><p class="note">Der Itschana-Raum und die nachprüfbare Wirkwelt bleiben getrennt. Du kannst jederzeit zur Originalquelle zurückgehen.</p></section>
@@ -88,4 +92,4 @@ fetch('data/bgbl-i-2026.json').then(r=>r.json()).then(d=>{bgblData=d;renderBgbl(
 fetch('data/itschana-flh.json').then(r=>r.json()).then(d=>{itData=d;filter()}).catch(()=>{itInhalt.innerHTML='<p class="note">Die Itschana-Datenquelle konnte gerade nicht geöffnet werden.</p>'});filter();
 document.getElementById('ansehen').addEventListener('click',()=>{const d=document.getElementById('datum').value;document.getElementById('stand').textContent='Ankerdatum: '+d+' · sichtbar sind nur Einträge, die bis zu diesem Datum dokumentiert sind.';filter();document.getElementById('register').scrollIntoView({behavior:'smooth'});})
 </script>
-</body></html>
+<div class="visitor-footer"><a href="redaktion.html">Redaktion &amp; Arbeitsweise</a> · <a href="redaktion.html#datenschutz">Datenschutz &amp; persönliche Einträge</a> · <a href="kontakt.html">Kontakt &amp; Berichtigungen</a></div></body></html>
