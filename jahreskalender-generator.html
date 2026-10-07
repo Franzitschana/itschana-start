@@ -13,7 +13,19 @@ label{font-weight:700}input,button{font:inherit;padding:9px 12px}button{border:0
 .dayhead{padding:6px;text-align:center;font-weight:700;border-bottom:1px solid var(--line)}.date{font-size:21px}.kin{padding:8px;min-height:150px}.kin strong{display:block;font-size:16px}.small{font-size:12px}.wave{padding:5px 7px;font-weight:700;border-top:1px solid #aaa}.bottom{padding:6px;border-top:1px solid var(--line);min-height:55px}.rune{font-weight:700}.note{max-width:1280px;margin:8px auto;padding:0 18px;color:#536266}
 .c-red{background:#f5d8d2}.c-white{background:#f4f2ec}.c-blue{background:#dce9f3}.c-yellow{background:#f4ebbc}
 @media(max-width:850px){.week{grid-template-columns:1fr}.sheet{width:calc(100% - 12px)}}
-@media print{body{background:white}.tools,nav,.note{display:none}.sheet{width:100%;margin:0;box-shadow:none;border:0}.day{break-inside:avoid}}
+@page{size:A4 landscape;margin:8mm}
+@media print{
+ html,body{width:100%;margin:0;padding:0;background:white}
+ .tools,nav,.note{display:none!important}
+ .sheet{width:100%!important;max-width:none!important;margin:0!important;padding:4mm!important;box-shadow:none!important;border:0!important}
+ .head{padding:2mm 1mm 3mm!important}
+ .head h1{font-size:15pt!important}
+ .week{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;width:100%!important;margin-top:2mm!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ .day{display:grid!important;min-width:0!important;break-inside:avoid!important;page-break-inside:avoid!important;font-size:7.5pt!important}
+ .dayhead{padding:2mm 1mm!important}.date{font-size:12pt!important}
+ .kin{padding:2mm!important;min-height:38mm!important}.kin strong{font-size:8.5pt!important}
+ .small{font-size:6.5pt!important}.wave{padding:1.5mm!important}.bottom{padding:1.5mm!important;min-height:16mm!important}
+}
 </style></head><body>
 <nav><a href="index.html">← Itschana</a> · <a href="tageszeitraum.html">Tagesraum</a></nav>
 <section class="tools"><label>Jahreskalender<br><input id="year" type="number" min="1991" max="2100" value="2027"></label><button id="make">Jahr ab Yule öffnen</button><button id="prev">← Woche</button><button id="next">Woche →</button><button onclick="print()">Drucken / PDF</button></section>
