@@ -16,26 +16,35 @@ label{font-weight:700}input,button{font:inherit;padding:9px 12px}button{border:0
 @media print{body{background:white}.tools,nav,.note{display:none}.sheet{width:100%;margin:0;box-shadow:none;border:0}.day{break-inside:avoid}}
 </style></head><body>
 <nav><a href="index.html">← Itschana</a> · <a href="tageszeitraum.html">Tagesraum</a></nav>
-<section class="tools"><label>Jahr<br><input id="year" type="number" min="1990" max="2100" value="2027"></label><label>Woche ab Montag<br><input id="week" type="date" value="2027-01-04"></label><button id="make">Kalenderblatt erstellen</button><button onclick="print()">Drucken / PDF</button></section>
-<p class="note"><strong>Jahreskalender-Generator · Arbeitsstand.</strong> Formbasis: BW65-Original. Tiroler Zahlenrad entfällt. Runenfeld ist aktiv; die originale Runenzuordnung wird noch aus BW65 übernommen und bis dahin nicht erfunden.</p>
+<section class="tools"><label>Jahreskalender<br><input id="year" type="number" min="1991" max="2100" value="2027"></label><button id="make">Jahr ab Yule öffnen</button><button id="prev">← Woche</button><button id="next">Woche →</button><button onclick="print()">Drucken / PDF</button></section>
+<p class="note"><strong>Jahreskalender-Generator · BW65-Arbeitsstand.</strong> Der Jahresraum startet immer am Yule-Tag <strong>21. Dezember des Vorjahres</strong>. Von dort laufen 13 × 28 Tage. Tiroler Zahlenrad entfällt; die Runenzeile bleibt aktiv und wird aus dem BW65-Original befüllt.</p>
 <main class="sheet"><header class="head"><div>Natürlicher Jahreskalender</div><h1 id="title">Wochenblatt</h1><div class="right" id="range"></div></header><section class="week" id="days"></section></main>
 <script src="itschana-calendar.js"></script><script>
-let data=null; const colors={1:"white",2:"blue",3:"yellow",4:"red"};
+let data=null,currentStart=null; const colors={1:"white",2:"blue",3:"yellow",4:"red"};
 const de=["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
-function monday(d){d=new Date(d);const n=(d.getDay()+6)%7;d.setDate(d.getDate()-n);return d}
-function iso(d){return ItschanaCalendar.isoFromDate(d)}
-function fmt(d){return d.toLocaleDateString("de-AT",{day:"2-digit",month:"2-digit",year:"numeric"})}
 function by(a,n){return a.find(x=>x.number===n)}
+function fmt(d){return d.toLocaleDateString("de-AT",{day:"2-digit",month:"2-digit",year:"numeric"})}
+function yuleForYear(y){return new Date(y-1,11,21)}
+function dayDiff(a,b){return Math.round((Date.UTC(b.getFullYear(),b.getMonth(),b.getDate())-Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()))/86400000)}
+function openYear(){const y=+document.getElementById("year").value;currentStart=yuleForYear(y);draw()}
 function draw(){
- if(!data)return; let start=ItschanaCalendar.dateFromIso(document.getElementById("week").value);if(!start)return;start=monday(start);
- document.getElementById("week").value=iso(start);document.getElementById("year").value=start.getFullYear();
- const end=new Date(start);end.setDate(end.getDate()+6);document.getElementById("title").textContent="Jahreskalender "+start.getFullYear();document.getElementById("range").textContent=fmt(start)+" – "+fmt(end);
+ if(!data||!currentStart)return; const y=+document.getElementById("year").value, yule=yuleForYear(y);
+ const end=new Date(currentStart);end.setDate(end.getDate()+6);
+ document.getElementById("title").textContent="Natürlicher Jahreskalender "+y;
+ document.getElementById("range").textContent="Yule "+fmt(yule)+" · "+fmt(currentStart)+" – "+fmt(end);
  const host=document.getElementById("days");host.innerHTML="";
- for(let i=0;i<7;i++){const d=new Date(start);d.setDate(d.getDate()+i);const kn=ItschanaCalendar.kinForDate(d),k=by(data.kins,kn),t=by(data.tones,k.toneNumber),f=by(data.figures,k.figureNumber),w=by(data.figures,k.waveFigureNumber),col=colors[f.colorIndex]||"white";
-  const el=document.createElement("article");el.className="day c-"+col;
-  el.innerHTML='<div class="dayhead">'+de[d.getDay()]+'<div class="date">'+d.getDate()+'.'+(d.getMonth()+1)+'.</div></div><div class="kin"><strong>KIN '+k.number+'</strong><strong>'+k.name+'</strong><p>Ton '+t.number+' · '+t.keyword+'</p><p class="small">'+f.flhText+'<br>'+f.purpose+'</p></div><div class="wave c-'+(colors[w.colorIndex]||"white")+'">Welle · '+w.shortName+'</div><div class="bottom"><div><strong>Ebene:</strong> '+t.dimension.replace("Dimension der ","")+'</div><div class="rune">Rune · —</div><div class="small">28-Tage-Tag · wird aus BW65-Regel ergänzt</div></div>';
-  host.appendChild(el)}
+ for(let i=0;i<7;i++){const d=new Date(currentStart);d.setDate(d.getDate()+i);const offset=dayDiff(yule,d),kn=ItschanaCalendar.kinForDate(d),k=by(data.kins,kn),t=by(data.tones,k.toneNumber),f=by(data.figures,k.figureNumber),w=by(data.figures,k.waveFigureNumber),col=colors[f.colorIndex]||"white";
+ const moon=offset>=0&&offset<364?Math.floor(offset/28)+1:null,md=offset>=0&&offset<364?(offset%28)+1:null;
+ const el=document.createElement("article");el.className="day";
+ el.innerHTML='<div class="dayhead">'+de[d.getDay()]+'<div class="date">'+d.getDate()+'.'+(d.getMonth()+1)+'.</div></div>'+
+ '<div class="kin"><strong>KIN '+k.number+'</strong><strong>'+k.name+'</strong><p>Ton '+t.number+' · '+t.keyword+'</p><p class="small">'+f.flhText+'<br>'+f.purpose+'</p></div>'+
+ '<div class="wave c-'+(colors[w.colorIndex]||"white")+'">Welle · '+w.shortName+'</div>'+
+ '<div class="bottom"><div><strong>28-Tage:</strong> '+(md?('Mond '+moon+' · Tag '+md):'Übergangstag')+'</div><div><strong>Ebene:</strong> '+t.dimension.replace("Dimension der ","")+'</div><div class="rune">Rune · —</div></div>';
+ host.appendChild(el)}
 }
-document.getElementById("make").onclick=draw;document.getElementById("year").onchange=e=>{document.getElementById("week").value=e.target.value+"-01-04";draw()};
-fetch("data/itschana-flh.json").then(r=>r.json()).then(d=>{data=d;draw()});
+document.getElementById("make").onclick=openYear;
+document.getElementById("prev").onclick=()=>{if(!currentStart)return;currentStart.setDate(currentStart.getDate()-7);draw()};
+document.getElementById("next").onclick=()=>{if(!currentStart)return;currentStart.setDate(currentStart.getDate()+7);draw()};
+document.getElementById("year").onchange=openYear;
+fetch("data/itschana-flh.json").then(r=>r.json()).then(d=>{data=d;openYear()});
 </script></body></html>
