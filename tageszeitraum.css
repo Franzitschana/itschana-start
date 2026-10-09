@@ -9,3 +9,17 @@
 @media(max-width:860px){.empathy-grid{grid-template-columns:1fr}}@media(max-width:700px){.zeitraum-intro{padding-top:44px}.kin-stage{width:calc(100% - 22px);margin-bottom:58px;padding:34px 22px 28px;border-radius:28px}.kin-center{margin:34px auto 38px;grid-template-columns:1fr;justify-items:center;gap:24px;text-align:center}.glyph-halo{width:min(210px,62vw)}.flh-grid{grid-template-columns:1fr}.day-navigation{grid-template-columns:1fr 1fr}.today-button{grid-column:1/-1;grid-row:1}.day-button{text-align:center!important}.empathy-space{width:calc(100% - 22px);margin-bottom:58px;padding:28px 18px;border-radius:26px}.empathy-actions .button{width:100%;text-align:center}.visual-stage{height:390px}}
 
 .golden-day-block{max-width:980px;margin:36px auto;padding:52px;border-radius:30px;background:linear-gradient(145deg,#fffdf5,#f2e2b8);color:#173f3d;box-shadow:0 22px 55px rgba(44,42,29,.1)}.golden-day-block h2{font-size:clamp(2rem,4vw,3.2rem);margin:8px 0 12px;font-weight:500}.golden-day-block>p{line-height:1.65}.golden-day-block label{display:block;margin:22px 0 8px;font-weight:700}.golden-day-block textarea,.golden-day-block input{box-sizing:border-box;width:100%;border:1px solid rgba(23,63,61,.22);border-radius:14px;padding:14px;background:#fff;color:#173f3d;font:inherit;line-height:1.55}.golden-day-block textarea:focus,.golden-day-block input:focus{outline:3px solid rgba(216,173,85,.3);border-color:#b8862e}.golden-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.golden-status{font-weight:700;min-height:1.5em}.golden-privacy{font-size:.86rem;opacity:.72}@media(max-width:700px){.golden-day-block{padding:34px 22px}}
+
+/* BW65: Die Farbe des aktuell gewählten Tages-KIN steuert den Tagesraum. */
+.kin-stage { --kin-bg:#FFFFFF; --kin-ink:#123f3b; --kin-soft:#375b56; --kin-panel:rgba(18,63,59,.07); color:var(--kin-ink); background:var(--kin-bg); transition:background-color .2s ease,color .2s ease; }
+.kin-stage::before { border-color:currentColor; opacity:.18; }
+.kin-stage .kin-heading h2,.kin-stage .flh-card h3,.kin-stage .wave-line a { color:var(--kin-ink); }
+.kin-stage .kin-heading p,.kin-stage .card-detail,.kin-stage .wave-line span,.kin-stage .day-boundary { color:var(--kin-soft); }
+.kin-stage .kin-heading>span,.kin-stage .date-line>span:first-child,.kin-stage .card-label,.kin-stage .flh-text { color:var(--kin-ink); }
+.kin-stage .flh-card,.kin-stage .glyph-halo { background:var(--kin-panel); border-color:currentColor; }
+.kin-stage .flh-card { border-color:color-mix(in srgb,currentColor 18%,transparent); }
+.kin-stage .tone-point,.kin-stage .tone-bar { background:var(--kin-ink); }
+.kin-stage .wave-line { border-color:color-mix(in srgb,currentColor 20%,transparent); }
+.kin-stage .day-button { color:var(--kin-ink); border-color:color-mix(in srgb,currentColor 30%,transparent); }
+.kin-stage .today-button { background:var(--kin-ink); color:var(--kin-bg); }
+.kin-stage .kin-heading h2 { overflow-wrap:normal; word-break:normal; hyphens:none; font-size:clamp(2rem,5vw,4.3rem); line-height:1.12; }
