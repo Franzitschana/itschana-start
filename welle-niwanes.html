@@ -23,7 +23,7 @@
     .platz { min-height:33px; font-size:1.65rem; font-weight:700; }
     .kin { display:block; margin-top:9px; font-size:.9rem; line-height:1.45; }
     .name { display:block; margin:4px 0; font-weight:700; }
-    .neutral { display:block; margin-top:8px; font-size:.78rem; font-weight:700; }
+    .kontrollfokus { display:block; margin-top:8px; font-size:.78rem; font-weight:700; }
     .marke { display:block; margin-bottom:5px; color:#9b6500; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
     .fehler { padding:22px; border-radius:14px; background:#fff; text-align:center; }
     @media (max-width:760px) { .welle { grid-template-columns:repeat(2,minmax(0,1fr)); } .tag { min-height:155px; } }
@@ -37,7 +37,7 @@
       <div class="uebertitel">Getragen von der Welle</div>
       <h1 id="wave-name">Der Wellenraum</h1>
       <p class="zeitraum" id="wave-range"></p>
-      <p class="erklaerung">Der Ton trägt den Platz in der Welle. Ton 1 beginnt – Ton 13 vollendet sie. Tritt Niwanes ein, bleibt Niwanes mit seinem eigenen Ton neutral; die nachfolgenden KIN laufen mit ihren Wellentönen weiter.</p>
+      <p class="erklaerung">Der Ton trägt den Platz in der Welle. Ton 1 beginnt – Ton 13 vollendet sie. Niwanes erscheint als eigener Kontrollsektor innerhalb der laufenden Welle, ohne sie zu unterbrechen. Sein Sprungmuster verbindet 13 Niwanes-Positionen im 273er-Zyklus. Die übrigen KIN laufen in ihrer Wellenfolge weiter.</p>
     </header>
     <section class="welle" id="wave-grid" aria-live="polite"></section>
   </main>
@@ -76,7 +76,7 @@
           card.className="tag"+(isNiwanes?" niwanes":"")+(current?" heute":"");
           card.href="tageszeitraum.html?date="+iso(day);
           card.setAttribute("aria-label",longDate(day)+": KIN "+kin.number+", "+kin.name);
-          card.innerHTML=(current?'<span class="marke">Gewählter Tag</span>':'')+'<span class="platz">'+(isNiwanes?'Niwanes':'Ton '+kin.toneNumber)+'</span><span class="kin">KIN '+kin.number+'<span class="name">'+figure.name+'</span>'+longDate(day)+(isNiwanes?'<span class="neutral">eigener Ton '+kin.toneNumber+' · neutral in der Welle</span>':'')+'</span>';
+          card.innerHTML=(current?'<span class="marke">Gewählter Tag</span>':'')+'<span class="platz">'+(isNiwanes?'Niwanes · Kontrollfokus':'Ton '+kin.toneNumber)+'</span><span class="kin">KIN '+kin.number+'<span class="name">'+(isNiwanes?'Eisblauer Niwanes':figure.name)+'</span>'+longDate(day)+(isNiwanes?'<span class="kontrollfokus">eigener Ton '+kin.toneNumber+' · Kontrollsektor innerhalb der Welle</span>':'')+'</span>';
           cards.push(card);
         }
         document.getElementById("wave-grid").replaceChildren(...cards);
