@@ -1,5 +1,7 @@
-// BW65-Original 2023 ist verbindlich. KIN 271 Schreibfehler 'Speigel' in Anzeige korrigiert.
-// Niwanes: Farbe Eisblauer; Original-Tonqualität. Wellenzuordnung gesondert prüfen.
+// BW65-Original 2023 verbindlich; KIN 271 'Speigel' als 'Spiegel' angezeigt.
+// Niwanes: Farbbezeichnung 'Eisblauer'; 13 Kontrollpunkte in 21er-Abständen.
+// Niwanes-Sprungstruktur überlagert reguläre Wellen, unterbricht deren Ablauf nicht.
+// KIN 50 ist der erläuterte Manifestations-/Kontrollfokus. Wellenwerte aus Arbeitsbasis bleiben als historische Einordnung erhalten.
 const kinInfos = {
   "1": {
     "name": "Roter magnetischer Drache",
@@ -120,7 +122,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "kosmischer"
+    "tonQualitaetOriginal": "kosmischer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 1,
+    "niwanesManifestationspunkt": false
   },
   "9": {
     "name": "Gelber galaktischer Stern",
@@ -436,7 +441,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "resonanter"
+    "tonQualitaetOriginal": "resonanter",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 2,
+    "niwanesManifestationspunkt": false
   },
   "30": {
     "name": "Gelber lunarer Stern",
@@ -752,7 +760,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "magnetischer"
+    "tonQualitaetOriginal": "magnetischer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 3,
+    "niwanesManifestationspunkt": true
   },
   "51": {
     "name": "Gelber solarer Stern",
@@ -1068,7 +1079,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "galaktischer"
+    "tonQualitaetOriginal": "galaktischer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 4,
+    "niwanesManifestationspunkt": false
   },
   "72": {
     "name": "Gelber elektrischer Stern",
@@ -1384,7 +1398,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "lunarer"
+    "tonQualitaetOriginal": "lunarer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 5,
+    "niwanesManifestationspunkt": false
   },
   "93": {
     "name": "Gelber planetarer Stern",
@@ -1700,7 +1717,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "solarer"
+    "tonQualitaetOriginal": "solarer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 6,
+    "niwanesManifestationspunkt": false
   },
   "114": {
     "name": "Gelber selbst-bestehender Stern",
@@ -2016,7 +2036,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "elektrischer"
+    "tonQualitaetOriginal": "elektrischer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 7,
+    "niwanesManifestationspunkt": false
   },
   "135": {
     "name": "Gelber spektraler Stern",
@@ -2332,7 +2355,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "planetarer"
+    "tonQualitaetOriginal": "planetarer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 8,
+    "niwanesManifestationspunkt": false
   },
   "156": {
     "name": "Gelber oberton Stern",
@@ -2648,7 +2674,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "selbst-bestehender"
+    "tonQualitaetOriginal": "selbst-bestehender",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 9,
+    "niwanesManifestationspunkt": false
   },
   "177": {
     "name": "Gelber kristaller Stern",
@@ -2964,7 +2993,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "spektraler"
+    "tonQualitaetOriginal": "spektraler",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 10,
+    "niwanesManifestationspunkt": false
   },
   "198": {
     "name": "Gelber rhythnmischer Stern",
@@ -3270,7 +3302,7 @@ const kinInfos = {
     "name": "Eisblauer oberton Niwanes",
     "farbe": "Eisblauer",
     "glyphe": "Niwanes",
-    "tonNummer": null,
+    "tonNummer": 5,
     "ton": "Eigener Niwanes-Ton",
     "ebene": "",
     "welle": "Krieger",
@@ -3280,7 +3312,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "oberton"
+    "tonQualitaetOriginal": "oberton",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 11,
+    "niwanesManifestationspunkt": false
   },
   "219": {
     "name": "Gelber kosmischer Stern",
@@ -3596,7 +3631,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "kristaller"
+    "tonQualitaetOriginal": "kristaller",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 12,
+    "niwanesManifestationspunkt": false
   },
   "240": {
     "name": "Gelber resonater Stern",
@@ -3912,7 +3950,10 @@ const kinInfos = {
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
     "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
-    "tonQualitaetOriginal": "rhythmischer"
+    "tonQualitaetOriginal": "rhythmischer",
+    "niwanesKontrollsektor": true,
+    "niwanesSprungPosition": 13,
+    "niwanesManifestationspunkt": false
   },
   "261": {
     "name": "Gelber magnetischer Stern",
@@ -4113,7 +4154,7 @@ const kinInfos = {
 
 const kinDatenStatus = Object.freeze({
   zyklusLaenge:273,
-  quelle:"BW65-basierter KIN_Master (Arbeitsbasis; fachliche Freigabe offen)",
+  quelle:"BW65-basierter BW65 Original 2023 (KIN-Namen, Glyphenbedeutungen, Töne); Wellen aus Arbeitsbasis",
   bestaetigteBeschreibungen:Object.freeze(Object.keys(kinInfos).map(Number).sort((a,b)=>a-b)),
   fehlendeBeschreibungen:Object.freeze(Array.from({length:273},(_,i)=>i+1).filter(k=>!Object.prototype.hasOwnProperty.call(kinInfos,k))),
   hatBeschreibung(kin){return Object.prototype.hasOwnProperty.call(kinInfos,kin);},
