@@ -1,5 +1,5 @@
 // BW65-Original 2023 ist verbindlich. KIN 271 Schreibfehler 'Speigel' in Anzeige korrigiert.
-// Niwanes: Farbe Eismeerblau; Original-Tonqualität. Wellenzuordnung gesondert prüfen.
+// Niwanes: Farbe Eisblauer; Original-Tonqualität. Wellenzuordnung gesondert prüfen.
 const kinInfos = {
   "1": {
     "name": "Roter magnetischer Drache",
@@ -108,7 +108,7 @@ const kinInfos = {
   },
   "8": {
     "name": "Eisblauer kosmischer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 13,
     "ton": "Der KOSMISCHE Ton",
@@ -424,7 +424,7 @@ const kinInfos = {
   },
   "29": {
     "name": "Eisblauer resonanter Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 7,
     "ton": "Der RESONANTE Ton",
@@ -740,7 +740,7 @@ const kinInfos = {
   },
   "50": {
     "name": "Eisblauer magnetischer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 1,
     "ton": "Der MAGNETISCHE Ton",
@@ -1056,7 +1056,7 @@ const kinInfos = {
   },
   "71": {
     "name": "Eisblauer galaktischer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 8,
     "ton": "Der GALAKTISCHE Ton",
@@ -1372,7 +1372,7 @@ const kinInfos = {
   },
   "92": {
     "name": "Eisblauer lunarer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 2,
     "ton": "Der LUNARE Ton",
@@ -1688,7 +1688,7 @@ const kinInfos = {
   },
   "113": {
     "name": "Eisblauer solarer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 9,
     "ton": "Der SOLARE Ton",
@@ -2004,7 +2004,7 @@ const kinInfos = {
   },
   "134": {
     "name": "Eisblauer elektrischer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 3,
     "ton": "Der ELEKTRISCHE Ton",
@@ -2320,7 +2320,7 @@ const kinInfos = {
   },
   "155": {
     "name": "Eisblauer planetarer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 10,
     "ton": "Der PLANETARE Ton",
@@ -2636,7 +2636,7 @@ const kinInfos = {
   },
   "176": {
     "name": "Eisblauer selbst-bestehender Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 4,
     "ton": "Der SELBST-BESTEHENDE Ton",
@@ -2952,7 +2952,7 @@ const kinInfos = {
   },
   "197": {
     "name": "Eisblauer spektraler Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 11,
     "ton": "Der SPEKTRALE Ton",
@@ -3268,7 +3268,7 @@ const kinInfos = {
   },
   "218": {
     "name": "Eisblauer oberton Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": null,
     "ton": "Eigener Niwanes-Ton",
@@ -3584,7 +3584,7 @@ const kinInfos = {
   },
   "239": {
     "name": "Eisblauer kristaller Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 12,
     "ton": "Der KRISTALLE Ton",
@@ -3900,7 +3900,7 @@ const kinInfos = {
   },
   "260": {
     "name": "Eisblauer rhythmischer Niwanes",
-    "farbe": "Eismeerblau",
+    "farbe": "Eisblauer",
     "glyphe": "Niwanes",
     "tonNummer": 6,
     "ton": "Der RHYTHMISCHE Ton",
