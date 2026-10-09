@@ -504,3 +504,13 @@ const kinInfos = {
     farbe: "#009ddc",
     glyphe: "nacht.png"
   }};
+
+// Itschana-Datenprüfung: Fehlende Tagesbeschreibungen werden ausdrücklich als
+// unbestätigt markiert. Keine fremden Glyphen, Töne oder Bestimmungen ergänzen.
+const kinDatenStatus = Object.freeze({
+  zyklusLaenge: 273,
+  bestaetigteBeschreibungen: Object.freeze(Object.keys(kinInfos).map(Number).sort((a,b)=>a-b)),
+  fehlendeBeschreibungen: Object.freeze(Array.from({length:273},(_,i)=>i+1).filter(kin=>!Object.prototype.hasOwnProperty.call(kinInfos,kin))),
+  hatBeschreibung(kin) { return Object.prototype.hasOwnProperty.call(kinInfos,kin); },
+  beschreibung(kin) { return this.hatBeschreibung(kin) ? kinInfos[kin] : null; }
+});
