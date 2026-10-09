@@ -1,6 +1,5 @@
-// Itschana-KIN-Stammdaten aus BW65-Quelle, Blatt KIN_Master.
-// Quelle: ITSCHANA_Tischkalender_2027_V3.xlsx (Arbeitsbasis, nicht Original BW65).
-// Bestehende handgepflegte 1–63-Einträge wurden durch diese einheitliche Quelle ersetzt.
+// BW65-Original 2023 ist verbindlich. KIN 271 Schreibfehler 'Speigel' in Anzeige korrigiert.
+// Niwanes: Farbe Eismeerblau; Original-Tonqualität. Wellenzuordnung gesondert prüfen.
 const kinInfos = {
   "1": {
     "name": "Roter magnetischer Drache",
@@ -15,7 +14,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "2": {
     "name": "Weisser lunarer Wind",
@@ -30,7 +29,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "3": {
     "name": "Blaue elektrische Nacht",
@@ -45,7 +44,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "4": {
     "name": "Gelber selbst-bestehender Samen",
@@ -60,7 +59,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "5": {
     "name": "Rote oberton Schlange",
@@ -75,7 +74,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "6": {
     "name": "Weisser rhythmischer Weltenüberbrücker",
@@ -90,7 +89,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "7": {
     "name": "Blaue resonante Hand",
@@ -105,22 +104,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "8": {
     "name": "Eisblauer kosmischer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 13,
+    "ton": "Der KOSMISCHE Ton",
+    "ebene": "Ebene der ZEIT",
     "welle": "Drache",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "kosmischer"
   },
   "9": {
     "name": "Gelber galaktischer Stern",
@@ -135,7 +135,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "10": {
     "name": "Roter solarer Mond",
@@ -150,7 +150,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "11": {
     "name": "Weisser planetarer Hund",
@@ -165,7 +165,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "12": {
     "name": "Blauer spektraler Affe",
@@ -176,11 +176,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Drache",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "13": {
     "name": "Gelber kristaller Mensch",
@@ -195,7 +195,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "14": {
     "name": "Roter kosmischer Himmelswanderer",
@@ -210,7 +210,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "15": {
     "name": "Weisser magnetischer Magier",
@@ -225,7 +225,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "16": {
     "name": "Blauer lunarer Adler",
@@ -236,11 +236,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Magier",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "17": {
     "name": "Gelber elektrischer Krieger",
@@ -255,7 +255,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "18": {
     "name": "Rote selbst-bstehende Erde",
@@ -270,7 +270,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "19": {
     "name": "Weisser oberton Spiegel",
@@ -285,7 +285,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "20": {
     "name": "Blauer rhythmischer Sturm",
@@ -300,7 +300,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "21": {
     "name": "Gelbe resonante Sonne",
@@ -315,7 +315,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "22": {
     "name": "Roter galaktischer Drache",
@@ -330,7 +330,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "23": {
     "name": "Weisser solarer Wind",
@@ -345,7 +345,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "24": {
     "name": "Blaue planetare Nacht",
@@ -360,7 +360,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "25": {
     "name": "Gelber spektraler Samen",
@@ -375,7 +375,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "26": {
     "name": "Rote kristalle Schlange",
@@ -390,7 +390,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "27": {
     "name": "Weisser kosmischer Weltenüberbrücker",
@@ -405,7 +405,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "28": {
     "name": "Blaue magnetische Hand",
@@ -420,22 +420,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "29": {
     "name": "Eisblauer resonanter Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 7,
+    "ton": "Der RESONANTE Ton",
+    "ebene": "Ebene der SINNE",
     "welle": "Hand",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "resonanter"
   },
   "30": {
     "name": "Gelber lunarer Stern",
@@ -450,7 +451,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "31": {
     "name": "Roter elektrischer Mond",
@@ -465,7 +466,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "32": {
     "name": "Weisser selbst-bestehender Hund",
@@ -480,7 +481,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "33": {
     "name": "Blauer oberton Affe",
@@ -491,11 +492,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Hand",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "34": {
     "name": "Gelber rhythmischer Mensch",
@@ -510,7 +511,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "35": {
     "name": "Roter resonanter Himmelswanderer",
@@ -525,7 +526,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "36": {
     "name": "Weisser galaktischer Magier",
@@ -540,7 +541,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "37": {
     "name": "Blauer solarer Adler",
@@ -551,11 +552,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Hand",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "38": {
     "name": "Gelber planetarer Krieger",
@@ -570,7 +571,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "39": {
     "name": "Rote spektrale Erde",
@@ -585,7 +586,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "40": {
     "name": "Weisser kristaller Spiegel",
@@ -600,7 +601,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "41": {
     "name": "Blauer kosmischer Sturm",
@@ -615,7 +616,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "42": {
     "name": "Gelbe magnetische Sonne",
@@ -630,7 +631,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "43": {
     "name": "Roter lunarer Drache",
@@ -645,7 +646,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "44": {
     "name": "Weisser elektrischer Wind",
@@ -660,7 +661,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "45": {
     "name": "Blaue selbst-bestehende Nacht",
@@ -675,7 +676,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "46": {
     "name": "Gelber oberton Samen",
@@ -690,7 +691,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "47": {
     "name": "Rote rhythmische Schlange",
@@ -705,7 +706,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "48": {
     "name": "Weisser resonanter Weltenüberbrücker",
@@ -720,7 +721,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "49": {
     "name": "Blaue galaktische Hand",
@@ -735,22 +736,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "50": {
     "name": "Eisblauer magnetischer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 1,
+    "ton": "Der MAGNETISCHE Ton",
+    "ebene": "Ebene der ZEIT",
     "welle": "Niwanes",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "magnetischer"
   },
   "51": {
     "name": "Gelber solarer Stern",
@@ -765,7 +767,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "52": {
     "name": "Roter planetarer Mond",
@@ -780,7 +782,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "53": {
     "name": "Weisser spektraler Hund",
@@ -795,7 +797,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "54": {
     "name": "Blauer kristaller Affe",
@@ -806,11 +808,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Niwanes",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "55": {
     "name": "Gelber kosmischer Mensch",
@@ -825,7 +827,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "56": {
     "name": "Roter magnetischer Himmelswanderer",
@@ -840,7 +842,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "57": {
     "name": "Weisser lunarer Magier",
@@ -855,7 +857,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "58": {
     "name": "Blauer elektrischer Adler",
@@ -866,11 +868,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Himmelswanderer",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "59": {
     "name": "Gelber selbst-bestehender Krieger",
@@ -885,7 +887,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "60": {
     "name": "Rote oberton Erde",
@@ -900,7 +902,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "61": {
     "name": "Weisser rhythmischer Spiegel",
@@ -915,7 +917,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "62": {
     "name": "Blauer resonanter Sturm",
@@ -930,7 +932,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "63": {
     "name": "Gelbe galaktische Sonne",
@@ -945,7 +947,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "64": {
     "name": "Roter solarer Drache",
@@ -960,7 +962,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "65": {
     "name": "Weisser planetarer Wind",
@@ -975,7 +977,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "66": {
     "name": "Blaue spektrale Nacht",
@@ -990,7 +992,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "67": {
     "name": "Gelber kristaller Samen",
@@ -1005,7 +1007,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "68": {
     "name": "Rote kosmische Schlange",
@@ -1020,7 +1022,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "69": {
     "name": "Weisser magnetischer Weltenüberbrücker",
@@ -1035,7 +1037,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "70": {
     "name": "Blaue lunare Hand",
@@ -1050,22 +1052,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "71": {
     "name": "Eisblauer galaktischer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 8,
+    "ton": "Der GALAKTISCHE Ton",
+    "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Weltenüberbrücker",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "galaktischer"
   },
   "72": {
     "name": "Gelber elektrischer Stern",
@@ -1080,7 +1083,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "73": {
     "name": "Roter selbst-bestehender Mond",
@@ -1095,7 +1098,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "74": {
     "name": "Weisser oberton Hund",
@@ -1110,7 +1113,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "75": {
     "name": "Blauer rhythmischer Affe",
@@ -1121,11 +1124,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Weltenüberbrücker",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "76": {
     "name": "Gelber resonanter Mensch",
@@ -1140,7 +1143,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "77": {
     "name": "Roter galaktischer Himmelswanderer",
@@ -1155,7 +1158,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "78": {
     "name": "Weisser solarer Magier",
@@ -1170,7 +1173,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "79": {
     "name": "Blauer planetarer Adler",
@@ -1181,11 +1184,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Weltenüberbrücker",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "80": {
     "name": "Gelber spektraler Krieger",
@@ -1200,7 +1203,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "81": {
     "name": "Rote kristalle Erde",
@@ -1215,7 +1218,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "82": {
     "name": "Weisser kosmischer Spiegel",
@@ -1230,7 +1233,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "83": {
     "name": "Blauer magnetischer Sturm",
@@ -1245,7 +1248,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "84": {
     "name": "Gelbe lunare Sonne",
@@ -1260,7 +1263,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "85": {
     "name": "Roter elektrischer Drache",
@@ -1275,7 +1278,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "86": {
     "name": "Weisser selbst-bestehender Wind",
@@ -1290,7 +1293,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "87": {
     "name": "Blaue oberton Nacht",
@@ -1305,7 +1308,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "88": {
     "name": "Gelber rhythmischer Samen",
@@ -1320,7 +1323,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "89": {
     "name": "Rote resonante Schlange",
@@ -1335,7 +1338,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "90": {
     "name": "Weisser galaktischer Weltenüberbrücker",
@@ -1350,7 +1353,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "91": {
     "name": "Blaue solare Hand",
@@ -1365,22 +1368,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "92": {
     "name": "Eisblauer lunarer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 2,
+    "ton": "Der LUNARE Ton",
+    "ebene": "Ebene des LEBENS",
     "welle": "Sturm",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "lunarer"
   },
   "93": {
     "name": "Gelber planetarer Stern",
@@ -1395,7 +1399,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "94": {
     "name": "Roter spektraler Mond",
@@ -1410,7 +1414,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "95": {
     "name": "Weisser kristaller Hund",
@@ -1425,7 +1429,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "96": {
     "name": "Blauer kosmischer Affe",
@@ -1436,11 +1440,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Sturm",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "97": {
     "name": "Gelber magnetischer Mensch",
@@ -1455,7 +1459,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "98": {
     "name": "Roter lunarer Himmelswanderer",
@@ -1470,7 +1474,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "99": {
     "name": "Weisser elektrischer Magier",
@@ -1485,7 +1489,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "100": {
     "name": "Blauer selbst-bestehender Adler",
@@ -1496,11 +1500,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Mensch",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "101": {
     "name": "Gelber oberton Krieger",
@@ -1515,7 +1519,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "102": {
     "name": "Rote rhythmische Erde",
@@ -1530,7 +1534,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "103": {
     "name": "Weisser resonanter Spiegel",
@@ -1545,7 +1549,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "104": {
     "name": "Blauer galaktischer Sturm",
@@ -1560,7 +1564,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "105": {
     "name": "Gelbe solare Sonne",
@@ -1575,7 +1579,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "106": {
     "name": "Roter planetarer Drache",
@@ -1590,7 +1594,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "107": {
     "name": "Weisser spektraler Wind",
@@ -1605,7 +1609,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "108": {
     "name": "Blaue kristalle Nacht",
@@ -1620,7 +1624,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "109": {
     "name": "Gelber kosmischer Samen",
@@ -1635,7 +1639,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "110": {
     "name": "Rote magnetische Schlange",
@@ -1650,7 +1654,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "111": {
     "name": "Weisser lunarer Weltenüberbrücker",
@@ -1665,7 +1669,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "112": {
     "name": "Blauer elektrische Hand",
@@ -1680,22 +1684,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "113": {
     "name": "Eisblauer solarer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 9,
+    "ton": "Der SOLARE Ton",
+    "ebene": "Ebene der ZEIT",
     "welle": "Schlange",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "solarer"
   },
   "114": {
     "name": "Gelber selbst-bestehender Stern",
@@ -1710,7 +1715,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "115": {
     "name": "Roter oberton Mond",
@@ -1725,7 +1730,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "116": {
     "name": "Weisser rhyythmischer Hund",
@@ -1740,7 +1745,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "117": {
     "name": "Blauer resonanter Affe",
@@ -1751,11 +1756,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Schlange",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "118": {
     "name": "Gelber galaktischer Mensch",
@@ -1770,7 +1775,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "119": {
     "name": "Roter solarer Himmelswanderer",
@@ -1785,7 +1790,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "120": {
     "name": "Weisser planetarer Magier",
@@ -1800,7 +1805,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "121": {
     "name": "Blauer spektraler Adler",
@@ -1811,11 +1816,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Schlange",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "122": {
     "name": "Gelber kristaller Krieger",
@@ -1830,7 +1835,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "123": {
     "name": "Rote kosmische Erde",
@@ -1845,7 +1850,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "124": {
     "name": "Weisser magnetischer Spiegel",
@@ -1860,7 +1865,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "125": {
     "name": "Blauer lunarer Sturm",
@@ -1875,7 +1880,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "126": {
     "name": "Gelbe elektrische Sonne",
@@ -1890,7 +1895,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "127": {
     "name": "Roter selbst-bestehender Drache",
@@ -1905,7 +1910,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "128": {
     "name": "Weisser oberton Wind",
@@ -1920,7 +1925,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "129": {
     "name": "Blaue rhythmische Nacht",
@@ -1935,7 +1940,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "130": {
     "name": "Gelber resonanter Samen",
@@ -1950,7 +1955,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "131": {
     "name": "Rote galaktische Schlange",
@@ -1965,7 +1970,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "132": {
     "name": "Weisser solarer Weltenüberbrücker",
@@ -1980,7 +1985,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "133": {
     "name": "Blaue planetare Hand",
@@ -1995,22 +2000,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "134": {
     "name": "Eisblauer elektrischer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 3,
+    "ton": "Der ELEKTRISCHE Ton",
+    "ebene": "Ebene der SINNE",
     "welle": "Spiegel",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "elektrischer"
   },
   "135": {
     "name": "Gelber spektraler Stern",
@@ -2025,7 +2031,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "136": {
     "name": "Roter kristaller Mond",
@@ -2040,7 +2046,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "137": {
     "name": "Weisser kosmischer Hund",
@@ -2055,7 +2061,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "138": {
     "name": "Blauer magnetischer Affe-Delphin",
@@ -2066,11 +2072,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Affe",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "139": {
     "name": "Gelber lunarer Mensch",
@@ -2085,7 +2091,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "140": {
     "name": "Roter elektrischer Himmelswanderer",
@@ -2100,7 +2106,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "141": {
     "name": "Weisser selbst-bestehender Magier",
@@ -2115,7 +2121,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "142": {
     "name": "Blauer oberton Adler",
@@ -2126,11 +2132,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Affe",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "143": {
     "name": "Gelber rhythmischer Krieger",
@@ -2145,7 +2151,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "144": {
     "name": "Rote resonante Erde",
@@ -2160,7 +2166,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "145": {
     "name": "Weisser galaktischer Spiegel",
@@ -2175,7 +2181,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "146": {
     "name": "Blauer solarer Sturm",
@@ -2190,7 +2196,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "147": {
     "name": "Gelbe planetare Sonne",
@@ -2205,7 +2211,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "148": {
     "name": "Roter spektraler Drache",
@@ -2220,7 +2226,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "149": {
     "name": "Weisser kristaller Wind",
@@ -2235,7 +2241,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "150": {
     "name": "Blaue kosmische Nacht",
@@ -2250,7 +2256,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "151": {
     "name": "Gelber magnetischer Samen",
@@ -2265,7 +2271,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "152": {
     "name": "Rote lunare Schlange",
@@ -2280,7 +2286,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "153": {
     "name": "Weisser elektrischer Weltenüberbrücker",
@@ -2295,7 +2301,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "154": {
     "name": "Blaue selbst-bestehende Hand",
@@ -2310,22 +2316,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "155": {
     "name": "Eisblauer planetarer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 10,
+    "ton": "Der PLANETARE Ton",
+    "ebene": "Ebene des LEBENS",
     "welle": "Samen",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "planetarer"
   },
   "156": {
     "name": "Gelber oberton Stern",
@@ -2340,7 +2347,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "157": {
     "name": "Roter rhythmischer Mond",
@@ -2355,7 +2362,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "158": {
     "name": "Weisser resonanter Hund",
@@ -2370,7 +2377,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "159": {
     "name": "Blauer galaktischer Affe",
@@ -2381,11 +2388,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Samen",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "160": {
     "name": "Gelber solarer Mensch",
@@ -2400,7 +2407,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "161": {
     "name": "Roter planetarer Himmelswanderer",
@@ -2415,7 +2422,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "162": {
     "name": "Weisser spektraler Magier",
@@ -2430,7 +2437,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "163": {
     "name": "Blauer kristaller Adler",
@@ -2441,11 +2448,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Samen",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "164": {
     "name": "Gelber kosmischer Krieger",
@@ -2460,7 +2467,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "165": {
     "name": "Rote magnetische Erde",
@@ -2475,7 +2482,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "166": {
     "name": "Weisser lunarer Spiegel",
@@ -2490,7 +2497,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "167": {
     "name": "Blauer elektrischer Sturm",
@@ -2505,7 +2512,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "168": {
     "name": "Gelbe selbst-bestehende Sonne",
@@ -2520,7 +2527,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "169": {
     "name": "Roter oberton Drache",
@@ -2535,7 +2542,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "170": {
     "name": "Weisser rhythmischer Wind",
@@ -2550,7 +2557,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "171": {
     "name": "Blaue resonante Nacht",
@@ -2565,7 +2572,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "172": {
     "name": "Gelber galaktischer Samen",
@@ -2580,7 +2587,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "173": {
     "name": "Rote solare Schlange",
@@ -2595,7 +2602,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "174": {
     "name": "Weisser planetarer Weltenüberbrücker",
@@ -2610,7 +2617,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "175": {
     "name": "Blaue spektrale Hand",
@@ -2625,22 +2632,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "176": {
     "name": "Eisblauer selbst-bestehender Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 4,
+    "ton": "Der SELBST-BESTEHENDE Ton",
+    "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Erde",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "selbst-bestehender"
   },
   "177": {
     "name": "Gelber kristaller Stern",
@@ -2655,7 +2663,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "178": {
     "name": "Roter kosmischer Mond",
@@ -2670,7 +2678,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "179": {
     "name": "Weisser magnetischer Hund",
@@ -2685,7 +2693,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "180": {
     "name": "Blauer lunarer Affe",
@@ -2696,11 +2704,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Hund",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "181": {
     "name": "Gelber elektrischer Mensch",
@@ -2715,7 +2723,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "182": {
     "name": "Roter selbst-bestehender Himmelswanderer",
@@ -2730,7 +2738,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "183": {
     "name": "Weisser oberton Magier",
@@ -2745,7 +2753,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "184": {
     "name": "Blauer rhythmischer Adler",
@@ -2756,11 +2764,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Hund",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "185": {
     "name": "Gelber resonanter Krieger",
@@ -2775,7 +2783,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "186": {
     "name": "Rote galaktische Erde",
@@ -2790,7 +2798,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "187": {
     "name": "Weisser solarer Spiegel",
@@ -2805,7 +2813,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "188": {
     "name": "Blauer planetarer Sturm",
@@ -2820,7 +2828,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "189": {
     "name": "Gelbe spektrale Sonne",
@@ -2835,7 +2843,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "190": {
     "name": "Roter kristaller Drache",
@@ -2850,7 +2858,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "191": {
     "name": "Weisser kosmischer Wind",
@@ -2865,7 +2873,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "192": {
     "name": "Blaue magnetische Nacht",
@@ -2880,7 +2888,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "193": {
     "name": "Gelber lunarer Samen",
@@ -2895,7 +2903,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "194": {
     "name": "Rote elektrische Schlange",
@@ -2910,7 +2918,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "195": {
     "name": "Weisser selbst-bestehender Weltenüberbrücker",
@@ -2925,7 +2933,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "196": {
     "name": "Blaue oberton Hand",
@@ -2940,22 +2948,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "197": {
     "name": "Eisblauer spektraler Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 11,
+    "ton": "Der SPEKTRALE Ton",
+    "ebene": "Ebene der SINNE",
     "welle": "Nacht",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "spektraler"
   },
   "198": {
     "name": "Gelber rhythnmischer Stern",
@@ -2970,7 +2979,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "199": {
     "name": "Roter resonanter Mond",
@@ -2985,7 +2994,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "200": {
     "name": "Weisser galaktischer Hund",
@@ -3000,7 +3009,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "201": {
     "name": "Blauer solarer Affe",
@@ -3011,11 +3020,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Nacht",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "202": {
     "name": "Gelber planetarer Mensch",
@@ -3030,7 +3039,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "203": {
     "name": "Roter spektraler Himmelswanderer",
@@ -3045,7 +3054,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "204": {
     "name": "Weisser kristaller Magier",
@@ -3060,7 +3069,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "205": {
     "name": "Blauer kosmischer Adler",
@@ -3071,11 +3080,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Nacht",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "206": {
     "name": "Gelber magnetischer Krieger",
@@ -3090,7 +3099,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "207": {
     "name": "Rote lunare Erde",
@@ -3105,7 +3114,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "208": {
     "name": "Weisser elektrischer Spiegel",
@@ -3120,7 +3129,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "209": {
     "name": "Blauer selbst-bestehender Sturm",
@@ -3135,7 +3144,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "210": {
     "name": "Gelbe oberton Sonne",
@@ -3150,7 +3159,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "211": {
     "name": "Roter rhythmischer Drache",
@@ -3165,7 +3174,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "212": {
     "name": "Weisser resonanter Wind",
@@ -3180,7 +3189,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "213": {
     "name": "Blaue galaktische Nacht",
@@ -3195,7 +3204,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "214": {
     "name": "Gelber solarer Samen",
@@ -3210,7 +3219,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "215": {
     "name": "Rote planetare Schlange",
@@ -3225,7 +3234,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "216": {
     "name": "Weisser spektraler Weltenüberbrücker",
@@ -3240,7 +3249,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "217": {
     "name": "Blaue kristalle Hand",
@@ -3255,11 +3264,11 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "218": {
     "name": "Eisblauer oberton Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
     "tonNummer": null,
     "ton": "Eigener Niwanes-Ton",
@@ -3270,7 +3279,8 @@ const kinInfos = {
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "oberton"
   },
   "219": {
     "name": "Gelber kosmischer Stern",
@@ -3285,7 +3295,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "220": {
     "name": "Roter magnetischer Mond",
@@ -3300,7 +3310,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "221": {
     "name": "Weisser lunarer Hund",
@@ -3315,7 +3325,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "222": {
     "name": "Blauer elektrischer Affe",
@@ -3326,11 +3336,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Mond",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "223": {
     "name": "Gelber selbst-bestehender Mensch",
@@ -3345,7 +3355,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "224": {
     "name": "Roter oberton Himmelswanderer",
@@ -3360,7 +3370,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "225": {
     "name": "Weisser rhythmischer Magier",
@@ -3375,7 +3385,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "226": {
     "name": "Blauer resonanter Adler",
@@ -3386,11 +3396,11 @@ const kinInfos = {
     "ebene": "Ebene der SINNE",
     "welle": "Mond",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "227": {
     "name": "Gelber galaktischer Krieger",
@@ -3405,7 +3415,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "228": {
     "name": "Rote solare Erde",
@@ -3420,7 +3430,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "229": {
     "name": "Weisser planetarer Spiegel",
@@ -3435,7 +3445,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "230": {
     "name": "Blauer spektraler Sturm",
@@ -3450,7 +3460,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "231": {
     "name": "Gelbe kristalle Sonne",
@@ -3465,7 +3475,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "232": {
     "name": "Roter kosmischer Drache",
@@ -3480,7 +3490,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "233": {
     "name": "Weisser magnetischer Wind",
@@ -3495,7 +3505,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "234": {
     "name": "Blaue lunare Nacht",
@@ -3510,7 +3520,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "235": {
     "name": "Gelber elektrischer Samen",
@@ -3525,7 +3535,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "236": {
     "name": "Rote selbst-bestehende Schlange",
@@ -3540,7 +3550,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "237": {
     "name": "Weisser oberton Weltenüberbrücker",
@@ -3555,7 +3565,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "238": {
     "name": "Blaue rhythmische Hand",
@@ -3570,22 +3580,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "239": {
     "name": "Eisblauer kristaller Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 12,
+    "ton": "Der KRISTALLE Ton",
+    "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Wind",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "kristaller"
   },
   "240": {
     "name": "Gelber resonater Stern",
@@ -3600,7 +3611,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "241": {
     "name": "Roter galaktischer Mond",
@@ -3615,7 +3626,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "242": {
     "name": "Weisser solarer Hund",
@@ -3630,7 +3641,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "243": {
     "name": "Blauer planetarer Affe",
@@ -3641,11 +3652,11 @@ const kinInfos = {
     "ebene": "Ebene des LEBENS",
     "welle": "Wind",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "244": {
     "name": "Gelber spektraler Mensch",
@@ -3660,7 +3671,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "245": {
     "name": "Roter kristaller Himmelswanderer",
@@ -3675,7 +3686,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "246": {
     "name": "Weisser kosmischer Magier",
@@ -3690,7 +3701,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "247": {
     "name": "Blauer magnetischer Adler",
@@ -3701,11 +3712,11 @@ const kinInfos = {
     "ebene": "Ebene der ZEIT",
     "welle": "Adler",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "248": {
     "name": "Gelber lunarer Krieger",
@@ -3720,7 +3731,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "249": {
     "name": "Rote elektrische Erde",
@@ -3735,7 +3746,7 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "250": {
     "name": "Weisser selbst-bestehender Spiegel",
@@ -3750,7 +3761,7 @@ const kinInfos = {
     "nutzen": "reflektieren",
     "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
     "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "251": {
     "name": "Blauer oberton Sturm",
@@ -3765,7 +3776,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "252": {
     "name": "Gelbe rhythmische Sonne",
@@ -3780,7 +3791,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "253": {
     "name": "Roter resonanter Drache",
@@ -3795,7 +3806,7 @@ const kinInfos = {
     "nutzen": "nähren",
     "eigenschaft": "Urvertrauen / Geborgenheit / Sicherheit",
     "wesen": "Tag der Geburt, \nstarke NATUR der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "254": {
     "name": "Weisser galaktischer Wind",
@@ -3810,7 +3821,7 @@ const kinInfos = {
     "nutzen": "kommunizieren",
     "eigenschaft": "Trennen / Verfeinerung / Durchdringung",
     "wesen": "Tag des Geistes, \nehrenwerter RICHTER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "255": {
     "name": "Blaue solare Nacht",
@@ -3825,7 +3836,7 @@ const kinInfos = {
     "nutzen": "träumen",
     "eigenschaft": "Träumen / Phantasie / Unendlichkeit",
     "wesen": "Tag der Ideen, \nfantastischer ERFINDER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "256": {
     "name": "Gelber planetarer Samen",
@@ -3840,7 +3851,7 @@ const kinInfos = {
     "nutzen": "säen",
     "eigenschaft": "Vollkommenheit / Direktheit",
     "wesen": "Tag der Reife, \nzügelloser PIONIER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "257": {
     "name": "Rote spektrale Schlange",
@@ -3855,7 +3866,7 @@ const kinInfos = {
     "nutzen": "überleben",
     "eigenschaft": "Rhythmus / Freude / ",
     "wesen": "Tag der Gesundheit, \ntreibende KRAFT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "258": {
     "name": "Weisser kristaller Weltenüberbrücker",
@@ -3870,7 +3881,7 @@ const kinInfos = {
     "nutzen": "loslassen",
     "eigenschaft": "Offenbarung / Würde / Leben und Tod",
     "wesen": "Tag des Veränderns,\n gewinnendes WESEN der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "259": {
     "name": "Blaue kosmische Hand",
@@ -3885,22 +3896,23 @@ const kinInfos = {
     "nutzen": "heilen",
     "eigenschaft": "Perfektion / Heilung / Spezialisierung",
     "wesen": "Tag des Erlebens, \ngeschickter HÄNDLER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "260": {
     "name": "Eisblauer rhythmischer Niwanes",
-    "farbe": "Eisblauer",
+    "farbe": "Eismeerblau",
     "glyphe": "Niwanes",
-    "tonNummer": null,
-    "ton": "Eigener Niwanes-Ton",
-    "ebene": "",
+    "tonNummer": 6,
+    "ton": "Der RHYTHMISCHE Ton",
+    "ebene": "Ebene des LEBENS",
     "welle": "Adler",
     "bestimmung": "Unbestimmten",
     "kraft": "Kraft der Wahrheit",
     "nutzen": "neues zulassen",
     "eigenschaft": "Unbestechlichkeit / WIE / Übereinstimmung",
     "wesen": "Tag der Erfühlbarkeit, reines HERZ der UNBESTIMMTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13",
+    "tonQualitaetOriginal": "rhythmischer"
   },
   "261": {
     "name": "Gelber magnetischer Stern",
@@ -3915,7 +3927,7 @@ const kinInfos = {
     "nutzen": "harmonisieren",
     "eigenschaft": "Schönheit / Tanz / Anmut",
     "wesen": "Tag der Harmonie, \nfeste GRÖßE der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "262": {
     "name": "Roter lunarer Mond",
@@ -3930,7 +3942,7 @@ const kinInfos = {
     "nutzen": "reinigen",
     "eigenschaft": "Überschnappen / Reinigung",
     "wesen": "Tag des Wassers, \nechter KLASSIKER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "263": {
     "name": "Weisser elektrischer Hund",
@@ -3945,7 +3957,7 @@ const kinInfos = {
     "nutzen": "lieben",
     "eigenschaft": "Liebe / Bedingungslosigkeit / Treue",
     "wesen": "Tag des Herzens, \nwahrer FREUND der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "264": {
     "name": "Blauer selbst-bestehender Affe",
@@ -3956,11 +3968,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Stern",
     "bestimmung": "Selbstlosen",
-    "kraft": "Kraft der Vision",
-    "nutzen": "erschaffen",
-    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
-    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft des göttlichen Kindes",
+    "nutzen": "spielen",
+    "eigenschaft": "Verspieltheit / Leichtigkeit / Kindlich",
+    "wesen": "Tag des Spielens, \nglücklicher SPIELER der FURCHTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "265": {
     "name": "Gelber oberton Mensch",
@@ -3975,7 +3987,7 @@ const kinInfos = {
     "nutzen": "erleben",
     "eigenschaft": "Bedachtsamkeit / Wille / Schwere",
     "wesen": "Tag des Entscheidens, \nhartnäckiger ANWALT der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "266": {
     "name": "Roter rhythmischer Himmelswanderer",
@@ -3990,7 +4002,7 @@ const kinInfos = {
     "nutzen": "erforschen",
     "eigenschaft": "Ordnung / Disziplin / Haltung",
     "wesen": "Tag des Raumes, \nweitgereister ENTDECKER der GELEHRTEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "267": {
     "name": "Weisser resonanter magier",
@@ -4005,7 +4017,7 @@ const kinInfos = {
     "nutzen": "verzaubern",
     "eigenschaft": "Magie / Materialisierung / Konzentration",
     "wesen": "Tag der Magie, \nangesehener MEISTER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "268": {
     "name": "Blauer galaktischer Adler",
@@ -4016,11 +4028,11 @@ const kinInfos = {
     "ebene": "Ebene des BEWUSSTSEINS",
     "welle": "Stern",
     "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "kraft": "Kraft der Vision",
+    "nutzen": "erschaffen",
+    "eigenschaft": "Übersicht / Drüberstehen / Bewachen",
+    "wesen": "Tag der Vision, \ngerechter FÜHRER der SELBSTLOSEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "269": {
     "name": "Gelber solarer Krieger",
@@ -4035,7 +4047,7 @@ const kinInfos = {
     "nutzen": "analisieren",
     "eigenschaft": "Weisheit / Durchsetzungskraft",
     "wesen": "Tag der Hinterfragung, \nglorreicher HELD der FURCHTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "270": {
     "name": "Rote planetare Erde",
@@ -4050,22 +4062,22 @@ const kinInfos = {
     "nutzen": "zentrieren",
     "eigenschaft": "Lenkung / Ernährung / Boden",
     "wesen": "Tag des Zentrums, \ngewissenhafter PRÜFER der FREIMÜTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "271": {
-    "name": "Weisser spektraler Speigel",
+    "name": "Weisser spektraler Spiegel",
     "farbe": "Weisser",
-    "glyphe": "",
+    "glyphe": "Spiegel",
     "tonNummer": 11,
     "ton": "Der SPEKTRALE Ton",
     "ebene": "Ebene der SINNE",
     "welle": "Stern",
-    "bestimmung": "",
-    "kraft": "",
-    "nutzen": "",
-    "eigenschaft": "",
-    "wesen": "",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "bestimmung": "Gelehrten",
+    "kraft": "Kraft der Selbst-Erkenntnis",
+    "nutzen": "reflektieren",
+    "eigenschaft": "Hinter die Kulissen sehen / Invertieren",
+    "wesen": "Tag der Erkenntnis, \nklarer GEIST der GELEHRTEN",
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "272": {
     "name": "Blauer kristaller Sturm",
@@ -4080,7 +4092,7 @@ const kinInfos = {
     "nutzen": "transformieren",
     "eigenschaft": "Erneuerung / Vernichtung / Himmel",
     "wesen": "Tag der Erneuerung, \njunger WILDER der FRIEDFERTIGEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   },
   "273": {
     "name": "Gelbe kosmische Sonne",
@@ -4095,7 +4107,7 @@ const kinInfos = {
     "nutzen": "erleuchten",
     "eigenschaft": "Extreme meiden / Wärme / gleißendes Licht",
     "wesen": "Tag der Erleuchtung,\nstrahlende AUTORITÄT der SELBSTLOSEN",
-    "quelle": "BW65 · KIN_Master · Itschana Tischkalender 2027 V3 (Arbeitsbasis)"
+    "quelle": "BW65 Original 2023 · Blätter 273, 21, 13"
   }
 };
 
