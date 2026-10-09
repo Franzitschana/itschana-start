@@ -79,6 +79,9 @@
           const current=sameDay(day,selectedDate), isNiwanes=figure.number===6;
           const card=document.createElement("a");
           card.className="tag"+(isNiwanes?" niwanes":"")+(current?" heute":"");
+          const [kinfarbe,kintext]=isNiwanes?["#CCE4FF","#123f3b"]:(farben[figure.colorIndex]||farben[1]);
+          card.style.setProperty("--wellenfarbe",kinfarbe);
+          card.style.setProperty("--wellentext",kintext);
           card.href="tageszeitraum.html?date="+iso(day);
           card.setAttribute("aria-label",longDate(day)+": KIN "+kin.number+", "+kin.name);
           card.innerHTML=(current?'<span class="marke">Gewählter Tag</span>':'')+'<span class="platz">'+(isNiwanes?'Niwanes · Kontrollfokus':'Ton '+kin.toneNumber)+'</span><span class="kin">KIN '+kin.number+'<span class="name">'+(isNiwanes?'Eisblauer Niwanes':figure.name)+'</span>'+longDate(day)+(isNiwanes?'<span class="kontrollfokus">eigener Ton '+kin.toneNumber+' · Kontrollsektor innerhalb der Welle</span>':'')+'</span>';
