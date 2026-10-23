@@ -1,0 +1,54 @@
+DAS GOLDENE BUCH DEINES LEBENS – V3.7.2
+Öffentliche 30-Tage-Testausgabe für Computer, Handy und Tablet
+
+Testzeitraum:
+1. November 2026, 03:08 Uhr bis 1. Dezember 2026, 03:08 Uhr
+(österreichische Ortszeit / Europe Vienna)
+
+AM EINFACHSTEN AUF ALLEN GERÄTEN
+Öffne im Browser die auf der Itschana-Webseite angegebene Buch-Adresse.
+Empfohlen sind Chrome oder Edge unter Linux, Windows und Android sowie Safari auf iPhone und iPad.
+
+START UNTER LINUX VON DIESER ZIP-DATEI
+1. ZIP-Datei vollständig entpacken.
+2. Im entpackten Ordner „Start-Lokal.sh“ doppelt anklicken.
+3. Falls gefragt: „Im Terminal ausführen“ wählen.
+4. Die angezeigte lokale Adresse im Browser öffnen.
+
+START UNTER WINDOWS VON DIESER ZIP-DATEI
+1. ZIP-Datei vollständig entpacken.
+2. Im entpackten Ordner „Start-Windows.bat“ doppelt anklicken.
+3. Falls Windows nachfragt, die Ausführung bestätigen.
+4. Das schwarze Fenster während der Benutzung geöffnet lassen.
+
+HANDY UND TABLET
+- Android: Die veröffentlichte Buch-Adresse in Chrome öffnen.
+- iPhone und iPad: Die veröffentlichte Buch-Adresse in Safari öffnen.
+- Für Sprachaufnahmen den Mikrofonzugriff erlauben.
+- Das Buch kann über „Zum Home-Bildschirm“ wie eine App abgelegt werden.
+- Die ZIP-Datei selbst ist auf Handy und Tablet nicht der empfohlene Startweg.
+
+BEIM ERSTEN START
+- Einen eigenen Buch-Code mit mindestens 8 Zeichen festlegen.
+- Einen davon verschiedenen Notfall-Code mit mindestens 8 Zeichen festlegen.
+- Beide Codes sicher außerhalb der App notieren.
+
+WICHTIG ZUR DATENSICHERUNG
+- Buchdaten und Codes bleiben im verwendeten Browser auf dem jeweiligen Gerät.
+- Daten werden nicht automatisch zwischen mehreren Geräten übertragen.
+- Regelmäßig eine JSON-Sicherung herunterladen und getrennt aufbewahren.
+- Für einen Gerätewechsel die JSON-Sicherung auf dem neuen Gerät importieren.
+- Die JSON-Sicherung enthält persönliche Buchdaten und darf nicht unbedacht weitergegeben werden.
+- Browserdaten nicht löschen, bevor eine aktuelle JSON-Sicherung vorhanden ist.
+
+SICHERHEIT DER CODES
+- Der Buch-Code ist eine Zugangssperre, keine vollständige Verschlüsselung aller Buchinhalte.
+- Der Notfall-Code erlaubt ausschließlich neue Notfall-Einträge; vorhandene Buchseiten bleiben verborgen.
+- Ein vergessener Notfall-Code kann nach Prüfung des gültigen Buch-Codes erneuert werden, solange keine verschlüsselten Notfall-Einträge vorhanden sind.
+
+BESTANDTEILE DIESER TESTAUSGABE
+Die drei Original-Cover, Personalisierung, Foto- und Dateianhänge, Sprachaufnahme,
+Buchansicht, JSON-Sicherung und Rückmeldung.
+
+HINWEIS
+Dies ist eine Testausgabe. Wichtige Erinnerungen und Dateien immer zusätzlich sichern.

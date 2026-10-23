@@ -1,0 +1,26 @@
+{
+  "id": "goldenes-buch-v37-testphase",
+  "name": "Das Goldene Buch Deines Lebens – V3.7.2 Testphase",
+  "short_name": "Goldenes Buch V3.7.2",
+  "description": "Öffentliche 30-Tage-Testphase des persönlichen Lebensbuchs mit Buch- und Notfallzugang.",
+  "lang": "de",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#563778",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

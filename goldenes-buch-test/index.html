@@ -1,0 +1,383 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Das Goldene Buch Deines Lebens – V3.7.2 Testphase</title><meta name="theme-color" content="#563778"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><style>
+:root{color-scheme:light;--paper:#fffaf0;--ink:#3b3028;--gold:#ad8752;--bg:#f1e8d8;--line:#ddcbb2}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#fffaf0,var(--bg));color:var(--ink);font:16px/1.55 system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:22px 15px 80px}header{text-align:center;padding:20px 8px 14px}h1,h2,h3{font-family:Georgia,serif}h1{font-size:clamp(30px,5vw,48px);margin:4px}h2{margin:0 0 12px}p{margin:8px 0}.subtitle{color:#77624c}.panel{background:var(--paper);border:1px solid var(--line);border-radius:19px;box-shadow:0 5px 22px #8b6a3910;padding:20px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:end}.toolbar>*{flex:1 1 160px}label{display:block;font-weight:650;font-size:14px;margin:7px 0 4px}input,textarea,select,button{font:inherit}input,textarea,select{width:100%;padding:10px 12px;border:1px solid #c8b698;border-radius:10px;background:#fffdf8;color:var(--ink)}textarea{min-height:155px;resize:vertical}button,.button{border:1px solid #9b784b;border-radius:11px;padding:10px 15px;background:#a98858;color:white;cursor:pointer;font-weight:650}button.secondary,.button.secondary{background:#fff9ec;color:#604b31}button:disabled{opacity:.5;cursor:not-allowed}.buttons{display:flex;flex-wrap:wrap;gap:8px}.small{font-size:13px;color:#725f4c}.notice{background:#f8efd9;border-left:4px solid var(--gold);padding:10px 14px;border-radius:6px}.daytitle{font-size:24px;font-family:Georgia,serif}.attachments{display:grid;gap:8px}.attachment{border:1px solid var(--line);padding:10px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;overflow-wrap:anywhere}.attachment a{color:#735326}.hidden{display:none!important}#status{min-height:26px;color:#46603d;font-weight:600}.timeline{display:flex;flex-wrap:wrap;gap:7px}.timeline button{font-size:13px;padding:7px 10px}.footer{text-align:center;color:#78674f;font-size:13px;margin-top:25px}hr{border:0;border-top:1px solid var(--line);margin:20px 0}@media(max-width:650px){.grid{grid-template-columns:1fr}.panel{padding:15px}.toolbar>*{flex-basis:100%}header{padding-top:8px}}
+
+/* V7: Tagesbuch im Vordergrund; Navigation auf Wunsch */
+#bookSpread{grid-template-columns:minmax(0,1fr) minmax(0,1.65fr)}
+#dayPage{grid-column:2;grid-row:1}
+#yearNavigator{grid-column:1;grid-row:1;position:static;max-height:none;overflow:visible;align-self:start}
+#yearNavigator>.panel{padding:10px 0 16px!important}
+#bookshelfFold{margin-bottom:12px}
+.reading-page{background:#fffdf7;border:1px solid #e1cfad;border-radius:12px;padding:22px;margin-bottom:20px;line-height:1.7}
+.reading-page h3{font-size:24px;margin:0 0 10px;color:#6a4c30}
+.reading-page p{white-space:pre-wrap;overflow-wrap:anywhere}
+.reading-page figure{margin:18px 0;text-align:center}
+.reading-page img{max-width:100%;max-height:420px;object-fit:contain;border-radius:9px;cursor:zoom-in}
+.reading-page figcaption{font-size:12px;color:#806b51}
+@media(max-width:950px){#bookSpread{grid-template-columns:1fr}#dayPage{grid-column:1;grid-row:1}#yearNavigator{grid-column:1;grid-row:2}}
+/* V6: Bildanhänge direkt im Buch betrachten */
+.image-preview{border:0;border-radius:16px;padding:18px;background:#fffaf0;color:#3b3028;max-width:min(94vw,1050px);max-height:94vh;box-shadow:0 18px 60px #0005}
+.image-preview::backdrop{background:#18130fbb}
+.image-preview img{display:block;max-width:100%;max-height:73vh;object-fit:contain;margin:12px auto}
+.image-preview .buttons{justify-content:flex-end;align-items:center}
+.image-preview .filename{overflow-wrap:anywhere;flex:1}
+.attachment .attachment-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.attachment .attachment-actions button{padding:7px 10px}
+@media(max-width:650px){.attachment{align-items:flex-start;flex-direction:column}.attachment .attachment-actions{justify-content:flex-start}}
+
+/* V9 – Jede Buchhälfte ist eine eigenständige A4-Hochformatseite. */
+.open-book-dialog{width:min(98vw,calc(2 * (min(84vh, 680px) * 210 / 297) + 76px));max-width:98vw;max-height:97vh;padding:12px;box-sizing:border-box}
+.open-book-top h2{font-size:clamp(15px,1.5vw,22px)}
+.open-book-spread{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));min-height:0;border:3px double #c8a772;box-sizing:border-box;overflow:visible}
+.open-book-leaf{aspect-ratio:210 / 297;min-height:0;padding:clamp(12px,2vw,27px);box-sizing:border-box;overflow:auto;}
+.open-book-leaf h3{font-size:clamp(15px,1.5vw,23px)}
+.open-book-leaf img{max-height:55vh}
+.open-book-label{font-size:clamp(10px,.85vw,13px)}
+@media(max-width:700px){
+ .open-book-dialog{width:min(96vw,480px);max-height:96vh;padding:8px}
+ .open-book-spread{grid-template-columns:1fr}
+ .open-book-leaf{width:100%;aspect-ratio:210 / 297;min-height:0;padding:20px}
+ .open-book-leaf img{max-height:55vh}
+}
+@page{size:A4 portrait;margin:0}
+@media print{
+ html,body{margin:0!important;padding:0!important;background:white!important}
+ body>*:not(.open-book-dialog){display:none!important}
+ .open-book-dialog{display:block!important;position:static!important;inset:auto!important;transform:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;width:auto!important;max-width:none!important;max-height:none!important;overflow:visible!important;box-shadow:none!important;background:white!important;color:#3b3028!important}
+ .open-book-dialog::backdrop{display:none!important}
+ .open-book-top,.open-book-dialog>.buttons{display:none!important}
+ .open-book-spread{display:block!important;width:210mm!important;border:0!important;box-shadow:none!important;background:white!important;overflow:visible!important}
+ .open-book-leaf{display:block!important;width:210mm!important;height:297mm!important;min-height:297mm!important;aspect-ratio:auto!important;box-sizing:border-box!important;padding:18mm!important;border:0!important;overflow:hidden!important;break-after:page!important;page-break-after:always!important;background:white!important}
+ .open-book-leaf:last-child{break-after:auto!important;page-break-after:auto!important}
+ .open-book-leaf img{max-width:100%!important;max-height:190mm!important;object-fit:contain!important}
+ .open-book-leaf h3{font-size:19pt!important}
+ .open-book-label{font-size:10pt!important}
+ .open-book-leaf p{font-size:11pt!important}
+}
+
+.life-phase{margin:18px 0 7px;padding:11px 14px;background:#f8efd9;border-left:4px solid #ad8752;border-radius:8px}.life-phase h3{margin:0 0 3px}.life-phase p{margin:0}
+</style>
+<style>
+.shelf-cycle{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.shelf-cycle button.active{background:#8d6839;color:white}
+.shelf-section{margin:16px 0;padding:12px;border:1px solid #ddcbb2;border-radius:12px}
+.shelf-section h3{margin:0 0 10px;font-size:1rem}
+.shelf-books{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:4px}
+.shelf-book{padding:12px 0 8px!important;min-width:0;border-radius:5px 5px 2px 2px!important;color:#fff!important;font-size:12px!important;min-height:62px;box-shadow:inset -3px 0 rgba(0,0,0,.12);border:1px solid #8d795d!important}
+.shelf-book:disabled{opacity:.3;cursor:not-allowed}
+.shelf-book.active{outline:3px solid #473a2c;outline-offset:2px}
+.shelf-book span{display:block;font-size:10px}
+.shelf-book:nth-child(even){filter:brightness(.94)}
+.shelf-info{margin-top:12px;padding:12px;background:#f5ead5;border-radius:10px}
+@media(max-width:580px){.shelf-books{grid-template-columns:repeat(7,minmax(0,1fr))}}
+
+/* V6: Bildanhänge direkt im Buch betrachten */
+.image-preview{border:0;border-radius:16px;padding:18px;background:#fffaf0;color:#3b3028;max-width:min(94vw,1050px);max-height:94vh;box-shadow:0 18px 60px #0005}
+.image-preview::backdrop{background:#18130fbb}
+.image-preview img{display:block;max-width:100%;max-height:73vh;object-fit:contain;margin:12px auto}
+.image-preview .buttons{justify-content:flex-end;align-items:center}
+.image-preview .filename{overflow-wrap:anywhere;flex:1}
+.attachment .attachment-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.attachment .attachment-actions button{padding:7px 10px}
+@media(max-width:650px){.attachment{align-items:flex-start;flex-direction:column}.attachment .attachment-actions{justify-content:flex-start}}
+</style>
+
+<style>
+.shelf-books{grid-template-columns:repeat(13,minmax(0,1fr));gap:7px}
+.shelf-book{min-height:82px;font-size:17px!important;border-radius:6px 6px 3px 3px!important;padding:9px 1px!important}
+.shelf-book small{display:block;font-size:9px;line-height:1.2;margin-top:8px;color:#fff9}
+.shelf-section{padding:16px}
+.shelf-section h3{font-size:1.12rem}
+#yearNavigator{scroll-margin-top:20px}
+.month-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.month-card{background:#fffdf8;border:1px solid var(--line);border-radius:12px;padding:10px}
+.month-card h3{margin:0 0 8px;font-size:15px}
+.days-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.day-button{min-width:0;padding:6px 0!important;font-size:12px!important;border:1px solid #d8c5a5!important;background:#faf0df!important;color:#483a2c!important;border-radius:5px!important}
+.day-button.written{background:#73917e!important;color:white!important}
+.day-button.selected{outline:2px solid #6b4727;outline-offset:1px}
+.day-button:disabled{opacity:.22}
+.month-weekday{font-size:10px;text-align:center;color:#766955}
+.year-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#yearCaption{font-weight:650}
+#unsaved{font-size:13px;color:#a34e25;font-weight:700;min-height:20px}
+@media(max-width:850px){.month-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.month-grid{grid-template-columns:1fr}.shelf-books{grid-template-columns:repeat(7,minmax(0,1fr))}.shelf-book{min-height:67px}}
+
+/* V6: Bildanhänge direkt im Buch betrachten */
+.image-preview{border:0;border-radius:16px;padding:18px;background:#fffaf0;color:#3b3028;max-width:min(94vw,1050px);max-height:94vh;box-shadow:0 18px 60px #0005}
+.image-preview::backdrop{background:#18130fbb}
+.image-preview img{display:block;max-width:100%;max-height:73vh;object-fit:contain;margin:12px auto}
+.image-preview .buttons{justify-content:flex-end;align-items:center}
+.image-preview .filename{overflow-wrap:anywhere;flex:1}
+.attachment .attachment-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.attachment .attachment-actions button{padding:7px 10px}
+@media(max-width:650px){.attachment{align-items:flex-start;flex-direction:column}.attachment .attachment-actions{justify-content:flex-start}}
+</style>
+
+<style>
+/* V4: Buchansicht */
+main{max-width:1320px!important}
+#bookSpread{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:18px;align-items:start}
+#bookSpread>.panel{margin:0}
+#yearNavigator{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+#monthGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#dayPage{scroll-margin-top:18px}
+#bookSpread .panel{box-shadow:0 6px 24px rgba(104,76,41,.08)}
+#bookExtras{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+.book-fold{border:1px solid #dfceb4;border-radius:14px;background:#fffaf0;padding:0 16px}
+.book-fold summary{cursor:pointer;padding:16px 4px;font-size:17px;font-weight:700;color:#59452f}
+.book-fold .panel{border:0!important;box-shadow:none!important;margin:0!important;padding:0 0 16px!important;background:transparent!important}
+.book-fold summary::marker{color:#a88757}
+#spreadTip{font-size:13px;color:#7d684f;margin:4px 0 14px}
+@media(max-width:950px){#bookSpread{grid-template-columns:1fr}#yearNavigator{position:static;max-height:none}#monthGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){#monthGrid{grid-template-columns:1fr}#bookSpread{gap:10px}}
+
+/* V6: Bildanhänge direkt im Buch betrachten */
+.image-preview{border:0;border-radius:16px;padding:18px;background:#fffaf0;color:#3b3028;max-width:min(94vw,1050px);max-height:94vh;box-shadow:0 18px 60px #0005}
+.image-preview::backdrop{background:#18130fbb}
+.image-preview img{display:block;max-width:100%;max-height:73vh;object-fit:contain;margin:12px auto}
+.image-preview .buttons{justify-content:flex-end;align-items:center}
+.image-preview .filename{overflow-wrap:anywhere;flex:1}
+.attachment .attachment-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.attachment .attachment-actions button{padding:7px 10px}
+@media(max-width:650px){.attachment{align-items:flex-start;flex-direction:column}.attachment .attachment-actions{justify-content:flex-start}}
+</style>
+
+<style>
+/* V8: Aufgeschlagenes Lebensbuch */
+.open-book-dialog{border:0;border-radius:18px;padding:18px;background:#e8dcc5;color:#3b3028;width:min(1180px,96vw);max-width:96vw;max-height:94vh;overflow:auto;box-shadow:0 20px 80px #0008}
+.open-book-dialog::backdrop{background:#241b15bb}
+.open-book-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.open-book-top h2{margin:0;font-size:clamp(20px,3vw,28px)}
+.open-book-spread{display:grid;grid-template-columns:1fr 1fr;min-height:510px;border:7px double #c8a772;border-radius:12px;background:#fffaf0;box-shadow:0 8px 24px #543a2029;overflow:hidden}
+.open-book-leaf{padding:clamp(18px,3vw,38px);background:linear-gradient(90deg,#fff8e9,#fffdf8 80%);min-width:0}
+.open-book-leaf+ .open-book-leaf{border-left:2px solid #d7c19d;background:linear-gradient(90deg,#f2e6d1 0,#fffdf8 10%,#fffaf0)}
+.open-book-leaf h3{font:26px Georgia,serif;color:#654729;overflow-wrap:anywhere}
+.open-book-leaf p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75}
+.open-book-leaf figure{margin:12px 0 24px;text-align:center}
+.open-book-leaf img{display:block;max-width:100%;max-height:380px;object-fit:contain;margin:auto;border-radius:7px;cursor:zoom-in}
+.open-book-leaf figcaption{font-size:12px;color:#77664d;margin-top:6px;overflow-wrap:anywhere}
+.open-book-label{font:small-caps 14px Georgia,serif;letter-spacing:.12em;color:#94774e}
+.open-book-empty{margin:65px auto;text-align:center;font:italic 19px Georgia,serif;color:#927e65}
+.open-book-dialog .buttons{justify-content:flex-end;margin-top:14px}
+@media(max-width:700px){.open-book-spread{grid-template-columns:1fr}.open-book-leaf+.open-book-leaf{border-left:0;border-top:2px solid #d7c19d}.open-book-dialog{padding:8px}.open-book-leaf{padding:20px;min-height:220px}}
+@media print{body>*{display:none!important}.open-book-dialog{display:block!important;position:static;width:100%;max-width:100%;max-height:none;overflow:visible;box-shadow:none;background:white}.open-book-top button,.open-book-dialog .buttons{display:none!important}.open-book-spread{box-shadow:none;min-height:0}.open-book-leaf img{max-height:230mm}}
+</style>
+
+<style>
+/* V9.1: Diese Regeln stehen zuletzt und haben Vorrang vor älteren V8-Regeln. */
+.open-book-dialog{width:min(96vw,1100px);max-width:96vw;max-height:96vh;padding:14px;overflow:auto;box-sizing:border-box}
+.open-book-top h2{font-size:clamp(16px,2vw,24px)}
+.open-book-spread{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;min-height:0;border:3px double #c8a772;overflow:visible}
+.open-book-leaf{aspect-ratio:210 / 297;min-width:0;min-height:0;padding:clamp(14px,2.1vw,32px);overflow:auto;box-sizing:border-box}
+.open-book-leaf h3{font-size:clamp(17px,1.8vw,25px)}
+.open-book-leaf img{max-height:45vh;max-width:100%;object-fit:contain}
+.open-book-label{font-size:clamp(10px,.9vw,13px)}
+@media(max-width:700px){.open-book-dialog{width:96vw;padding:8px}.open-book-spread{grid-template-columns:1fr}.open-book-leaf{width:100%;aspect-ratio:210 / 297;padding:20px}.open-book-leaf img{max-height:42vh}}
+@page{size:A4 portrait;margin:0}
+@media print{
+ html,body{margin:0!important;padding:0!important;background:white!important}
+ body>*:not(.open-book-dialog){display:none!important}
+ .open-book-dialog{display:block!important;position:static!important;inset:auto!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;width:210mm!important;max-width:none!important;max-height:none!important;overflow:visible!important;box-shadow:none!important;background:white!important}
+ .open-book-dialog::backdrop{display:none!important}
+ .open-book-top,.open-book-dialog>.buttons{display:none!important}
+ .open-book-spread{display:block!important;width:210mm!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+ .open-book-leaf{display:block!important;aspect-ratio:auto!important;width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-sizing:border-box!important;padding:18mm!important;margin:0!important;border:0!important;overflow:hidden!important;break-after:page!important;page-break-after:always!important;background:white!important}
+ .open-book-leaf:last-child{break-after:auto!important;page-break-after:auto!important}
+ .open-book-leaf img{max-width:100%!important;max-height:180mm!important;object-fit:contain!important}
+ .open-book-leaf h3{font-size:19pt!important}
+ .open-book-label{font-size:10pt!important}
+ .open-book-leaf p{font-size:11pt!important}
+}
+</style>
+
+<style id="cover-style">
+.cover-panel{text-align:center;background:linear-gradient(145deg,#fff9ed,#e9d5ae);border:2px solid #b8975f}
+.cover-preview{position:relative;isolation:isolate;width:min(100%,430px);aspect-ratio:210/297;margin:16px auto;background:radial-gradient(ellipse at 50% 38%,#5b4260 0%,#272340 52%,#121b2c 100%);border:12px ridge #b99b5c;box-shadow:0 12px 28px #241b2480,inset 0 0 0 2px #e8d19b;color:#f5e6bb;display:flex;align-items:center;flex-direction:column;justify-content:space-between;padding:8% 7%;overflow:hidden;font-family:Georgia,serif}
+.cover-preview:before{content:"✧  ✦  ✧  ✦  ✧";position:absolute;top:17%;left:0;right:0;font-size:30px;color:#f6d68b66;z-index:-1}
+.cover-preview:after{content:"";position:absolute;inset:15px;border:1px solid #d9b97799;pointer-events:none}
+.cover-ornament{font-size:30px;color:#e3bd75}
+.cover-title{font-size:clamp(22px,3vw,32px);line-height:1.25;text-shadow:0 2px 8px #000}
+.cover-photo{width:67%;aspect-ratio:4/5;object-fit:cover;border:6px double #e7c77f;box-shadow:0 0 0 4px #554061,0 6px 22px #0008;background:#44384e}
+.cover-photo-placeholder{width:67%;aspect-ratio:4/5;border:6px double #e7c77f;display:grid;place-items:center;color:#e7c77f;font-style:italic}
+.cover-name{font-size:clamp(20px,2.5vw,29px);overflow-wrap:anywhere}
+.cover-birth{font-size:17px;letter-spacing:.05em}
+.cover-actions{justify-content:center}
+.cover-actions input[type=file]{max-width:350px}
+@media print{body.print-cover>main,body.print-cover>dialog{display:none!important}body.print-cover #printableCover{display:flex!important;position:static!important;width:210mm!important;height:297mm!important;margin:0!important;border:0!important;box-shadow:none!important;break-after:auto!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}body.print-cover #printableCover .cover-title{font-size:29pt!important}body.print-cover #printableCover .cover-name{font-size:26pt!important}body.print-cover #printableCover .cover-photo{max-height:125mm!important}}
+#printableCover{display:none}
+.cover-v2-layout{align-items:start;text-align:left}.cover-v2-layout canvas{display:block;width:min(100%,390px);height:auto;margin:auto;border:2px solid #b8975f;border-radius:8px;box-shadow:0 10px 24px #3b2a1d38;background:#efe2ca}.cover-v2-layout select,.cover-v2-layout input{width:100%;box-sizing:border-box}.cover-v2-layout input[type=range]{accent-color:#74532c}
+</style>
+</head><body class="gb-locked"><script src="./access-v2.js"></script><main><header><div style="font-size:32px">✧ 📖 ✧</div><h1>Das Goldene Buch Deines Lebens</h1><p class="subtitle">Vom ersten Lebenstag an. Von den Eltern begonnen. Vom Menschen weitergeschrieben.</p><p class="notice small"><strong>V3.7.2 – öffentliche Testphase:</strong> 1. November 2026, 03:08 Uhr bis 1. Dezember 2026, 03:08 Uhr (Europa/Wien).</p><p id="trialStatus" class="notice small" role="status" aria-live="polite"></p></header>
+<section class="panel" id="setup"><h2>Ein Buch beginnt</h2><p>Trage den Geburtstag ein. Du kannst jeden bisherigen Lebenstag besuchen – auch wenn dort noch nichts geschrieben steht.</p><div class="grid"><div><label for="person">Name des Menschen</label><input id="person" maxlength="120" placeholder="Vorname oder Buchname"></div><div><label for="birth">Geburtstag</label><input id="birth" type="date"></div></div><div class="buttons" style="margin-top:15px"><button id="start">Mein Buch öffnen</button><button class="secondary" id="restoreSetup">Vorhandenes Buch importieren</button></div><div id="importPreviewSetup" class="notice hidden" aria-live="polite" style="margin-top:14px"></div></section>
+<div id="book" class="hidden">
+<section class="panel cover-panel" id="coverPanel">
+<h2>✧ Meine drei Buchwelten ✧</h2>
+<p>Die drei vorhandenen Original-Cover bleiben unverändert. Dein Foto und deine Angaben werden nur auf deinem Gerät in das gewählte Cover eingesetzt.</p>
+<div class="grid cover-v2-layout"><div>
+<label for="coverWorld">Meine Buchwelt</label><select id="coverWorld"><option value="0">Klassisch – Das Lebensbuch</option><option value="1">Kindheit – Das wachsende Buch</option><option value="2">Jugend – Mein eigener Weg</option></select>
+<label for="coverUpload">Mein Porträtfoto</label><input type="file" id="coverUpload" accept="image/*"><p class="small">Das Foto wird in der JSON-Buchsicherung mitgenommen, aber niemals automatisch versendet.</p>
+<label for="coverZoom">Foto vergrößern</label><input type="range" id="coverZoom" min="100" max="230" value="115">
+<label for="coverX">Foto links / rechts</label><input type="range" id="coverX" min="-100" max="100" value="0">
+<label for="coverY">Foto hoch / runter</label><input type="range" id="coverY" min="-100" max="100" value="0">
+<div class="buttons cover-actions"><button type="button" id="coverSave">Cover als PNG speichern</button><button type="button" class="secondary" id="coverRemove">Coverfoto entfernen</button></div><p id="coverStatus" class="small" aria-live="polite"></p>
+</div><div><canvas id="coverCanvas" width="490" height="779" aria-label="Vorschau des persönlichen Buchcovers"></canvas></div></div>
+</section>
+<section class="panel"><div class="toolbar"><div><div class="small">MEIN LEBENSBUCH</div><h2 id="bookName"></h2><div id="lifeInfo" class="subtitle"></div></div><div><label for="jump">Zum Lebenstag</label><input id="jump" type="date"></div></div><div class="buttons" style="margin-top:12px"><button class="secondary" id="prev">← Vortag</button><button class="secondary" id="today">Heute</button><button class="secondary" id="next">Nächster Tag →</button></div><p class="small" id="dayInfo"></p></section>
+<details class="book-fold" id="bookshelfFold"><summary>Mein Bücherregal – 52 Lebensbände</summary><section class="panel" id="bookshelf"><h2>Mein Bücherregal des Lebens</h2><p>Jeder 52-Jahreszyklus umfasst vier Abschnitte mit je 13 Lebensbänden. Wähle einen Band, um zu seinem ersten Lebenstag zu springen. Auch leere Jahre gehören zu deinem Leben.</p><div id="cycleButtons" class="shelf-cycle"></div><div id="shelfSections"></div><div id="shelfInfo" class="shelf-info" aria-live="polite"></div></section></details>
+<p id="spreadTip">Heute aufschlagen und schreiben. Für einen anderen Lebenstag einfach die Datumsauswahl verwenden.</p><div id="bookSpread"><details class="book-fold" id="yearNavigator"><summary>Jahresübersicht – einen anderen Tag finden</summary><section class="panel"><div class="year-controls"><h2>Mein Lebensband – die Tage</h2><div class="buttons"><button class="secondary" id="yearPrev">← Vorheriger Band</button><button class="secondary" id="yearNext">Nächster Band →</button></div></div><p id="yearCaption" class="subtitle"></p><p class="small">Grün markierte Tage enthalten einen gespeicherten Eintrag. Jeder andere Tag darf später ergänzt werden.</p><div id="monthGrid" class="month-grid"></div></section></details>
+<section class="panel" id="v3aufnahme"><h2>Einfach festhalten · V3-Prototyp</h2><p>Der geöffnete Lebenstag wird automatisch verwendet. Aufnahmen und Fotos bleiben lokal auf diesem Gerät.</p><div class="buttons"><button type="button" id="v3record">🎙️ Erzählen beginnen</button><button type="button" id="v3stop" class="secondary" disabled>■ Aufnahme beenden &amp; speichern</button><button type="button" id="v3photo" class="secondary">📷 Foto aufnehmen</button></div><input type="file" id="v3cameraInput" accept="image/*" capture="environment" hidden><p id="v3message" class="small" role="status" aria-live="polite">Schreiben bleibt möglich. Texte werden nach kurzer Pause automatisch gespeichert.</p><p class="small">Die Stimme wird als Anhang gespeichert. Automatische Offline-Sprache-zu-Text-Umwandlung ist noch nicht enthalten. Bitte regelmäßig JSON-Buchsicherung exportieren.</p></section><section class="panel" id="dayPage"><div class="daytitle" id="selectedTitle"></div><p id="directStatus" class="small" role="status" aria-live="polite">Mikrofon im gewünschten Bereich anklicken. Während des Diktats wird dieselbe Taste rot und zeigt „Diktat stoppen“.</p><div class="buttons" style="margin:8px 0 14px"><button class="secondary" type="button" id="toggleDayPreview">📖 Buchseite ansehen</button><button class="secondary" type="button" id="openBookV8">📖 Aufgeschlagenes Buch</button></div><div id="readingPage" class="reading-page hidden" aria-live="polite"></div><p class="small">Jeder Tag gehört zum Leben – auch ohne Eintrag.</p><div class="grid"><div><label for="author">Wer erzählt?</label><input id="author" placeholder="z. B. Mama, Papa, ich selbst"></div><div><label for="heading">Überschrift</label><input id="heading" placeholder="Was diesen Tag besonders macht"></div></div><div class="life-phase"><h3>Es war</h3><p class="small">Erinnerungen, Ereignisse, Menschen und Fotos: Was ist geschehen und was möchte ich bewahren?</p></div><div class="buttons" style="margin:8px 0"><button type="button" class="secondary direct-dictate" data-target="memory">🎤 In „Es war“ sprechen</button></div><label for="memory">Es war – meine Erinnerung, meine Geschichte</label><textarea id="memory" placeholder="Was ist geschehen? Was möchte ich bewahren? Auch Jahre später darf diese Seite wachsen."></textarea><div class="life-phase"><h3>Es ist</h3><p class="small">Gegenwärtiges Erleben, Wahrnehmungen und Gefühle: Was bewegt mich heute?</p></div><div class="grid"><div><label for="people">Menschen und Orte</label><input id="people" placeholder="Familie, Freunde, Orte"></div><div><div class="buttons" style="margin:8px 0"><button type="button" class="secondary direct-dictate" data-target="feeling">🎤 In „Es ist“ sprechen</button></div><label for="feeling">Es ist – mein Erleben und meine Wahrnehmung</label><textarea id="feeling" placeholder="Was ist jetzt wichtig?" style="min-height:90px"></textarea></div></div><div class="life-phase"><h3>Könnte sein</h3><p class="small">Gedanken, Ideen, Wünsche und Möglichkeiten: Was könnte sich daraus entwickeln?</p></div><div class="buttons" style="margin:8px 0"><button type="button" class="secondary direct-dictate" data-target="connections">🎤 In „Könnte sein“ sprechen</button></div><label for="connections">Könnte sein – Ideen, Möglichkeiten und offene Fragen</label><textarea id="connections" style="min-height:90px" placeholder="Andere Daten (z. B. 2020-04-25), Beziehungen, Gedanken oder ein noch offenes ?"></textarea><div class="buttons" style="margin-top:14px"><button id="save">Diesen Tag speichern</button><button class="secondary" id="clear">Felder leeren</button></div><p id="unsaved" aria-live="polite"></p><p id="status" aria-live="polite"></p></section>
+</div><dialog id="bookVideoDialog" aria-label="Videoplayer" style="max-width:min(96vw,850px);width:850px;border:1px solid #c8b698;border-radius:14px;padding:18px;background:#fffaf0;color:#3b3028"><div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><strong id="bookVideoName" style="overflow-wrap:anywhere">Video</strong><button class="secondary" type="button" id="bookVideoClose">✕ Schließen</button></div><video id="bookVideoPlayer" controls playsinline preload="metadata" style="width:100%;max-height:70vh;background:#161616;margin-top:12px" aria-label="Video abspielen"></video><p class="small" id="bookVideoHint">▶ Starten, pausieren und Lautstärke direkt im Player einstellen. Nicht jedes Videoformat wird von Chrome unterstützt.</p></dialog>
+<div id="bookExtras"><details class="book-fold"><summary>Fotos, Dokumente und Stimmen</summary><section class="panel"><h2>Deine Anhänge</h2><p>Du kannst Bilder, PDFs, Tonaufnahmen, Videos und andere Dateien an diesen Tag hängen. Die Dateien werden zunächst lokal auf diesem Gerät gespeichert und beim Buch-Export mitgenommen.</p><label for="files">Dateien hinzufügen</label><input id="files" type="file" multiple accept="image/*,application/pdf,audio/*,video/*,.txt,.doc,.docx,.odt"><p class="small">Große Videos können die Browser-Speichergrenze erreichen. Bitte regelmäßig exportieren und extern sichern.</p><div id="attachments" class="attachments"></div></section>
+</details><details class="book-fold"><summary>Zurückblicken – gespeicherte Lebenstage</summary><section class="panel"><h2>Zurückblicken</h2><p>Bereits beschriebene Lebenstage</p><div id="timeline" class="timeline"></div></section>
+</details><details class="book-fold"><summary>Mein Buch mitnehmen – sichern und importieren</summary><section class="panel"><h2>Mein Buch mitnehmen</h2><p>Die Buchdatei enthält alle Einträge, Anhänge und verschlüsselten Notfall-Hinweise. Sie kann auf einen USB-Stick gespeichert und auf einem anderen Gerät importiert werden.</p><div class="buttons"><button id="export">Gesamtes Buch sichern / exportieren</button><button class="secondary" id="import">Buchdatei importieren</button><button class="secondary" id="profile">Buchdaten ansehen</button><button class="secondary" id="feedback">Test-Rückmeldung speichern</button></div><div id="importPreview" class="notice hidden" aria-live="polite" style="margin-top:14px"></div><p class="notice small"><strong>Wichtig:</strong> Diese Testversion ist durch den Besitzer-Code gesperrt, aber noch kein endgültig verschlüsseltes Langzeitarchiv. Auf dem Handy und insbesondere auf iPhones ist ein direkter Schreibzugriff auf USB-Sticks nicht immer möglich. Verwende deshalb Export und Import über die Dateien-App. Ein Import ersetzt den lokalen Buchstand und kann die bisherigen Codes ersetzen – vorher sichern! Es gibt noch keine automatische Zusammenführung.</p></section></details></div></div>
+<footer class="footer"><strong>USB-Probelauf:</strong> Die HTML-Datei liegt auf dem Stick, aber deine Einträge liegen zunächst im Browser dieses Geräts. Nach jedem Test das gesamte Buch als JSON auf den Stick exportieren. Der gleiche Stick öffnet auf einem anderen PC nicht automatisch dieselben Einträge.<p></p>It tscha na! · Ein Leben. Viele Erinnerungen. Ein Buch.</footer><input id="importFile" type="file" accept=".json,application/json" hidden></main><dialog id="imagePreview" class="image-preview" aria-label="Bildvorschau">
+<div class="buttons"><strong id="imagePreviewName" class="filename"></strong><button id="closeImagePreview" class="secondary" type="button">Schließen ✕</button></div>
+<img id="imagePreviewContent" alt="Dein Erinnerungsbild">
+<div class="buttons"><a id="savePreviewImage" class="button secondary" href="#" download>Originalbild speichern</a></div>
+</dialog>
+<dialog id="openBookDialog" class="open-book-dialog" aria-label="Aufgeschlagenes Goldenes Buch">
+<div class="open-book-top"><h2>✧ Das Goldene Buch Deines Lebens ✧</h2><button type="button" id="closeBookV8" class="secondary">Schließen ✕</button></div>
+<div class="open-book-spread"><article class="open-book-leaf" id="bookV8Left"></article><article class="open-book-leaf" id="bookV8Right"></article></div>
+<div class="buttons"><button type="button" class="secondary" id="printBookV8">Buchseite drucken / als PDF</button><button type="button" id="editBookV8">Zurück zum Schreiben</button></div>
+</dialog>
+<script>
+'use strict';const $=id=>document.getElementById(id);let db,profile=null,selected=null,objectUrls=[];const pad=n=>String(n).padStart(2,'0');const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const parse=s=>new Date(s+'T12:00:00');const fmt=s=>new Intl.DateTimeFormat('de-AT',{day:'numeric',month:'long',year:'numeric'}).format(parse(s));const today=()=>iso(new Date());const dayNumber=(a,b)=>Math.round((Date.UTC(+b.slice(0,4),+b.slice(5,7)-1,+b.slice(8,10))-Date.UTC(+a.slice(0,4),+a.slice(5,7)-1,+a.slice(8,10)))/86400000)+1;
+const TRIAL_START=Date.parse('2026-11-01T03:08:00+01:00'),TRIAL_END=Date.parse('2026-12-01T03:08:00+01:00');
+const LOCAL_PREVIEW=location.protocol==='file:'||location.hostname==='localhost'||location.hostname==='127.0.0.1';
+function trialPhase(){const now=Date.now();return now<TRIAL_START?'before':now>=TRIAL_END?'after':'active'}
+function trialCanWrite(){return LOCAL_PREVIEW||trialPhase()==='active'}
+function trialMessage(){const phase=trialPhase(),start=new Date(TRIAL_START).toLocaleString('de-AT',{timeZone:'Europe/Vienna'}),end=new Date(TRIAL_END).toLocaleString('de-AT',{timeZone:'Europe/Vienna'});return LOCAL_PREVIEW?'Lokale Prüfansicht: Schreiben ist für die Vorbereitung freigeschaltet.':phase==='before'?'Die kostenlose Testphase beginnt am '+start+' Uhr.':phase==='active'?'Die kostenlose Testphase ist aktiv und endet am '+end+' Uhr.':'Die 30-Tage-Testphase ist beendet. Dein Buch bleibt lesbar und kann weiterhin vollständig exportiert werden.'}
+function applyTrialState(){const status=$('trialStatus');if(status)status.textContent=trialMessage();const writable=trialCanWrite();for(const id of ['start','save','clear','files','v3record','v3stop','v3photo','coverUpload','coverRemove']){const node=$(id);if(node)node.disabled=!writable}document.querySelectorAll('.direct-dictate').forEach(node=>node.disabled=!writable)}
+function requireTrialWrite(){if(trialCanWrite())return true;alert(trialMessage());applyTrialState();return false}
+function openDb(){return new Promise((resolve,reject)=>{const r=indexedDB.open('GoldenesBuchV37Testphase',1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('data'))d.createObjectStore('data');if(!d.objectStoreNames.contains('files'))d.createObjectStore('files',{keyPath:'id'});};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}function req(store,mode,action){return new Promise((resolve,reject)=>{const tx=db.transaction(store,mode),s=tx.objectStore(store),r=action(s);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}const get=(k)=>req('data','readonly',s=>s.get(k));const put=(k,v)=>req('data','readwrite',s=>s.put(v,k));const delFile=id=>req('files','readwrite',s=>s.delete(id));const putFile=v=>req('files','readwrite',s=>s.put(v));const allFiles=()=>req('files','readonly',s=>s.getAll());function message(s){$('status').textContent=s}function setDate(s){if(!validDate(s)||s<profile.birth||s>today())return;if(dirty&&s!==selected&&!confirm('Du hast noch ungespeicherte Änderungen. Diesen Tag wirklich verlassen?'))return;dirty=false;selected=s;openedYear=lifeYearFor(s);visibleCycle=Math.floor((openedYear-1)/52)+1;$('jump').value=s;loadDay();if($('shelfSections'))renderShelf();renderYear();updateDirty()}
+let loadGeneration=0;async function loadDay(){const date=selected,generation=++loadGeneration;objectUrls.forEach(URL.revokeObjectURL);objectUrls=[];const entry=await get('day:'+date)||{};if(generation!==loadGeneration)return;$('selectedTitle').textContent=fmt(selected);$('dayInfo').textContent=`Lebenstag ${dayNumber(profile.birth,selected)} · ${dayNumber(profile.birth,selected)-1} vergangene Tage`;$('heading').value=entry.heading||'';$('author').value=entry.author||'';$('memory').value=entry.memory||'';$('people').value=entry.people||'';$('feeling').value=entry.feeling||'';$('connections').value=entry.connections||'';$('next').disabled=selected>=today();$('prev').disabled=selected<=profile.birth;message('');updateDirty();await showAttachments();if(generation!==loadGeneration)return;await renderReadingPage()}
+let activePreviewUrl=null;
+function closeImagePreview(){const dialog=$('imagePreview');if(dialog.open)dialog.close();$('imagePreviewContent').removeAttribute('src');if(activePreviewUrl){URL.revokeObjectURL(activePreviewUrl);activePreviewUrl=null}}
+$('closeImagePreview').onclick=closeImagePreview;
+$('imagePreview').addEventListener('click',e=>{if(e.target===$('imagePreview'))closeImagePreview()});
+$('imagePreview').addEventListener('close',()=>{if(activePreviewUrl){URL.revokeObjectURL(activePreviewUrl);activePreviewUrl=null}$('imagePreviewContent').removeAttribute('src')});
+function previewImage(f){closeImagePreview();activePreviewUrl=URL.createObjectURL(f.blob);$('imagePreviewContent').src=activePreviewUrl;$('imagePreviewName').textContent=f.name;$('savePreviewImage').href=activePreviewUrl;$('savePreviewImage').download=f.name;$('imagePreview').showModal()}
+let dayPreviewOpen=false;
+async function renderReadingPage(){const box=$('readingPage');if(!dayPreviewOpen){box.classList.add('hidden');return}box.classList.remove('hidden');box.replaceChildren();const entry=await get('day:'+selected)||{};const title=document.createElement('h3');title.textContent=entry.heading||fmt(selected);box.append(title);const date=document.createElement('p');date.className='small';date.textContent=fmt(selected)+(entry.author?' · Erzählt von '+entry.author:'');box.append(date);const photos=(await allFiles()).filter(f=>f.day===selected&&((f.type||f.blob.type||'').startsWith('image/')||/\.(png|jpe?g|gif|webp|bmp|avif)$/i.test(f.name)));for(const f of photos){const figure=document.createElement('figure');const img=document.createElement('img');const u=URL.createObjectURL(f.blob);objectUrls.push(u);img.src=u;img.alt=f.name;img.title='Bild vergrößern';img.onclick=()=>previewImage(f);const cap=document.createElement('figcaption');cap.textContent=f.name;figure.append(img,cap);box.append(figure)}for(const [label,value] of [['Es war – meine Erinnerung, meine Geschichte',entry.memory],['Menschen und Orte',entry.people],['Es ist – mein Erleben und meine Wahrnehmung',entry.feeling],['Könnte sein – Ideen, Möglichkeiten und offene Fragen',entry.connections]]){if(!value)continue;const h=document.createElement('strong');h.textContent=label;const p=document.createElement('p');p.textContent=value;box.append(h,p)}if(!photos.length&&!entry.memory){const p=document.createElement('p');p.textContent='Diese Buchseite wartet auf deine Erinnerungen.';box.append(p)}}
+$('toggleDayPreview').onclick=async()=>{dayPreviewOpen=!dayPreviewOpen;$('toggleDayPreview').textContent=dayPreviewOpen?'✎ Zurück zur Eingabe':'📖 Buchseite ansehen';await renderReadingPage()};
+document.getElementById('bookVideoClose').onclick=closeVideoAttachment;document.getElementById('bookVideoDialog').addEventListener('close',closeVideoAttachment);
+let activeVideoUrl=null;
+function closeVideoAttachment(){const dialog=document.getElementById('bookVideoDialog');if(!dialog)return;const video=document.getElementById('bookVideoPlayer');video.pause();video.removeAttribute('src');video.load();if(activeVideoUrl){URL.revokeObjectURL(activeVideoUrl);activeVideoUrl=null;}if(dialog.open)dialog.close();}
+function openVideoAttachment(file){const dialog=document.getElementById('bookVideoDialog');if(!dialog)return;closeVideoAttachment();document.getElementById('bookVideoHint').textContent='▶ Starten, pausieren und Lautstärke direkt im Player einstellen. Nicht jedes Videoformat wird von Chrome unterstützt.';activeVideoUrl=URL.createObjectURL(file.blob);const video=document.getElementById('bookVideoPlayer');document.getElementById('bookVideoName').textContent=file.name;video.src=activeVideoUrl;dialog.showModal();video.play().catch(()=>{document.getElementById('bookVideoHint').textContent='Zum Abspielen bitte ▶ im Videoplayer drücken. Falls der Codec nicht unterstützt wird, die Datei herunterladen und extern öffnen.';});}
+async function showAttachments(){const all=(await allFiles()).filter(f=>f.day===selected),out=$('attachments');out.replaceChildren();if(!all.length){out.textContent='Noch keine Anhänge für diesen Tag.';return}for(const f of all){const row=document.createElement('div');row.className='attachment';const a=document.createElement('a');const u=URL.createObjectURL(f.blob);objectUrls.push(u);a.href=u;a.download=f.name;a.textContent='📎 '+f.name+' ('+Math.ceil(f.blob.size/1024)+' KB)';const actions=document.createElement('div');actions.className='attachment-actions';const isImage=(f.type||f.blob.type||'').startsWith('image/')||/\.(png|jpe?g|gif|webp|bmp|avif)$/i.test(f.name);const isVideo=(f.type||f.blob.type||'').startsWith('video/')||/\.(mp4|webm|ogv|ogg|mov|m4v)$/i.test(f.name);if(isVideo){a.textContent='🎬 '+f.name+' – Video ansehen';a.removeAttribute('download');a.onclick=e=>{e.preventDefault();openVideoAttachment(f)};a.title='Video im Buch abspielen';const play=document.createElement('button');play.className='secondary';play.textContent='▶ Video ansehen';play.onclick=()=>openVideoAttachment(f);actions.append(play)}if(isImage){a.onclick=e=>{e.preventDefault();previewImage(f)};a.title='Bild direkt im Buch ansehen';const save=document.createElement('button');save.className='secondary';save.textContent='Speichern';save.onclick=()=>{const link=document.createElement('a');link.href=u;link.download=f.name;link.click()};actions.append(save)}const btn=document.createElement('button');btn.className='secondary';btn.textContent='Entfernen';btn.onclick=async()=>{if(confirm('Diesen Anhang wirklich entfernen?')){closeImagePreview();await delFile(f.id);await showAttachments()}};actions.append(btn);row.append(a,actions);out.append(row)}await renderReadingPage()}
+async function timeline(){const entries=await get('days')||[];const out=$('timeline');out.replaceChildren();if(!entries.length){out.textContent='Noch keine gespeicherten Lebenstage.';return}for(const d of entries.slice().sort().reverse()){const b=document.createElement('button');b.className='secondary';b.textContent=fmt(d);b.onclick=()=>setDate(d);out.append(b)}}function anniversary(birth,offset){const d=parse(birth),year=d.getFullYear()+offset,month=d.getMonth(),day=d.getDate();const last=new Date(year,month+1,0).getDate();return iso(new Date(year,month,Math.min(day,last),12))}
+function lifeYearFor(date){let y=parse(date).getFullYear()-parse(profile.birth).getFullYear();if(anniversary(profile.birth,y)>date)y--;return y+1}
+let visibleCycle=1,openedYear=1,dirty=false;const editFields=['heading','author','memory','people','feeling','connections'];
+function renderShelf(){if(!profile)return;const currentYear=lifeYearFor(today()),cycleCount=Math.ceil(currentYear/52),activeYear=lifeYearFor(selected);const tabs=$('cycleButtons'),sections=$('shelfSections');tabs.replaceChildren();sections.replaceChildren();
+for(let c=1;c<=cycleCount;c++){const b=document.createElement('button');b.className='secondary'+(c===visibleCycle?' active':'');b.textContent='52-Jahreszyklus '+c;b.onclick=()=>{visibleCycle=c;renderShelf()};tabs.append(b)}
+const colors=['#ad765e','#668d7b','#6885a5','#a58b4f'];
+for(let section=0;section<4;section++){const wrap=document.createElement('div');wrap.className='shelf-section';const h=document.createElement('h3');h.textContent='Abschnitt '+(section+1)+' · Bände '+(section*13+1)+'–'+((section+1)*13);wrap.append(h);const books=document.createElement('div');books.className='shelf-books';
+for(let n=1;n<=13;n++){const within=section*13+n,year=(visibleCycle-1)*52+within,start=anniversary(profile.birth,year-1),endExclusive=anniversary(profile.birth,year),b=document.createElement('button');b.className='shelf-book'+(year===activeYear?' active':'');b.style.background=colors[section];b.innerHTML=String(within)+'<small>Band</small>';b.title='Lebensjahr '+year+' · '+fmt(start)+' bis vor '+fmt(endExclusive);b.disabled=start>today();b.onclick=()=>{setDate(start);$('yearNavigator').scrollIntoView({behavior:'smooth',block:'start'});$('shelfInfo').textContent='Band '+within+' · Lebensjahr '+year+' · Beginn: '+fmt(start)+' · Ende: '+fmt(iso(new Date(parse(endExclusive).getTime()-86400000)));};books.append(b)}
+wrap.append(books);sections.append(wrap)}
+$('shelfInfo').textContent='Aktuell geöffnet: Lebensjahr '+activeYear+' · Zyklus '+(Math.floor((activeYear-1)/52)+1)+' · Band '+(((activeYear-1)%52)+1)+'. Ein Band umfasst den Zeitraum von einem Geburtstag bis zum Tag vor dem nächsten Geburtstag.'}
+function updateDirty(){$('unsaved').textContent=dirty?'● Ungespeicherte Änderungen – bitte diesen Tag speichern.':''}
+for(const id of editFields){$(id).addEventListener('input',()=>{dirty=true;updateDirty()})}
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}})
+function addDays(s,n){const d=parse(s);d.setDate(d.getDate()+n);return iso(d)}
+async function renderYear(){if(!profile)return;const year=openedYear,start=anniversary(profile.birth,year-1),end=addDays(anniversary(profile.birth,year),-1),cap=addDays(today(),0);$('yearCaption').textContent='Lebensjahr '+year+' · '+fmt(start)+' bis '+fmt(end)+' · Zyklus '+(Math.floor((year-1)/52)+1)+' · Band '+(((year-1)%52)+1);$('yearPrev').disabled=year<=1;$('yearNext').disabled=anniversary(profile.birth,year)>today();const saved=new Set(await get('days')||[]);const wrap=$('monthGrid');wrap.replaceChildren();let current=start;while(current<=end&&current<=cap){const d=parse(current),month=d.getMonth(),yearNum=d.getFullYear();const card=document.createElement('section');card.className='month-card';const title=document.createElement('h3');title.textContent=new Intl.DateTimeFormat('de-AT',{month:'long',year:'numeric'}).format(d);card.append(title);const days=document.createElement('div');days.className='days-grid';for(const w of ['Mo','Di','Mi','Do','Fr','Sa','So']){const lab=document.createElement('span');lab.className='month-weekday';lab.textContent=w;days.append(lab)}
+const firstWeekday=(new Date(yearNum,month,1).getDay()+6)%7;for(let i=0;i<firstWeekday;i++)days.append(document.createElement('span'));
+const lastDay=new Date(yearNum,month+1,0).getDate();for(let day=1;day<=lastDay;day++){const ds=iso(new Date(yearNum,month,day,12)),b=document.createElement('button');b.className='day-button'+(saved.has(ds)?' written':'')+(ds===selected?' selected':'');b.textContent=String(day);b.title=fmt(ds)+(saved.has(ds)?' · Eintrag vorhanden':'');b.disabled=ds<start||ds>end||ds>cap;b.onclick=()=>{setDate(ds);document.getElementById('dayPage').scrollIntoView({behavior:'smooth',block:'start'})};days.append(b)}
+card.append(days);wrap.append(card);current=iso(new Date(yearNum,month+1,1,12))}}
+$('yearPrev').onclick=()=>{if(openedYear>1)setDate(anniversary(profile.birth,openedYear-2))};
+$('yearNext').onclick=()=>{const date=anniversary(profile.birth,openedYear);if(date<=today())setDate(date)};
+function showBook(){if(!profile)return;$('setup').classList.add('hidden');$('book').classList.remove('hidden');$('bookName').textContent=profile.name||'Mein Lebensbuch';$('lifeInfo').textContent='Beginn: '+fmt(profile.birth);$('jump').min=profile.birth;$('jump').max=today();visibleCycle=Math.floor((lifeYearFor(today())-1)/52)+1;setDate(today());timeline();applyTrialState()}
+$('start').onclick=async()=>{if(!requireTrialWrite())return;const birth=$('birth').value,name=$('person').value.trim();if(!validDate(birth)||birth>today()){alert('Bitte einen gültigen Geburtstag bis heute eingeben.');return}if(!name){alert('Bitte einen Namen oder Buchnamen eingeben.');return}const existing=await get('profile');if(existing&&!confirm('Auf diesem Gerät besteht bereits ein Goldenes Buch. Ein neues Buch kann die bisherigen Einträge unzugänglich machen. Bitte zuerst das bestehende Buch exportieren. Trotzdem fortfahren?'))return;profile={name,birth,created:new Date().toISOString(),version:1};await put('profile',profile);await put('days',[]);showBook()};$('jump').onchange=e=>setDate(e.target.value);$('prev').onclick=()=>{const d=parse(selected);d.setDate(d.getDate()-1);setDate(iso(d))};$('next').onclick=()=>{const d=parse(selected);d.setDate(d.getDate()+1);setDate(iso(d))};$('today').onclick=()=>setDate(today());$('save').onclick=async()=>{if(!requireTrialWrite())return;const e={heading:$('heading').value,author:$('author').value,memory:$('memory').value,people:$('people').value,feeling:$('feeling').value,connections:$('connections').value,updated:new Date().toISOString()};await put('day:'+selected,e);const days=await get('days')||[];if(!days.includes(selected)){days.push(selected);await put('days',days)}dirty=false;updateDirty();await timeline();await renderYear();await renderReadingPage();message('Dieser Lebenstag wurde auf diesem Gerät gespeichert. Bitte auch eine Buchsicherung exportieren.')};$('clear').onclick=()=>{if(!requireTrialWrite())return;if(!confirm('Eingabefelder leeren? Erst nach Speichern wird der Eintrag überschrieben.'))return;for(const id of editFields)$(id).value='';dirty=true;updateDirty()};
+$('files').onchange=async e=>{if(!requireTrialWrite()){e.target.value='';return}for(const file of Array.from(e.target.files)){try{await putFile({id:crypto.randomUUID(),day:selected,name:file.name,type:file.type,blob:file,lastModified:file.lastModified})}catch(err){alert('Anhang konnte nicht gespeichert werden: '+err.message);break}}e.target.value='';await showAttachments();await renderReadingPage()};const blobToBase64=b=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result.split(',')[1]);r.onerror=()=>reject(r.error);r.readAsDataURL(b)});const b64ToBlob=(base64,type)=>{const bin=atob(base64),chunks=[];for(let i=0;i<bin.length;i+=8192){const chunk=bin.slice(i,i+8192),arr=new Uint8Array(chunk.length);for(let j=0;j<chunk.length;j++)arr[j]=chunk.charCodeAt(j);chunks.push(arr)}return new Blob(chunks,{type:type||'application/octet-stream'})};async function exportBook(){const days=await get('days')||[],entries={};for(const d of days)entries[d]=await get('day:'+d);const attachments=[];for(const f of await allFiles()){let base64;try{if(!(f.blob instanceof Blob))throw Error('Dateiinhalt fehlt oder ist nicht lesbar');base64=await blobToBase64(f.blob)}catch(err){throw Error('Anhang '+JSON.stringify(f.name||'(ohne Namen)')+' vom '+(f.day||'unbekannten Tag')+' konnte nicht gelesen werden: '+err.message)}attachments.push({id:f.id,day:f.day,name:f.name,type:f.type,lastModified:f.lastModified,base64})};const security=await window.GoldenAccess.exportSecurity();const json=JSON.stringify({format:'goldenes-buch',version:2,appVersion:'3.7.2-testphase',exported:new Date().toISOString(),profile,days:entries,attachments,security});const url=URL.createObjectURL(new Blob([json],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Goldenes-Buch-V3.7.2-'+profile.birth+'-'+today()+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}$('export').onclick=()=>exportBook().catch(e=>alert('Export fehlgeschlagen: '+e.message+'\n\nDeine bisherigen Buchdaten wurden nicht gelöscht. Bitte diese Fehlermeldung für die Fehleranalyse notieren.'));$('profile').onclick=()=>alert('Buch: '+profile.name+'\nGeburtstag: '+fmt(profile.birth)+'\nGespeicherte Einträge: siehe Zurückblicken.');$('import').onclick=$('restoreSetup').onclick=()=>{if(!requireTrialWrite())return;$('importFile').click()};function validDate(s){return typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&!Number.isNaN(parse(s).getTime())&&iso(parse(s))===s}
+function inspectBackup(obj){if(!obj||obj.format!=='goldenes-buch'||![1,2].includes(obj.version)||!obj.profile||!validDate(obj.profile.birth)||!obj.days||typeof obj.days!=='object'||Array.isArray(obj.days)||!Array.isArray(obj.attachments))throw Error('Unbekanntes oder beschädigtes Buchformat');const dates=Object.keys(obj.days);if(dates.some(d=>!validDate(d)||d<obj.profile.birth||d>today()||!obj.days[d]||typeof obj.days[d]!=='object'))throw Error('Ungültige Lebenstage in der Sicherung');let total=0;for(const f of obj.attachments){if(!f||typeof f.name!=='string'||!validDate(f.day)||f.day<obj.profile.birth||f.day>today()||typeof f.base64!=='string'||!/^[A-Za-z0-9+/]*={0,2}$/.test(f.base64)||f.base64.length%4!==0)throw Error('Ungültige Anhangdaten');total+=Math.floor(f.base64.length*3/4)}if(obj.security&&(!obj.security.accessConfig||!Array.isArray(obj.security.careNotes)))throw Error('Ungültige Sicherheitsdaten');return {dates,bytes:total}}
+async function restoreBackup(obj){const oldProfile=await get('profile'),oldDays=await get('days')||[],oldEntries={};for(const d of oldDays)oldEntries[d]=await get('day:'+d);const oldFiles=await allFiles(),oldSecurity=await window.GoldenAccess.exportSecurity();const newFiles=obj.attachments.map(f=>({id:f.id,day:f.day,name:f.name,type:f.type,lastModified:f.lastModified,blob:b64ToBlob(f.base64,f.type)}));const apply=async(p,entries,files)=>{const tx=db.transaction(['data','files'],'readwrite'),data=tx.objectStore('data'),store=tx.objectStore('files');data.clear();store.clear();if(p)data.put(p,'profile');data.put(Object.keys(entries),'days');for(const [d,v] of Object.entries(entries))data.put(v,'day:'+d);for(const f of files)store.put(f);await new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Transaktion abgebrochen'))})};try{await apply(obj.profile,obj.days,newFiles);if(obj.security)await window.GoldenAccess.importSecurity(obj.security)}catch(err){try{await apply(oldProfile,oldEntries,oldFiles);await window.GoldenAccess.importSecurity(oldSecurity)}catch{}throw err}profile=obj.profile;dirty=false;showBook()}
+$('importFile').onchange=async e=>{const file=e.target.files[0];e.target.value='';if(!file)return;const panel=$('book').classList.contains('hidden') ? $('importPreviewSetup') : $('importPreview');panel.replaceChildren();panel.classList.remove('hidden');try{const obj=JSON.parse(await file.text()),info=inspectBackup(obj);const title=document.createElement('h3');title.textContent='Import-Vorschau – noch nichts verändert';const details=document.createElement('p');details.textContent='Datei: '+file.name+' | Buch: '+(obj.profile.name||'Ohne Namen')+' | Geburtstag: '+fmt(obj.profile.birth)+' | Lebenstage: '+info.dates.length+' | Anhänge: '+obj.attachments.length+' ('+(info.bytes/1048576).toFixed(2)+' MB)';const note=document.createElement('p');note.className='small';note.textContent='Der Import ersetzt sämtliche lokalen Buchdaten und Anhänge. Sichere vorher unbedingt dein jetziges Buch. Die Vorschau verändert nichts.';const buttons=document.createElement('div');buttons.className='buttons';const cancel=document.createElement('button');cancel.className='secondary';cancel.textContent='Abbrechen';cancel.onclick=()=>{panel.replaceChildren();panel.classList.add('hidden')};const accept=document.createElement('button');accept.textContent='Dieses Buch wirklich importieren';accept.onclick=async()=>{if(dirty){alert('Bitte zuerst deinen aktuellen Tag speichern oder die Änderungen bewusst verwerfen.');return}if(!confirm('Letzte Bestätigung: Alle derzeitigen lokalen Buchdaten und Anhänge werden ersetzt. Hast du vorher eine Sicherung exportiert?'))return;accept.disabled=true;try{await restoreBackup(obj);panel.replaceChildren();panel.classList.add('hidden');alert('Import abgeschlossen. Bitte Einträge und Anhänge kontrollieren.')}catch(err){alert('Import fehlgeschlagen: '+err.message);accept.disabled=false}};buttons.append(cancel,accept);panel.append(title,details,note,buttons);panel.scrollIntoView({behavior:'smooth',block:'nearest'})}catch(err){panel.textContent='Sicherungsdatei konnte nicht geprüft werden: '+err.message}};
+
+$('feedback').onclick=()=>{const positive=prompt('Was hat gut funktioniert?','')??'';const difficult=prompt('Was war schwierig oder unverständlich?','')??'';const wish=prompt('Was wünschst du dir für die nächste Version?','')??'';if(!positive&&!difficult&&!wish)return;const payload={format:'goldenes-buch-test-feedback',appVersion:'3.7.2-testphase',created:new Date().toISOString(),browser:navigator.userAgent,positive,difficult,wish};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Goldenes-Buch-V3.7.2-Rueckmeldung-'+today()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000)};
+
+(async()=>{try{await window.GoldenAccess.waitForOwner();db=await openDb();profile=await get('profile');if(profile)showBook();else applyTrialState();window.GoldenAccess.ownerReady()}catch(e){alert('Lokaler Speicher ist nicht verfügbar. Bitte das Buch in einem aktuellen Browser öffnen. Fehler: '+e.message)}})();
+
+/* V8: Nur Leseansicht, keine Änderung an Buchdaten */
+let v8ObjectUrls=[];
+function clearV8Urls(){for(const u of v8ObjectUrls)URL.revokeObjectURL(u);v8ObjectUrls=[]}
+function closeBookV8(){if($('openBookDialog').open)$('openBookDialog').close();clearV8Urls()}
+$('closeBookV8').onclick=closeBookV8;
+$('editBookV8').onclick=closeBookV8;
+$('printBookV8').onclick=()=>window.print();
+$('openBookDialog').addEventListener('close',clearV8Urls);
+$('openBookDialog').addEventListener('click',e=>{if(e.target===$('openBookDialog'))closeBookV8()});
+function v8Paragraph(parent,label,value){if(!value)return;const heading=document.createElement('h4');heading.textContent=label;parent.append(heading);const para=document.createElement('p');para.textContent=value;parent.append(para)}
+$('openBookV8').onclick=async()=>{
+ if(dirty){alert('Bitte speichere zuerst deine Änderungen. Die Buchansicht zeigt nur bereits gespeicherte Texte.');return}
+ clearV8Urls();
+ const left=$('bookV8Left'),right=$('bookV8Right');left.replaceChildren();right.replaceChildren();
+ const entry=await get('day:'+selected)||{};
+ const label=document.createElement('p');label.className='open-book-label';label.textContent='Erinnerungen · '+fmt(selected);left.append(label);
+ const photos=(await allFiles()).filter(f=>f.day===selected&&((f.type||f.blob.type||'').startsWith('image/')||/\.(png|jpe?g|gif|webp|bmp|avif)$/i.test(f.name)));
+ if(!photos.length){const empty=document.createElement('p');empty.className='open-book-empty';empty.textContent='Raum für ein Erinnerungsbild';left.append(empty)}
+ for(const f of photos){const fig=document.createElement('figure'),img=document.createElement('img'),cap=document.createElement('figcaption'),url=URL.createObjectURL(f.blob);v8ObjectUrls.push(url);img.src=url;img.alt=f.name;img.onclick=()=>previewImage(f);cap.textContent=f.name;fig.append(img,cap);left.append(fig)}
+ const date=document.createElement('p');date.className='open-book-label';date.textContent=fmt(selected)+' · Lebenstag '+dayNumber(profile.birth,selected);right.append(date);
+ const h=document.createElement('h3');h.textContent=entry.heading||'Ein Tag meines Lebens';right.append(h);
+ if(entry.author)v8Paragraph(right,'Erzählt von',entry.author);
+ v8Paragraph(right,'Meine Geschichte',entry.memory);
+ v8Paragraph(right,'Menschen und Orte',entry.people);
+ v8Paragraph(right,'Es ist – mein Erleben und meine Wahrnehmung',entry.feeling);
+ v8Paragraph(right,'Könnte sein – Ideen, Möglichkeiten und offene Fragen',entry.connections);
+ if(![entry.memory,entry.people,entry.feeling,entry.connections].some(Boolean)){const blank=document.createElement('p');blank.className='open-book-empty';blank.textContent='Auch eine unbeschriebene Seite gehört zum Leben.';right.append(blank)}
+ $('openBookDialog').showModal();
+};
+</script>
+
+<script src="./cover-v2.js"></script>
+<script src="./cover-runtime-v2.js"></script>
+<script>
+// App-Installation: funktioniert auf HTTPS oder localhost, nicht beim direkten file://-Öffnen.
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(console.warn));
+}
+</script>
+<script>
+/* V3: isolated local store, audio/photo capture, text autosave */
+(()=>{'use strict';const el=id=>document.getElementById(id);let recorder=null,stream=null,chunks=[],recordDay=null,autoTimer=null;const msg=t=>el('v3message').textContent=t;
+const addFile=async(file,day)=>{if(!trialCanWrite())throw Error(trialMessage());if(!db||!profile||!day)throw Error('Bitte zuerst das Buch öffnen.');await putFile({id:crypto.randomUUID(),day,name:file.name,type:file.type,blob:file,lastModified:Date.now()});if(selected===day){await showAttachments();await renderReadingPage();}};
+el('v3photo').onclick=()=>el('v3cameraInput').click();el('v3cameraInput').onchange=async e=>{const files=[...e.target.files],day=selected;e.target.value='';try{for(const f of files)await addFile(f,day);msg(files.length?'Foto für '+day+' gespeichert. Bitte Buchsicherung exportieren.':'Kein Foto ausgewählt.')}catch(err){msg('Foto nicht gespeichert: '+err.message)}};
+el('v3record').onclick=async()=>{if(!profile||!selected){msg('Bitte zuerst dein Buch öffnen.');return}if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined'){msg('Mikrofon im aktuellen Browser/Dateimodus nicht verfügbar. Bitte Aufnahme über „Dateien hinzufügen“ anhängen.');return}try{stream=await navigator.mediaDevices.getUserMedia({audio:true});const mime=['audio/webm;codecs=opus','audio/mp4','audio/webm'].find(t=>MediaRecorder.isTypeSupported(t));recorder=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];recordDay=selected;recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=async()=>{const day=recordDay,blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});stream?.getTracks().forEach(t=>t.stop());stream=null;el('v3record').disabled=false;el('v3stop').disabled=true;try{if(!blob.size)throw Error('Leere Aufnahme');const ext=blob.type.includes('mp4')?'m4a':'webm';await addFile(new File([blob],'Erzaehlung-'+day+'-'+Date.now()+'.'+ext,{type:blob.type}),day);msg('Stimme für '+day+' lokal gespeichert. Bitte Buchsicherung exportieren.')}catch(err){msg('Aufnahme nicht gespeichert: '+err.message)}};recorder.start();el('v3record').disabled=true;el('v3stop').disabled=false;msg('Aufnahme läuft für '+recordDay+'. Zum Speichern Aufnahme beenden.')}catch(err){stream?.getTracks().forEach(t=>t.stop());msg('Mikrofon nicht verfügbar: '+err.message)}};
+el('v3stop').onclick=()=>{if(recorder?.state==='recording')recorder.stop()};
+// V3.3: dictate directly into the selected life-phase, leaving original audio recording independent.
+(()=>{
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const status=el('directStatus');
+const buttons=[...document.querySelectorAll('.direct-dictate')];
+let recog=null,active=false,target=null,day=null,original='',committed='',runningButton=null,stopping=false;
+const labels={memory:'Es war',feeling:'Es ist',connections:'Könnte sein'};
+function setButtons(){buttons.forEach(b=>{const selectedButton=b===runningButton; b.disabled=!SR||(active&&!selectedButton);b.textContent=selectedButton?(stopping?'⏳ Diktat wird beendet …':'■ Diktat stoppen'):'🎤 In „'+labels[b.dataset.target]+'“ sprechen';b.setAttribute('aria-pressed',String(selectedButton));b.style.background=selectedButton?'#8e3529':'';b.style.color=selectedButton?'#fff':'';});}
+function reset(){active=false;stopping=false;runningButton=null;recog=null;target=null;setButtons();}
+if(!SR){setButtons();status.textContent='Spracherkennung in diesem Browser nicht verfügbar. Schreiben ist weiterhin möglich.';return;}
+function emit(value){if(target&&selected===day){target.value=value;target.dispatchEvent(new Event('input',{bubbles:true}));}}
+function stopDictation(){if(!active||!recog||stopping)return;stopping=true;status.textContent='Diktat wird beendet. Bitte einen Moment warten …';setButtons();try{recog.stop();}catch(e){status.textContent='Diktat konnte nicht beendet werden: '+e.message;reset();}}
+function begin(id,button){
+ if(active){if(button===runningButton)stopDictation();return;}
+ if(!profile||!selected){status.textContent='Bitte zuerst dein Buch öffnen.';return;}
+ const input=el(id);if(!input)return;
+ target=input;day=selected;original=input.value;committed='';runningButton=button;
+ try{
+  const session=new SR();recog=session;session.lang='de-AT';session.continuous=true;session.interimResults=true;
+  session.onresult=e=>{
+   if(recog!==session)return;
+   if(selected!==day){stopDictation();return;}
+   let finals='',interim='';
+   for(let i=0;i<e.results.length;i++){const t=e.results[i][0].transcript.trim();if(e.results[i].isFinal)finals+=(finals?' ':'')+t;else interim+=(interim?' ':'')+t;}
+   committed=finals;const spoken=[finals,interim].filter(Boolean).join(' ');
+   emit(original+(original.trim()&&spoken?'\n':'')+spoken);
+  };
+  session.onerror=e=>{if(recog!==session)return;status.textContent='Diktatfehler: '+e.error+'. Prüfe Mikrofonberechtigung und Internetverbindung.';};
+  session.onend=()=>{if(recog!==session)return;if(selected===day&&target)emit(original+(original.trim()&&committed?'\n':'')+committed);if(!status.textContent.startsWith('Diktatfehler'))status.textContent='Diktat beendet. Text prüfen und Lebenstag speichern.';reset();};
+  session.start();active=true;setButtons();status.textContent='🔴 Diktat läuft in „'+labels[id]+'“. Zum Stoppen dieselbe rote Taste drücken.';
+ }catch(e){reset();status.textContent='Diktat konnte nicht starten: '+e.message;}
+}
+buttons.forEach(b=>b.addEventListener('click',()=>begin(b.dataset.target,b)));
+setButtons();
+})();
+['heading','author','memory','people','feeling','connections'].forEach(id=>el(id).addEventListener('input',()=>{clearTimeout(autoTimer);const day=selected;autoTimer=setTimeout(()=>{if(!profile||!db||day!==selected||!dirty)return;el('save').click();msg('Text für '+day+' automatisch gespeichert. Bitte Buchsicherung exportieren.')},1200)}));
+})();
+</script></body></html>
