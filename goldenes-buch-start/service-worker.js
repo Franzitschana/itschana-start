@@ -1,5 +1,5 @@
 /* V3.20 Geräteausgabe: Programmdateien offline bereithalten; keine Lebensdaten zwischenspeichern. */
-const CACHE_NAME = 'goldenes-buch-v320-startklar-20261106';
+const CACHE_NAME = 'goldenes-buch-v320-startklar-20261106b';
 const STATIC = [
   './', './index.html', './berechtigung.js', './access-v2.js',
   './cover-v2.js', './cover-runtime-v2.js',
