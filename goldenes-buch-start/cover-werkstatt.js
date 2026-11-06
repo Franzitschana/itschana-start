@@ -122,7 +122,8 @@ async function loadBirthdayFromBook(){
  if(!window.indexedDB||$('birthOnCover').value)return;
  await new Promise(resolve=>{
   let request;
-  try{request=indexedDB.open('GoldenesBuchV320Startklar')}catch(e){resolve();return}
+  try{request=indexedDB.open('GoldenesBuchV320Startklar',2)}catch(e){resolve();return}
+  request.onupgradeneeded=()=>{const d=request.result;if(!d.objectStoreNames.contains('data'))d.createObjectStore('data');if(!d.objectStoreNames.contains('files'))d.createObjectStore('files',{keyPath:'id'})};
   request.onerror=()=>resolve();
   request.onsuccess=()=>{
    const db=request.result;

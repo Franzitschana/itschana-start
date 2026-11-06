@@ -19,7 +19,7 @@ function base64ToBlob(base64, mime) {const bin=atob(base64), parts=[];for(let i=
 function openDb(name, version, upgrade){return new Promise((ok,fail)=>{const r=indexedDB.open(name,version);r.onupgradeneeded=()=>upgrade(r.result);r.onsuccess=()=>ok(r.result);r.onerror=()=>fail(r.error||Error('Speicher nicht erreichbar'));r.onblocked=()=>fail(Error('Bitte andere Tabs mit diesem Buch schließen'))})}
 async function readObject(db, store, key){const tx=db.transaction(store,'readonly'),req=tx.objectStore(store).get(key);return new Promise((ok,fail)=>{req.onsuccess=()=>ok(req.result);req.onerror=()=>fail(req.error);tx.onabort=()=>fail(tx.error);});}
 async function readAll(db,store){const tx=db.transaction(store,'readonly'),req=tx.objectStore(store).getAll();return new Promise((ok,fail)=>{req.onsuccess=()=>ok(req.result);req.onerror=()=>fail(req.error);tx.onabort=()=>fail(tx.error)})}
-const openBook=()=>openDb(BOOK_DB,1,d=>{if(!d.objectStoreNames.contains('data'))d.createObjectStore('data');if(!d.objectStoreNames.contains('files'))d.createObjectStore('files',{keyPath:'id'})});
+const openBook=()=>openDb(BOOK_DB,2,d=>{if(!d.objectStoreNames.contains('data'))d.createObjectStore('data');if(!d.objectStoreNames.contains('files'))d.createObjectStore('files',{keyPath:'id'})});
 const openAlbum=()=>openDb(ALBUM_DB,1,d=>{if(!d.objectStoreNames.contains('bilder'))d.createObjectStore('bilder',{keyPath:'id'})});
 async function readCurrentCover(){return localStorage.getItem(CURRENT_COVER_KEY)}
 async function writeCurrentCover(data){
