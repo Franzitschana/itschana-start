@@ -97,7 +97,10 @@
     const read = (id) => document.getElementById(id).textContent.trim();
     const preferred = /anna|helena|katja|vicki|petra|marlene|amala|susan|yann?ika|elli|katrin|female|weiblich/i;
     let current = null;
+    let pause = null;
     function reset() {
+      window.clearTimeout(pause);
+      pause = null;
       if (current) {
         current = null;
         speech.cancel();
@@ -112,7 +115,7 @@
     new MutationObserver(update).observe(card.querySelector("#opening"), { childList: true });
     update();
     button.addEventListener("click", () => {
-      if (current) { reset(); status.textContent = "Wiedergabe gestoppt."; return; }
+      if (current || pause !== null) { reset(); status.textContent = "Wiedergabe gestoppt."; return; }
       const voices = speech.getVoices().filter((voice) => /^de(?:[-_]|$)/i.test(voice.lang));
       const voice = voices.find((v) => preferred.test(v.name) && /^de[-_]AT$/i.test(v.lang))
         || voices.find((v) => preferred.test(v.name)) || voices.find((v) => v.default) || voices[0];
@@ -122,26 +125,37 @@
         "Sinne. " + read("space-senses"), "Bewusstsein. " + read("space-awareness"),
         "Eine Frage zum Mitnehmen. " + read("daily-question"),
         "Nimm mit, was in dir anklingt. It tscha na."];
-      const utterance = new SpeechSynthesisUtterance(script.join(" "));
-      utterance.lang = voice?.lang || "de-AT";
-      if (voice) utterance.voice = voice;
-      utterance.rate = 0.91;
-      utterance.onend = () => {
-        if (current !== utterance) return;
-        current = null;
-        reset();
-        status.textContent = "Wiedergabe beendet.";
-      };
-      utterance.onerror = () => {
-        if (current !== utterance) return;
-        current = null;
-        reset();
-        status.textContent = "Die Stimme konnte nicht gestartet werden. Der Tagesruf steht darunter zum Lesen bereit.";
-      };
-      current = utterance;
+      function readSection(index) {
+        const utterance = new SpeechSynthesisUtterance(script[index]);
+        utterance.lang = voice?.lang || "de-AT";
+        if (voice) utterance.voice = voice;
+        utterance.rate = 0.86;
+        utterance.pitch = 0.97;
+        utterance.onend = () => {
+          if (current !== utterance) return;
+          current = null;
+          if (index + 1 === script.length) {
+            reset();
+            status.textContent = "Wiedergabe beendet.";
+            return;
+          }
+          pause = window.setTimeout(() => {
+            pause = null;
+            readSection(index + 1);
+          }, index === 5 || index === 6 ? 1350 : 950);
+        };
+        utterance.onerror = () => {
+          if (current !== utterance) return;
+          current = null;
+          reset();
+          status.textContent = "Die Stimme konnte nicht gestartet werden. Der Tagesruf steht darunter zum Lesen bereit.";
+        };
+        current = utterance;
+        speech.speak(utterance);
+      }
       button.textContent = "Wiedergabe stoppen";
       status.textContent = "Nova liest den Tagesruf.";
-      speech.speak(utterance);
+      readSection(0);
     });
     window.addEventListener("pagehide", reset);
   })();
