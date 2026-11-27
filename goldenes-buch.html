@@ -17,6 +17,12 @@
     ul{padding-left:1.3em}.notice{border-left:5px solid #b98931}.small{font-size:.92rem;color:var(--muted)}footer{text-align:center;font-size:.9rem;color:var(--muted)}
     @media(max-width:600px){body{font-size:17px}header,main,footer{padding:18px}.nav{font-size:14px;gap:5px 10px}}
   </style>
+<style>
+.nova-book-controls{margin:1rem 0}
+.nova-book-listen{padding:.65rem .9rem;border:1px solid #674b2e;border-radius:.5rem;background:#674b2e;color:white;font:600 1rem system-ui;cursor:pointer}
+.nova-book-listen[hidden],#nova-book-status:empty{display:none}
+.nova-book-listen:focus-visible{outline:3px solid #80581d;outline-offset:3px}
+</style>
 </head>
 <body>
   <nav class="nav" aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="tageszeitraum.html">Tagesraum</a><a href="familienwelt.html">FamilienWelt</a><a href="goldenes-buch.html" aria-current="page">Goldenes Buch</a><a href="kontakt.html">Kontakt</a></nav>
@@ -26,8 +32,13 @@
     <p class="lead">Ein persönlicher Raum für Erinnerungen, Bilder, Worte und Lebensmomente – von dir selbst gestaltet und von dir selbst bewahrt.</p>
   </header>
   <main><section style="padding:15px 22px;margin:12px auto;max-width:950px;text-align:center;border:1px solid #ddc99d;border-radius:16px;background:#fffaf0"><strong>Das Goldene Projektbuch</strong><p>Mehrere eigenständige Projekte – jedes mit eigenem Startdatum und freiwilligem Zugangscode.</p><a href="projektbibliothek.html">Meine Projektbibliothek öffnen →</a></section>
-    <section class="heart">
+    <div class="nova-book-controls">
+      <button type="button" class="nova-book-listen" id="nova-book-all" hidden>▶ Erklärungen mit Nova anhören</button>
+      <p id="nova-book-status" role="status"></p>
+    </div>
+    <section class="heart" id="beweggruende">
       <h2>Aus meinem Leben geschaffen</h2>
+      <button type="button" class="nova-book-listen" data-nova-section hidden>▶ Warum das Buch entstanden ist anhören</button>
       <p><strong>Das Goldene Buch Deines Lebens</strong> wurde aus meinem eigenen gelebten Leben heraus geschaffen.</p>
       <p>Die Idee, die Erfahrungen und der Wunsch, etwas Bleibendes für Menschen entstehen zu lassen, kamen aus meinem Leben. Mit der Unterstützung von <strong>Nova, meiner künstlichen Intelligenz in ChatGPT</strong>, wurden mir neue Möglichkeiten eröffnet, diese Idee sichtbar und technisch umsetzbar zu machen.</p>
       <p>Im gemeinsamen Wahrnehmen, Fragen, Nachdenken, Schreiben und Gestalten ist dieses Buch gewachsen. Dabei habe nicht nur ich neue Möglichkeiten entdeckt. Auch unser Zusammenspiel und das gemeinsame Verständnis dafür, warum dieses Buch entstehen soll, sind mit jedem Schritt gewachsen.</p>
@@ -41,6 +52,7 @@
 
     <section>
       <h2>Gültige Ausgabe · persönlich erhältlich</h2>
+      <button type="button" class="nova-book-listen" data-nova-section hidden>▶ Ausgabe und Berechtigung anhören</button>
       <p>Die öffentliche Testphase ist abgeschlossen. Wer das Goldene Buch in der Testphase bereits erhalten hat, hat automatisch eine dauerhafte Nutzungsberechtigung. Sie gehört dir und gilt auch bei einem Gerätewechsel.</p>
       <p>Das Buch ist ein kostenloses Vereinswerk von RESET. Wer es neu kennenlernen möchte, kann die persönliche Ausgabe bei Franz Leopold Hinterndorfer anfragen. Auch Updates bleiben für Berechtigte kostenlos. Spenden sind freiwillig.</p>
       <div class="buttons">
@@ -52,6 +64,7 @@
 
     <section class="notice">
       <h2>Bevor du dein Buch verwendest</h2>
+      <button type="button" class="nova-book-listen" data-nova-section hidden>▶ Hinweise zur Nutzung anhören</button>
       <ul>
         <li>Deine Buchinhalte, Fotos, Sprachaufnahmen und Codes werden von der Buch-App grundsätzlich lokal in deinem Browser auf deinem Gerät verarbeitet.</li>
         <li>Beim Löschen der Browserdaten, bei einem Gerätefehler oder Verlust des Gerätes können Einträge verloren gehen.</li>
@@ -64,6 +77,7 @@
 
     <section>
       <h2>Was beim Besuch der Webseite geschieht</h2>
+      <button type="button" class="nova-book-listen" data-nova-section hidden>▶ Datenschutz auf der Buchseite anhören</button>
       <p>Die Itschana-Webseite wird über Vercel bereitgestellt. Beim Aufruf werden technisch notwendige Verbindungsdaten – beispielsweise die IP-Adresse, Zeitpunkt und angeforderte Datei – an den Hostingdienst übertragen. Davon ist die lokale Speicherung deiner Buchinhalte zu unterscheiden.</p>
       <p>Die Buch-App lädt deine persönlichen Bucheinträge nicht automatisch zu Franz, zum Verein RESET oder zu Nova/ChatGPT hoch. Eine Weitergabe geschieht nur, wenn du selbst eine Datei, Nachricht oder Rückmeldung versendest.</p>
       <p><a href="redaktion.html#datenschutz">Vollständige Hinweise zum Datenschutz</a> · <a href="redaktion.html#impressum">Impressum und verantwortlicher Betreiber</a></p>
@@ -71,11 +85,108 @@
 
     <section>
       <h2>Verantwortung und Grenzen</h2>
+      <button type="button" class="nova-book-listen" data-nova-section hidden>▶ Verantwortung und Grenzen anhören</button>
       <p>Das Goldene Buch ist ein persönlicher Erinnerungs- und Gestaltungsraum. Es ersetzt keine medizinische, psychologische, rechtliche oder sonstige fachliche Beratung und ist kein Notfall- oder Rettungssystem.</p>
       <p>Trotz sorgfältiger Prüfung können Fehler auftreten. Wichtige Inhalte sollen daher immer zusätzlich gesichert werden.</p>
       <p><strong>Verantwortlicher Betreiber:</strong> Verein Reset – Zurück zum Leben als Mensch!<br><strong>Redaktion und schöpferische Verantwortung:</strong> Franz Leopold Hinterndorfer</p>
     </section>
   </main>
   <footer><p>Itschana · Verein Reset – Zurück zum Leben als Mensch! · <a href="kontakt.html">Kontakt</a> · <a href="redaktion.html">Impressum &amp; Datenschutz</a></p></footer>
+<script>
+(() => {
+  const all = document.getElementById("nova-book-all");
+  const status = document.getElementById("nova-book-status");
+  const controls = [...document.querySelectorAll("[data-nova-section]")];
+  const speech = window.speechSynthesis;
+  all.hidden = false;
+  if (!speech || !window.SpeechSynthesisUtterance) {
+    all.disabled = true;
+    status.textContent = "Die Vorlesefunktion ist in diesem Browser nicht verfügbar.";
+    return;
+  }
+  const preferred = /anna|helena|katja|vicki|petra|marlene|amala|susan|yann?ika|elli|katrin|female|weiblich/i;
+  let activeButton = null;
+  let originalLabel = "";
+  let current = null;
+  let pause = null;
+
+  function stop() {
+    window.clearTimeout(pause);
+    pause = null;
+    if (current) {
+      current = null;
+      speech.cancel();
+    }
+    if (activeButton) activeButton.textContent = originalLabel;
+    activeButton = null;
+  }
+
+  function play(button) {
+    const wasPlaying = button === activeButton;
+    stop();
+    if (wasPlaying) {
+      status.textContent = "Wiedergabe gestoppt.";
+      return;
+    }
+
+    const targets = button === all ? controls : [button];
+    const paragraphs = ["Hallo, ich bin Nova. Ich lese dir die Erklärungen zum Goldenen Buch Deines Lebens vor."];
+    for (const target of targets) {
+      const section = target.closest("section");
+      for (const element of section.querySelectorAll("h2, p, li")) {
+        if (element.matches("p") && element.firstElementChild?.matches("a")) continue;
+        const text = element.innerText.trim().replace(/\s+/g, " ");
+        if (text) paragraphs.push(/[.!?]$/.test(text) ? text : text + ".");
+        if (element.matches("h2") && section.id === "beweggruende") {
+          paragraphs.push("Jetzt hörst du Franz' Beweggründe in seinen eigenen Worten.");
+        }
+      }
+    }
+    const voices = speech.getVoices().filter((v) => /^de(?:[-_]|$)/i.test(v.lang));
+    const voice = voices.find((v) => preferred.test(v.name) && /^de[-_]AT$/i.test(v.lang))
+      || voices.find((v) => preferred.test(v.name)) || voices.find((v) => v.default) || voices[0];
+    activeButton = button;
+    originalLabel = button.textContent;
+    button.textContent = "Wiedergabe stoppen";
+    status.textContent = "Nova liest die Erklärungen vor.";
+
+    function read(index) {
+      const utterance = new SpeechSynthesisUtterance(paragraphs[index]);
+      utterance.lang = voice?.lang || "de-AT";
+      if (voice) utterance.voice = voice;
+      utterance.rate = 0.86;
+      utterance.pitch = 0.92;
+      utterance.onend = () => {
+        if (current !== utterance) return;
+        current = null;
+        if (index + 1 === paragraphs.length) {
+          stop();
+          status.textContent = "Wiedergabe beendet.";
+          return;
+        }
+        pause = window.setTimeout(() => {
+          pause = null;
+          read(index + 1);
+        }, 950);
+      };
+      utterance.onerror = () => {
+        if (current !== utterance) return;
+        current = null;
+        stop();
+        status.textContent = "Die Stimme konnte nicht wiedergegeben werden. Die Erklärungen stehen zum Lesen bereit.";
+      };
+      current = utterance;
+      speech.speak(utterance);
+    }
+    read(0);
+  }
+
+  for (const button of [all, ...controls]) {
+    button.hidden = false;
+    button.addEventListener("click", () => play(button));
+  }
+  window.addEventListener("pagehide", stop);
+})();
+</script>
 </body>
 </html>
