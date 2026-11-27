@@ -23,6 +23,8 @@
 #wegweiser li a:hover{background:#f9ecd4}
 #wegweiser small{display:block;margin-top:4px}
 #wegweiser input{display:block;box-sizing:border-box;width:min(100%,32rem);margin-top:6px;padding:10px;border:1px solid #806645;border-radius:6px;font:inherit;background:white;color:#312417}
+#nova-lesung{padding:10px 16px;border:1px solid #674b2e;border-radius:8px;background:#674b2e;color:#fff;font:600 1rem system-ui;cursor:pointer;margin-bottom:12px}
+#nova-status:empty{display:none}
 #wegweiser :focus-visible{outline:3px solid #80581d;outline-offset:3px}
 </style>
   <meta property="og:title" content="Itschana · Dein Wegweiser" />
@@ -35,6 +37,10 @@
   <main>
 <section id="wegweiser" aria-labelledby="wegweiser-titel">
   <h2 id="wegweiser-titel">Was möchtest du finden?</h2>
+  <div id="nova-stimme" hidden>
+    <button type="button" id="nova-lesung">▶ Wegweiser anhören</button>
+    <p id="nova-status" role="status"></p>
+  </div>
   <div id="wegweiser-suche" hidden>
     <label for="wegweiser-eingabe">Wegweiser durchsuchen</label>
     <input id="wegweiser-eingabe" type="search" placeholder="z. B. Lebensbuch oder Tagesenergie">
@@ -53,6 +59,76 @@
   </ul>
   <p id="wegweiser-status" role="status"></p>
 </section>
+<script>
+  (() => {
+    const control = document.getElementById("nova-stimme");
+    const button = document.getElementById("nova-lesung");
+    const status = document.getElementById("nova-status");
+    control.hidden = false;
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
+      status.textContent = "Die Vorlesefunktion ist in diesem Browser nicht verfügbar.";
+      return;
+    }
+    const speech = window.speechSynthesis;
+    const preferred = /anna|helena|katja|vicki|petra|marlene|amala|susan|yann?ika|elli|katrin|female|weiblich/i;
+    let current = null;
+    let pause = null;
+    function reset() {
+      window.clearTimeout(pause);
+      pause = null;
+      if (current) {
+        current = null;
+        speech.cancel();
+      }
+      button.textContent = "Wegweiser anhören";
+    }
+    button.addEventListener("click", () => {
+      if (current || pause !== null) { reset(); status.textContent = "Wiedergabe gestoppt."; return; }
+      const voices = speech.getVoices().filter((voice) => /^de(?:[-_]|$)/i.test(voice.lang));
+      const voice = voices.find((v) => preferred.test(v.name) && /^de[-_]AT$/i.test(v.lang))
+        || voices.find((v) => preferred.test(v.name)) || voices.find((v) => v.default) || voices[0];
+      const script = [
+        "Hallo, ich bin Nova. Schön, dass du da bist. Ich zeige dir, was du bei Itschana finden kannst.",
+        "Oben im Wegweiser findest du: Was ist Itschana? Dort lernst du den natürlichen Jahreskalender kennen.",
+        "Unter Heutiges KIN findest du den Tagesraum. Wenn du den Tagesimpuls lieber hören möchtest, wähle Podcast.",
+        "Beim Goldenen Buch erfährst du, wie du deine Lebensgeschichte festhalten und dein Buch persönlich bei Franz anfragen kannst.",
+        "Unter RESET findest du den Verein und seine Projekte. Wenn du etwas Bestimmtes suchst, kannst du dein Stichwort in das Suchfeld eingeben."
+      ];
+      function readSection(index) {
+        const utterance = new SpeechSynthesisUtterance(script[index]);
+        utterance.lang = voice?.lang || "de-AT";
+        if (voice) utterance.voice = voice;
+        utterance.rate = 0.86;
+        utterance.pitch = 0.92;
+        utterance.onend = () => {
+          if (current !== utterance) return;
+          current = null;
+          if (index + 1 === script.length) {
+            reset();
+            status.textContent = "Wiedergabe beendet.";
+            return;
+          }
+          pause = window.setTimeout(() => {
+            pause = null;
+            readSection(index + 1);
+          }, 950);
+        };
+        utterance.onerror = () => {
+          if (current !== utterance) return;
+          current = null;
+          reset();
+          status.textContent = "Die Stimme konnte nicht gestartet werden. Die Links im Wegweiser stehen darunter bereit.";
+        };
+        current = utterance;
+        speech.speak(utterance);
+      }
+      button.textContent = "Wiedergabe stoppen";
+      status.textContent = "Nova erklärt den Wegweiser.";
+      readSection(0);
+    });
+    window.addEventListener("pagehide", reset);
+  })();
+  </script>
 <script>
 (() => {
   const field = document.getElementById("wegweiser-eingabe");
