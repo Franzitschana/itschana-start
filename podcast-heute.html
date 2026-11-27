@@ -24,7 +24,7 @@
     <section class="podcast-intro">
       <p class="eyebrow">Itschana</p>
       <h1>Ruf des Raumes</h1>
-      <p>Der heutige Zeitraum – zum Lesen und, wenn eine Aufnahme vorhanden ist, zum Anhören.</p>
+      <p>Der heutige Zeitraum zum Lesen und Anhören. Nova, die KI-Assistentin von Franz, liest dir den Tagesruf auf Wunsch vor.</p>
     </section>
     <article class="ruf-card" id="ruf-card" aria-live="polite" aria-busy="true">
       <header class="ruf-header">
@@ -41,6 +41,10 @@
         <p class="section-label">Den Ruf anhören</p>
         <iframe id="audio-player" title="Podcast des Tages" width="100%" height="100" allow="autoplay"></iframe>
       </section>
+      <div class="listen-space" id="nova-stimme" hidden>
+        <button type="button" class="day-button" id="nova-lesung" disabled>Mit Nova anhören</button>
+        <p id="nova-status" role="status"></p>
+      </div>
       <section class="reading-space" aria-labelledby="reading-title">
         <p class="section-label">Den Ruf lesen</p>
         <h2 id="reading-title">Der heutige Ruf des Raumes</h2>
@@ -67,6 +71,7 @@
     <nav class="podcast-links" aria-label="Weitere Wege">
       <a class="workshop-link" href="podcast-werkstatt.html">Podcast-Werkstatt öffnen</a>
       <a href="podcast-archiv.html">Zum Podcast-Archiv</a>
+      <a href="geburtstagsraum.html">Zum persönlichen Geburtstagsraum</a>
       <a id="day-room-link" href="tageszeitraum.html">Den vollständigen Tagesraum öffnen</a>
     </nav>
   </main>
@@ -77,5 +82,69 @@
   <script src="podcasts.js"></script>
   <script src="itschana-calendar.js"></script>
   <script src="podcast-heute.js"></script>
+  <script>
+  (() => {
+    const control = document.getElementById("nova-stimme");
+    const button = document.getElementById("nova-lesung");
+    const status = document.getElementById("nova-status");
+    const card = document.getElementById("ruf-card");
+    control.hidden = false;
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
+      status.textContent = "Die Vorlesefunktion ist in diesem Browser nicht verfügbar.";
+      return;
+    }
+    const speech = window.speechSynthesis;
+    const read = (id) => document.getElementById(id).textContent.trim();
+    const preferred = /anna|helena|katja|vicki|petra|marlene|amala|susan|yann?ika|elli|katrin|female|weiblich/i;
+    let current = null;
+    function reset() {
+      if (current) {
+        current = null;
+        speech.cancel();
+      }
+      button.textContent = "Mit Nova anhören";
+    }
+    function update() {
+      reset();
+      button.disabled = !read("opening");
+      status.textContent = "";
+    }
+    new MutationObserver(update).observe(card.querySelector("#opening"), { childList: true });
+    update();
+    button.addEventListener("click", () => {
+      if (current) { reset(); status.textContent = "Wiedergabe gestoppt."; return; }
+      const voices = speech.getVoices().filter((voice) => /^de(?:[-_]|$)/i.test(voice.lang));
+      const voice = voices.find((v) => preferred.test(v.name) && /^de[-_]AT$/i.test(v.lang))
+        || voices.find((v) => preferred.test(v.name)) || voices.find((v) => v.default) || voices[0];
+      const script = ["Hallo, ich bin Nova, Franz' KI-Assistentin. Du hörst den Ruf des Raumes für den " + read("date-full") + ".",
+        read("opening").replace(/^Heute öffnet sich/, "An diesem Tag öffnet sich"),
+        "Zeit. " + read("space-time"), "Leben. " + read("space-life"),
+        "Sinne. " + read("space-senses"), "Bewusstsein. " + read("space-awareness"),
+        "Eine Frage zum Mitnehmen. " + read("daily-question"),
+        "Nimm mit, was in dir anklingt. It tscha na."];
+      const utterance = new SpeechSynthesisUtterance(script.join(" "));
+      utterance.lang = voice?.lang || "de-AT";
+      if (voice) utterance.voice = voice;
+      utterance.rate = 0.91;
+      utterance.onend = () => {
+        if (current !== utterance) return;
+        current = null;
+        reset();
+        status.textContent = "Wiedergabe beendet.";
+      };
+      utterance.onerror = () => {
+        if (current !== utterance) return;
+        current = null;
+        reset();
+        status.textContent = "Die Stimme konnte nicht gestartet werden. Der Tagesruf steht darunter zum Lesen bereit.";
+      };
+      current = utterance;
+      button.textContent = "Wiedergabe stoppen";
+      status.textContent = "Nova liest den Tagesruf.";
+      speech.speak(utterance);
+    });
+    window.addEventListener("pagehide", reset);
+  })();
+  </script>
 <div class="visitor-footer"><a href="redaktion.html">Redaktion &amp; Arbeitsweise</a> · <a href="redaktion.html#datenschutz">Datenschutz &amp; persönliche Einträge</a> · <a href="kontakt.html">Kontakt &amp; Berichtigungen</a></div></body>
 </html>
